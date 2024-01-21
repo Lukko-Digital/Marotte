@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://v8xpl2jr2dsl"]
+
+[ext_resource type="Texture2D" uid="uid://cb0ugslrvhr3o" path="res://assets/dialogue_scene/king.png" id="1_gvtcy"]
+[ext_resource type="Texture2D" uid="uid://bgontbgsrxxc0" path="res://assets/dialogue_scene/dialogue_box.png" id="2_5r0v5"]
+
+[node name="dialogue_scene" type="CanvasLayer"]
+
+[node name="king" type="TextureRect" parent="."]
+offset_right = 9600.0
+offset_bottom = 2927.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_gvtcy")
+
+[node name="dialogue_box" type="TextureRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -839.0
+offset_top = -508.0
+offset_right = 7677.0
+offset_bottom = 1369.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_5r0v5")
+
+[node name="text" type="Label" parent="dialogue_box"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 250
+text = "so you want to become the king of comedy"
