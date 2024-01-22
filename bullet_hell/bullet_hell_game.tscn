@@ -1,43 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=3 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/bh_player.tscn" id="1_le3bt"]
+[ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
 
 [node name="bullet_hell_game" type="Node2D"]
-position = Vector2(896, 496)
+script = ExtResource("1_ruomc")
 
 [node name="bh_player" parent="." instance=ExtResource("1_le3bt")]
+position = Vector2(985, 483)
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 197.0
-offset_top = -343.0
-offset_right = 237.0
-offset_bottom = -303.0
+offset_left = 1182.0
+offset_top = 140.0
+offset_right = 1222.0
+offset_bottom = 180.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 208.0
-offset_top = 328.0
-offset_right = 248.0
-offset_bottom = 368.0
+offset_left = 1193.0
+offset_top = 811.0
+offset_right = 1233.0
+offset_bottom = 851.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect3" type="ColorRect" parent="."]
-offset_left = -437.0
-offset_top = 303.0
-offset_right = -397.0
-offset_bottom = 343.0
+offset_left = 548.0
+offset_top = 786.0
+offset_right = 588.0
+offset_bottom = 826.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect4" type="ColorRect" parent="."]
-offset_left = 691.0
-offset_top = 405.0
-offset_right = 731.0
-offset_bottom = 445.0
+offset_left = 1676.0
+offset_top = 888.0
+offset_right = 1716.0
+offset_bottom = 928.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect5" type="ColorRect" parent="."]
-offset_left = -690.0
-offset_top = -235.0
-offset_right = -650.0
-offset_bottom = -195.0
+offset_left = 295.0
+offset_top = 248.0
+offset_right = 335.0
+offset_bottom = 288.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
