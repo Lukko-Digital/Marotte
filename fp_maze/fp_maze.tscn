@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnfw775ud128o"]
+[gd_scene load_steps=8 format=3 uid="uid://dnfw775ud128o"]
 
 [ext_resource type="Script" path="res://fp_maze/fp_maze.gd" id="1_2pyqd"]
 [ext_resource type="PackedScene" uid="uid://b2mtmh3kniaj3" path="res://fp_maze/player/fp_maze_player.tscn" id="1_xt3ey"]
@@ -9,16 +9,8 @@
 
 [sub_resource type="Environment" id="Environment_n6kyh"]
 ambient_light_source = 1
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_uaxtr"]
-
-[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_xuo61"]
-noise = SubResource("FastNoiseLite_uaxtr")
-
-[sub_resource type="FogMaterial" id="FogMaterial_uie7x"]
-density = -0.0115
-emission = Color(0.309804, 0.309804, 0.309804, 1)
-density_texture = SubResource("NoiseTexture3D_xuo61")
+fog_light_color = Color(0, 0, 0, 1)
+volumetric_fog_albedo = Color(0, 0, 0, 1)
 
 [node name="FPMaze" type="Node3D"]
 script = ExtResource("1_2pyqd")
@@ -28,12 +20,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.09156, 5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n6kyh")
-
-[node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-visible = false
-shape = 4
-material = SubResource("FogMaterial_uie7x")
 
 [node name="Ui" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_n7iq7")]
 player = NodePath("../Player")
