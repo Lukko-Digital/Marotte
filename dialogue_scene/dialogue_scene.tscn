@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://v8xpl2jr2dsl"]
+[gd_scene load_steps=4 format=3 uid="uid://by1v75ovunb1c"]
 
 [ext_resource type="Texture2D" uid="uid://cb0ugslrvhr3o" path="res://assets/dialogue_scene/king.png" id="1_gvtcy"]
+[ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_tsyg8"]
 [ext_resource type="Texture2D" uid="uid://bgontbgsrxxc0" path="res://assets/dialogue_scene/dialogue_box.png" id="2_5r0v5"]
 
-[node name="dialogue_scene" type="CanvasLayer"]
+[node name="dialogue_scene" type="CanvasLayer" node_paths=PackedStringArray("dialogue_label", "text_timer")]
+script = ExtResource("1_tsyg8")
+dialogue_label = NodePath("dialogue_box/text")
+text_timer = NodePath("TextTimer")
 
 [node name="king" type="TextureRect" parent="."]
 offset_right = 9600.0
@@ -41,4 +45,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 250
-text = "so you want to become the king of comedy"
+
+[node name="TextTimer" type="Timer" parent="."]
