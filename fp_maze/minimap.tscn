@@ -15,8 +15,8 @@ script = ExtResource("1_jj6cq")
 [node name="Minimap" type="TextureRect" parent="."]
 modulate = Color(0.392157, 0.392157, 0.392157, 1)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 128.0
+offset_bottom = 128.0
 texture = ExtResource("1_c0hgn")
 
 [node name="Player" type="Sprite2D" parent="."]
