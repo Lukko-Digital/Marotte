@@ -5,6 +5,7 @@ extends CanvasLayer
 
 var dialogue: PackedStringArray
 var curr_dialogue_idx = -1
+var display_in_progress = false
 
 const TEXT_SPEED = 0.03
 
@@ -21,12 +22,17 @@ func load_file():
 
 func animate_display():
 	dialogue_label.visible_characters = 0
+	display_in_progress = true
 	while dialogue_label.visible_characters < len(dialogue_label.text):
 		dialogue_label.visible_characters += 1
 		text_timer.start()
 		await text_timer.timeout
+	display_in_progress = false
 
 func advance_dialogue():
-	curr_dialogue_idx += 1
-	dialogue_label.text = dialogue[curr_dialogue_idx]
-	await animate_display()
+	if display_in_progress:
+		dialogue_label.visible_characters = len(dialogue_label.text)
+	else:
+		curr_dialogue_idx += 1
+		dialogue_label.text = dialogue[curr_dialogue_idx]
+		await animate_display()
