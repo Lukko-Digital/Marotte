@@ -12,6 +12,7 @@ font_size = 160
 script = ExtResource("1_0hd1g")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
+omni_range = 20.0
 
 [node name="Area3D" type="Area3D" parent="."]
 

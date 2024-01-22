@@ -26,8 +26,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55087, 0)
 [node name="Camera3D" type="Camera3D" parent="RotationHelper"]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-light_color = Color(1, 0.580392, 0.32549, 1)
-light_energy = 2.616
+light_color = Color(1, 0.74902, 0.611765, 1)
+light_energy = 4.096
 shadow_enabled = true
-omni_range = 653.939
-omni_attenuation = 1.93187
+omni_range = 40.0
+omni_attenuation = 1.18921
