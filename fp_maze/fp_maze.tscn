@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://dnfw775ud128o"]
 
+[ext_resource type="Script" path="res://fp_maze/fp_maze.gd" id="1_2pyqd"]
 [ext_resource type="PackedScene" uid="uid://b2mtmh3kniaj3" path="res://fp_maze/player/fp_maze_player.tscn" id="1_xt3ey"]
 [ext_resource type="PackedScene" uid="uid://cjp4eow1trakk" path="res://fp_maze/wall/tunnel.tscn" id="2_dn5hj"]
 [ext_resource type="PackedScene" uid="uid://yshtu8rxtscq" path="res://fp_maze/wall/wall.tscn" id="2_jiomu"]
 [ext_resource type="PackedScene" uid="uid://cckqx6u14q8bc" path="res://fp_maze/minimap.tscn" id="4_n7iq7"]
-[ext_resource type="PackedScene" uid="uid://gq6y2xjqy6wy" path="res://fp_maze/fp_maze_word.tscn" id="5_jp38w"]
 
 [sub_resource type="Environment" id="Environment_n6kyh"]
 volumetric_fog_enabled = true
@@ -20,32 +20,10 @@ emission = Color(0.309804, 0.309804, 0.309804, 1)
 density_texture = SubResource("NoiseTexture3D_xuo61")
 
 [node name="FPMaze" type="Node3D"]
+script = ExtResource("1_2pyqd")
 
 [node name="Player" parent="." instance=ExtResource("1_xt3ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09156, 0)
-
-[node name="Tunnel" parent="." instance=ExtResource("2_dn5hj")]
-
-[node name="Tunnel2" parent="." instance=ExtResource("2_dn5hj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
-
-[node name="Tunnel3" parent="." instance=ExtResource("2_dn5hj")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0, -20)
-
-[node name="Tunnel4" parent="." instance=ExtResource("2_dn5hj")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 0, -20)
-
-[node name="Wall" parent="." instance=ExtResource("2_jiomu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
-
-[node name="Wall2" parent="." instance=ExtResource("2_jiomu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -20)
-
-[node name="Wall3" parent="." instance=ExtResource("2_jiomu")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, -25)
-
-[node name="Wall4" parent="." instance=ExtResource("2_jiomu")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, 5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n6kyh")
@@ -58,5 +36,77 @@ material = SubResource("FogMaterial_uie7x")
 [node name="Ui" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_n7iq7")]
 player = NodePath("../Player")
 
-[node name="fp_maze_word" parent="." instance=ExtResource("5_jp38w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 5, -20)
+[node name="Maze" type="Node3D" parent="."]
+
+[node name="Tunnel" parent="Maze" instance=ExtResource("2_dn5hj")]
+
+[node name="Tunnel2" parent="Maze" instance=ExtResource("2_dn5hj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="Tunnel3" parent="Maze" instance=ExtResource("2_dn5hj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0, -20)
+
+[node name="Tunnel7" parent="Maze" instance=ExtResource("2_dn5hj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0, -20)
+
+[node name="Tunnel6" parent="Maze" instance=ExtResource("2_dn5hj")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -20, 0, -10)
+
+[node name="Tunnel4" parent="Maze" instance=ExtResource("2_dn5hj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 0, -20)
+
+[node name="Tunnel5" parent="Maze" instance=ExtResource("2_dn5hj")]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 20, 0, -30)
+
+[node name="Wall" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="Wall2" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -20)
+
+[node name="Wall5" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
+
+[node name="Wall6" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 10, -20)
+
+[node name="Wall10" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 10, -20)
+
+[node name="Wall11" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
+
+[node name="Wall12" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 20, 5, -15)
+
+[node name="Wall13" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 25, 5, -20)
+
+[node name="Wall14" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 20, 5, -35)
+
+[node name="Wall7" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -20, 5, -25)
+
+[node name="Wall9" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -20, 5, -5)
+
+[node name="Wall8" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -25, 5, -20)
+
+[node name="Wall3" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, -25)
+
+[node name="Wall4" parent="Maze" instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, 5)
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+
+[node name="Node3D" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Node3D2" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 5, -10)
+
+[node name="Node3D3" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, -30)
