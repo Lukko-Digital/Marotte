@@ -32,6 +32,8 @@ func animate_display():
 func advance_dialogue():
 	if display_in_progress:
 		dialogue_label.visible_characters = len(dialogue_label.text)
+	elif curr_dialogue_idx >= len(dialogue) - 1:
+		print("end")
 	else:
 		curr_dialogue_idx += 1
 		dialogue_label.text = dialogue[curr_dialogue_idx]
