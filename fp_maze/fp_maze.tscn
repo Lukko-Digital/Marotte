@@ -110,3 +110,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 5, -10)
 
 [node name="Node3D3" type="Node3D" parent="SpawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, -30)
+
+[connection signal="word_spawned" from="." to="Ui" method="_on_fp_maze_word_spawned"]

@@ -6,6 +6,8 @@ var current_spawn
 
 var word
 
+signal word_spawned(new_word)
+
 func spawn_word():
 	word = word_scene.instantiate()
 	add_child(word)
@@ -16,11 +18,11 @@ func spawn_word():
 	spawn_points.shuffle()
 	spawn_points.append(current_spawn)
 	
+	word_spawned.emit(word)
 	word.entered.connect(spawn_word)
 
 func _ready():
 	spawn_points.shuffle()
-	
 	
 	spawn_word()
 

@@ -1,7 +1,8 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 5
+const SPRINT_MODIFIER = 2
 var MOUSE_SENSITIVITY_X = 0.2
 var MOUSE_SENSITIVITY_Y = 0.075
 var rotation_helper
@@ -17,9 +18,14 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	var sprinting = Input.get_action_strength("shift")
+	
+	var modifier = SPRINT_MODIFIER if sprinting else 1
+	
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * SPEED * modifier
+		velocity.z = direction.z * SPEED * modifier
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
