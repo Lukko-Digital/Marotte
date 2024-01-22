@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnfw775ud128o"]
+
+[ext_resource type="PackedScene" uid="uid://b2mtmh3kniaj3" path="res://fp_maze/player/fp_maze_player.tscn" id="1_xt3ey"]
+[ext_resource type="PackedScene" uid="uid://cjp4eow1trakk" path="res://fp_maze/wall/tunnel.tscn" id="2_dn5hj"]
+[ext_resource type="PackedScene" uid="uid://yshtu8rxtscq" path="res://fp_maze/wall/wall.tscn" id="2_jiomu"]
+
+[sub_resource type="Environment" id="Environment_n6kyh"]
+volumetric_fog_enabled = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uaxtr"]
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_xuo61"]
+noise = SubResource("FastNoiseLite_uaxtr")
+
+[sub_resource type="FogMaterial" id="FogMaterial_uie7x"]
+density = -0.0115
+emission = Color(0.309804, 0.309804, 0.309804, 1)
+density_texture = SubResource("NoiseTexture3D_xuo61")
+
+[node name="FPMaze" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_xt3ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09156, 0)
+
+[node name="Tunnel" parent="." instance=ExtResource("2_dn5hj")]
+
+[node name="Tunnel2" parent="." instance=ExtResource("2_dn5hj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="Tunnel3" parent="." instance=ExtResource("2_dn5hj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 0, -20)
+
+[node name="Tunnel4" parent="." instance=ExtResource("2_dn5hj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 0, -20)
+
+[node name="Wall" parent="." instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="Wall2" parent="." instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -20)
+
+[node name="Wall3" parent="." instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, -25)
+
+[node name="Wall4" parent="." instance=ExtResource("2_jiomu")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, 5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n6kyh")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = 4
+material = SubResource("FogMaterial_uie7x")

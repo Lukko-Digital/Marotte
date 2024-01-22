@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2mtmh3kniaj3"]
+
+[ext_resource type="Script" path="res://fp_maze/player/fp_maze_player.gd" id="1_uh03h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lxful"]
+radius = 1.0
+height = 6.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_iub53"]
+radius = 1.0
+height = 6.0
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_uh03h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_lxful")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_iub53")
+
+[node name="RotationHelper" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55087, 0)
+
+[node name="Camera3D" type="Camera3D" parent="RotationHelper"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.580392, 0.32549, 1)
+light_energy = 2.616
+shadow_enabled = true
+omni_range = 653.939
+omni_attenuation = 1.93187
