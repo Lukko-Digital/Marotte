@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cckqx6u14q8bc"]
+
+[ext_resource type="Texture2D" uid="uid://2leuuw0ht3r" path="res://icon.svg" id="1_c0hgn"]
+[ext_resource type="Script" path="res://fp_maze/minimap.gd" id="1_jj6cq"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jj6cq")
+
+[node name="Minimap" type="TextureRect" parent="."]
+modulate = Color(0.392157, 0.392157, 0.392157, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_c0hgn")
+
+[node name="Player" type="Sprite2D" parent="."]
+modulate = Color(1, 0.262745, 0.498039, 1)
+position = Vector2(62, 62)
+scale = Vector2(0.164063, 0.1875)
+texture = ExtResource("1_c0hgn")

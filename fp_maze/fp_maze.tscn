@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnfw775ud128o"]
+[gd_scene load_steps=9 format=3 uid="uid://dnfw775ud128o"]
 
 [ext_resource type="PackedScene" uid="uid://b2mtmh3kniaj3" path="res://fp_maze/player/fp_maze_player.tscn" id="1_xt3ey"]
 [ext_resource type="PackedScene" uid="uid://cjp4eow1trakk" path="res://fp_maze/wall/tunnel.tscn" id="2_dn5hj"]
 [ext_resource type="PackedScene" uid="uid://yshtu8rxtscq" path="res://fp_maze/wall/wall.tscn" id="2_jiomu"]
+[ext_resource type="PackedScene" uid="uid://cckqx6u14q8bc" path="res://fp_maze/minimap.tscn" id="4_n7iq7"]
 
 [sub_resource type="Environment" id="Environment_n6kyh"]
 volumetric_fog_enabled = true
@@ -52,3 +53,6 @@ environment = SubResource("Environment_n6kyh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = 4
 material = SubResource("FogMaterial_uie7x")
+
+[node name="Ui" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_n7iq7")]
+player = NodePath("../Player")
