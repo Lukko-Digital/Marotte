@@ -31,10 +31,13 @@ func animate_display():
 
 func advance_dialogue():
 	if display_in_progress:
+		# cut to the end of the line
 		dialogue_label.visible_characters = len(dialogue_label.text)
-	elif curr_dialogue_idx >= len(dialogue) - 1:
+	elif curr_dialogue_idx >= len(dialogue):
+		# end of dialogue
 		print("end")
 	else:
+		# next line
 		curr_dialogue_idx += 1
 		dialogue_label.text = dialogue[curr_dialogue_idx]
 		await animate_display()
