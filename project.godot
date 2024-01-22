@@ -51,3 +51,5 @@ space={
 [layer_names]
 
 2d_physics/layer_1="PLAYER"
+2d_physics/layer_2="TERRAIN"
+2d_physics/layer_3="ENEMY"

@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" path="res://bullet_hell/bullet.gd" id="1_inqog"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cnaht"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8swx2"]
 size = Vector2(18, 18)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cnaht"]
-
-[node name="bullet" type="Area2D"]
-collision_layer = 0
+[node name="bullet" type="Area2D" groups=["bullet"]]
+collision_layer = 4
 script = ExtResource("1_inqog")
-
-[node name="HitBox" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_8swx2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(18, 18)
 texture = SubResource("PlaceholderTexture2D_cnaht")
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8swx2")
