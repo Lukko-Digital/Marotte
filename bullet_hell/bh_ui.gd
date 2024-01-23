@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var color_animation: AnimationPlayer = $ScreenColor/AnimationPlayer
@@ -17,6 +17,7 @@ func _process(delta):
 		color_animation.play("pulse")
 	elif current_hp <= MAX_HP/2:
 		color_animation.play("pulse")
+
 
 func _on_bh_player_hit():
 	current_hp -= 1
