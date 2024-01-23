@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://fp_maze/fp_maze_word.gd" id="1_0hd1g"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1snb0"]
-radius = 3.0
+radius = 2.0
 
 [node name="fp_maze_word" type="Label3D"]
 billboard = 1
