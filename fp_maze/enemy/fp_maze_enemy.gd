@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export var player : CharacterBody3D
 @onready var nav_agent : NavigationAgent3D = $NavigationAgent3D
 
-var SPEED = 3
+var SPEED = 7
 
 func _physics_process(delta):
 	
@@ -24,7 +24,5 @@ func _physics_process(delta):
 		# so collisions work properly.
 		velocity = direction.normalized() * SPEED
 		nav_agent.set_velocity_forced(velocity)
-		
-		print(velocity)
 
 	move_and_slide()
