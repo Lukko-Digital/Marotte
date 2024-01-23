@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://utnmqv554thm"
-path="res://.godot/imported/fv_player_nervous.png-91933624f6c52e565a7b2c0243352b8e.ctex"
+uid="uid://banxhtgki4vbs"
+path="res://.godot/imported/bh_interface.png-0a2516c8ce89d769558d34a4183fcce0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fv_player_nervous.png"
-dest_files=["res://.godot/imported/fv_player_nervous.png-91933624f6c52e565a7b2c0243352b8e.ctex"]
+source_file="res://assets/sprites/bh_interface.png"
+dest_files=["res://.godot/imported/bh_interface.png-0a2516c8ce89d769558d34a4183fcce0.ctex"]
 
 [params]
 
