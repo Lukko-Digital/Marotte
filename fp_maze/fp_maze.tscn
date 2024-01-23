@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnfw775ud128o"]
+[gd_scene load_steps=11 format=3 uid="uid://dnfw775ud128o"]
 
 [ext_resource type="Script" path="res://fp_maze/fp_maze.gd" id="1_2pyqd"]
 [ext_resource type="PackedScene" uid="uid://b2mtmh3kniaj3" path="res://fp_maze/player/fp_maze_player.tscn" id="1_xt3ey"]
@@ -6,17 +6,25 @@
 [ext_resource type="PackedScene" uid="uid://do5xri1rtsc7y" path="res://fp_maze/wall/floor.tscn" id="4_a0i0r"]
 [ext_resource type="PackedScene" uid="uid://cckqx6u14q8bc" path="res://fp_maze/minimap.tscn" id="4_n7iq7"]
 [ext_resource type="PackedScene" uid="uid://xhfk7be8mp67" path="res://fp_maze/wall/long_wall.tscn" id="5_bhyob"]
+[ext_resource type="PackedScene" uid="uid://ijgwfytqtnof" path="res://fp_maze/enemy/fp_maze_enemy.tscn" id="7_xf08l"]
+[ext_resource type="Script" path="res://fp_maze/fp_maze_NavigationRegion3D.gd" id="8_jfmqf"]
 
 [sub_resource type="Environment" id="Environment_n6kyh"]
 ambient_light_source = 1
 fog_light_color = Color(0, 0, 0, 1)
 volumetric_fog_albedo = Color(0, 0, 0, 1)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_63ypd"]
+cell_size = 1.0
+cell_height = 1.0
+agent_height = 3.0
+agent_radius = 1.0
+
 [node name="FPMaze" type="Node3D"]
 script = ExtResource("1_2pyqd")
 
 [node name="Player" parent="." instance=ExtResource("1_xt3ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.09156, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2.5, 5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n6kyh")
@@ -28,9 +36,6 @@ player = NodePath("../Player")
 
 [node name="Node3D" type="Node3D" parent="SpawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 5, -45)
-
-[node name="Node3D2" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 5, 15)
 
 [node name="Node3D3" type="Node3D" parent="SpawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, -35)
@@ -44,272 +49,284 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 5, 45)
 [node name="Node3D6" type="Node3D" parent="SpawnPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 25)
 
-[node name="Maze" type="Node3D" parent="."]
+[node name="Node3D7" type="Node3D" parent="SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, -25)
 
-[node name="Floor" parent="Maze" instance=ExtResource("4_a0i0r")]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_63ypd")
+script = ExtResource("8_jfmqf")
 
-[node name="Floor2" parent="Maze" instance=ExtResource("4_a0i0r")]
+[node name="Maze" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="Floor" parent="NavigationRegion3D/Maze" instance=ExtResource("4_a0i0r")]
+
+[node name="Floor2" parent="NavigationRegion3D/Maze" instance=ExtResource("4_a0i0r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+visible = false
 
-[node name="Wall" parent="Maze" instance=ExtResource("5_bhyob")]
+[node name="Wall" parent="NavigationRegion3D/Maze" instance=ExtResource("5_bhyob")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, -50)
 
-[node name="Wall86" parent="Maze" instance=ExtResource("5_bhyob")]
+[node name="Wall86" parent="NavigationRegion3D/Maze" instance=ExtResource("5_bhyob")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, 50)
 
-[node name="Wall2" parent="Maze" instance=ExtResource("5_bhyob")]
+[node name="Wall2" parent="NavigationRegion3D/Maze" instance=ExtResource("5_bhyob")]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -50, 5, 0)
 
-[node name="Wall87" parent="Maze" instance=ExtResource("5_bhyob")]
+[node name="Wall87" parent="NavigationRegion3D/Maze" instance=ExtResource("5_bhyob")]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 50, 5, 0)
 
-[node name="Wall3" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall3" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -35, 5, -40)
 
-[node name="Wall4" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall4" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -25, 5, -40)
 
-[node name="Wall5" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall5" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -25, 5, -30)
 
-[node name="Wall6" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall6" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -35, 5, -30)
 
-[node name="Wall15" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall15" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -35, 5, -20)
 
-[node name="Wall16" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall16" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -35, 5, -10)
 
-[node name="Wall27" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall27" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -45, 5, 0)
 
-[node name="Wall28" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall28" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -35, 5, 0)
 
-[node name="Wall29" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall29" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -25, 5, 0)
 
-[node name="Wall36" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall36" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -25, 5, 10)
 
-[node name="Wall56" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall56" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -25, 5, 20)
 
-[node name="Wall37" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall37" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -35, 5, 10)
 
-[node name="Wall55" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall55" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -35, 5, 20)
 
-[node name="Wall60" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall60" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -35, 5, 40)
 
-[node name="Wall64" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall64" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -25, 5, 40)
 
-[node name="Wall65" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall65" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -15, 5, 40)
 
-[node name="Wall68" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall68" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, 5, 40)
 
-[node name="Wall69" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall69" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 15, 5, 40)
 
-[node name="Wall70" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall70" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 15, 5, 20)
 
-[node name="Wall38" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall38" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -45, 5, 10)
 
-[node name="Wall19" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall19" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -25, 5, -10)
 
-[node name="Wall20" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall20" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -25, 5, -20)
 
-[node name="Wall21" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall21" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5, 5, -20)
 
-[node name="Wall24" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall24" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5, 5, 20)
 
-[node name="Wall58" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall58" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -15, 5, 30)
 
-[node name="Wall34" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall34" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, 5, 10)
 
-[node name="Wall71" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall71" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, 5, 30)
 
-[node name="Wall35" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall35" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 5, 5, 0)
 
-[node name="Wall25" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall25" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -10, 5, -15)
 
-[node name="Wall26" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall26" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 5, -15)
 
-[node name="Wall48" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall48" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 10, 5, -15)
 
-[node name="Wall49" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall49" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 40, 5, -15)
 
-[node name="Wall30" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall30" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 5, -5)
 
-[node name="Wall31" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall31" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -10, 5, -5)
 
-[node name="Wall32" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall32" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -10, 5, 5)
 
-[node name="Wall39" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall39" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -20, 5, 5)
 
-[node name="Wall33" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall33" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 5, 15)
 
-[node name="Wall57" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall57" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -10, 5, 15)
 
-[node name="Wall59" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall59" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -20, 5, 25)
 
-[node name="Wall61" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall61" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -40, 5, 25)
 
-[node name="Wall62" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall62" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -40, 5, 35)
 
-[node name="Wall63" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall63" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -10, 5, 35)
 
-[node name="Wall66" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall66" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, 5, 35)
 
-[node name="Wall67" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall67" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 20, 5, 35)
 
-[node name="Wall72" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall72" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 20, 5, 25)
 
-[node name="Wall73" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall73" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 10, 5, 25)
 
-[node name="Wall45" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall45" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 10, 5, 5)
 
-[node name="Wall17" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall17" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -40, 5, -15)
 
-[node name="Wall18" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall18" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -20, 5, -15)
 
-[node name="Wall7" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall7" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -40, 5, -35)
 
-[node name="Wall8" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall8" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -20, 5, -35)
 
-[node name="Wall9" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall9" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -10, 5, -35)
 
-[node name="Wall10" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall10" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 10, 5, -35)
 
-[node name="Wall11" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall11" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, -5, 5, -30)
 
-[node name="Wall12" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall12" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 5, 5, -30)
 
-[node name="Wall22" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall22" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 15, 5, -20)
 
-[node name="Wall46" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall46" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 15, 5, -10)
 
-[node name="Wall74" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall74" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 25, 5, 0)
 
-[node name="Wall75" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall75" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 25, 5, 10)
 
-[node name="Wall76" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall76" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 30, 5, 5)
 
-[node name="Wall78" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall78" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 40, 5, 5)
 
-[node name="Wall81" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall81" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 40, 5, 15)
 
-[node name="Wall82" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall82" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 40, 5, 35)
 
-[node name="Wall83" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall83" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 30, 5, 35)
 
-[node name="Wall77" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall77" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 20, 5, 5)
 
-[node name="Wall47" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall47" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 25, 5, -10)
 
-[node name="Wall53" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall53" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 35, 5, -10)
 
-[node name="Wall79" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall79" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 45, 5, 0)
 
-[node name="Wall80" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall80" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 45, 5, 20)
 
-[node name="Wall84" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall84" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 35, 5, 40)
 
-[node name="Wall85" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall85" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 35, 5, 30)
 
-[node name="Wall54" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall54" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 35, 5, -20)
 
-[node name="Wall23" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall23" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 25, 5, -30)
 
-[node name="Wall43" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall43" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 25, 5, -40)
 
-[node name="Wall51" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall51" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 45, 5, -40)
 
-[node name="Wall52" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall52" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 45, 5, -30)
 
-[node name="Wall40" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall40" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1.31134e-07, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 1.31134e-07, -5.73206e-15, 20, 5, -25)
 
-[node name="Wall44" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall44" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1.31134e-07, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 1.31134e-07, -5.73206e-15, 30, 5, -25)
 
-[node name="Wall41" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall41" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1.31134e-07, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 1.31134e-07, -5.73206e-15, 20, 5, -45)
 
-[node name="Wall42" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall42" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1.31134e-07, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 1.31134e-07, -5.73206e-15, 30, 5, -45)
 
-[node name="Wall50" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall50" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(1.31134e-07, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, 1.31134e-07, -5.73206e-15, 40, 5, -35)
 
-[node name="Wall13" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall13" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 5, 5, -40)
 
-[node name="Wall14" parent="Maze" instance=ExtResource("2_jiomu")]
+[node name="Wall14" parent="NavigationRegion3D/Maze" instance=ExtResource("2_jiomu")]
 transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, -5, 5, -40)
+
+[node name="fp_maze_enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_xf08l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 2.5, 25)
+player = NodePath("../Player")
 
 [connection signal="word_spawned" from="." to="Ui" method="_on_fp_maze_word_spawned"]
