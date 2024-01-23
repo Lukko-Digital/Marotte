@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
+signal hit
+
 func _physics_process(delta):
 	var direction = Vector2(
 		Input.get_axis("left", "right"), Input.get_axis("up", "down")
@@ -14,6 +16,7 @@ func _physics_process(delta):
 
 func _on_hit_box_area_entered(area):
 	if area.is_in_group("bullet"):
+		emit_signal("hit")
 		modulate = Color(1,0,0)
 		await get_tree().create_timer(0.1).timeout
 		modulate = Color(1,1,1)
