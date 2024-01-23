@@ -1,10 +1,10 @@
 extends Node2D
 
 @onready var bullet_scene = preload("res://bullet_hell/bullet.tscn")
-@onready var timer: Timer = $Timer
+@onready var timer: Timer = $BulletTimer
 
 func _ready():
-	timer.wait_time = 0.1
+	timer.wait_time = 0.3
 
 func _process(delta):
 	pass
@@ -12,7 +12,7 @@ func _process(delta):
 func spawn_bullet():
 	var instance = bullet_scene.instantiate()
 	instance.start(
-		Vector2(0, randi_range(0, 1080)),
+		Vector2(758, randi_range(73, 914)),
 		Vector2(1, randf_range(-1,1))
 	)
 	add_child(instance)

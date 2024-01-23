@@ -15,5 +15,6 @@ func _ready():
 func _process(delta):
 	position += direction * SPEED
 
-func _on_body_entered(body):
+
+func _on_area_exited(area):
 	queue_free()

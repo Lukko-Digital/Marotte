@@ -1,28 +1,33 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxtfc3ofiogqk"]
 
 [ext_resource type="Script" path="res://bullet_hell/bh_player.gd" id="1_80ep2"]
-[ext_resource type="Texture2D" uid="uid://2leuuw0ht3r" path="res://icon.svg" id="1_wxm6o"]
+[ext_resource type="Texture2D" uid="uid://brouh6lqpndlc" path="res://assets/sprites/bh_player_ingame.png" id="2_r8dd4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ouiaa"]
-size = Vector2(112, 112)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_plvsl"]
+radius = 24.0
+height = 60.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bp7d5"]
-size = Vector2(112, 112)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mmh3d"]
+radius = 24.0
+height = 60.0
 
 [node name="bh_player" type="CharacterBody2D"]
 collision_mask = 0
 script = ExtResource("1_80ep2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_wxm6o")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_r8dd4")
 
-[node name="CollisionBox" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ouiaa")
+[node name="PhysicalCollider" type="CollisionShape2D" parent="."]
+position = Vector2(1, -4)
+shape = SubResource("CapsuleShape2D_plvsl")
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_mask = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-shape = SubResource("RectangleShape2D_bp7d5")
+[node name="HitBoxCollider" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(1, -4)
+shape = SubResource("CapsuleShape2D_mmh3d")
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
