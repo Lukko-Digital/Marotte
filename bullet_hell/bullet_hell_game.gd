@@ -4,7 +4,7 @@ extends Node2D
 @onready var timer: Timer = $BulletTimer
 
 func _ready():
-	timer.wait_time = 0.1
+	timer.wait_time = 0.3
 
 func _process(delta):
 	pass
