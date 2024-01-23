@@ -9,6 +9,7 @@ size = Vector2(18, 18)
 
 [node name="bullet" type="Area2D" groups=["bullet"]]
 collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_inqog")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,3 +18,5 @@ texture = SubResource("PlaceholderTexture2D_cnaht")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8swx2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
