@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5rvnoi1v7yxh"]
+
+[ext_resource type="Script" path="res://bullet_hell/bh_ui.gd" id="1_w7lse"]
+[ext_resource type="Texture2D" uid="uid://tnnqk5278cad" path="res://assets/sprites/bh_player_lowstress.png" id="2_3ydcx"]
+[ext_resource type="Texture2D" uid="uid://b8nxr51hhemgp" path="res://assets/sprites/bh_player_highstress.png" id="3_kycc7"]
+[ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="4_b3idn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ra1a7"]
+bg_color = Color(1, 0.388235, 0.388235, 1)
+
+[sub_resource type="Animation" id="Animation_v04y5"]
+resource_name = "pulse"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.152941), Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_daw1h"]
+_data = {
+"pulse": SubResource("Animation_v04y5")
+}
+
+[node name="bh_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_w7lse")
+low_stress = ExtResource("2_3ydcx")
+high_stress = ExtResource("3_kycc7")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.000925926
+anchor_bottom = 0.0175926
+offset_left = 1732.0
+offset_top = 117.0
+offset_right = 1757.0
+offset_bottom = 777.0
+theme_override_styles/background = SubResource("StyleBoxFlat_kbpsm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ra1a7")
+fill_mode = 3
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Interface" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = 26880.0
+offset_bottom = 15120.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_b3idn")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="UIPlayer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 155.0
+offset_right = 2432.0
+offset_bottom = 3850.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_3ydcx")
+
+[node name="ScreenColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenColor"]
+libraries = {
+"": SubResource("AnimationLibrary_daw1h")
+}
