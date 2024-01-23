@@ -19,4 +19,4 @@ texture = SubResource("PlaceholderTexture2D_cnaht")
 [node name="HitBox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8swx2")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
