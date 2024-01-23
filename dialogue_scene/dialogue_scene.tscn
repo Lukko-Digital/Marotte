@@ -1,49 +1,104 @@
-[gd_scene load_steps=4 format=3 uid="uid://by1v75ovunb1c"]
+[gd_scene load_steps=7 format=3 uid="uid://by1v75ovunb1c"]
 
-[ext_resource type="Texture2D" uid="uid://cb0ugslrvhr3o" path="res://assets/dialogue_scene/king.png" id="1_gvtcy"]
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_tsyg8"]
-[ext_resource type="Texture2D" uid="uid://bgontbgsrxxc0" path="res://assets/dialogue_scene/dialogue_box.png" id="2_5r0v5"]
+[ext_resource type="Texture2D" uid="uid://b30p5j3pxonww" path="res://assets/sprites/sv_crowd.png" id="2_neox0"]
+[ext_resource type="Texture2D" uid="uid://d3hfhda0t51c6" path="res://assets/sprites/sv_king_neutral.png" id="3_mvlk4"]
+[ext_resource type="Texture2D" uid="uid://dtydkcfk4e8sn" path="res://assets/sprites/sv_player_scared.png" id="4_c8u2e"]
+[ext_resource type="Texture2D" uid="uid://h0uj0ye8u74p" path="res://assets/sprites/sv_textbox_kid.png" id="5_l4ayj"]
+[ext_resource type="Texture2D" uid="uid://dr1a4q36857lj" path="res://assets/sprites/sv_textbox_king.png" id="6_o7lnw"]
 
-[node name="dialogue_scene" type="CanvasLayer" node_paths=PackedStringArray("dialogue_label", "text_timer")]
+[node name="dialogue_scene" type="CanvasLayer"]
 script = ExtResource("1_tsyg8")
-dialogue_label = NodePath("dialogue_box/text")
-text_timer = NodePath("TextTimer")
 
-[node name="king" type="TextureRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Crowd" type="TextureRect" parent="."]
 offset_right = 9600.0
-offset_bottom = 2927.0
+offset_bottom = 5400.0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_gvtcy")
+texture = ExtResource("2_neox0")
 
-[node name="dialogue_box" type="TextureRect" parent="."]
+[node name="King" type="TextureRect" parent="."]
+offset_left = 849.0
+offset_top = 105.0
+offset_right = 5251.0
+offset_bottom = 4873.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_mvlk4")
+
+[node name="Player" type="TextureRect" parent="."]
+offset_left = 284.0
+offset_top = 451.0
+offset_right = 1295.0
+offset_bottom = 3152.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_c8u2e")
+
+[node name="PlayerDialogueBox" type="TextureRect" parent="."]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -839.0
-offset_top = -508.0
-offset_right = 7677.0
-offset_bottom = 1369.0
+offset_left = -725.0
+offset_top = -915.0
+offset_right = 2648.0
+offset_bottom = 507.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_5r0v5")
+texture = ExtResource("5_l4ayj")
 
-[node name="text" type="Label" parent="dialogue_box"]
+[node name="Label" type="Label" parent="PlayerDialogueBox"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -872.5
+offset_top = -267.5
+offset_right = 872.5
+offset_bottom = 77.5002
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 250
+text = "i uhhh ... umm"
+horizontal_alignment = 1
+
+[node name="KingDialogueBox" type="TextureRect" parent="."]
+visible = false
+offset_left = 144.0
+offset_top = 104.0
+offset_right = 4680.0
+offset_bottom = 1753.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_o7lnw")
+
+[node name="Label" type="Label" parent="KingDialogueBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -917.5
+offset_top = -172.5
+offset_right = 827.5
+offset_bottom = 172.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 250
+text = "you wot mate"
+horizontal_alignment = 1
 
 [node name="TextTimer" type="Timer" parent="."]
