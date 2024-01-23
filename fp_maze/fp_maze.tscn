@@ -29,28 +29,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2.5, 5)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n6kyh")
 
-[node name="Ui" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_n7iq7")]
+[node name="Ui" parent="." node_paths=PackedStringArray("player", "enemy") instance=ExtResource("4_n7iq7")]
 player = NodePath("../Player")
+enemy = NodePath("../fp_maze_enemy")
 
 [node name="SpawnPoints" type="Node3D" parent="."]
 
 [node name="Node3D" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 5, -45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 2.5, -45)
 
 [node name="Node3D3" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, -35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 2.5, -35)
 
 [node name="Node3D4" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 2.5, 45)
 
 [node name="Node3D5" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 5, 45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 2.5, 45)
 
 [node name="Node3D6" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, 25)
 
 [node name="Node3D7" type="Node3D" parent="SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, -25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -25)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_63ypd")
@@ -62,7 +63,6 @@ script = ExtResource("8_jfmqf")
 
 [node name="Floor2" parent="NavigationRegion3D/Maze" instance=ExtResource("4_a0i0r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
-visible = false
 
 [node name="Wall" parent="NavigationRegion3D/Maze" instance=ExtResource("5_bhyob")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, -50)

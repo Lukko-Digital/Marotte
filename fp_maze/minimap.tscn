@@ -28,5 +28,12 @@ scale = Vector2(0.164063, 0.1875)
 texture = ExtResource("1_c0hgn")
 
 [node name="Word" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 1, 1)
+scale = Vector2(0.0117187, 0.0117187)
+texture = SubResource("NoiseTexture2D_yorvb")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.0117187, 0.0117187)
 texture = SubResource("NoiseTexture2D_yorvb")

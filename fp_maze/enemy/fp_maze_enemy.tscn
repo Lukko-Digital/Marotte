@@ -25,3 +25,8 @@ script = ExtResource("3_fxoux")
 avoidance_enabled = true
 height = 3.0
 radius = 3.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.0
+omni_range = 20.0
