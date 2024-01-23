@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://by1v75ovunb1c"]
+[gd_scene load_steps=8 format=3 uid="uid://by1v75ovunb1c"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_tsyg8"]
 [ext_resource type="Texture2D" uid="uid://b30p5j3pxonww" path="res://assets/sprites/sv_crowd.png" id="2_neox0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dtydkcfk4e8sn" path="res://assets/sprites/sv_player_scared.png" id="4_c8u2e"]
 [ext_resource type="Texture2D" uid="uid://h0uj0ye8u74p" path="res://assets/sprites/sv_textbox_kid.png" id="5_l4ayj"]
 [ext_resource type="Texture2D" uid="uid://dr1a4q36857lj" path="res://assets/sprites/sv_textbox_king.png" id="6_o7lnw"]
+[ext_resource type="FontFile" uid="uid://b0smwnx6pxsp5" path="res://assets/fonts/Kingfont-Regular.ttf" id="7_wr05v"]
 
 [node name="dialogue_scene" type="CanvasLayer"]
 script = ExtResource("1_tsyg8")
@@ -97,8 +98,10 @@ offset_bottom = 172.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_wr05v")
 theme_override_font_sizes/font_size = 250
 text = "you wot mate"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextTimer" type="Timer" parent="."]
