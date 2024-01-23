@@ -96,12 +96,15 @@ collision_mask = 0
 position = Vector2(1196, 501)
 shape = SubResource("RectangleShape2D_upp13")
 
-[node name="ui" type="CanvasLayer" parent="."]
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("3_il5ih")
 low_stress = ExtResource("5_2blib")
 high_stress = ExtResource("5_tx5pn")
 
 [node name="HealthBar" type="ProgressBar" parent="ui"]
+layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.000925926
 anchor_bottom = 0.0175926
@@ -116,6 +119,7 @@ show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Interface" type="TextureRect" parent="ui"]
+layout_mode = 0
 offset_right = 9600.0
 offset_bottom = 5400.0
 scale = Vector2(0.2, 0.2)
@@ -123,6 +127,7 @@ texture = ExtResource("4_pr4vf")
 metadata/_edit_use_anchors_ = true
 
 [node name="UIPlayer" type="TextureRect" parent="ui"]
+layout_mode = 0
 offset_left = 153.0
 offset_top = 155.0
 offset_right = 2432.0
@@ -131,6 +136,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_2blib")
 
 [node name="ScreenColor" type="ColorRect" parent="ui"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -142,6 +148,9 @@ color = Color(1, 0, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_daw1h")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
 
 [connection signal="timeout" from="BulletTimer" to="." method="_on_timer_timeout"]
 [connection signal="hit" from="bh_player" to="ui" method="_on_bh_player_hit"]
