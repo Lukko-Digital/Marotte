@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs8tqnk8fpsgy"
-path="res://.godot/imported/fv_kid_scared.png-10d10b799410acf9aa645327b2223ee4.ctex"
+path="res://.godot/imported/fv_player_scared.png-d5ad14f76bfe7ca607d191973a795ea2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fv_kid_scared.png"
-dest_files=["res://.godot/imported/fv_kid_scared.png-10d10b799410acf9aa645327b2223ee4.ctex"]
+source_file="res://assets/sprites/fv_player_scared.png"
+dest_files=["res://.godot/imported/fv_player_scared.png-d5ad14f76bfe7ca607d191973a795ea2.ctex"]
 
 [params]
 
