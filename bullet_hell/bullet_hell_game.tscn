@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=17 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="4_pr4vf"]
 [ext_resource type="Texture2D" uid="uid://tnnqk5278cad" path="res://assets/sprites/bh_player_lowstress.png" id="5_2blib"]
 [ext_resource type="Texture2D" uid="uid://b8nxr51hhemgp" path="res://assets/sprites/bh_player_highstress.png" id="5_tx5pn"]
+[ext_resource type="Script" path="res://bullet_hell/bh_camera.gd" id="7_hph2u"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fpm7c"]
 a = Vector2(758, 73)
@@ -59,6 +60,7 @@ script = ExtResource("1_ruomc")
 autostart = true
 
 [node name="Background" type="ColorRect" parent="."]
+z_index = -10
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -120,10 +122,13 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Interface" type="TextureRect" parent="ui"]
 layout_mode = 0
-offset_right = 9600.0
-offset_bottom = 5400.0
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = 26880.0
+offset_bottom = 15120.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_pr4vf")
+stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="UIPlayer" type="TextureRect" parent="ui"]
@@ -142,7 +147,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0, 0, 0)
+color = Color(1, 0, 0, 0.152941)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ui/ScreenColor"]
 libraries = {
@@ -151,6 +156,11 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
+script = ExtResource("7_hph2u")
+
+[node name="ShakeTimer" type="Timer" parent="Camera2D"]
+one_shot = true
 
 [connection signal="timeout" from="BulletTimer" to="." method="_on_timer_timeout"]
 [connection signal="hit" from="bh_player" to="ui" method="_on_bh_player_hit"]
+[connection signal="hit" from="bh_player" to="Camera2D" method="_on_bh_player_hit"]
