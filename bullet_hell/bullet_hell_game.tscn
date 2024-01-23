@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=16 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
 [ext_resource type="Script" path="res://bullet_hell/bh_ui.gd" id="3_il5ih"]
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="4_pr4vf"]
+[ext_resource type="Texture2D" uid="uid://tnnqk5278cad" path="res://assets/sprites/bh_player_lowstress.png" id="5_2blib"]
+[ext_resource type="Texture2D" uid="uid://b8nxr51hhemgp" path="res://assets/sprites/bh_player_highstress.png" id="5_tx5pn"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fpm7c"]
 a = Vector2(758, 73)
@@ -20,6 +22,9 @@ b = Vector2(1625, 73)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0thoo"]
 a = Vector2(1625, 914)
 b = Vector2(758, 914)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upp13"]
+size = Vector2(992, 946)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
 bg_color = Color(0, 0, 0, 1)
@@ -46,9 +51,6 @@ tracks/0/keys = {
 _data = {
 "pulse": SubResource("Animation_v04y5")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_upp13"]
-size = Vector2(992, 946)
 
 [node name="bullet_hell_game" type="Node2D"]
 script = ExtResource("1_ruomc")
@@ -86,8 +88,18 @@ shape = SubResource("SegmentShape2D_ls2kp")
 [node name="Bottom" type="CollisionShape2D" parent="Walls"]
 shape = SubResource("SegmentShape2D_0thoo")
 
+[node name="BulletDespawnArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletDespawnArea"]
+position = Vector2(1196, 501)
+shape = SubResource("RectangleShape2D_upp13")
+
 [node name="ui" type="CanvasLayer" parent="."]
 script = ExtResource("3_il5ih")
+low_stress = ExtResource("5_2blib")
+high_stress = ExtResource("5_tx5pn")
 
 [node name="HealthBar" type="ProgressBar" parent="ui"]
 anchors_preset = -1
@@ -110,6 +122,14 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_pr4vf")
 metadata/_edit_use_anchors_ = true
 
+[node name="UIPlayer" type="TextureRect" parent="ui"]
+offset_left = 153.0
+offset_top = 155.0
+offset_right = 2432.0
+offset_bottom = 3850.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_2blib")
+
 [node name="ScreenColor" type="ColorRect" parent="ui"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -122,14 +142,6 @@ color = Color(1, 0, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_daw1h")
 }
-
-[node name="BulletDespawnArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletDespawnArea"]
-position = Vector2(1196, 501)
-shape = SubResource("RectangleShape2D_upp13")
 
 [connection signal="timeout" from="BulletTimer" to="." method="_on_timer_timeout"]
 [connection signal="hit" from="bh_player" to="ui" method="_on_bh_player_hit"]
