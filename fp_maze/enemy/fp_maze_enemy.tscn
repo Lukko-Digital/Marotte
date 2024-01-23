@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ijgwfytqtnof"]
+
+[ext_resource type="Texture2D" uid="uid://2leuuw0ht3r" path="res://icon.svg" id="1_2nk7b"]
+[ext_resource type="Script" path="res://fp_maze/enemy/fp_maze_enemy.gd" id="2_pmojn"]
+[ext_resource type="Script" path="res://fp_maze/enemy/fp_maze_enemy_sprite.gd" id="3_fxoux"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_w1ku5"]
+radius = 1.0
+height = 5.0
+
+[node name="fp_maze_enemy" type="CharacterBody3D"]
+script = ExtResource("2_pmojn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_w1ku5")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 4, 0, 0, 0, 2, 0, 0, 0)
+transparent = false
+shaded = true
+texture = ExtResource("1_2nk7b")
+script = ExtResource("3_fxoux")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+height = 3.0
+radius = 3.0
