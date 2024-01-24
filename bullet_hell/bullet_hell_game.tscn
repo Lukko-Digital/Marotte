@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://dj6e7xh4njtlj"]
 
-[ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/bh_player.tscn" id="1_le3bt"]
+[ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
-[ext_resource type="PackedScene" uid="uid://c5rvnoi1v7yxh" path="res://bullet_hell/bh_ui.tscn" id="3_5sicw"]
-[ext_resource type="PackedScene" uid="uid://bmqy68ba644tc" path="res://bullet_hell/bh_camera.tscn" id="7_ybxu1"]
+[ext_resource type="PackedScene" uid="uid://c5rvnoi1v7yxh" path="res://bullet_hell/display/bh_ui.tscn" id="3_5sicw"]
+[ext_resource type="PackedScene" uid="uid://bmqy68ba644tc" path="res://bullet_hell/display/bh_camera.tscn" id="7_ybxu1"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fpm7c"]
 a = Vector2(758, 73)

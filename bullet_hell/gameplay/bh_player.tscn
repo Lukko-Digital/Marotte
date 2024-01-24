@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxtfc3ofiogqk"]
 
-[ext_resource type="Script" path="res://bullet_hell/bh_player.gd" id="1_80ep2"]
-[ext_resource type="Texture2D" uid="uid://brouh6lqpndlc" path="res://assets/sprites/bh_player_ingame.png" id="2_r8dd4"]
+[ext_resource type="Script" path="res://bullet_hell/gameplay/bh_player.gd" id="1_6oy4i"]
+[ext_resource type="Texture2D" uid="uid://brouh6lqpndlc" path="res://assets/sprites/bh_player_ingame.png" id="2_8vepm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_plvsl"]
 radius = 24.0
@@ -13,11 +13,11 @@ height = 60.0
 
 [node name="bh_player" type="CharacterBody2D"]
 collision_mask = 0
-script = ExtResource("1_80ep2")
+script = ExtResource("1_6oy4i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_r8dd4")
+texture = ExtResource("2_8vepm")
 
 [node name="PhysicalCollider" type="CollisionShape2D" parent="."]
 position = Vector2(1, -4)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://devfd57x0kmqe"]
 
-[ext_resource type="Script" path="res://bullet_hell/bullet.gd" id="1_inqog"]
-[ext_resource type="Texture2D" uid="uid://mw6aruv2a61j" path="res://assets/sprites/bh_bullet_highdamage.png" id="2_ssodo"]
+[ext_resource type="Script" path="res://bullet_hell/gameplay/bullet.gd" id="1_vb6m3"]
+[ext_resource type="Texture2D" uid="uid://mw6aruv2a61j" path="res://assets/sprites/bh_bullet_highdamage.png" id="2_nap8f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w2ha0"]
 radius = 12.0
@@ -10,11 +10,11 @@ radius = 12.0
 z_index = -5
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_inqog")
+script = ExtResource("1_vb6m3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_ssodo")
+texture = ExtResource("2_nap8f")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_w2ha0")

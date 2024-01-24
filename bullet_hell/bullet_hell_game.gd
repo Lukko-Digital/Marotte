@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var bullet_scene = preload("res://bullet_hell/bullet.tscn")
-@onready var warning_scene = preload("res://bullet_hell/warning.tscn")
+@onready var bullet_scene = preload("res://bullet_hell/gameplay/bullet.tscn")
+@onready var warning_scene = preload("res://bullet_hell/gameplay/warning.tscn")
 @onready var timer: Timer = $BulletTimer
 
 const LEFT_X = 758

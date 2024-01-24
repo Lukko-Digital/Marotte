@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bmqy68ba644tc"]
 
-[ext_resource type="Script" path="res://bullet_hell/bh_camera.gd" id="1_uacst"]
+[ext_resource type="Script" path="res://bullet_hell/display/bh_camera.gd" id="1_uacst"]
 
 [node name="bh_camera" type="Camera2D"]
 position = Vector2(960, 540)
