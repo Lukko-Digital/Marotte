@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dtydkcfk4e8sn" path="res://assets/sprites/sv_player_scared.png" id="4_c8u2e"]
 [ext_resource type="Texture2D" uid="uid://h0uj0ye8u74p" path="res://assets/sprites/sv_textbox_kid.png" id="5_l4ayj"]
 [ext_resource type="Texture2D" uid="uid://dr1a4q36857lj" path="res://assets/sprites/sv_textbox_king.png" id="6_o7lnw"]
-[ext_resource type="FontFile" uid="uid://b0smwnx6pxsp5" path="res://assets/fonts/Kingfont-Regular.ttf" id="7_wr05v"]
+[ext_resource type="FontFile" uid="uid://25gqh1d7cxn5" path="res://assets/fonts/Kingfont-Regular.ttf" id="7_wr05v"]
 
 [node name="dialogue_scene" type="CanvasLayer"]
 script = ExtResource("1_tsyg8")
