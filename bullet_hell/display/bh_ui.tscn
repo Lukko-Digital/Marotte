@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://bullet_hell/display/bh_ui.gd" id="1_3ae8p"]
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="2_i8vm2"]
 [ext_resource type="Texture2D" uid="uid://cjik188370ui1" path="res://assets/sprites/bh_player-sheet.png" id="3_2qqpm"]
-[ext_resource type="Texture2D" uid="uid://vyf7wi1vly6c" path="res://assets/sprites/bh_thought_bubble.png" id="4_wqoy2"]
+[ext_resource type="Texture2D" uid="uid://bh1hmydut2hns" path="res://assets/sprites/bh_thought_bubble.png" id="4_wqoy2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
 bg_color = Color(0, 0, 0, 1)
@@ -86,22 +86,6 @@ _data = {
 "stress3": SubResource("Animation_jug5x")
 }
 
-[sub_resource type="Animation" id="Animation_v04y5"]
-resource_name = "pulse"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 0, 0, 0.152941), Color(1, 0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_fiipx"]
 resource_name = "flash"
 length = 0.5
@@ -111,6 +95,22 @@ tracks/0/enabled = true
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 2
 tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.152941), Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v04y5"]
+resource_name = "pulse"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
