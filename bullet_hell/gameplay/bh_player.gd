@@ -24,10 +24,16 @@ func handle_animation(direction: Vector2):
 			# right
 			animation_player.play("run_left")
 			sprite.flip_h = true
-		Vector2(-1,-1), Vector2(-1,0), Vector2(-1,1), Vector2(0,1), Vector2(0,-1):
+		Vector2(-1,-1), Vector2(-1,0), Vector2(-1,1):
 			# left
 			animation_player.play("run_left")
 			sprite.flip_h = false
+		Vector2(0,-1):
+			# up
+			animation_player.play("run_up")
+		Vector2(0,1):
+			# down
+			animation_player.play("run_down")
 
 func _on_hit_box_area_entered(area):
 	if area.is_in_group("bullet"):
