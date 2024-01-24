@@ -1,0 +1,1 @@
+signal correct_word_picked
