@@ -2,12 +2,26 @@ extends Node2D
 
 @onready var bullet_scene = preload("res://bullet_hell/gameplay/bullet.tscn")
 @onready var warning_scene = preload("res://bullet_hell/gameplay/warning.tscn")
+@onready var word_scene = preload("res://bullet_hell/gameplay/word_pickup.tscn")
 @onready var timer: Timer = $BulletTimer
+@onready var player: CharacterBody2D = $bh_player
 
 const LEFT_X = 758
 const RIGHT_X = 1625
 const TOP_Y = 73
 const BOTTOM_Y = 914
+
+const PLAYER_SPAWN = Vector2(1200, 500)
+
+const WORD_SPAWN_X_OFFSET = 130
+const WORD_SPAWN_Y_OFFSET = 80
+
+const Word_Spawn = {
+	TOP_LEFT = Vector2(LEFT_X + WORD_SPAWN_X_OFFSET, TOP_Y + WORD_SPAWN_Y_OFFSET),
+	BOT_LEFT = Vector2(LEFT_X + WORD_SPAWN_X_OFFSET, BOTTOM_Y - WORD_SPAWN_Y_OFFSET),
+	TOP_RIGHT = Vector2(RIGHT_X - WORD_SPAWN_X_OFFSET, TOP_Y + WORD_SPAWN_Y_OFFSET),
+	BOT_RIGHT = Vector2(RIGHT_X - WORD_SPAWN_X_OFFSET, BOTTOM_Y - WORD_SPAWN_Y_OFFSET)
+}
 
 const Direction = {
 	LEFT = Vector2(-1, 0),
@@ -18,13 +32,16 @@ const Direction = {
 
 func _ready():
 	timer.wait_time = 2
-	Events.correct_word_picked.connect(_correct_word_picked)
+	player.position = PLAYER_SPAWN
+	Events.correct_word_picked.connect(_reset)
 
 func _process(delta):
 	pass
 
-func _correct_word_picked():
+func _reset():
 	get_tree().call_group("bullet", "queue_free")
+	player.position = PLAYER_SPAWN
+	spawn(word_scene, Word_Spawn.values().pick_random(), Vector2())
 
 func _on_timer_timeout():
 	circle(Direction.values().pick_random(), 8)
