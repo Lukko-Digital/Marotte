@@ -1,3 +1,3 @@
 extends Node
 
-signal correct_word_picked
+signal word_picked(correct)

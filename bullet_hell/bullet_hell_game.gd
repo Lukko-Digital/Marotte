@@ -35,14 +35,17 @@ const Direction = {
 func _ready():
 	timer.wait_time = 2
 	player.position = PLAYER_SPAWN
-	Events.correct_word_picked.connect(_reset)
+	Events.word_picked.connect(_on_word_picked)
+	spawn_words()
 
 
 ## Reset upon word pickup
-func _reset():
-	get_tree().call_group("bullet", "queue_free")
-	player.position = PLAYER_SPAWN
-	spawn(word_scene, Word_Spawn.values().pick_random(), [])
+func _on_word_picked(correct):
+	if correct:
+		get_tree().call_group("bullet", "queue_free")
+		get_tree().call_group("word", "queue_free")
+		player.position = PLAYER_SPAWN
+		spawn_words()
 
 
 ## Spawn external scene, used for bullets, warnings, and words
@@ -51,6 +54,24 @@ func spawn(scene: PackedScene, spawn_position: Vector2, args: Array):
 	instance.start(spawn_position, args)
 	add_child(instance)
 
+
+## Spawn words in the four corners, with one being incorrect
+func spawn_words():
+	var word_map = {
+		"amogus": true,
+		"Among Us": false,
+		"mungus": false,
+		"Amongus": false
+	}
+	var spawn_locations = Word_Spawn.values()
+	spawn_locations.shuffle()
+	
+	for word in word_map:
+		spawn(
+			word_scene,
+			spawn_locations.pop_back(),
+			[word_map[word], word]
+		)
 
 ## Bullet Timer
 func _on_timer_timeout():

@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbxo8"]
 size = Vector2(150, 36)
 
-[node name="word_pickup" type="Area2D"]
+[node name="word_pickup" type="Area2D" groups=["word"]]
 collision_layer = 0
 script = ExtResource("1_55d41")
 
