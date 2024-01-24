@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://blq4ard1pgvnj"]
+[gd_scene load_steps=5 format=3 uid="uid://blq4ard1pgvnj"]
 
 [ext_resource type="Texture2D" uid="uid://jdenxtubm2nj" path="res://assets/sprites/bh_warning-sheet.png" id="1_xl8xq"]
+[ext_resource type="Script" path="res://bullet_hell/warning.gd" id="2_2sakn"]
 
 [sub_resource type="Animation" id="Animation_v7f73"]
 resource_name = "warning"
@@ -24,13 +25,17 @@ _data = {
 }
 
 [node name="warning" type="Sprite2D"]
-scale = Vector2(0.2, 0.2)
+position = Vector2(80, 0)
+rotation = 2.35619
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_xl8xq")
 hframes = 5
-frame = 4
+script = ExtResource("2_2sakn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "warning"
 libraries = {
 "": SubResource("AnimationLibrary_17h36")
 }
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
