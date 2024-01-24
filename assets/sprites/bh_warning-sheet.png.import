@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://0dkpnwrh3h6w"
+=======
+uid="uid://dpi42al2adup3"
+>>>>>>> d622291e9f70173649c8bc62718cf4d8a0067668
 path="res://.godot/imported/bh_warning-sheet.png-d472c011049cd98c3c374a5e7928e723.ctex"
 metadata={
 "vram_texture": false

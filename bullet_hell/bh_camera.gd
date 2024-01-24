@@ -1,7 +1,7 @@
 extends Camera2D
 
 const SHAKE_DURATION = 0.2
-const SHAKE_AMOUNT = 4
+const SHAKE_AMOUNT = 10
 
 @onready var timer: Timer = $ShakeTimer
 var default_offset: Vector2 = offset
