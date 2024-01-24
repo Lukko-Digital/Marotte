@@ -12,8 +12,6 @@ func _ready():
 	Events.word_picked.connect(_on_word_picked)
 	health_bar.max_value = MAX_HP
 	health_bar.value = MAX_HP
-	player_image_animation.play("stress0")
-
 
 func _process(_delta):
 	if current_hp <= MAX_HP * 0.2:
@@ -25,6 +23,8 @@ func _process(_delta):
 		color_animation.play("pulse")
 	elif current_hp <= MAX_HP * 0.7:
 		player_image_animation.play("stress1")
+	else:
+		player_image_animation.play("stress0")
 
 
 func _set_current_hp(new_hp):
