@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://drh3ibbuef4dx"
+=======
 uid="uid://drv7qkjjnk1sh"
+>>>>>>> 138351ec3b2c2d29b715ec75dc4dcdb6388bb4ce
 path="res://.godot/imported/transition_jokeclear_center.png-858d075eb9688a6248056cd553f16627.ctex"
 metadata={
 "vram_texture": false
