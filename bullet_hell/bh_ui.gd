@@ -18,6 +18,7 @@ func _process(delta):
 	if current_hp <= MAX_HP * 0.2:
 		player_image_animation.play("stress3")
 		color_animation.speed_scale = 2
+		color_animation.play("pulse")
 	elif current_hp <= MAX_HP * 0.5:
 		player_image_animation.play("stress2")
 		color_animation.play("pulse")
@@ -28,3 +29,4 @@ func _process(delta):
 func _on_bh_player_hit():
 	current_hp -= 1
 	health_bar.value = current_hp
+	color_animation.play("flash")
