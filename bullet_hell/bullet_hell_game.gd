@@ -23,7 +23,8 @@ func _process(delta):
 	pass
 
 func _on_timer_timeout():
-	circle(Direction.DOWN)
+	circle(Direction.values().pick_random(), 8)
+	circle(Direction.values().pick_random(), 8)
 
 func circle(direction: Vector2, num_shots=12):
 	var spawn_position: Vector2
