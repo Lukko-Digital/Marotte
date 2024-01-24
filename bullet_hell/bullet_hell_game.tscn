@@ -42,7 +42,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="bh_player" parent="." instance=ExtResource("1_le3bt")]
-position = Vector2(1092, 526)
+position = Vector2(1200, 500)
 collision_mask = 2
 
 [node name="Walls" type="StaticBody2D" parent="."]
