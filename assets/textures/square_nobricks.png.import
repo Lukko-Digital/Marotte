@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://blvl717ef72jr"
+=======
+uid="uid://dx1n4k4xbudtj"
+>>>>>>> 138351ec3b2c2d29b715ec75dc4dcdb6388bb4ce
 path="res://.godot/imported/square_nobricks.png-31379f44ced3cdb5934791858b9f436a.ctex"
 metadata={
 "vram_texture": false
