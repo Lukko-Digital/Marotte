@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs8tqnk8fpsgy"
-path="res://.godot/imported/fv_player_scared.png-d5ad14f76bfe7ca607d191973a795ea2.ctex"
+uid="uid://dtx828i4kqlyf"
+path="res://.godot/imported/transition_jokestart_left_jester.png-83412c9c64fdcfa9f31f001d6a240f6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fv_player_scared.png"
-dest_files=["res://.godot/imported/fv_player_scared.png-d5ad14f76bfe7ca607d191973a795ea2.ctex"]
+source_file="res://assets/sprites/transition_jokestart_left_jester.png"
+dest_files=["res://.godot/imported/transition_jokestart_left_jester.png-83412c9c64fdcfa9f31f001d6a240f6c.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://by1v75ovunb1c"]
+[gd_scene load_steps=9 format=3 uid="uid://by1v75ovunb1c"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_tsyg8"]
 [ext_resource type="Texture2D" uid="uid://b30p5j3pxonww" path="res://assets/sprites/sv_crowd.png" id="2_neox0"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dtydkcfk4e8sn" path="res://assets/sprites/sv_player_scared.png" id="4_c8u2e"]
 [ext_resource type="Texture2D" uid="uid://h0uj0ye8u74p" path="res://assets/sprites/sv_textbox_kid.png" id="5_l4ayj"]
 [ext_resource type="Texture2D" uid="uid://dr1a4q36857lj" path="res://assets/sprites/sv_textbox_king.png" id="6_o7lnw"]
-[ext_resource type="FontFile" uid="uid://25gqh1d7cxn5" path="res://assets/fonts/Kingfont-Regular.ttf" id="7_wr05v"]
+[ext_resource type="FontFile" uid="uid://dd15to0bt5pd8" path="res://assets/fonts/Kingfont-Regular.ttf" id="7_wr05v"]
+[ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="8_ewfxd"]
 
 [node name="dialogue_scene" type="CanvasLayer"]
 script = ExtResource("1_tsyg8")
@@ -105,3 +106,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextTimer" type="Timer" parent="."]
+
+[node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ewfxd")
