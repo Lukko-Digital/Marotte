@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c5rvnoi1v7yxh"]
+[gd_scene load_steps=15 format=3 uid="uid://c5rvnoi1v7yxh"]
 
 [ext_resource type="Script" path="res://bullet_hell/bh_ui.gd" id="1_w7lse"]
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="4_b3idn"]
+[ext_resource type="Texture2D" uid="uid://cpnmt3jhqf4ct" path="res://assets/sprites/bh_thought_bubble.png" id="4_sccpc"]
 [ext_resource type="Texture2D" uid="uid://cjik188370ui1" path="res://assets/sprites/bh_player-sheet.png" id="5_ysjmv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
@@ -155,17 +156,47 @@ stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="UIPlayer" type="Sprite2D" parent="."]
-position = Vector2(382, 514)
-scale = Vector2(0.75, 0.75)
+position = Vector2(349, 675)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_ysjmv")
 hframes = 4
 vframes = 2
-frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UIPlayer"]
 libraries = {
 "": SubResource("AnimationLibrary_01p1x")
 }
+
+[node name="ThuoghtBubble" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 90.0
+offset_right = 2674.0
+offset_bottom = 1650.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_sccpc")
+
+[node name="Label" type="Label" parent="ThuoghtBubble"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -995.0
+offset_top = -527.5
+offset_right = 995.0
+offset_bottom = 187.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 200
+text = "josh feet pics..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+text_overrun_behavior = 1
 
 [node name="ScreenColor" type="ColorRect" parent="."]
 layout_mode = 1
