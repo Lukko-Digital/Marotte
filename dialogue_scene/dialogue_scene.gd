@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var king_box: TextureRect = $KingDialogueBox
 @onready var king_label: Label = $KingDialogueBox/Label
 @onready var text_timer: Timer = $TextTimer
+@onready var dialogue_noise: AudioStreamPlayer = $DialogueAudioPlayer
 
 var dialogue: PackedStringArray
 var active_label: Label
@@ -12,6 +13,9 @@ var curr_dialogue_idx = -1
 var display_in_progress = false
 
 const TEXT_SPEED = 0.03
+
+const VOICE_PITCH_MIN: float = 0.9
+const VOICE_PITCH_MAX: float = 1.5
 
 func _ready():
 	load_file()
@@ -28,6 +32,8 @@ func animate_display():
 	active_label.visible_characters = 0
 	display_in_progress = true
 	while active_label.visible_characters < len(active_label.text):
+		dialogue_noise.pitch_scale = randf_range(VOICE_PITCH_MIN, VOICE_PITCH_MAX)
+		dialogue_noise.play()
 		active_label.visible_characters += 1
 		text_timer.start()
 		await text_timer.timeout
