@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED = 10
+const SPEED = 7
 var direction: Vector2
 
 func start(start_pos: Vector2, dir: Vector2):
