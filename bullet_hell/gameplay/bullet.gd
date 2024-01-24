@@ -3,9 +3,11 @@ extends Area2D
 const SPEED = 7
 var direction: Vector2
 
-func start(start_pos: Vector2, dir: Vector2):
+
+## Expect args to contain one Vector2 which represents the direction
+func start(start_pos: Vector2, args: Array):
 	position = start_pos
-	direction = dir.normalized()
+	direction = args[0].normalized()
 	look_at(direction)
 
 func _ready():

@@ -42,13 +42,13 @@ func _ready():
 func _reset():
 	get_tree().call_group("bullet", "queue_free")
 	player.position = PLAYER_SPAWN
-	spawn(word_scene, Word_Spawn.values().pick_random(), Vector2())
+	spawn(word_scene, Word_Spawn.values().pick_random(), [])
 
 
 ## Spawn external scene, used for bullets, warnings, and words
-func spawn(scene: PackedScene, spawn_position: Vector2, direction: Vector2):
+func spawn(scene: PackedScene, spawn_position: Vector2, args: Array):
 	var instance = scene.instantiate()
-	instance.start(spawn_position, direction)
+	instance.start(spawn_position, args)
 	add_child(instance)
 
 
@@ -74,13 +74,13 @@ func circle(direction: Vector2, num_shots=12):
 		Direction.DOWN:
 			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
 	
-	spawn(warning_scene, spawn_position, warning_dir)
+	spawn(warning_scene, spawn_position, [warning_dir])
 	await get_tree().create_timer(0.5).timeout
 	for i in range(num_shots):
 		spawn(
 			bullet_scene,
 			spawn_position,
-			shot_base_dir.rotated(PI/num_shots*i)
+			[shot_base_dir.rotated(PI/num_shots*i)]
 		)
 
 
