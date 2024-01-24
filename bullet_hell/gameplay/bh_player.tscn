@@ -1,7 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxtfc3ofiogqk"]
+[gd_scene load_steps=10 format=3 uid="uid://dxtfc3ofiogqk"]
 
 [ext_resource type="Script" path="res://bullet_hell/gameplay/bh_player.gd" id="1_6oy4i"]
 [ext_resource type="Texture2D" uid="uid://bwc40rw0bkkuv" path="res://assets/sprites/bh_player_ingame-sheet.png" id="2_f2llj"]
+
+[sub_resource type="Animation" id="Animation_m2g1d"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 1]
+}
 
 [sub_resource type="Animation" id="Animation_01e40"]
 resource_name = "run_left"
@@ -18,11 +34,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1, 4]
+"values": [2, 5]
 }
 
-[sub_resource type="Animation" id="Animation_m2g1d"]
-resource_name = "idle"
+[sub_resource type="Animation" id="Animation_nxgai"]
+resource_name = "run_up"
+length = 0.4
+loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -31,16 +49,36 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0]
+"values": [6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_bnu61"]
+resource_name = "run_down"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [8, 9]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wfto1"]
 _data = {
 "idle": SubResource("Animation_m2g1d"),
-"run_left": SubResource("Animation_01e40")
+"run_down": SubResource("Animation_bnu61"),
+"run_left": SubResource("Animation_01e40"),
+"run_up": SubResource("Animation_nxgai")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_plvsl"]
@@ -58,8 +96,8 @@ script = ExtResource("1_6oy4i")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_f2llj")
-vframes = 5
-frame = 3
+vframes = 10
+frame = 9
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
