@@ -18,7 +18,6 @@ func _process(delta):
 	if current_hp <= MAX_HP * 0.2:
 		player_image_animation.play("stress3")
 		color_animation.speed_scale = 2
-		color_animation.play("pulse")
 	elif current_hp <= MAX_HP * 0.5:
 		player_image_animation.play("stress2")
 		color_animation.play("pulse")
