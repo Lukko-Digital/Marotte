@@ -18,9 +18,13 @@ const Direction = {
 
 func _ready():
 	timer.wait_time = 2
+	Events.correct_word_picked.connect(_correct_word_picked)
 
 func _process(delta):
 	pass
+
+func _correct_word_picked():
+	get_tree().call_group("bullet", "queue_free")
 
 func _on_timer_timeout():
 	circle(Direction.values().pick_random(), 8)
