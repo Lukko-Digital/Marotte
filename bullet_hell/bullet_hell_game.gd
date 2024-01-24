@@ -11,7 +11,7 @@ extends Node2D
 const LEFT_X = 758
 const RIGHT_X = 1625
 const TOP_Y = 73
-const BOTTOM_Y = 914
+const BOTTOM_Y = 892
 
 ## Spawn locations
 const PLAYER_SPAWN = Vector2(1200, 500)

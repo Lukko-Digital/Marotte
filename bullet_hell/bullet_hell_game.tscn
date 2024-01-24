@@ -7,19 +7,19 @@
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fpm7c"]
 a = Vector2(758, 73)
-b = Vector2(758, 914)
+b = Vector2(758, 892)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1jwpp"]
 a = Vector2(1625, 73)
-b = Vector2(1625, 914)
+b = Vector2(1625, 892)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ls2kp"]
 a = Vector2(758, 73)
 b = Vector2(1625, 73)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_0thoo"]
-a = Vector2(1625, 914)
-b = Vector2(758, 914)
+a = Vector2(1625, 892)
+b = Vector2(758, 892)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upp13"]
 size = Vector2(992, 946)
