@@ -8,27 +8,26 @@ const SPEED = 300.0
 
 signal hit
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = Vector2(
 		Input.get_axis("left", "right"), Input.get_axis("up", "down")
 	).normalized()
 	handle_animation(direction)
 	velocity = direction * SPEED
-	
 	move_and_slide()
 
 func handle_animation(direction: Vector2):
-	if direction == Vector2():
-		# still
-		animation_player.play("idle")
-	elif direction.x > 0:
-		# right
-		animation_player.play("run_left")
-		sprite.flip_h = true
-	else:
-		# left
-		animation_player.play("run_left")
-		sprite.flip_h = false
+	match direction.round():
+		Vector2():
+			animation_player.play("idle")
+		Vector2(1,-1), Vector2(1,0), Vector2(1,1):
+			# right
+			animation_player.play("run_left")
+			sprite.flip_h = true
+		Vector2(-1,-1), Vector2(-1,0), Vector2(-1,1), Vector2(0,1), Vector2(0,-1):
+			# left
+			animation_player.play("run_left")
+			sprite.flip_h = false
 
 func _on_hit_box_area_entered(area):
 	if area.is_in_group("bullet"):

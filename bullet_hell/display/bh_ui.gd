@@ -14,7 +14,7 @@ func _ready():
 	player_image_animation.play("stress0")
 
 
-func _process(delta):
+func _process(_delta):
 	if current_hp <= MAX_HP * 0.2:
 		player_image_animation.play("stress3")
 		color_animation.speed_scale = 2

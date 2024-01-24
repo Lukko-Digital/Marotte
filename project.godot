@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Lukko Ggj"
-run/main_scene="res://fp_maze/fp_maze.tscn"
+run/main_scene="res://bullet_hell/bullet_hell_game.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Events="*res://bullet_hell/autoload/events.gd"
 
 [display]
 

@@ -62,6 +62,7 @@ shape = SubResource("SegmentShape2D_ls2kp")
 shape = SubResource("SegmentShape2D_0thoo")
 
 [node name="BulletDespawnArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 0
 
@@ -74,6 +75,5 @@ shape = SubResource("RectangleShape2D_upp13")
 [node name="bh_camera" parent="." instance=ExtResource("7_ybxu1")]
 
 [connection signal="timeout" from="BulletTimer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="BulletTimer" to="bh_camera" method="_on_bullet_timer_timeout"]
 [connection signal="hit" from="bh_player" to="bh_ui" method="_on_bh_player_hit"]
 [connection signal="hit" from="bh_player" to="bh_camera" method="_on_bh_player_hit"]

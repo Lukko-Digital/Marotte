@@ -9,7 +9,7 @@ var default_offset: Vector2 = offset
 func _ready():
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	offset = default_offset
 	handle_shake()
 
