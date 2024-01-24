@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://blq4ard1pgvnj"]
+
+[ext_resource type="Texture2D" uid="uid://jdenxtubm2nj" path="res://assets/sprites/bh_warning-sheet.png" id="1_xl8xq"]
+
+[sub_resource type="Animation" id="Animation_v7f73"]
+resource_name = "warning"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17h36"]
+_data = {
+"warning": SubResource("Animation_v7f73")
+}
+
+[node name="warning" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_xl8xq")
+hframes = 5
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "warning"
+libraries = {
+"": SubResource("AnimationLibrary_17h36")
+}
