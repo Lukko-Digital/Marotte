@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://g3sc2s47mxxv"
+=======
+uid="uid://vyf7wi1vly6c"
+>>>>>>> 8dba5d24332964443f223254781a64bb37896af0
 path="res://.godot/imported/bh_thought_bubble.png-06467319c0377809e045770a0e367116.ctex"
 metadata={
 "vram_texture": false
