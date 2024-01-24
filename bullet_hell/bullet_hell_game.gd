@@ -32,7 +32,7 @@ func circle_from_left():
 	var num_shots = 12
 	var angle = PI/num_shots
 	var spawn_position = Vector2(LEFT_X, randi_range(TOP_Y, BOTTOM_Y))
-	spawn(warning_scene, spawn_position+Vector2(60,0), Vector2(1, 0))
+	spawn(warning_scene, spawn_position, Vector2(1, 0))
 	await get_tree().create_timer(0.5).timeout
 	for i in range(num_shots):
 		spawn(

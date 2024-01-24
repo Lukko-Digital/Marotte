@@ -25,10 +25,10 @@ _data = {
 }
 
 [node name="warning" type="Sprite2D"]
-position = Vector2(80, 0)
 rotation = 2.35619
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_xl8xq")
+offset = Vector2(-240, -240)
 hframes = 5
 script = ExtResource("2_2sakn")
 
