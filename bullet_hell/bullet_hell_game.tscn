@@ -79,6 +79,5 @@ shape = SubResource("RectangleShape2D_upp13")
 position = Vector2(888, 150)
 
 [connection signal="timeout" from="BulletTimer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="BulletTimer" to="bh_camera" method="_on_bullet_timer_timeout"]
 [connection signal="hit" from="bh_player" to="bh_ui" method="_on_bh_player_hit"]
 [connection signal="hit" from="bh_player" to="bh_camera" method="_on_bh_player_hit"]
