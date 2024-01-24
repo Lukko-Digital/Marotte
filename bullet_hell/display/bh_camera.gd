@@ -17,7 +17,7 @@ func _on_bh_player_hit():
 
 func _on_word_picked(correct):
 	if not correct:
-		shake(0.2, 20)
+		shake(0.2, 40)
 
 func handle_shake():
 	if not timer.is_stopped():
