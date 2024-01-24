@@ -3,7 +3,8 @@ extends Node2D
 @onready var bullet_scene = preload("res://bullet_hell/gameplay/bullet.tscn")
 @onready var warning_scene = preload("res://bullet_hell/gameplay/warning.tscn")
 @onready var word_scene = preload("res://bullet_hell/gameplay/word_pickup.tscn")
-@onready var timer: Timer = $BulletTimer
+@onready var word_timer: Timer = $WordTimer
+@onready var bullet_timer: Timer = $BulletTimer
 @onready var player: CharacterBody2D = $bh_player
 
 ## Wall Locations
@@ -33,10 +34,10 @@ const Direction = {
 
 
 func _ready():
-	timer.wait_time = 2
+	bullet_timer.wait_time = 2
 	player.position = PLAYER_SPAWN
 	Events.word_picked.connect(_on_word_picked)
-	spawn_words()
+	word_timer.start()
 
 
 ## Reset upon word pickup
@@ -45,7 +46,7 @@ func _on_word_picked(correct):
 		get_tree().call_group("bullet", "queue_free")
 		get_tree().call_group("word", "queue_free")
 		player.position = PLAYER_SPAWN
-		spawn_words()
+		word_timer.start()
 
 
 ## Spawn external scene, used for bullets, warnings, and words
@@ -73,8 +74,14 @@ func spawn_words():
 			[word_map[word], word]
 		)
 
+
+## Word Timer
+func _on_word_timer_timeout():
+	spawn_words()
+
+
 ## Bullet Timer
-func _on_timer_timeout():
+func _on_bullet_timer_timeout():
 	circle(Direction.values().pick_random(), 8)
 	circle(Direction.values().pick_random(), 8)
 

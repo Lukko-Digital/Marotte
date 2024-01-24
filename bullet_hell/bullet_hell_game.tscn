@@ -27,6 +27,10 @@ size = Vector2(992, 946)
 [node name="bullet_hell_game" type="Node2D"]
 script = ExtResource("1_ruomc")
 
+[node name="WordTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [node name="BulletTimer" type="Timer" parent="."]
 autostart = true
 
@@ -74,6 +78,7 @@ shape = SubResource("RectangleShape2D_upp13")
 
 [node name="bh_camera" parent="." instance=ExtResource("7_ybxu1")]
 
-[connection signal="timeout" from="BulletTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="WordTimer" to="." method="_on_word_timer_timeout"]
+[connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]
 [connection signal="hit" from="bh_player" to="bh_ui" method="_on_bh_player_hit"]
 [connection signal="hit" from="bh_player" to="bh_camera" method="_on_bh_player_hit"]
