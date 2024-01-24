@@ -12,9 +12,9 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _process(delta):
+func _process(_delta):
 	position += direction * SPEED
 
 
-func _on_area_exited(area):
+func _on_area_exited(_area):
 	queue_free()

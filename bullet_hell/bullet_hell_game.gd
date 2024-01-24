@@ -46,9 +46,9 @@ func _reset():
 
 
 ## Spawn external scene, used for bullets, warnings, and words
-func spawn(scene: PackedScene, position: Vector2, direction: Vector2):
+func spawn(scene: PackedScene, spawn_position: Vector2, direction: Vector2):
 	var instance = scene.instantiate()
-	instance.start(position, direction)
+	instance.start(spawn_position, direction)
 	add_child(instance)
 
 

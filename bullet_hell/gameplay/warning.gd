@@ -6,5 +6,5 @@ func start(start_pos: Vector2, dir: Vector2):
 	look_at(dir)
 
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	queue_free()

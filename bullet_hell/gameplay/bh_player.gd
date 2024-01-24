@@ -8,7 +8,7 @@ const SPEED = 300.0
 
 signal hit
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = Vector2(
 		Input.get_axis("left", "right"), Input.get_axis("up", "down")
 	).normalized()
