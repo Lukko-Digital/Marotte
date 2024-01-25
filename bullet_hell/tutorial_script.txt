@@ -4,3 +4,5 @@ Jester: Much nicer furniture.: 3
 Jester: But it’s not all too different.: 3
 Player: ...: 3
 Jester: Not much of a talker are ya?: 3
+Player: Well: 3
+Player: Yeah: 3

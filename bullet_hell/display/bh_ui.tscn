@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5rvnoi1v7yxh"]
+[gd_scene load_steps=19 format=3 uid="uid://c5rvnoi1v7yxh"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/bh_ui.gd" id="1_3ae8p"]
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="2_i8vm2"]
 [ext_resource type="Texture2D" uid="uid://cjik188370ui1" path="res://assets/sprites/bh_player-sheet.png" id="3_2qqpm"]
 [ext_resource type="Texture2D" uid="uid://d2b2wpen3jlgl" path="res://assets/sprites/bh_thought_bubble_jester.png" id="3_o3n0w"]
+[ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="4_feqy3"]
 [ext_resource type="Texture2D" uid="uid://bh1hmydut2hns" path="res://assets/sprites/bh_thought_bubble.png" id="4_wqoy2"]
+[ext_resource type="FontFile" uid="uid://cwxn07dib3abf" path="res://assets/fonts/Jokerfont-Regular.ttf" id="6_c052r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
 bg_color = Color(0, 0, 0, 1)
@@ -148,6 +150,8 @@ anchors_preset = 0
 script = ExtResource("1_3ae8p")
 player_thought_bubble = ExtResource("4_wqoy2")
 jester_thought_bubble = ExtResource("3_o3n0w")
+player_font = ExtResource("4_feqy3")
+jester_font = ExtResource("6_c052r")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 layout_mode = 1
@@ -208,6 +212,7 @@ offset_bottom = 1010.0
 grow_horizontal = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_c052r")
 theme_override_font_sizes/font_size = 200
 text = "josh feet pics..."
 horizontal_alignment = 1

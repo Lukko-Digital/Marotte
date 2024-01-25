@@ -2,6 +2,8 @@ extends Control
 
 @export var player_thought_bubble: CompressedTexture2D
 @export var jester_thought_bubble: CompressedTexture2D
+@export var player_font: Font
+@export var jester_font: Font
 
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var color_animation: AnimationPlayer = $ScreenColor/AnimationPlayer
@@ -67,10 +69,12 @@ func _on_script_handler_active_speaker(speaker):
 			thought_bubble.texture = player_thought_bubble
 			dialogue_label.size = Label_Size.PLAYER
 			dialogue_label.position = Label_Position.PLAYER
+			dialogue_label.set("theme_override_fonts/font", player_font)
 		"Jester":
 			thought_bubble.texture = jester_thought_bubble
 			dialogue_label.size = Label_Size.JESTER
 			dialogue_label.position = Label_Position.JESTER
+			dialogue_label.set("theme_override_fonts/font", jester_font)
 
 
 func _on_script_handler_display_line(text):
