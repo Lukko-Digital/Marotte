@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var script_file_path: String
+
 @onready var bullet_scene = preload("res://bullet_hell/gameplay/bullet.tscn")
 @onready var warning_scene = preload("res://bullet_hell/gameplay/warning.tscn")
 @onready var word_scene = preload("res://bullet_hell/gameplay/word_pickup.tscn")
