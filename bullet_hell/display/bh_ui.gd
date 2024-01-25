@@ -12,6 +12,16 @@ extends Control
 const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
 
+const Label_Size = {
+	PLAYER = Vector2(1990, 715),
+	JESTER = Vector2(1560, 715)
+}
+
+const Label_Position = {
+	PLAYER = Vector2(427, 240),
+	JESTER = Vector2(980, 240)
+}
+
 func _ready():
 	Events.word_picked.connect(_on_word_picked)
 	health_bar.max_value = MAX_HP
@@ -54,8 +64,12 @@ func _on_script_handler_active_speaker(speaker):
 	match speaker:
 		"Player":
 			thought_bubble.texture = player_thought_bubble
+			dialogue_label.size = Label_Size.PLAYER
+			dialogue_label.position = Label_Position.PLAYER
 		"Jester":
 			thought_bubble.texture = jester_thought_bubble
+			dialogue_label.size = Label_Size.JESTER
+			dialogue_label.position = Label_Position.JESTER
 
 
 func _on_script_handler_display_line(text):
