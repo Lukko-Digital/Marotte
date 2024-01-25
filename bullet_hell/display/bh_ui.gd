@@ -13,13 +13,14 @@ const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
 
 const Label_Size = {
-	PLAYER = Vector2(1990, 715),
-	JESTER = Vector2(1560, 715)
+	PLAYER = Vector2(2335, 835),
+	JESTER = Vector2(1705, 835)
+	
 }
 
 const Label_Position = {
-	PLAYER = Vector2(427, 240),
-	JESTER = Vector2(980, 240)
+	PLAYER = Vector2(235, 175),
+	JESTER = Vector2(925, 175)
 }
 
 func _ready():
