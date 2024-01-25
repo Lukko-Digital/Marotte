@@ -46,7 +46,6 @@ func _ready():
 	bullet_timer.wait_time = 2
 	player.position = PLAYER_SPAWN
 	Events.word_picked.connect(_on_word_picked)
-	word_timer.start()
 
 
 ## Reset upon word pickup
@@ -68,6 +67,16 @@ func spawn(scene: PackedScene, spawn_position: Vector2, args: Array):
 	add_child(instance)
 
 
+## Word Timer
+func _on_word_timer_timeout():
+	spawn_words(["A", "B"].pick_random())
+	word_spawn_sound.play()
+
+
+func _on_script_handler_spawn_words(group):
+	spawn_words(group)
+
+
 ## Spawn words in the four corners, with one being incorrect
 func spawn_words(group):
 	var word_map = word_groups.data[group]
@@ -82,17 +91,15 @@ func spawn_words(group):
 		)
 
 
-## Word Timer
-func _on_word_timer_timeout():
-	spawn_words(["A", "B"].pick_random())
-	word_spawn_sound.play()
-
-
 ## Bullet Timer
 func _on_bullet_timer_timeout():
 	circle(Direction.values().pick_random(), 8)
 	circle(Direction.values().pick_random(), 8)
 	bullet_spawn_sound.play()
+
+
+func _on_script_handler_spawn_bullets(pattern):
+	pass # Replace with function body.
 
 
 ## Circle shot

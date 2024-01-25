@@ -7,6 +7,8 @@ var current_line: int = 0
 
 signal active_speaker(speaker)
 signal display_line(text)
+signal spawn_words(group)
+signal spawn_bullets(pattern)
 
 func _ready():
 	load_file()
@@ -35,8 +37,10 @@ func parse_line(line: String):
 	var split = line.split(": ")
 	match split[0]:
 		"!words":
+			spawn_words.emit(split[1])
 			next_line()
 		"!bullets":
+			spawn_bullets.emit(split[1])
 			next_line()
 		"Player", "Jester":
 			active_speaker.emit(split[0])
