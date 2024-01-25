@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dyon7poiilo3p"
-path="res://.godot/imported/Kingfont-Regular.ttf-6271d3ee344b88818a8d6015b9cf847e.fontdata"
+uid="uid://cwxn07dib3abf"
+path="res://.godot/imported/Jokerfont-Regular.ttf-b0a8bc5966542dda25dde67fd55c958e.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Kingfont-Regular.ttf"
-dest_files=["res://.godot/imported/Kingfont-Regular.ttf-6271d3ee344b88818a8d6015b9cf847e.fontdata"]
+source_file="res://assets/fonts/Jokerfont-Regular.ttf"
+dest_files=["res://.godot/imported/Jokerfont-Regular.ttf-b0a8bc5966542dda25dde67fd55c958e.fontdata"]
 
 [params]
 
