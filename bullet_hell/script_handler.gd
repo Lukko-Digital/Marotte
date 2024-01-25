@@ -26,6 +26,8 @@ func load_file():
 
 func next_line():
 	current_line += 1
+	if current_line >= len(game_script):
+		return
 	parse_line(game_script[current_line])
 
 
