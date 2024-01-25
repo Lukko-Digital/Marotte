@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://by1v75ovunb1c"]
+[gd_scene load_steps=11 format=3 uid="uid://by1v75ovunb1c"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_tsyg8"]
 [ext_resource type="Texture2D" uid="uid://b30p5j3pxonww" path="res://assets/sprites/sv_crowd.png" id="2_neox0"]
 [ext_resource type="Texture2D" uid="uid://d3hfhda0t51c6" path="res://assets/sprites/sv_king_neutral.png" id="3_mvlk4"]
 [ext_resource type="Texture2D" uid="uid://dtydkcfk4e8sn" path="res://assets/sprites/sv_player_scared.png" id="4_c8u2e"]
 [ext_resource type="Texture2D" uid="uid://h0uj0ye8u74p" path="res://assets/sprites/sv_textbox_kid.png" id="5_l4ayj"]
+[ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_ew3cy"]
 [ext_resource type="Texture2D" uid="uid://dr1a4q36857lj" path="res://assets/sprites/sv_textbox_king.png" id="6_o7lnw"]
 [ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="7_wr05v"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="8_3lmr7"]
@@ -12,6 +13,7 @@
 
 [node name="dialogue_scene" type="CanvasLayer"]
 script = ExtResource("1_tsyg8")
+script_file_path = "res://dialogue_scene/test.txt"
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -58,6 +60,8 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_l4ayj")
+script = ExtResource("6_ew3cy")
+character_name = "Player"
 
 [node name="Label" type="Label" parent="PlayerDialogueBox"]
 layout_mode = 1
@@ -89,6 +93,8 @@ offset_right = 4680.0
 offset_bottom = 1753.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_o7lnw")
+script = ExtResource("6_ew3cy")
+character_name = "King"
 
 [node name="Label" type="Label" parent="KingDialogueBox"]
 layout_mode = 1
@@ -116,3 +122,8 @@ text_overrun_behavior = 2
 
 [node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_ewfxd")
+
+[connection signal="active_speaker" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_active_speaker"]
+[connection signal="active_speaker" from="." to="KingDialogueBox" method="_on_dialogue_scene_active_speaker"]
+[connection signal="display_line" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_display_line"]
+[connection signal="display_line" from="." to="KingDialogueBox" method="_on_dialogue_scene_display_line"]
