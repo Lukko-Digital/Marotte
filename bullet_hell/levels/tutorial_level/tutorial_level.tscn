@@ -34,14 +34,12 @@ script_file_path = "res://bullet_hell/levels/tutorial_level/tutorial_script.txt"
 word_groups = ExtResource("2_xbiqt")
 
 [node name="MovementTutorial" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.86678)
 position = Vector2(1196.65, 315.094)
 scale = Vector2(0.120112, 0.120112)
 texture = ExtResource("3_mjsbp")
 script = ExtResource("4_52q1e")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MovementTutorial"]
-autoplay = "pulse"
 libraries = {
 "": SubResource("AnimationLibrary_r7vdm")
 }
