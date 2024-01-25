@@ -3,15 +3,11 @@
 [resource]
 data = {
 "A": {
-"...": true,
 "huh": true,
-"umm": true,
 "what": true
 },
 "B": {
-"Among Us": false,
-"Amongus": false,
-"amogus": true,
-"mungus": false
+"got it": true,
+"huh?": true
 }
 }
