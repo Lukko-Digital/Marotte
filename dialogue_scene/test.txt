@@ -6,3 +6,4 @@ Player: ...i will!: keypress
 King: FOR THE FIRST JOKE: keypress
 King: I PROPOSE A PUN: keypress
 Player: uhhh... let me think...: keypress
+!transition: tutorial_level

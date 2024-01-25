@@ -132,6 +132,5 @@ stream = ExtResource("8_ewfxd")
 [connection signal="display_line" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_display_line"]
 [connection signal="display_line" from="." to="KingDialogueBox" method="_on_dialogue_scene_display_line"]
 [connection signal="speed_animation" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_speed_animation"]
-[connection signal="speed_animation" from="." to="KingDialogueBox" method="_on_dialogue_scene_speed_animation"]
 [connection signal="text_animation_done" from="PlayerDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
 [connection signal="text_animation_done" from="KingDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]

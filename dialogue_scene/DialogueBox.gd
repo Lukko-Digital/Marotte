@@ -22,8 +22,6 @@ func _on_dialogue_scene_display_line(text):
 		label.text = text
 		animate_display()
 
-
-
 func animate_display():
 	label.visible_characters = 0
 	while label.visible_characters < len(label.text):

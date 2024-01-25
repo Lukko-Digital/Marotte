@@ -45,6 +45,8 @@ func next_line():
 func parse_line(line: String):
 	var split = line.split(": ")
 	match split[0]:
+		"!transition":
+			get_tree().change_scene_to_file("res://bullet_hell/levels/{level}/{level}.tscn".format({"level": split[1]}))
 		"Player", "King":
 			active_speaker.emit(split[0])
 			display_line.emit(split[1])
