@@ -33,6 +33,10 @@ const Word_Spawn = {
 	BOT_RIGHT = Vector2(RIGHT_X - WORD_SPAWN_X_OFFSET, BOTTOM_Y - WORD_SPAWN_Y_OFFSET)
 }
 
+## Bullet Modes
+enum Bullet_Modes {NONE, CIRCLE}
+var active_bullet_mode = Bullet_Modes.NONE
+
 ## Direction enum
 const Direction = {
 	LEFT = Vector2(-1, 0),
@@ -93,14 +97,26 @@ func spawn_words(group):
 
 ## Bullet Timer
 func _on_bullet_timer_timeout():
-	circle(Direction.values().pick_random(), 8)
-	circle(Direction.values().pick_random(), 8)
-	bullet_spawn_sound.play()
+	spawn_bullets()
 
 
 func _on_script_handler_spawn_bullets(pattern):
-	pass # Replace with function body.
+	match pattern:
+		"none":
+			active_bullet_mode = Bullet_Modes.NONE
+			bullet_timer.stop()
+		"circle":
+			active_bullet_mode = Bullet_Modes.CIRCLE
+			bullet_timer.start()
+			spawn_bullets()
 
+## General Bullet Pattern Spawning
+func spawn_bullets():
+	match active_bullet_mode:
+		Bullet_Modes.CIRCLE:
+			circle(Direction.values().pick_random(), 8)
+			circle(Direction.values().pick_random(), 8)
+	bullet_spawn_sound.play()
 
 ## Circle shot
 func circle(direction: Vector2, num_shots=12):

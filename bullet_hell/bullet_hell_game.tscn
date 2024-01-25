@@ -48,7 +48,6 @@ wait_time = 5.0
 one_shot = true
 
 [node name="BulletTimer" type="Timer" parent="Environment"]
-autostart = true
 
 [node name="Background" type="ColorRect" parent="Environment"]
 z_index = -10
