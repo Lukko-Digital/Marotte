@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://c5rvnoi1v7yxh"]
+[gd_scene load_steps=17 format=3 uid="uid://c5rvnoi1v7yxh"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/bh_ui.gd" id="1_3ae8p"]
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="2_i8vm2"]
 [ext_resource type="Texture2D" uid="uid://cjik188370ui1" path="res://assets/sprites/bh_player-sheet.png" id="3_2qqpm"]
+[ext_resource type="Texture2D" uid="uid://d2b2wpen3jlgl" path="res://assets/sprites/bh_thought_bubble_jester.png" id="3_o3n0w"]
 [ext_resource type="Texture2D" uid="uid://bh1hmydut2hns" path="res://assets/sprites/bh_thought_bubble.png" id="4_wqoy2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
@@ -145,6 +146,8 @@ _data = {
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_3ae8p")
+player_thought_bubble = ExtResource("4_wqoy2")
+jester_thought_bubble = ExtResource("3_o3n0w")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 layout_mode = 1
@@ -184,7 +187,7 @@ libraries = {
 "": SubResource("AnimationLibrary_01p1x")
 }
 
-[node name="ThuoghtBubble" type="TextureRect" parent="."]
+[node name="ThoughtBubble" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 91.0
 offset_top = 90.0
@@ -193,7 +196,7 @@ offset_bottom = 1304.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_wqoy2")
 
-[node name="Label" type="Label" parent="ThuoghtBubble"]
+[node name="Label" type="Label" parent="ThoughtBubble"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -209,7 +212,7 @@ theme_override_font_sizes/font_size = 200
 text = "josh feet pics..."
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 1
+autowrap_mode = 2
 text_overrun_behavior = 1
 
 [node name="ScreenColor" type="ColorRect" parent="."]

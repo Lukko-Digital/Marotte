@@ -1,9 +1,13 @@
 extends Control
 
+@export var player_thought_bubble: CompressedTexture2D
+@export var jester_thought_bubble: CompressedTexture2D
+
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var color_animation: AnimationPlayer = $ScreenColor/AnimationPlayer
 @onready var player_image_animation: AnimationPlayer = $UIPlayer/AnimationPlayer
-
+@onready var thought_bubble: TextureRect = $ThoughtBubble
+@onready var dialogue_label: Label = $ThoughtBubble/Label
 
 const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
@@ -44,3 +48,15 @@ func _on_word_picked(correct):
 	else:
 		current_hp -= 2
 		color_animation.play("red_flash")
+
+
+func _on_script_handler_active_speaker(speaker):
+	match speaker:
+		"Player":
+			thought_bubble.texture = player_thought_bubble
+		"Jester":
+			thought_bubble.texture = jester_thought_bubble
+
+
+func _on_script_handler_display_line(text):
+	dialogue_label.text = text
