@@ -1,8 +1,10 @@
-Jester: What’s going on?: 3
-Jester: My mental palace looks nothing like this.: 3
-Jester: Much nicer furniture.: 3
-Jester: But it’s not all too different.: 3
-Player: ...: 3
-Jester: Not much of a talker are ya?: 3
-Player: Well: 3
-Player: Yeah: 3
+Jester: What’s going on??: 2
+!words: A
+Jester: My mental palace looks nothing like this.: pickup
+Jester: That red bar over there is your “confidence”: 3
+Jester: As long as you can formulate the opening to your joke without losing all your confidence: 5
+Jester: The punch line will be no problem.: 3
+Jester: Until then, time is frozen in the real world.: 3
+Jester: We jesters only have to win this mental battle.: 3
+Jester: For me, it usually has to do with forgetting my material.: 3
+Jester: But for you it’s something else...: 2
