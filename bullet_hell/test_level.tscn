@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dja6cv76f00ic"]
-
-[ext_resource type="PackedScene" uid="uid://dj6e7xh4njtlj" path="res://bullet_hell/bullet_hell_game.tscn" id="1_skd7g"]
-
-[node name="test_level" type="Node2D"]
-
-[node name="bullet_hell_game" parent="." instance=ExtResource("1_skd7g")]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Lukko Ggj"
-run/main_scene="res://bullet_hell/bullet_hell_game.tscn"
+run/main_scene="res://bullet_hell/levels/tutorial_level/tutorial_level.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
