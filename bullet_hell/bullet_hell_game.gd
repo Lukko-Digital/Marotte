@@ -9,6 +9,12 @@ extends Node2D
 @onready var bullet_timer: Timer = $BulletTimer
 @onready var player: CharacterBody2D = $bh_player
 
+## Sound Effects
+@onready var bullet_spawn_sound: AudioStreamPlayer = $SoundEffects/BulletSpawn
+@onready var word_spawn_sound: AudioStreamPlayer = $SoundEffects/WordSpawn
+@onready var correct_word_sound: AudioStreamPlayer = $SoundEffects/CorrectWord
+@onready var incorrect_word_sound: AudioStreamPlayer = $SoundEffects/IncorrectWord
+
 ## Wall Locations
 const LEFT_X = 758
 const RIGHT_X = 1625
@@ -45,11 +51,13 @@ func _ready():
 ## Reset upon word pickup
 func _on_word_picked(correct):
 	if correct:
+		correct_word_sound.play()
 		get_tree().call_group("bullet", "queue_free")
 		get_tree().call_group("word", "queue_free")
 		player.position = PLAYER_SPAWN
 		word_timer.start()
-
+	else:
+		incorrect_word_sound.play()
 
 ## Spawn external scene, used for bullets, warnings, and words
 func spawn(scene: PackedScene, spawn_position: Vector2, args: Array):
@@ -80,12 +88,14 @@ func spawn_words():
 ## Word Timer
 func _on_word_timer_timeout():
 	spawn_words()
+	word_spawn_sound.play()
 
 
 ## Bullet Timer
 func _on_bullet_timer_timeout():
 	circle(Direction.values().pick_random(), 8)
 	circle(Direction.values().pick_random(), 8)
+	bullet_spawn_sound.play()
 
 
 ## Circle shot

@@ -29,14 +29,26 @@ size = Vector2(992, 946)
 script = ExtResource("1_ruomc")
 script_file_path = "res://bullet_hell/tutorial_script.txt"
 
-[node name="WordTimer" type="Timer" parent="."]
+[node name="SoundEffects" type="Node" parent="."]
+
+[node name="BulletSpawn" type="AudioStreamPlayer" parent="SoundEffects"]
+
+[node name="WordSpawn" type="AudioStreamPlayer" parent="SoundEffects"]
+
+[node name="CorrectWord" type="AudioStreamPlayer" parent="SoundEffects"]
+
+[node name="IncorrectWord" type="AudioStreamPlayer" parent="SoundEffects"]
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="WordTimer" type="Timer" parent="Environment"]
 wait_time = 5.0
 one_shot = true
 
-[node name="BulletTimer" type="Timer" parent="."]
+[node name="BulletTimer" type="Timer" parent="Environment"]
 autostart = true
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="Environment"]
 z_index = -10
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,34 +59,34 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="bh_player" parent="." instance=ExtResource("1_le3bt")]
-position = Vector2(1200, 500)
-collision_mask = 2
-
-[node name="Walls" type="StaticBody2D" parent="."]
+[node name="Walls" type="StaticBody2D" parent="Environment"]
 collision_layer = 2
 collision_mask = 0
 
-[node name="Left" type="CollisionShape2D" parent="Walls"]
+[node name="Left" type="CollisionShape2D" parent="Environment/Walls"]
 shape = SubResource("SegmentShape2D_fpm7c")
 
-[node name="Right" type="CollisionShape2D" parent="Walls"]
+[node name="Right" type="CollisionShape2D" parent="Environment/Walls"]
 shape = SubResource("SegmentShape2D_1jwpp")
 
-[node name="Top" type="CollisionShape2D" parent="Walls"]
+[node name="Top" type="CollisionShape2D" parent="Environment/Walls"]
 shape = SubResource("SegmentShape2D_ls2kp")
 
-[node name="Bottom" type="CollisionShape2D" parent="Walls"]
+[node name="Bottom" type="CollisionShape2D" parent="Environment/Walls"]
 shape = SubResource("SegmentShape2D_0thoo")
 
-[node name="BulletDespawnArea" type="Area2D" parent="."]
+[node name="BulletDespawnArea" type="Area2D" parent="Environment"]
 visible = false
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletDespawnArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/BulletDespawnArea"]
 position = Vector2(1196, 501)
 shape = SubResource("RectangleShape2D_upp13")
+
+[node name="bh_player" parent="." instance=ExtResource("1_le3bt")]
+position = Vector2(1200, 500)
+collision_mask = 2
 
 [node name="bh_ui" parent="." instance=ExtResource("3_5sicw")]
 
@@ -85,8 +97,8 @@ script = ExtResource("5_eia4t")
 
 [node name="Timer" type="Timer" parent="script_handler"]
 
-[connection signal="timeout" from="WordTimer" to="." method="_on_word_timer_timeout"]
-[connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]
+[connection signal="timeout" from="Environment/WordTimer" to="." method="_on_word_timer_timeout"]
+[connection signal="timeout" from="Environment/BulletTimer" to="." method="_on_bullet_timer_timeout"]
 [connection signal="hit" from="bh_player" to="bh_ui" method="_on_bh_player_hit"]
 [connection signal="hit" from="bh_player" to="bh_camera" method="_on_bh_player_hit"]
 [connection signal="timeout" from="script_handler/Timer" to="script_handler" method="_on_timer_timeout"]
