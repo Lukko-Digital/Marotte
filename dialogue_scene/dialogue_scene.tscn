@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dtydkcfk4e8sn" path="res://assets/sprites/sv_player_scared.png" id="4_c8u2e"]
 [ext_resource type="Texture2D" uid="uid://h0uj0ye8u74p" path="res://assets/sprites/sv_textbox_kid.png" id="5_l4ayj"]
 [ext_resource type="Texture2D" uid="uid://dr1a4q36857lj" path="res://assets/sprites/sv_textbox_king.png" id="6_o7lnw"]
-[ext_resource type="FontFile" uid="uid://dd15to0bt5pd8" path="res://assets/fonts/Kingfont-Regular.ttf" id="7_wr05v"]
+[ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/Kingfont-Regular.ttf" id="7_wr05v"]
 [ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="8_ewfxd"]
 
 [node name="dialogue_scene" type="CanvasLayer"]
@@ -65,16 +65,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -872.5
-offset_top = -267.5
-offset_right = 872.5
-offset_bottom = 77.5002
+offset_left = -1336.5
+offset_top = -476.0
+offset_right = 1336.5
+offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 250
 text = "i uhhh ... umm"
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 2
 
 [node name="KingDialogueBox" type="TextureRect" parent="."]
 visible = false
@@ -92,18 +95,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -917.5
-offset_top = -172.5
-offset_right = 827.5
-offset_bottom = 172.5
+offset_left = -1758.0
+offset_top = -504.5
+offset_right = 1638.0
+offset_bottom = 444.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("7_wr05v")
-theme_override_font_sizes/font_size = 250
+theme_override_font_sizes/font_size = 300
 text = "you wot mate"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 2
 
 [node name="TextTimer" type="Timer" parent="."]
 
