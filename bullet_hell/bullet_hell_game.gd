@@ -71,12 +71,16 @@ func spawn(scene: PackedScene, spawn_position: Vector2, args: Array):
 	add_child(instance)
 
 
+## ============================== Words ==============================
+
+
 ## Word Timer
 func _on_word_timer_timeout():
 	spawn_words(["A", "B"].pick_random())
 	word_spawn_sound.play()
 
 
+## When the script handler says to spawn words
 func _on_script_handler_spawn_words(group):
 	spawn_words(group)
 
@@ -95,11 +99,14 @@ func spawn_words(group):
 		)
 
 
+## ============================== Bullets ==============================
+
+
 ## Bullet Timer
 func _on_bullet_timer_timeout():
 	spawn_bullets()
 
-
+## When the script handler says to spawn bullets
 func _on_script_handler_spawn_bullets(pattern):
 	match pattern:
 		"none":
