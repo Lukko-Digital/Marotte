@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var script_file_path: String
+@export var word_groups: JSON
 
 @onready var bullet_scene = preload("res://bullet_hell/gameplay/bullet.tscn")
 @onready var warning_scene = preload("res://bullet_hell/gameplay/warning.tscn")
@@ -59,6 +60,7 @@ func _on_word_picked(correct):
 	else:
 		incorrect_word_sound.play()
 
+
 ## Spawn external scene, used for bullets, warnings, and words
 func spawn(scene: PackedScene, spawn_position: Vector2, args: Array):
 	var instance = scene.instantiate()
@@ -67,13 +69,8 @@ func spawn(scene: PackedScene, spawn_position: Vector2, args: Array):
 
 
 ## Spawn words in the four corners, with one being incorrect
-func spawn_words():
-	var word_map = {
-		"amogus": true,
-		"Among Us": false,
-		"mungus": false,
-		"Amongus": false
-	}
+func spawn_words(group):
+	var word_map = word_groups.data[group]
 	var spawn_locations = Word_Spawn.values()
 	spawn_locations.shuffle()
 	
@@ -87,7 +84,7 @@ func spawn_words():
 
 ## Word Timer
 func _on_word_timer_timeout():
-	spawn_words()
+	spawn_words(["A", "B"].pick_random())
 	word_spawn_sound.play()
 
 

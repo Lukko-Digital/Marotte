@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=12 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
+[ext_resource type="JSON" uid="uid://cjmrk1ysk2dsp" path="res://bullet_hell/tutorial_word_groups.tres" id="2_625l7"]
 [ext_resource type="PackedScene" uid="uid://c5rvnoi1v7yxh" path="res://bullet_hell/display/bh_ui.tscn" id="3_5sicw"]
 [ext_resource type="Script" path="res://bullet_hell/script_handler.gd" id="5_eia4t"]
 [ext_resource type="PackedScene" uid="uid://bmqy68ba644tc" path="res://bullet_hell/display/bh_camera.tscn" id="7_ybxu1"]
@@ -28,6 +29,7 @@ size = Vector2(992, 946)
 [node name="bullet_hell_game" type="Node2D"]
 script = ExtResource("1_ruomc")
 script_file_path = "res://bullet_hell/tutorial_script.txt"
+word_groups = ExtResource("2_625l7")
 
 [node name="SoundEffects" type="Node" parent="."]
 

@@ -1,0 +1,17 @@
+[gd_resource type="JSON" format=3 uid="uid://cjmrk1ysk2dsp"]
+
+[resource]
+data = {
+"A": {
+"...": true,
+"huh": true,
+"umm": true,
+"what": true
+},
+"B": {
+"Among Us": false,
+"Amongus": false,
+"amogus": true,
+"mungus": false
+}
+}
