@@ -28,7 +28,7 @@ size = Vector2(992, 946)
 
 [node name="bullet_hell_game" type="Node2D"]
 script = ExtResource("1_ruomc")
-script_file_path = "res://bullet_hell/tutorial_script.txt"
+script_file_path = "res://bullet_hell/tutorial_script2.txt"
 word_groups = ExtResource("2_625l7")
 
 [node name="SoundEffects" type="Node" parent="."]

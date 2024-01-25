@@ -33,10 +33,17 @@ func next_line():
 
 func parse_line(line: String):
 	var split = line.split(": ")
-	active_speaker.emit(split[0])
-	display_line.emit(split[1])
-	timer.start(int(split[2]))
-
+	match split[0]:
+		"!words":
+			next_line()
+		"!bullets":
+			next_line()
+		"Player", "Jester":
+			active_speaker.emit(split[0])
+			display_line.emit(split[1])
+			timer.start(int(split[2]))
+		_:
+			assert(false, "Error: Invalid tag in game script")
 
 func _on_timer_timeout():
 	next_line()

@@ -1,0 +1,12 @@
+Jester: ooh hnnggg: 2
+Jest: asdf
+Jester: ahahaha: 2
+Player: what the fuck: 2
+Jester: i got josh feet on the mind: 2
+Player: ...: 1
+!words: A
+Jester: BOOM I JUST SPAWNED WORDS: 3
+Player: that was pretty cool: 2
+!bullets: circle
+Jester: AND NOW I SPAWNED BULLETS: 2
+Player: wow: 2
