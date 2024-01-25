@@ -1,11 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=11 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
 [ext_resource type="PackedScene" uid="uid://c5rvnoi1v7yxh" path="res://bullet_hell/display/bh_ui.tscn" id="3_5sicw"]
 [ext_resource type="Script" path="res://bullet_hell/script_handler.gd" id="5_eia4t"]
-[ext_resource type="Shader" path="res://bullet_hell/display/video_blue_transparency.gdshader" id="6_718oi"]
-[ext_resource type="VideoStream" path="res://assets/mp4/transition_jokeclear_keyable.ogv" id="6_f64nb"]
 [ext_resource type="PackedScene" uid="uid://bmqy68ba644tc" path="res://bullet_hell/display/bh_camera.tscn" id="7_ybxu1"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fpm7c"]
@@ -26,10 +24,6 @@ b = Vector2(758, 892)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upp13"]
 size = Vector2(992, 946)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x2lri"]
-shader = ExtResource("6_718oi")
-shader_parameter/orange = Color(0.996078, 0.388235, 0.388235, 1)
 
 [node name="bullet_hell_game" type="Node2D"]
 script = ExtResource("1_ruomc")
@@ -100,12 +94,6 @@ collision_mask = 2
 script = ExtResource("5_eia4t")
 
 [node name="Timer" type="Timer" parent="script_handler"]
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_x2lri")
-stream = ExtResource("6_f64nb")
-autoplay = true
 
 [connection signal="timeout" from="Environment/WordTimer" to="." method="_on_word_timer_timeout"]
 [connection signal="timeout" from="Environment/BulletTimer" to="." method="_on_bullet_timer_timeout"]

@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhotvh21fhnod"]
+
+[ext_resource type="Texture2D" uid="uid://p1ch84or5111" path="res://assets/sprites/transition_jokeclear_left.png" id="1_uth4p"]
+[ext_resource type="Texture2D" uid="uid://58x6xqi23swt" path="res://assets/sprites/transition_jokeclear_right.png" id="2_uuj27"]
+
+[sub_resource type="Animation" id="Animation_7tn0i"]
+resource_name = "left_right"
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Right:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1920, -0.25, 0, 0, -400, 960, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.75)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Left:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-960, -0.25, 0, 0, 400, 0, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.75)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ggtfr"]
+_data = {
+"left_right": SubResource("Animation_7tn0i")
+}
+
+[node name="Transition" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Left" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 1080.0
+texture = ExtResource("1_uth4p")
+expand_mode = 4
+
+[node name="Right" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 960.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_uuj27")
+expand_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "left_right"
+libraries = {
+"": SubResource("AnimationLibrary_ggtfr")
+}
