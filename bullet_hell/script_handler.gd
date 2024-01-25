@@ -2,6 +2,7 @@ extends Node2D
 
 var game_script: PackedStringArray
 var current_line: int = 0
+var advance_on_pickup: bool = false
 
 @onready var timer: Timer = $Timer
 
@@ -13,10 +14,7 @@ signal spawn_bullets(pattern)
 func _ready():
 	load_file()
 	parse_line(game_script[0])
-
-
-func _process(_delta):
-	pass
+	Events.word_picked.connect(_on_word_picked)
 
 
 func load_file():
@@ -45,9 +43,23 @@ func parse_line(line: String):
 		"Player", "Jester":
 			active_speaker.emit(split[0])
 			display_line.emit(split[1])
-			timer.start(int(split[2]))
+			
+			var advance_condition = split[2]
+			if advance_condition == "pickup":
+				timer.stop()
+				advance_on_pickup = true
+			elif advance_condition.is_valid_int():
+				timer.start(int(advance_condition))
+			else:
+				assert(false, "Error: Invalid advance condition")
 		_:
 			assert(false, "Error: Invalid tag in game script")
 
+
 func _on_timer_timeout():
 	next_line()
+
+
+func _on_word_picked(correct):
+	if correct and advance_on_pickup:
+		next_line()
