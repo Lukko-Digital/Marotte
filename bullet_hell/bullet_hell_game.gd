@@ -59,7 +59,7 @@ func _on_word_picked(correct):
 		get_tree().call_group("bullet", "queue_free")
 		get_tree().call_group("word", "queue_free")
 		player.position = PLAYER_SPAWN
-		word_timer.start()
+#		word_timer.start()
 	else:
 		incorrect_word_sound.play()
 
