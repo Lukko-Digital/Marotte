@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var hitbox: Area2D = $HitBox
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $Sprite2D/AnimationPlayer
+@onready var hit_sound: AudioStreamPlayer = $HitSound
+@onready var walk_sound: AudioStreamPlayer = $WalkSound
 
 const SPEED = 300.0
 
@@ -34,10 +36,13 @@ func handle_animation(direction: Vector2):
 		Vector2(0,1):
 			# down
 			animation_player.play("run_down")
+	if direction != Vector2():
+		walk_sound.play()
 
 func _on_hit_box_area_entered(area):
 	if area.is_in_group("bullet"):
 		emit_signal("hit")
+		hit_sound.play()
 		modulate = Color(1,0,0)
 		await get_tree().create_timer(0.1).timeout
 		modulate = Color(1,1,1)
