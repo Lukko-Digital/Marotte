@@ -45,7 +45,7 @@ offset_bottom = 3152.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_c8u2e")
 
-[node name="PlayerDialogueBox" type="TextureRect" parent="."]
+[node name="PlayerDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_noise")]
 visible = false
 anchors_preset = 7
 anchor_left = 0.5
@@ -62,6 +62,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_l4ayj")
 script = ExtResource("6_ew3cy")
 character_name = "Player"
+dialogue_noise = NodePath("../DialogueAudioPlayer")
 
 [node name="Label" type="Label" parent="PlayerDialogueBox"]
 layout_mode = 1
@@ -85,7 +86,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 text_overrun_behavior = 2
 
-[node name="KingDialogueBox" type="TextureRect" parent="."]
+[node name="TextTimer" type="Timer" parent="PlayerDialogueBox"]
+
+[node name="KingDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_noise")]
 visible = false
 offset_left = 144.0
 offset_top = 104.0
@@ -95,6 +98,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("6_o7lnw")
 script = ExtResource("6_ew3cy")
 character_name = "King"
+dialogue_noise = NodePath("../DialogueAudioPlayer")
 
 [node name="Label" type="Label" parent="KingDialogueBox"]
 layout_mode = 1
@@ -118,7 +122,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 text_overrun_behavior = 2
 
-[node name="TextTimer" type="Timer" parent="."]
+[node name="TextTimer" type="Timer" parent="KingDialogueBox"]
 
 [node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_ewfxd")
@@ -127,3 +131,7 @@ stream = ExtResource("8_ewfxd")
 [connection signal="active_speaker" from="." to="KingDialogueBox" method="_on_dialogue_scene_active_speaker"]
 [connection signal="display_line" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_display_line"]
 [connection signal="display_line" from="." to="KingDialogueBox" method="_on_dialogue_scene_display_line"]
+[connection signal="speed_animation" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_speed_animation"]
+[connection signal="speed_animation" from="." to="KingDialogueBox" method="_on_dialogue_scene_speed_animation"]
+[connection signal="text_animation_done" from="PlayerDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
+[connection signal="text_animation_done" from="KingDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
