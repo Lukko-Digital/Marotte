@@ -215,10 +215,12 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_c052r")
 theme_override_font_sizes/font_size = 200
 text = "josh feet pics..."
-horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 text_overrun_behavior = 1
+
+[node name="TextTimer" type="Timer" parent="ThoughtBubble/Label"]
+one_shot = true
 
 [node name="ScreenColor" type="ColorRect" parent="."]
 layout_mode = 1

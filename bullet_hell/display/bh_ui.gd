@@ -10,9 +10,12 @@ extends Control
 @onready var player_image_animation: AnimationPlayer = $UIPlayer/AnimationPlayer
 @onready var thought_bubble: TextureRect = $ThoughtBubble
 @onready var dialogue_label: Label = $ThoughtBubble/Label
+@onready var text_timer: Timer = $ThoughtBubble/Label/TextTimer
 
 const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
+
+const TEXT_SPEED = 0.03
 
 const Label_Size = {
 	PLAYER = Vector2(2335, 835),
@@ -79,3 +82,11 @@ func _on_script_handler_active_speaker(speaker):
 
 func _on_script_handler_display_line(text):
 	dialogue_label.text = text
+	dialogue_label.visible_characters = 0
+	animate_display()
+
+func animate_display():
+	while dialogue_label.visible_characters < len(dialogue_label.text):
+		dialogue_label.visible_characters += 1
+		text_timer.start(TEXT_SPEED)
+		await text_timer.timeout
