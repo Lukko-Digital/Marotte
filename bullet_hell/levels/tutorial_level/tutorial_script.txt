@@ -18,23 +18,23 @@ Jester: Coming up with each word will require you to survive a bunch of those: 4
 Jester: Just like this: 3
 Jester: 5: 1
 Jester: 4: 1
+!joke_words: WHAT
 Jester: 3: 1
 Jester: 2: 1
 Jester: 1: 1
-!joke_words: WHAT
 Jester: There it is! The starting word!: pickup
 !joke_words: DO YOU
 Jester: Sometimes you'll need to use logic to figure out the next part of the joke: pickup
-Jester: Nice!: 1
 !joke_words: CALL A
+Jester: Nice!: 1
 Jester: I'll let you figure this one out: pickup
-Jester: In situations like this, your subconscious knows the answer: 4
 !joke_words: FISH
+Jester: In situations like this, your subconscious knows the answer: 3
 Jester: (hint hint it's the fish): pickup
 Jester: Incredible!: 1
 Jester: ...: 1
 Jester: Okay that's enough enthusiasm for me today: 8
 !bullets: circle
-Jester: We approach the climax: 3
 !joke_words: WITH NO EYES
+Jester: We approach the climax: 3
 Jester: It's a gimmie! The final line!: pickup
