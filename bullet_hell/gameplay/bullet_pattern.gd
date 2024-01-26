@@ -6,8 +6,12 @@ extends Node2D
 func _ready():
 	await get_tree().create_timer(0.5).timeout
 	
-	horizontal_grid(Vector2(0,540), 5, 10, 1)
-	vertical_grid(Vector2(960, 0), 10, 7, 1)
+#	horizontal_grid(Vector2(0,540), 5, 10, 1)
+#	vertical_grid(Vector2(960, 0), 10, 7, 1)
+
+	spiral(Vector2(960, 540), 3)
+
+#	circle(Vector2(960, 540))
 
 func horizontal_grid(spawn_position: Vector2, num_rows=5, num_cols=5, speed=1):
 	spawn_position = spawn_position - position
