@@ -10,7 +10,8 @@ var advance_condition: Advance_Conditions
 
 signal active_speaker(speaker)
 signal display_line(text)
-signal spawn_words(group)
+signal spawn_dialogue_words(group)
+signal spawn_joke_words(group)
 signal spawn_bullets(pattern)
 
 func _ready():
@@ -36,8 +37,11 @@ func next_line():
 func parse_line(line: String):
 	var split = line.split(": ")
 	match split[0]:
-		"!words":
-			spawn_words.emit(split[1])
+		"!dialogue_words":
+			spawn_dialogue_words.emit(split[1])
+			next_line()
+		"!joke_words":
+			spawn_joke_words.emit(split[1])
 			next_line()
 		"!bullets":
 			spawn_bullets.emit(split[1])

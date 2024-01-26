@@ -76,17 +76,24 @@ func spawn(scene: PackedScene, spawn_position: Vector2, args: Array):
 
 ## Word Timer
 func _on_word_timer_timeout():
-	spawn_words(["A", "B"].pick_random())
-	word_spawn_sound.play()
+	pass
 
 
-## When the script handler says to spawn words
-func _on_script_handler_spawn_words(group):
+func _on_script_handler_spawn_dialogue_words(group):
+	await get_tree().create_timer(2).timeout
 	spawn_words(group)
+
+
+func _on_script_handler_spawn_joke_words(group):
+	word_timer.start(3)
+	await get_tree().create_timer(3).timeout
+	spawn_words(group)
+
 
 
 ## Spawn words in the four corners, with one being incorrect
 func spawn_words(group):
+	word_spawn_sound.play()
 	var word_map = word_groups.data[group]
 	var spawn_locations = Word_Spawn.values()
 	spawn_locations.shuffle()
@@ -113,7 +120,8 @@ func _on_script_handler_spawn_bullets(pattern):
 			active_bullet_mode = Bullet_Modes.NONE
 			bullet_timer.stop()
 		"still":
-			await get_tree().create_timer(0.05).timeout
+			## Very specific only used in the tutorial
+			await get_tree().create_timer(1).timeout
 			spawn(bullet_scene, Word_Spawn.TOP_RIGHT, [Vector2()])
 		"circle":
 			active_bullet_mode = Bullet_Modes.CIRCLE

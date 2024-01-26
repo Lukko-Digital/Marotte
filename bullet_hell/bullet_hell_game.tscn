@@ -120,5 +120,6 @@ script = ExtResource("5_eia4t")
 [connection signal="active_speaker" from="script_handler" to="bh_ui" method="_on_script_handler_active_speaker"]
 [connection signal="display_line" from="script_handler" to="bh_ui" method="_on_script_handler_display_line"]
 [connection signal="spawn_bullets" from="script_handler" to="." method="_on_script_handler_spawn_bullets"]
-[connection signal="spawn_words" from="script_handler" to="." method="_on_script_handler_spawn_words"]
+[connection signal="spawn_dialogue_words" from="script_handler" to="." method="_on_script_handler_spawn_dialogue_words"]
+[connection signal="spawn_joke_words" from="script_handler" to="." method="_on_script_handler_spawn_joke_words"]
 [connection signal="timeout" from="script_handler/Timer" to="script_handler" method="_on_timer_timeout"]
