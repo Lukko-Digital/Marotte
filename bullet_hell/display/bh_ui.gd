@@ -11,6 +11,7 @@ extends Control
 @onready var thought_bubble: TextureRect = $ThoughtBubble
 @onready var dialogue_label: Label = $ThoughtBubble/Label
 @onready var text_timer: Timer = $ThoughtBubble/Label/TextTimer
+@onready var dialogue_noise: AudioStreamPlayer = $ThoughtBubble/DialogueAudioPlayer
 
 const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
@@ -27,6 +28,9 @@ const Label_Position = {
 	PLAYER = Vector2(235, 175),
 	JESTER = Vector2(925, 175)
 }
+
+const VOICE_PITCH_MIN = 0.9
+const VOICE_PITCH_MAX = 1.5
 
 func _ready():
 	Events.word_picked.connect(_on_word_picked)
@@ -91,6 +95,8 @@ func _on_script_handler_display_line(text):
 
 func animate_display():
 	while dialogue_label.visible_characters < len(dialogue_label.text):
+		dialogue_noise.pitch_scale = randf_range(VOICE_PITCH_MIN, VOICE_PITCH_MAX)
+		dialogue_noise.play()
 		dialogue_label.visible_characters += 1
 		text_timer.start(TEXT_SPEED)
 		await text_timer.timeout
