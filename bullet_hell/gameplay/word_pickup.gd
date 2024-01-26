@@ -23,5 +23,5 @@ func _ready():
 
 
 func _on_body_entered(_body):
-	Events.emit_signal("word_picked", correct)
+	Events.emit_signal("word_picked", correct, joke_text)
 	queue_free()

@@ -54,7 +54,7 @@ func _ready():
 
 
 ## Reset upon word pickup
-func _on_word_picked(correct):
+func _on_word_picked(correct, _joke_text):
 	if correct:
 		correct_word_sound.play()
 		get_tree().call_group("bullet", "queue_free")
