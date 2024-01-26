@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7fxxr2ugd05q"]
+[gd_scene load_steps=6 format=3 uid="uid://b7fxxr2ugd05q"]
 
 [ext_resource type="Texture2D" uid="uid://bg6xxrye0lsqt" path="res://assets/sprites/transition_jokestart_left.png" id="1_yy3qx"]
 [ext_resource type="Texture2D" uid="uid://hq875ehyc3re" path="res://assets/sprites/transition_jokestart_right.png" id="2_mnmhg"]
+[ext_resource type="Script" path="res://bullet_hell/display/AnimationPlayer.gd" id="3_o64wb"]
 
 [sub_resource type="Animation" id="Animation_7tn0i"]
 resource_name = "start"
@@ -72,7 +73,7 @@ expand_mode = 4
 layout_mode = 0
 offset_top = 1080.0
 offset_right = 960.0
-offset_bottom = 2160.0
+offset_bottom = 2183.0
 color = Color(0, 0, 0, 1)
 
 [node name="Right" type="TextureRect" parent="."]
@@ -86,14 +87,12 @@ expand_mode = 4
 
 [node name="ColorRect2" type="ColorRect" parent="Right"]
 layout_mode = 0
-offset_top = -1080.0
+offset_top = -1139.0
 offset_right = 960.0
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "start"
 libraries = {
 "": SubResource("AnimationLibrary_ggtfr")
 }
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+script = ExtResource("3_o64wb")
