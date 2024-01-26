@@ -7,6 +7,7 @@ enum Advance_Conditions {TIME, PICKUP, HIT}
 var advance_condition: Advance_Conditions
 
 @onready var timer: Timer = $Timer
+@onready var transition : Transition = $ClearTransition
 
 signal active_speaker(speaker)
 signal display_line(text)
@@ -43,6 +44,10 @@ func parse_line(line: String):
 			spawn_joke_words.emit(split[1])
 		"!bullets":
 			spawn_bullets.emit(split[1])
+		"!transition":
+			transition.play()
+			await transition.transition_finished
+			get_tree().change_scene_to_file("res://dialogue_scene/{dialogue}.tscn".format({"dialogue": split[1]}))
 		"Player", "Jester":
 			active_speaker.emit(split[0])
 			display_line.emit(split[1])
