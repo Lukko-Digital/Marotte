@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://by1v75ovunb1c"]
+[gd_scene load_steps=12 format=3 uid="uid://by1v75ovunb1c"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_tsyg8"]
 [ext_resource type="Texture2D" uid="uid://b30p5j3pxonww" path="res://assets/sprites/sv_crowd.png" id="2_neox0"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="7_wr05v"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="8_3lmr7"]
 [ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="8_ewfxd"]
+[ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="11_5jtwt"]
 
 [node name="dialogue_scene" type="CanvasLayer"]
 script = ExtResource("1_tsyg8")
@@ -127,10 +128,14 @@ text_overrun_behavior = 2
 [node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_ewfxd")
 
+[node name="StartTransition" parent="." instance=ExtResource("11_5jtwt")]
+visible = false
+
 [connection signal="active_speaker" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_active_speaker"]
 [connection signal="active_speaker" from="." to="KingDialogueBox" method="_on_dialogue_scene_active_speaker"]
 [connection signal="display_line" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_display_line"]
 [connection signal="display_line" from="." to="KingDialogueBox" method="_on_dialogue_scene_display_line"]
 [connection signal="speed_animation" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_speed_animation"]
+[connection signal="speed_animation" from="." to="KingDialogueBox" method="_on_dialogue_scene_speed_animation"]
 [connection signal="text_animation_done" from="PlayerDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
 [connection signal="text_animation_done" from="KingDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
