@@ -58,7 +58,7 @@ _data = {
 "left_right": SubResource("Animation_7tn0i")
 }
 
-[node name="Transition" type="Control"]
+[node name="ClearTransition" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 

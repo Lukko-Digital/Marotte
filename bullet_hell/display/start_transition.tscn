@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7fxxr2ugd05q"]
+
+[ext_resource type="Texture2D" uid="uid://bg6xxrye0lsqt" path="res://assets/sprites/transition_jokestart_left.png" id="1_yy3qx"]
+[ext_resource type="Texture2D" uid="uid://hq875ehyc3re" path="res://assets/sprites/transition_jokestart_right.png" id="2_mnmhg"]
+
+[sub_resource type="Animation" id="Animation_7tn0i"]
+resource_name = "start"
+length = 1.5
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1080, -0.25, 0, 0, 925.354, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.75)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1080, -0.25, 0, 0, -843.228, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.75)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Left:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -960, -0.0276301, 835.934, 0.25, 0),
+"times": PackedFloat32Array(0.85, 1.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Right:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(960, -0.25, 0, 0.25, 0, 1920, -0.0276301, -827.003, 0.25, 0),
+"times": PackedFloat32Array(0.85, 1.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ggtfr"]
+_data = {
+"start": SubResource("Animation_7tn0i")
+}
+
+[node name="StartTransition" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Left" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -960.0
+offset_bottom = 1080.0
+texture = ExtResource("1_yy3qx")
+expand_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="Left"]
+layout_mode = 0
+offset_top = 1080.0
+offset_right = 960.0
+offset_bottom = 2160.0
+color = Color(0, 0, 0, 1)
+
+[node name="Right" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1920.0
+offset_right = 2880.0
+offset_bottom = 1080.0
+texture = ExtResource("2_mnmhg")
+expand_mode = 4
+
+[node name="ColorRect2" type="ColorRect" parent="Right"]
+layout_mode = 0
+offset_top = -1080.0
+offset_right = 960.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "start"
+libraries = {
+"": SubResource("AnimationLibrary_ggtfr")
+}
