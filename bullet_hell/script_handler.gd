@@ -67,7 +67,7 @@ func _on_timer_timeout():
 
 
 func _on_word_picked(correct):
-	if advnace_condition == Advance_Conditions.PICKUP:
+	if advnace_condition == Advance_Conditions.PICKUP and correct:
 		next_line()
 
 
