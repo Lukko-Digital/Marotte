@@ -11,15 +11,20 @@ data = {
 "huh?": true
 },
 "CALL A": {
-"BEAR": false,
-"BLIND GUY": false,
-"FISH": true,
-"FOX": false
+"CALL A": true,
+"EAT ARE": false,
+"I FORGET": false
 },
 "DO YOU": {
 "AM ARE": false,
 "DO YOU": true,
 "FOR AND": false
+},
+"FISH": {
+"BEAR": false,
+"BLIND GUY": false,
+"FISH": true,
+"FOX": false
 },
 "WHAT": {
 "WHAT": true
