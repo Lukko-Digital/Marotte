@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyjcpt38w0tyo"]
+
+[ext_resource type="Script" path="res://bullet_hell/gameplay/bullet_pattern.gd" id="1_1h7jv"]
+
+[node name="bullet_pattern" type="Node2D"]
+position = Vector2(960, 540)
+script = ExtResource("1_1h7jv")
