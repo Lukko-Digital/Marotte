@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var script_file_path: String
+@onready var transition : Transition = $StartTransition
 
 var active_label: Label
 var display_in_progress = false
@@ -46,6 +47,8 @@ func parse_line(line: String):
 	var split = line.split(": ")
 	match split[0]:
 		"!transition":
+			transition.play("end")
+			await transition.transition_finished
 			get_tree().change_scene_to_file("res://bullet_hell/levels/{level}/{level}.tscn".format({"level": split[1]}))
 		"Player", "King":
 			active_speaker.emit(split[0])

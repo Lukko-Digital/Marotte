@@ -2,6 +2,7 @@ extends Node2D
 
 @export var script_file_path: String
 @export var word_groups: JSON
+@export var transition: Transition
 
 @onready var bullet_scene = preload("res://bullet_hell/gameplay/bullet.tscn")
 @onready var warning_scene = preload("res://bullet_hell/gameplay/warning.tscn")
@@ -46,6 +47,7 @@ const Direction = {
 }
 
 func _ready():
+	transition.play("start")
 	bullet_timer.wait_time = 3
 	player.position = PLAYER_SPAWN
 	Events.word_picked.connect(_on_word_picked)

@@ -45,7 +45,7 @@ func parse_line(line: String):
 		"!bullets":
 			spawn_bullets.emit(split[1])
 		"!transition":
-			transition.play()
+			transition.play("start")
 			await transition.transition_finished
 			get_tree().change_scene_to_file("res://dialogue_scene/{dialogue}.tscn".format({"dialogue": split[1]}))
 		"Player", "Jester":
