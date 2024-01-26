@@ -3,12 +3,12 @@
 [resource]
 data = {
 "A": {
-"!joke_text": "____ __ ___ ____ _ ____ ____ __ ____",
+"!joke_text": "",
 "huh": true,
 "what": true
 },
 "B": {
-"!joke_text": "____ __ ___ ____ _ ____ ____ __ ____",
+"!joke_text": "",
 "got it": true,
 "huh?": true
 },
