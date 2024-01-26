@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dja6cv76f00ic"]
+[gd_scene load_steps=8 format=3 uid="uid://dja6cv76f00ic"]
 
 [ext_resource type="PackedScene" uid="uid://dj6e7xh4njtlj" path="res://bullet_hell/bullet_hell_game.tscn" id="1_skd7g"]
 [ext_resource type="JSON" uid="uid://cjmrk1ysk2dsp" path="res://bullet_hell/levels/tutorial_level/tutorial_word_groups.tres" id="2_xbiqt"]
 [ext_resource type="Texture2D" uid="uid://do3fotxa4wlpo" path="res://assets/sprites/bh_movement_tutorial.png" id="3_mjsbp"]
 [ext_resource type="Script" path="res://bullet_hell/levels/tutorial_level/movement_tutorial.gd" id="4_52q1e"]
+[ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="5_adcmg"]
 
 [sub_resource type="Animation" id="Animation_0ugsy"]
 resource_name = "pulse"
@@ -43,3 +44,5 @@ script = ExtResource("4_52q1e")
 libraries = {
 "": SubResource("AnimationLibrary_r7vdm")
 }
+
+[node name="StartTransition" parent="." instance=ExtResource("5_adcmg")]

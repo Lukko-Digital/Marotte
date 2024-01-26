@@ -45,7 +45,6 @@ const Direction = {
 	DOWN = Vector2(0, 1)
 }
 
-
 func _ready():
 	bullet_timer.wait_time = 3
 	player.position = PLAYER_SPAWN

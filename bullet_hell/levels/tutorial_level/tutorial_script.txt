@@ -1,3 +1,4 @@
+Jester: _: 2
 Jester: What’s going on??: 2
 !dialogue_words: A
 Jester: My mental palace looks nothing like this.: pickup
