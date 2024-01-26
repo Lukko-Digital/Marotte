@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=16 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://bullet_hell/script_handler.gd" id="5_eia4t"]
 [ext_resource type="PackedScene" uid="uid://dfj2rgxbg66a0" path="res://bullet_hell/display/clear_transition.tscn" id="7_d2507"]
 [ext_resource type="PackedScene" uid="uid://bmqy68ba644tc" path="res://bullet_hell/display/bh_camera.tscn" id="7_ybxu1"]
+[ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="8_7wwqr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65c2p"]
 
@@ -99,6 +100,17 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/BulletDespawnArea"]
 position = Vector2(1196, 501)
 shape = SubResource("RectangleShape2D_upp13")
+
+[node name="JokeLabel" type="Label" parent="Environment"]
+offset_left = 702.0
+offset_top = 895.0
+offset_right = 1683.0
+offset_bottom = 983.0
+theme_override_fonts/font = ExtResource("8_7wwqr")
+theme_override_font_sizes/font_size = 50
+text = "WHAT DO YOU CALL A ____ ____ __ ____?"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="bh_player" parent="." instance=ExtResource("1_le3bt")]
 position = Vector2(1200, 500)
