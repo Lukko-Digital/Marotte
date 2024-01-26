@@ -5,7 +5,7 @@
 
 [sub_resource type="Animation" id="Animation_7tn0i"]
 resource_name = "start"
-length = 1.5
+length = 2.3
 step = 0.05
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -15,8 +15,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-1080, -0.25, 0, 0, 925.354, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.75)
+"points": PackedFloat32Array(-1080, -0.25, 0, 0, 1055.74, 0, -0.6, 0, 0.15, -176.275),
+"times": PackedFloat32Array(0, 1.25)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -26,8 +26,8 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1080, -0.25, 0, 0, -843.228, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.75)
+"points": PackedFloat32Array(1124.4, -0.25, 0, 0, -1085.11, 0, -0.6, 0, 0.15, -255.642),
+"times": PackedFloat32Array(0, 1.25)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -37,8 +37,8 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -960, -0.0276301, 835.934, 0.25, 0),
-"times": PackedFloat32Array(0.85, 1.5)
+"points": PackedFloat32Array(0, -0.25, 0, 0.4, -5.00757, -980, 0, 85.2388, 0.25, 0),
+"times": PackedFloat32Array(1.65, 2.3)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -48,8 +48,8 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(960, -0.25, 0, 0.25, 0, 1920, -0.0276301, -827.003, 0.25, 0),
-"times": PackedFloat32Array(0.85, 1.5)
+"points": PackedFloat32Array(960, -0.25, 0, 0.4, -0.0634766, 1920, 0, -57.7782, 0.25, 0),
+"times": PackedFloat32Array(1.65, 2.3)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ggtfr"]
@@ -63,8 +63,8 @@ anchors_preset = 0
 
 [node name="Left" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -960.0
-offset_bottom = 1080.0
+offset_top = -1080.0
+offset_right = 972.0
 texture = ExtResource("1_yy3qx")
 expand_mode = 4
 
@@ -77,9 +77,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="Right" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1920.0
-offset_right = 2880.0
-offset_bottom = 1080.0
+offset_left = 960.0
+offset_top = 1124.4
+offset_right = 1927.0
+offset_bottom = 2204.4
 texture = ExtResource("2_mnmhg")
 expand_mode = 4
 
