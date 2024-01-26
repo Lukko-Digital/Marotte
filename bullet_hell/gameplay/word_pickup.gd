@@ -20,7 +20,7 @@ func start(start_pos: Vector2, args: Array):
 
 
 func _ready():
-	#label.text = word
+	label.text = word
 	var rect = RectangleShape2D.new()
 	rect.size = label.size
 	hitbox.shape = rect
