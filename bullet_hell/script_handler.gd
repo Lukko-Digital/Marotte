@@ -56,8 +56,8 @@ func parse_line(line: String):
 				"hit":
 					advance_condition = Advance_Conditions.HIT
 				_:
-					if split[2].is_valid_int():
-						timer.start(int(split[2]))
+					if split[2].is_valid_float():
+						timer.start(float(split[2]))
 						advance_condition = Advance_Conditions.TIME
 					else:
 						assert(false, "Error: Invalid advance condition")
