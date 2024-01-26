@@ -4,7 +4,7 @@ var game_script: PackedStringArray
 var current_line: int = 0
 
 enum Advance_Conditions {TIME, PICKUP, HIT}
-var advnace_condition: Advance_Conditions
+var advance_condition: Advance_Conditions
 
 @onready var timer: Timer = $Timer
 
@@ -48,13 +48,13 @@ func parse_line(line: String):
 			
 			match split[2]:
 				"pickup":
-					advnace_condition = Advance_Conditions.PICKUP
+					advance_condition = Advance_Conditions.PICKUP
 				"hit":
-					advnace_condition = Advance_Conditions.HIT
+					advance_condition = Advance_Conditions.HIT
 				_:
 					if split[2].is_valid_int():
 						timer.start(int(split[2]))
-						advnace_condition = Advance_Conditions.TIME
+						advance_condition = Advance_Conditions.TIME
 					else:
 						assert(false, "Error: Invalid advance condition")
 		_:
@@ -62,15 +62,15 @@ func parse_line(line: String):
 
 
 func _on_timer_timeout():
-	if advnace_condition == Advance_Conditions.TIME:
+	if advance_condition == Advance_Conditions.TIME:
 		next_line()
 
 
 func _on_word_picked(correct):
-	if advnace_condition == Advance_Conditions.PICKUP and correct:
+	if advance_condition == Advance_Conditions.PICKUP and correct:
 		next_line()
 
 
 func _on_bh_player_hit():
-	if advnace_condition == Advance_Conditions.HIT:
+	if advance_condition == Advance_Conditions.HIT:
 		next_line()
