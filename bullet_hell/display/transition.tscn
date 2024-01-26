@@ -29,6 +29,28 @@ tracks/1/keys = {
 "points": PackedFloat32Array(-960, -0.25, 0, 0, 984, 0, -0.5, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.75)
 }
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.23, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.75)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.23, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.75)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ggtfr"]
 _data = {
@@ -54,12 +76,10 @@ offset_bottom = 1080.0
 texture = ExtResource("2_uuj27")
 expand_mode = 4
 
-[node name="Guy" type="TextureRect" parent="."]
-layout_mode = 0
-offset_bottom = 464.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(888, 528)
+scale = Vector2(0.23, 0.23)
 texture = ExtResource("3_soeb5")
-expand_mode = 4
-stretch_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "left_right"
