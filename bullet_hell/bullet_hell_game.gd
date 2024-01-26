@@ -34,7 +34,7 @@ const Word_Spawn = {
 }
 
 ## Bullet Modes
-enum Bullet_Modes {NONE, CIRCLE}
+enum Bullet_Modes {NONE, CIRCLE, DOUBLE_CIRCLE}
 var active_bullet_mode = Bullet_Modes.NONE
 
 ## Direction enum
@@ -47,7 +47,7 @@ const Direction = {
 
 
 func _ready():
-	bullet_timer.wait_time = 2
+	bullet_timer.wait_time = 3
 	player.position = PLAYER_SPAWN
 	Events.word_picked.connect(_on_word_picked)
 
@@ -126,12 +126,16 @@ func _on_script_handler_spawn_bullets(pattern):
 		"circle":
 			active_bullet_mode = Bullet_Modes.CIRCLE
 			bullet_timer.start()
-			spawn_bullets()
+		"double_circle":
+			active_bullet_mode = Bullet_Modes.DOUBLE_CIRCLE
+			bullet_timer.start()
 
 ## General Bullet Pattern Spawning
 func spawn_bullets():
 	match active_bullet_mode:
 		Bullet_Modes.CIRCLE:
+			circle(Direction.values().pick_random(), 8)
+		Bullet_Modes.DOUBLE_CIRCLE:
 			circle(Direction.values().pick_random(), 8)
 			circle(Direction.values().pick_random(), 8)
 	bullet_spawn_sound.play()

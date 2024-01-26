@@ -33,8 +33,8 @@ Jester: In situations like this, your subconscious knows the answer: 3
 Jester: (hint hint it's the fish): pickup
 Jester: Incredible!: 1
 Jester: ...: 1
+!bullets: double_circle
 Jester: Okay that's enough enthusiasm for me today: 8
-!bullets: circle
 !joke_words: WITH NO EYES
 Jester: We approach the climax: 3
 Jester: It's a gimmie! The final line!: pickup
