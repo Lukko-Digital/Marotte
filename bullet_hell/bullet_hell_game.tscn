@@ -1,14 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=16 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
 [ext_resource type="Script" path="res://bullet_hell/display/thinking_bar.gd" id="2_uwvi3"]
 [ext_resource type="PackedScene" uid="uid://c5rvnoi1v7yxh" path="res://bullet_hell/display/bh_ui.tscn" id="3_5sicw"]
-[ext_resource type="Script" path="res://bullet_hell/display/JokeLabel.gd" id="4_63vbv"]
 [ext_resource type="Script" path="res://bullet_hell/script_handler.gd" id="5_eia4t"]
 [ext_resource type="PackedScene" uid="uid://dfj2rgxbg66a0" path="res://bullet_hell/display/clear_transition.tscn" id="7_d2507"]
 [ext_resource type="PackedScene" uid="uid://bmqy68ba644tc" path="res://bullet_hell/display/bh_camera.tscn" id="7_ybxu1"]
-[ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="8_7wwqr"]
+[ext_resource type="PackedScene" uid="uid://cyjcpt38w0tyo" path="res://bullet_hell/gameplay/bullet_pattern.tscn" id="8_jtn82"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65c2p"]
 
@@ -64,8 +63,6 @@ value = 50.0
 show_percentage = false
 script = ExtResource("2_uwvi3")
 
-[node name="BulletTimer" type="Timer" parent="Environment"]
-
 [node name="Background" type="ColorRect" parent="Environment"]
 z_index = -10
 anchors_preset = 15
@@ -102,18 +99,6 @@ collision_mask = 0
 position = Vector2(1196, 501)
 shape = SubResource("RectangleShape2D_upp13")
 
-[node name="JokeLabel" type="Label" parent="Environment"]
-offset_left = 702.0
-offset_top = 895.0
-offset_right = 1683.0
-offset_bottom = 983.0
-theme_override_fonts/font = ExtResource("8_7wwqr")
-theme_override_font_sizes/font_size = 50
-text = "WHAT DO YOU CALL A ____ ____ __ ____?"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("4_63vbv")
-
 [node name="bh_player" parent="." instance=ExtResource("1_le3bt")]
 position = Vector2(1200, 500)
 collision_mask = 2
@@ -131,15 +116,19 @@ script = ExtResource("5_eia4t")
 visible = false
 
 [connection signal="init_joke_text" from="." to="Environment/JokeLabel" method="_on_bullet_hell_game_init_joke_text"]
+[node name="bullet_pattern" parent="." node_paths=PackedStringArray("bullet_spawn_sound") instance=ExtResource("8_jtn82")]
+position = Vector2(1200, 500)
+bullet_spawn_sound = NodePath("../SoundEffects/BulletSpawn")
+
+[connection signal="spawn_bullet_pattern" from="." to="bullet_pattern" method="_on_bullet_hell_game_spawn_bullet_pattern"]
 [connection signal="timeout" from="Environment/WordTimer" to="." method="_on_word_timer_timeout"]
 [connection signal="timeout" from="Environment/WordTimer" to="bh_ui" method="_on_word_timer_timeout"]
-[connection signal="timeout" from="Environment/BulletTimer" to="." method="_on_bullet_timer_timeout"]
 [connection signal="hit" from="bh_player" to="bh_ui" method="_on_bh_player_hit"]
 [connection signal="hit" from="bh_player" to="bh_camera" method="_on_bh_player_hit"]
 [connection signal="hit" from="bh_player" to="script_handler" method="_on_bh_player_hit"]
 [connection signal="active_speaker" from="script_handler" to="bh_ui" method="_on_script_handler_active_speaker"]
 [connection signal="display_line" from="script_handler" to="bh_ui" method="_on_script_handler_display_line"]
-[connection signal="spawn_bullets" from="script_handler" to="." method="_on_script_handler_spawn_bullets"]
+[connection signal="spawn_bullets" from="script_handler" to="bullet_pattern" method="_on_script_handler_spawn_bullets"]
 [connection signal="spawn_dialogue_words" from="script_handler" to="." method="_on_script_handler_spawn_dialogue_words"]
 [connection signal="spawn_joke_words" from="script_handler" to="." method="_on_script_handler_spawn_joke_words"]
 [connection signal="timeout" from="script_handler/Timer" to="script_handler" method="_on_timer_timeout"]

@@ -25,6 +25,7 @@ data = {
 "FOR AND": false
 },
 "FISH": {
+"!joke_text": "WHAT DO YOU CALL A FISH ____ __ ____",
 "BEAR": false,
 "BLIND GUY": false,
 "FISH": true,

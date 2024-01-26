@@ -9,7 +9,7 @@ extends Node2D
 @onready var warning_scene = preload("res://bullet_hell/gameplay/warning.tscn")
 @onready var word_scene = preload("res://bullet_hell/gameplay/word_pickup.tscn")
 @onready var word_timer: Timer = $Environment/WordTimer
-@onready var bullet_timer: Timer = $Environment/BulletTimer
+#@onready var bullet_timer: Timer = $Environment/BulletTimer
 @onready var player: CharacterBody2D = $bh_player
 
 ## Sound Effects
@@ -38,8 +38,9 @@ const Word_Spawn = {
 }
 
 ## Bullet Modes
-enum Bullet_Modes {NONE, CIRCLE, DOUBLE_CIRCLE}
-var active_bullet_mode = Bullet_Modes.NONE
+#enum Bullet_Modes {NONE, CIRCLE, DOUBLE_CIRCLE}
+var active_bullet_mode = "none"
+signal spawn_bullet_pattern(mode: String, args: Array)
 
 ## Direction enum
 const Direction = {
@@ -51,7 +52,7 @@ const Direction = {
 
 func _ready():
 	transition.play("start")
-	bullet_timer.wait_time = 3
+#	bullet_timer.wait_time = 3
 	player.position = PLAYER_SPAWN
 	Events.word_picked.connect(_on_word_picked)
 	init_joke_text.emit(start_joke_text)
@@ -123,69 +124,74 @@ func spawn_words(group):
 ## ============================== Bullets ==============================
 
 
-## Bullet Timer
-func _on_bullet_timer_timeout():
-	spawn_bullets()
+### Bullet Timer
+#func _on_bullet_timer_timeout():
+#	spawn_bullets()
 
 ## When the script handler says to spawn bullets
-func _on_script_handler_spawn_bullets(pattern):
-	match pattern:
-		"none":
-			active_bullet_mode = Bullet_Modes.NONE
-			bullet_timer.stop()
-		"still":
-			## Very specific only used in the tutorial
-			await get_tree().create_timer(1).timeout
-			spawn(bullet_scene, Word_Spawn.TOP_RIGHT, [Vector2()])
-		"circle":
-			active_bullet_mode = Bullet_Modes.CIRCLE
-			bullet_timer.start()
-		"double_circle":
-			active_bullet_mode = Bullet_Modes.DOUBLE_CIRCLE
-			bullet_timer.start()
+#func _on_script_handler_spawn_bullets(pattern):
+#	match pattern:
+#		"none":
+#			active_bullet_mode = "none"
+##			bullet_timer.stop()
+#		"still":
+#			## Very specific only used in the tutorial
+#			await get_tree().create_timer(1).timeout
+#			spawn(bullet_scene, Word_Spawn.TOP_RIGHT, [Vector2()])
+#		_:
+#			active_bullet_mode = pattern
+##			bullet_timer.start()
+#
+#	spawn_bullet_pattern.emit(active_bullet_mode)
+#		"circle":
+#			active_bullet_mode = Bullet_Modes.CIRCLE
+#			bullet_timer.start()
+#		"double_circle":
+#			active_bullet_mode = Bullet_Modes.DOUBLE_CIRCLE
+#			bullet_timer.start()
 
 ## General Bullet Pattern Spawning
-func spawn_bullets():
-	match active_bullet_mode:
-		Bullet_Modes.CIRCLE:
-			circle(Direction.values().pick_random(), 8)
-		Bullet_Modes.DOUBLE_CIRCLE:
-			circle(Direction.values().pick_random(), 8)
-			circle(Direction.values().pick_random(), 8)
-	bullet_spawn_sound.play()
+#func spawn_bullets():
+#	spawn_bullet_pattern.emit(active_bullet_mode)
+##		Bullet_Modes.CIRCLE:
+##			circle(Direction.values().pick_random(), 8)
+##		Bullet_Modes.DOUBLE_CIRCLE:
+##			circle(Direction.values().pick_random(), 8)
+##			circle(Direction.values().pick_random(), 8)
+#	bullet_spawn_sound.play()
 
 
 ## Circle shot
-func circle(direction: Vector2, num_shots=12):
-	var spawn_position: Vector2
-	var warning_dir = direction.rotated(PI)
-	var shot_base_dir = direction.rotated(PI/2)
-	
-	match direction:
-		Direction.LEFT:
-			spawn_position = Vector2(LEFT_X, randi_range(TOP_Y, BOTTOM_Y))
-		Direction.RIGHT:
-			spawn_position = Vector2(RIGHT_X, randi_range(TOP_Y, BOTTOM_Y))
-		Direction.UP:
-			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), TOP_Y)
-		Direction.DOWN:
-			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
-	
-	spawn(warning_scene, spawn_position, [warning_dir])
-	await get_tree().create_timer(0.5).timeout
-	for i in range(num_shots):
-		spawn(
-			bullet_scene,
-			spawn_position,
-			[shot_base_dir.rotated(PI/num_shots*i)]
-		)
-
-
-## Random single shot
-func random_from_left():
-	var instance = bullet_scene.instantiate()
-	instance.start(
-		Vector2(LEFT_X, randi_range(TOP_Y, BOTTOM_Y)),
-		Vector2(1, randf_range(0,1))
-	)
-	add_child(instance)
+#func circle(direction: Vector2, num_shots=12):
+#	var spawn_position: Vector2
+#	var warning_dir = direction.rotated(PI)
+#	var shot_base_dir = direction.rotated(PI/2)
+#
+#	match direction:
+#		Direction.LEFT:
+#			spawn_position = Vector2(LEFT_X, randi_range(TOP_Y, BOTTOM_Y))
+#		Direction.RIGHT:
+#			spawn_position = Vector2(RIGHT_X, randi_range(TOP_Y, BOTTOM_Y))
+#		Direction.UP:
+#			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), TOP_Y)
+#		Direction.DOWN:
+#			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
+#
+#	spawn(warning_scene, spawn_position, [warning_dir])
+#	await get_tree().create_timer(0.5).timeout
+#	for i in range(num_shots):
+#		spawn(
+#			bullet_scene,
+#			spawn_position,
+#			[shot_base_dir.rotated(PI/num_shots*i)]
+#		)
+#
+#
+### Random single shot
+#func random_from_left():
+#	var instance = bullet_scene.instantiate()
+#	instance.start(
+#		Vector2(LEFT_X, randi_range(TOP_Y, BOTTOM_Y)),
+#		Vector2(1, randf_range(0,1))
+#	)
+#	add_child(instance)
