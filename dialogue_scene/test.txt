@@ -1,8 +1,9 @@
-King: GO ON
-King: TRY YOUR BEST
-Player: i... i will...
-King: WHAT'S THAT? SAY IT WITH YOUR CHEST BOY.
-Player: ...i will!
-King: FOR THE FIRST JOKE
-King: I PROPOSE A PUN
-Player: uhhh... let me think...
+King: GO ON: keypress
+King: TRY YOUR BEST: keypress
+Player: i... i will...: keypress
+King: WHAT'S THAT? SAY IT WITH YOUR CHEST BOY.: keypress
+Player: ...i will!: keypress
+King: FOR THE FIRST JOKE: keypress
+King: I PROPOSE A PUN: keypress
+Player: uhhh... let me think...: keypress
+!transition: tutorial_level
