@@ -5,14 +5,13 @@ Jester: My mental palace looks nothing like this.: pickup
 Jester: That red bar over there is your “confidence”: 3
 Jester: As long as you can formulate the opening to your joke without losing all your confidence: 5
 Jester: The punch line will be no problem.: 3
-Jester: Until then, time is frozen in the real world.: 3
 Jester: We jesters only have to win this mental battle.: 3
 Jester: For me, it usually has to do with forgetting my material.: 3
 !dialogue_words: B: 0
 Jester: But for you it’s something else...: pickup
 !bullets: still: 0
-Jester: That red circle is called a “LEVEL UP” Try touching it.: hit
-Jester: Just kidding it was obviously harmful: 3
+Jester: That red circle is called a “CONFIDENCE BOOST” Try touching it.: hit
+Jester: Just kidding: 3
 Jester: Nine more of those and your confidence will be too low to deliver your joke.: 4
 Jester: Coming up with each word will require you to survive a bunch of those: 4
 !bullets: circle: 0
