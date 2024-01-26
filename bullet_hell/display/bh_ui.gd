@@ -61,7 +61,7 @@ func _on_bh_player_hit():
 	color_animation.play("red_flash")
 
 
-func _on_word_picked(correct):
+func _on_word_picked(correct, _joke_text):
 	if correct:
 		current_hp += 2
 		color_animation.play("white_flash")
