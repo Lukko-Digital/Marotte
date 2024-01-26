@@ -1,4 +1,5 @@
-Jester: What’s going on??: 2
+Jester: : 2
+Jester: What’s going on??: 3
 !dialogue_words: A: 0
 Jester: My mental palace looks nothing like this.: pickup
 Jester: That red bar over there is your “confidence”: 3
