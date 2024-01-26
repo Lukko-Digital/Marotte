@@ -112,6 +112,9 @@ func _on_script_handler_spawn_bullets(pattern):
 		"none":
 			active_bullet_mode = Bullet_Modes.NONE
 			bullet_timer.stop()
+		"still":
+			await get_tree().create_timer(0.05).timeout
+			spawn(bullet_scene, Word_Spawn.TOP_RIGHT, [Vector2()])
 		"circle":
 			active_bullet_mode = Bullet_Modes.CIRCLE
 			bullet_timer.start()
@@ -124,6 +127,7 @@ func spawn_bullets():
 			circle(Direction.values().pick_random(), 8)
 			circle(Direction.values().pick_random(), 8)
 	bullet_spawn_sound.play()
+
 
 ## Circle shot
 func circle(direction: Vector2, num_shots=12):

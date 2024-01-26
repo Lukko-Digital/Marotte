@@ -2,7 +2,9 @@ extends Node2D
 
 var game_script: PackedStringArray
 var current_line: int = 0
-var advance_on_pickup: bool = false
+
+enum Advance_Conditions {TIME, PICKUP, HIT}
+var advnace_condition: Advance_Conditions
 
 @onready var timer: Timer = $Timer
 
@@ -44,22 +46,31 @@ func parse_line(line: String):
 			active_speaker.emit(split[0])
 			display_line.emit(split[1])
 			
-			var advance_condition = split[2]
-			if advance_condition == "pickup":
-				timer.stop()
-				advance_on_pickup = true
-			elif advance_condition.is_valid_int():
-				timer.start(int(advance_condition))
-			else:
-				assert(false, "Error: Invalid advance condition")
+			match split[2]:
+				"pickup":
+					advnace_condition = Advance_Conditions.PICKUP
+				"hit":
+					advnace_condition = Advance_Conditions.HIT
+				_:
+					if split[2].is_valid_int():
+						timer.start(int(split[2]))
+						advnace_condition = Advance_Conditions.TIME
+					else:
+						assert(false, "Error: Invalid advance condition")
 		_:
 			assert(false, "Error: Invalid tag in game script")
 
 
 func _on_timer_timeout():
-	next_line()
+	if advnace_condition == Advance_Conditions.TIME:
+		next_line()
 
 
 func _on_word_picked(correct):
-	if correct and advance_on_pickup:
+	if advnace_condition == Advance_Conditions.PICKUP:
+		next_line()
+
+
+func _on_bh_player_hit():
+	if advnace_condition == Advance_Conditions.HIT:
 		next_line()
