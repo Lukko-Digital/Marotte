@@ -79,16 +79,17 @@ func _on_word_timer_timeout():
 	pass
 
 
+## When the script handler says to spawn dialogue words
 func _on_script_handler_spawn_dialogue_words(group):
 	await get_tree().create_timer(2).timeout
 	spawn_words(group)
 
 
+## When the script handler says to spawn joke words
 func _on_script_handler_spawn_joke_words(group):
 	word_timer.start(3)
 	await get_tree().create_timer(3).timeout
 	spawn_words(group)
-
 
 
 ## Spawn words in the four corners, with one being incorrect
