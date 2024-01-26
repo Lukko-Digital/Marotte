@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dja6cv76f00ic"]
+[gd_scene load_steps=9 format=3 uid="uid://dja6cv76f00ic"]
 
 [ext_resource type="PackedScene" uid="uid://dj6e7xh4njtlj" path="res://bullet_hell/bullet_hell_game.tscn" id="1_skd7g"]
 [ext_resource type="JSON" uid="uid://cjmrk1ysk2dsp" path="res://bullet_hell/levels/tutorial_level/tutorial_word_groups.tres" id="2_xbiqt"]
@@ -23,8 +23,25 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.54902)]
 }
 
+[sub_resource type="Animation" id="Animation_8fari"]
+resource_name = "fade"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.784314), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r7vdm"]
 _data = {
+"fade": SubResource("Animation_8fari"),
 "pulse": SubResource("Animation_0ugsy")
 }
 
@@ -36,6 +53,7 @@ word_groups = ExtResource("2_xbiqt")
 transition = NodePath("../StartTransition")
 
 [node name="MovementTutorial" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(1196.65, 315.094)
 scale = Vector2(0.120112, 0.120112)
 texture = ExtResource("3_mjsbp")
@@ -47,3 +65,6 @@ libraries = {
 }
 
 [node name="StartTransition" parent="." instance=ExtResource("5_adcmg")]
+visible = false
+
+[connection signal="animation_finished" from="MovementTutorial/AnimationPlayer" to="MovementTutorial" method="_on_animation_player_animation_finished"]
