@@ -130,6 +130,7 @@ script = ExtResource("5_eia4t")
 [node name="ClearTransition" parent="script_handler" instance=ExtResource("7_d2507")]
 visible = false
 
+[connection signal="init_joke_text" from="." to="Environment/JokeLabel" method="_on_bullet_hell_game_init_joke_text"]
 [connection signal="timeout" from="Environment/WordTimer" to="." method="_on_word_timer_timeout"]
 [connection signal="timeout" from="Environment/WordTimer" to="bh_ui" method="_on_word_timer_timeout"]
 [connection signal="timeout" from="Environment/BulletTimer" to="." method="_on_bullet_timer_timeout"]

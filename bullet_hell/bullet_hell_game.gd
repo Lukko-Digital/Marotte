@@ -2,6 +2,7 @@ extends Node2D
 
 @export var script_file_path: String
 @export var word_groups: JSON
+@export var start_joke_text: String
 @export var transition: Transition
 
 @onready var bullet_scene = preload("res://bullet_hell/gameplay/bullet.tscn")
@@ -16,6 +17,8 @@ extends Node2D
 @onready var word_spawn_sound: AudioStreamPlayer = $SoundEffects/WordSpawn
 @onready var correct_word_sound: AudioStreamPlayer = $SoundEffects/CorrectWord
 @onready var incorrect_word_sound: AudioStreamPlayer = $SoundEffects/IncorrectWord
+
+signal init_joke_text(joke_text)
 
 ## Wall Locations
 const LEFT_X = 758
@@ -51,6 +54,7 @@ func _ready():
 	bullet_timer.wait_time = 3
 	player.position = PLAYER_SPAWN
 	Events.word_picked.connect(_on_word_picked)
+	init_joke_text.emit(start_joke_text)
 
 
 ## Reset upon word pickup

@@ -50,6 +50,7 @@ _data = {
 [node name="bullet_hell_game" parent="." node_paths=PackedStringArray("transition") instance=ExtResource("1_skd7g")]
 script_file_path = "res://bullet_hell/levels/tutorial_level/tutorial_script.txt"
 word_groups = ExtResource("2_xbiqt")
+start_joke_text = "____ __ ___ ____ _ ____ ____ __ ____"
 transition = NodePath("../StartTransition")
 
 [node name="MovementTutorial" type="Sprite2D" parent="."]
@@ -65,5 +66,6 @@ libraries = {
 }
 
 [node name="StartTransition" parent="." instance=ExtResource("5_adcmg")]
+visible = false
 
 [connection signal="animation_finished" from="MovementTutorial/AnimationPlayer" to="MovementTutorial" method="_on_animation_player_animation_finished"]
