@@ -39,30 +39,29 @@ func parse_line(line: String):
 	match split[0]:
 		"!dialogue_words":
 			spawn_dialogue_words.emit(split[1])
-			next_line()
 		"!joke_words":
 			spawn_joke_words.emit(split[1])
-			next_line()
 		"!bullets":
 			spawn_bullets.emit(split[1])
-			next_line()
 		"Player", "Jester":
 			active_speaker.emit(split[0])
 			display_line.emit(split[1])
-			
-			match split[2]:
-				"pickup":
-					advance_condition = Advance_Conditions.PICKUP
-				"hit":
-					advance_condition = Advance_Conditions.HIT
-				_:
-					if split[2].is_valid_float():
-						timer.start(float(split[2]))
-						advance_condition = Advance_Conditions.TIME
-					else:
-						assert(false, "Error: Invalid advance condition")
 		_:
 			assert(false, "Error: Invalid tag in game script")
+
+	match split[2]:
+		"0":
+			next_line()
+		"pickup":
+			advance_condition = Advance_Conditions.PICKUP
+		"hit":
+			advance_condition = Advance_Conditions.HIT
+		_:
+			if split[2].is_valid_float():
+				timer.start(float(split[2]))
+				advance_condition = Advance_Conditions.TIME
+			else:
+				assert(false, "Error: Invalid advance condition")
 
 
 func _on_timer_timeout():
