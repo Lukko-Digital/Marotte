@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c5rvnoi1v7yxh"]
+[gd_scene load_steps=20 format=3 uid="uid://c5rvnoi1v7yxh"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/bh_ui.gd" id="1_3ae8p"]
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="2_i8vm2"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="4_feqy3"]
 [ext_resource type="Texture2D" uid="uid://bh1hmydut2hns" path="res://assets/sprites/bh_thought_bubble.png" id="4_wqoy2"]
 [ext_resource type="FontFile" uid="uid://cwxn07dib3abf" path="res://assets/fonts/Jokerfont-Regular.ttf" id="6_c052r"]
+[ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="8_ijuq7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
 bg_color = Color(0, 0, 0, 1)
@@ -221,6 +222,9 @@ text_overrun_behavior = 1
 
 [node name="TextTimer" type="Timer" parent="ThoughtBubble/Label"]
 one_shot = true
+
+[node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="ThoughtBubble"]
+stream = ExtResource("8_ijuq7")
 
 [node name="ScreenColor" type="ColorRect" parent="."]
 layout_mode = 1
