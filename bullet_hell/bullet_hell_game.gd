@@ -144,36 +144,36 @@ func spawn_bullets():
 
 
 ## Circle shot
-func circle(direction: Vector2, num_shots=12):
-	var spawn_position: Vector2
-	var warning_dir = direction.rotated(PI)
-	var shot_base_dir = direction.rotated(PI/2)
-	
-	match direction:
-		Direction.LEFT:
-			spawn_position = Vector2(LEFT_X, randi_range(TOP_Y, BOTTOM_Y))
-		Direction.RIGHT:
-			spawn_position = Vector2(RIGHT_X, randi_range(TOP_Y, BOTTOM_Y))
-		Direction.UP:
-			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), TOP_Y)
-		Direction.DOWN:
-			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
-	
-	spawn(warning_scene, spawn_position, [warning_dir])
-	await get_tree().create_timer(0.5).timeout
-	for i in range(num_shots):
-		spawn(
-			bullet_scene,
-			spawn_position,
-			[shot_base_dir.rotated(PI/num_shots*i)]
-		)
-
-
-## Random single shot
-func random_from_left():
-	var instance = bullet_scene.instantiate()
-	instance.start(
-		Vector2(LEFT_X, randi_range(TOP_Y, BOTTOM_Y)),
-		Vector2(1, randf_range(0,1))
-	)
-	add_child(instance)
+#func circle(direction: Vector2, num_shots=12):
+#	var spawn_position: Vector2
+#	var warning_dir = direction.rotated(PI)
+#	var shot_base_dir = direction.rotated(PI/2)
+#
+#	match direction:
+#		Direction.LEFT:
+#			spawn_position = Vector2(LEFT_X, randi_range(TOP_Y, BOTTOM_Y))
+#		Direction.RIGHT:
+#			spawn_position = Vector2(RIGHT_X, randi_range(TOP_Y, BOTTOM_Y))
+#		Direction.UP:
+#			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), TOP_Y)
+#		Direction.DOWN:
+#			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
+#
+#	spawn(warning_scene, spawn_position, [warning_dir])
+#	await get_tree().create_timer(0.5).timeout
+#	for i in range(num_shots):
+#		spawn(
+#			bullet_scene,
+#			spawn_position,
+#			[shot_base_dir.rotated(PI/num_shots*i)]
+#		)
+#
+#
+### Random single shot
+#func random_from_left():
+#	var instance = bullet_scene.instantiate()
+#	instance.start(
+#		Vector2(LEFT_X, randi_range(TOP_Y, BOTTOM_Y)),
+#		Vector2(1, randf_range(0,1))
+#	)
+#	add_child(instance)
