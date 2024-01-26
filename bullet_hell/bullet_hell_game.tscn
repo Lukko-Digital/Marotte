@@ -113,6 +113,7 @@ script = ExtResource("5_eia4t")
 [node name="Timer" type="Timer" parent="script_handler"]
 
 [connection signal="timeout" from="Environment/WordTimer" to="." method="_on_word_timer_timeout"]
+[connection signal="timeout" from="Environment/WordTimer" to="bh_ui" method="_on_word_timer_timeout"]
 [connection signal="timeout" from="Environment/BulletTimer" to="." method="_on_bullet_timer_timeout"]
 [connection signal="hit" from="bh_player" to="bh_ui" method="_on_bh_player_hit"]
 [connection signal="hit" from="bh_player" to="bh_camera" method="_on_bh_player_hit"]

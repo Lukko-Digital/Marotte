@@ -66,6 +66,10 @@ func _on_word_picked(correct):
 		color_animation.play("red_flash")
 
 
+func _on_word_timer_timeout():
+	color_animation.play("white_flash")
+
+
 func _on_script_handler_active_speaker(speaker):
 	match speaker:
 		"Player":
