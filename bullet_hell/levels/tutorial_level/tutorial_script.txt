@@ -49,4 +49,4 @@ Jester: Okay that's enough enthusiasm for me today: 10
 Jester: We approach the climax: 3
 Jester: It's a gimmie! The final line!: pickup
 !bullets: none: 0
-!transition: dialogue_scene
+!transition: dialogue_scene: 0
