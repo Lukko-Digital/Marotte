@@ -9,6 +9,11 @@ Jester: We jesters only have to win this mental battle.: 3
 Jester: For me, it usually has to do with forgetting my material.: 3
 !words: B
 Jester: But for you it’s something else...: pickup
-Jester: That red circle is called a “LEVEL UP” Try touching it.: 3
-Jester: Nah I’m just kidding it’s obviously harmful: 3
-Jester: But just run into it anyway it so I can progress my explanation: 3
+!bullets: still
+Jester: That red circle is called a “LEVEL UP” Try touching it.: hit
+Jester: Just kidding it was obviously harmful: 3
+Jester: Nine more of those and your confidence will be too low to deliver your joke.: 4
+Jester: Coming up with each word will require you to survive a bunch of those: 4
+Jester: Just like this: 3
+!bullets: circle
+Jester: : 2
