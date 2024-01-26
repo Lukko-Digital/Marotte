@@ -1,10 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=14 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
+[ext_resource type="Script" path="res://bullet_hell/display/thinking_bar.gd" id="2_uwvi3"]
 [ext_resource type="PackedScene" uid="uid://c5rvnoi1v7yxh" path="res://bullet_hell/display/bh_ui.tscn" id="3_5sicw"]
 [ext_resource type="Script" path="res://bullet_hell/script_handler.gd" id="5_eia4t"]
 [ext_resource type="PackedScene" uid="uid://bmqy68ba644tc" path="res://bullet_hell/display/bh_camera.tscn" id="7_ybxu1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65c2p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6x2by"]
+bg_color = Color(1, 1, 1, 0.156863)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_fpm7c"]
 a = Vector2(758, 73)
@@ -43,6 +49,17 @@ script = ExtResource("1_ruomc")
 [node name="WordTimer" type="Timer" parent="Environment"]
 wait_time = 5.0
 one_shot = true
+
+[node name="ThinkingBar" type="ProgressBar" parent="Environment/WordTimer"]
+offset_left = 702.0
+offset_top = 895.0
+offset_right = 1683.0
+offset_bottom = 983.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_65c2p")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6x2by")
+value = 50.0
+show_percentage = false
+script = ExtResource("2_uwvi3")
 
 [node name="BulletTimer" type="Timer" parent="Environment"]
 
@@ -103,5 +120,6 @@ script = ExtResource("5_eia4t")
 [connection signal="active_speaker" from="script_handler" to="bh_ui" method="_on_script_handler_active_speaker"]
 [connection signal="display_line" from="script_handler" to="bh_ui" method="_on_script_handler_display_line"]
 [connection signal="spawn_bullets" from="script_handler" to="." method="_on_script_handler_spawn_bullets"]
-[connection signal="spawn_words" from="script_handler" to="." method="_on_script_handler_spawn_words"]
+[connection signal="spawn_dialogue_words" from="script_handler" to="." method="_on_script_handler_spawn_dialogue_words"]
+[connection signal="spawn_joke_words" from="script_handler" to="." method="_on_script_handler_spawn_joke_words"]
 [connection signal="timeout" from="script_handler/Timer" to="script_handler" method="_on_timer_timeout"]
