@@ -14,6 +14,27 @@ Jester: That red circle is called a “LEVEL UP” Try touching it.: hit
 Jester: Just kidding it was obviously harmful: 3
 Jester: Nine more of those and your confidence will be too low to deliver your joke.: 4
 Jester: Coming up with each word will require you to survive a bunch of those: 4
-Jester: Just like this: 3
 !bullets: circle
-Jester: : 2
+Jester: Just like this: 3
+Jester: 5: 1
+Jester: 4: 1
+Jester: 3: 1
+Jester: 2: 1
+Jester: 1: 1
+!words: WHAT
+Jester: There it is! The starting word!: pickup
+!words: DO YOU
+Jester: Sometimes you'll need to use logic to figure out the next part of the joke: pickup
+Jester: Nice!: 1
+!words: CALL A
+Jester: I'll let you figure this one out: pickup
+Jester: In situations like this, your subconscious knows the answer: 4
+!words: FISH
+Jester: (hint hint it's the fish): pickup
+Jester: Incredible!: 1
+Jester: ...: 1
+Jester: Okay that's enough enthusiasm for me today: 8
+!bullets: circle
+Jester: We approach the climax: 3
+!words: WITH NO EYES
+Jester: It's a gimmie! The final line!: pickup

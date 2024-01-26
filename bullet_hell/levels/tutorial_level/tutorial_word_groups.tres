@@ -9,5 +9,22 @@ data = {
 "B": {
 "got it": true,
 "huh?": true
+},
+"CALL A": {
+"BEAR": false,
+"BLIND GUY": false,
+"FISH": true,
+"FOX": false
+},
+"DO YOU": {
+"AM ARE": false,
+"DO YOU": true,
+"FOR AND": false
+},
+"WHAT": {
+"WHAT": true
+},
+"WITH NO EYES": {
+"WITH NO EYES": true
 }
 }
