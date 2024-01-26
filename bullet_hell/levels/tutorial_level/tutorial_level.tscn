@@ -30,9 +30,10 @@ _data = {
 
 [node name="test_level" type="Node2D"]
 
-[node name="bullet_hell_game" parent="." instance=ExtResource("1_skd7g")]
+[node name="bullet_hell_game" parent="." node_paths=PackedStringArray("transition") instance=ExtResource("1_skd7g")]
 script_file_path = "res://bullet_hell/levels/tutorial_level/tutorial_script.txt"
 word_groups = ExtResource("2_xbiqt")
+transition = NodePath("../StartTransition")
 
 [node name="MovementTutorial" type="Sprite2D" parent="."]
 position = Vector2(1196.65, 315.094)

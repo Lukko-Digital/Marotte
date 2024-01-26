@@ -1,3 +1,4 @@
+King: : 1
 King: GO ON: keypress
 King: TRY YOUR BEST: keypress
 Player: i... i will...: keypress
@@ -6,4 +7,4 @@ Player: ...i will!: keypress
 King: FOR THE FIRST JOKE: keypress
 King: I PROPOSE A PUN: keypress
 Player: uhhh... let me think...: keypress
-!transition: tutorial_level
+!transition: tutorial_level: 0

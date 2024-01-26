@@ -3,7 +3,7 @@ extends Node2D
 var game_script: PackedStringArray
 var current_line: int = 0
 
-enum Advance_Conditions {TIME, PICKUP, HIT}
+enum Advance_Conditions {TIME, PICKUP, HIT, KEYPRESS}
 var advance_condition: Advance_Conditions
 
 @onready var timer: Timer = $Timer
@@ -45,7 +45,7 @@ func parse_line(line: String):
 		"!bullets":
 			spawn_bullets.emit(split[1])
 		"!transition":
-			transition.play()
+			transition.play("clear")
 			await transition.transition_finished
 			get_tree().change_scene_to_file("res://dialogue_scene/{dialogue}.tscn".format({"dialogue": split[1]}))
 		"Player", "Jester":
