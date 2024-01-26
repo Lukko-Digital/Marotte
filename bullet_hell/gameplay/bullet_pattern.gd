@@ -184,7 +184,6 @@ func _on_script_handler_spawn_bullets(pattern):
 		"none":
 			active_bullet_mode = "none"
 		"still":
-			print(1)
 			active_bullet_mode = "none"
 			## Very specific only used in the tutorial
 			await get_tree().create_timer(1).timeout
