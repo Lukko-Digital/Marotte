@@ -5,3 +5,7 @@
 [node name="bullet_pattern" type="Node2D"]
 position = Vector2(960, 540)
 script = ExtResource("1_1h7jv")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

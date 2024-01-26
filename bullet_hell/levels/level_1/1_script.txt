@@ -1,0 +1,8 @@
+Jester: : 2
+!bullets: still: 0
+Jester: That red circle is called a “CONFIDENCE BOOST” Try touching it.: hit
+!bullets: spiral: 0
+Jester: : 5
+!bullets: grid: 0
+Jester: : 1
+!bullets: circle: 0

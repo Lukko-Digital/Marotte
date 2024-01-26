@@ -14,36 +14,31 @@ Jester: That red circle is called a “CONFIDENCE BOOST” Try touching it.: hit
 Jester: Just kidding: 3
 Jester: Nine more of those and your confidence will be too low to deliver your joke.: 4
 Jester: Coming up with each word will require you to survive a bunch of those: 4
-!bullets: circle: 0
 Jester: Just like this: 3
-Jester: 5: 1
-Jester: 4: 1
-!joke_words: WHAT: 0
-Jester: 3: 1
-Jester: 2: 1
-Jester: 1: 1
+!bullets: circle: 2
+!joke_words: WHAT: 3
 !bullets: none: 0
 Jester: There it is! The starting word!: pickup
-!bullets: circle: 0
-Jester: You also get a bit of a confidence boost when you get the word right: 7
-!joke_words: DO YOU: 0
+Jester: You also get a bit of a confidence boost when you get the word right: 3
+!bullets: circle: 3
+!joke_words: DO YOU: 2
 !bullets: none: 0
 Jester: Sometimes you'll need to use logic to figure out the next part of the joke: pickup
-!bullets: circle: 0
-Jester: Nice!: 7
-!joke_words: CALL A: 1
+Jester: Nice!: 1
+!bullets: circle: 3
+!joke_words: CALL A: 2
 !bullets: none: 0
 Jester: I'll let you figure this one out: pickup
-!bullets: circle: 0
-Jester: Look at you go: 7
+Jester: Look at you go: 2
+!bullets: circle: 4
 !joke_words: FISH: 0
 !bullets: none: 0
 Jester: In situations like this, your subconscious knows the answer: 3
-Jester: (hint hint it's the fish): pickup
-Jester: Incredible!: 1
-!bullets: double_circle: 0
+Jester: (hint hint it's fish): pickup
+Jester: Incredible!: 2
 Jester: ...: 1
-Jester: Okay that's enough enthusiasm for me today: 10
+Jester: Okay that's enough enthusiasm for me today: 3
+!bullets: double_circle: 8
 !joke_words: WITH NO EYES: 0
 Jester: We approach the climax: 3
 Jester: It's a gimmie! The final line!: pickup

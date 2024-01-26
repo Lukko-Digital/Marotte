@@ -15,7 +15,7 @@ func _process(_delta):
 func _on_bh_player_hit():
 	shake(0.2, 10)
 
-func _on_word_picked(correct):
+func _on_word_picked(correct, _joke_text):
 	if not correct:
 		shake(0.2, 40)
 
