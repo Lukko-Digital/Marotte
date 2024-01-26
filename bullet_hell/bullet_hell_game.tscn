@@ -35,7 +35,6 @@ size = Vector2(992, 946)
 
 [node name="bullet_hell_game" type="Node2D"]
 script = ExtResource("1_ruomc")
-script_file_path = null
 
 [node name="SoundEffects" type="Node" parent="."]
 
@@ -63,8 +62,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_6x2by")
 value = 50.0
 show_percentage = false
 script = ExtResource("2_uwvi3")
-
-[node name="BulletTimer" type="Timer" parent="Environment"]
 
 [node name="Background" type="ColorRect" parent="Environment"]
 z_index = -10
@@ -118,18 +115,19 @@ script = ExtResource("5_eia4t")
 [node name="ClearTransition" parent="script_handler" instance=ExtResource("7_d2507")]
 visible = false
 
-[node name="bullet_pattern" parent="." instance=ExtResource("8_jtn82")]
+[node name="bullet_pattern" parent="." node_paths=PackedStringArray("bullet_spawn_sound") instance=ExtResource("8_jtn82")]
 position = Vector2(1200, 500)
+bullet_spawn_sound = NodePath("../SoundEffects/BulletSpawn")
 
+[connection signal="spawn_bullet_pattern" from="." to="bullet_pattern" method="_on_bullet_hell_game_spawn_bullet_pattern"]
 [connection signal="timeout" from="Environment/WordTimer" to="." method="_on_word_timer_timeout"]
 [connection signal="timeout" from="Environment/WordTimer" to="bh_ui" method="_on_word_timer_timeout"]
-[connection signal="timeout" from="Environment/BulletTimer" to="." method="_on_bullet_timer_timeout"]
 [connection signal="hit" from="bh_player" to="bh_ui" method="_on_bh_player_hit"]
 [connection signal="hit" from="bh_player" to="bh_camera" method="_on_bh_player_hit"]
 [connection signal="hit" from="bh_player" to="script_handler" method="_on_bh_player_hit"]
 [connection signal="active_speaker" from="script_handler" to="bh_ui" method="_on_script_handler_active_speaker"]
 [connection signal="display_line" from="script_handler" to="bh_ui" method="_on_script_handler_display_line"]
-[connection signal="spawn_bullets" from="script_handler" to="." method="_on_script_handler_spawn_bullets"]
+[connection signal="spawn_bullets" from="script_handler" to="bullet_pattern" method="_on_script_handler_spawn_bullets"]
 [connection signal="spawn_dialogue_words" from="script_handler" to="." method="_on_script_handler_spawn_dialogue_words"]
 [connection signal="spawn_joke_words" from="script_handler" to="." method="_on_script_handler_spawn_joke_words"]
 [connection signal="timeout" from="script_handler/Timer" to="script_handler" method="_on_timer_timeout"]
