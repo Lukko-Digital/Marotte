@@ -3,7 +3,7 @@ extends Node2D
 var game_script: PackedStringArray
 var current_line: int = 0
 
-enum Advance_Conditions {TIME, PICKUP, HIT}
+enum Advance_Conditions {TIME, PICKUP, HIT, KEYPRESS}
 var advance_condition: Advance_Conditions
 
 @onready var timer: Timer = $Timer

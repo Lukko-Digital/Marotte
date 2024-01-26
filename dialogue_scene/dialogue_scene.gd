@@ -2,13 +2,16 @@ extends CanvasLayer
 
 @export var script_file_path: String
 @onready var transition : Transition = $StartTransition
+@onready var timer: Timer = $Timer
 
 var active_label: Label
 var display_in_progress = false
 
 var game_script: PackedStringArray
 var current_line: int = 0
-var advance_on_keypress: bool = true
+
+enum Advance_Conditions {TIME, PICKUP, HIT, KEYPRESS}
+var advance_condition: Advance_Conditions
 
 #@onready var timer: Timer = $Timer
 
@@ -23,7 +26,11 @@ func _ready():
 	parse_line(game_script[0])
 
 func _unhandled_key_input(event):
-	if event.is_action_pressed("space") and advance_on_keypress:
+	if event.is_action_pressed("space") and advance_condition == Advance_Conditions.KEYPRESS:
+		next_line()
+
+func _on_timer_timeout():
+	if advance_condition == Advance_Conditions.TIME:
 		next_line()
 
 func load_file():
@@ -55,13 +62,20 @@ func parse_line(line: String):
 			display_line.emit(split[1])
 			display_in_progress = true
 			
-			var advance_condition = split[2]
-			if advance_condition == "keypress":
-				advance_on_keypress = true
-			else:
-				assert(false, "Error: Invalid advance condition")
 		_:
 			assert(false, "Error: Invalid tag in game script")
+	
+	match split[2]:
+		"0":
+			next_line()
+		"keypress":
+			advance_condition = Advance_Conditions.KEYPRESS
+		_:
+			if split[2].is_valid_float():
+				timer.start(float(split[2]))
+				advance_condition = Advance_Conditions.TIME
+			else:
+				assert(false, "Error: Invalid advance condition")
 
 
 func _on_dialogue_box_text_animation_done():
