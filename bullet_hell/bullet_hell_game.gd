@@ -98,17 +98,21 @@ func spawn_words(group):
 	word_spawn_sound.play()
 	var word_map: Dictionary = word_groups.data[group]
 	var joke_text = word_map["!joke_text"]
-	print(joke_text)
 	word_map.erase("!joke_text")
 	
 	var spawn_locations = Word_Spawn.values()
 	spawn_locations.shuffle()
 	
 	for word in word_map:
+		var correct = word_map[word]
 		spawn(
 			word_scene,
 			spawn_locations.pop_back(),
-			[word_map[word], word]
+			[
+				correct,
+				word,
+				joke_text if correct else null
+			]
 		)
 
 
