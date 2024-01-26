@@ -55,7 +55,7 @@ func _ready():
 
 
 ## Reset upon word pickup
-func _on_word_picked(correct):
+func _on_word_picked(correct, _joke_text):
 	if correct:
 		correct_word_sound.play()
 		get_tree().call_group("bullet", "queue_free")
@@ -97,15 +97,23 @@ func _on_script_handler_spawn_joke_words(group):
 ## Spawn words in the four corners, with one being incorrect
 func spawn_words(group):
 	word_spawn_sound.play()
-	var word_map = word_groups.data[group]
+	var word_map: Dictionary = word_groups.data[group]
+	var joke_text = word_map["!joke_text"]
+	word_map.erase("!joke_text")
+	
 	var spawn_locations = Word_Spawn.values()
 	spawn_locations.shuffle()
 	
 	for word in word_map:
+		var correct = word_map[word]
 		spawn(
 			word_scene,
 			spawn_locations.pop_back(),
-			[word_map[word], word]
+			[
+				correct,
+				word,
+				joke_text if correct else null
+			]
 		)
 
 

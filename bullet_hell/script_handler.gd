@@ -74,7 +74,7 @@ func _on_timer_timeout():
 		next_line()
 
 
-func _on_word_picked(correct):
+func _on_word_picked(correct, _joke_text):
 	if advance_condition == Advance_Conditions.PICKUP and correct:
 		next_line()
 
