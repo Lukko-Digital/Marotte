@@ -1,12 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://c5rvnoi1v7yxh"]
+[gd_scene load_steps=21 format=3 uid="uid://c5rvnoi1v7yxh"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/bh_ui.gd" id="1_3ae8p"]
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="2_i8vm2"]
 [ext_resource type="Texture2D" uid="uid://cjik188370ui1" path="res://assets/sprites/bh_player-sheet.png" id="3_2qqpm"]
 [ext_resource type="Texture2D" uid="uid://d2b2wpen3jlgl" path="res://assets/sprites/bh_thought_bubble_jester.png" id="3_o3n0w"]
-[ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="4_feqy3"]
+[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="4_feqy3"]
 [ext_resource type="Texture2D" uid="uid://bh1hmydut2hns" path="res://assets/sprites/bh_thought_bubble.png" id="4_wqoy2"]
 [ext_resource type="FontFile" uid="uid://cwxn07dib3abf" path="res://assets/fonts/Jokerfont-Regular.ttf" id="6_c052r"]
+[ext_resource type="Texture2D" uid="uid://r07snelnakyq" path="res://assets/sprites/bh_jester_icon-sheet.png" id="8_cuupq"]
 [ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="8_ijuq7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
@@ -206,10 +207,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -497.0
-offset_top = 175.0
-offset_right = 1208.0
-offset_bottom = 1010.0
+offset_left = -852.5
+offset_right = 852.5
+offset_bottom = 835.0
 grow_horizontal = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -223,10 +223,17 @@ text_overrun_behavior = 1
 [node name="TextTimer" type="Timer" parent="ThoughtBubble/Label"]
 one_shot = true
 
+[node name="JesterIcon" type="Sprite2D" parent="ThoughtBubble"]
+position = Vector2(400, 620)
+scale = Vector2(1.02, 1.02)
+texture = ExtResource("8_cuupq")
+hframes = 3
+
 [node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="ThoughtBubble"]
 stream = ExtResource("8_ijuq7")
 
 [node name="ScreenColor" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
