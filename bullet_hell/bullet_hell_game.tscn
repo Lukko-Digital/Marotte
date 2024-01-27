@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=22 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://bullet_hell/display/JokeLabel.gd" id="3_ea24l"]
 [ext_resource type="AudioStream" uid="uid://duv6ir6qw1ig5" path="res://assets/audio/player_picks_correct_v1.mp3" id="3_eykkj"]
 [ext_resource type="AudioStream" uid="uid://ro0a8d227t7q" path="res://assets/audio/player_picks_wrong_v1.mp3" id="4_qb53a"]
+[ext_resource type="AudioStream" uid="uid://ce7i5toq7o6lp" path="res://assets/audio/player_picks_correct_v2.mp3" id="4_v1y8a"]
 [ext_resource type="Script" path="res://bullet_hell/script_handler.gd" id="5_eia4t"]
 [ext_resource type="PackedScene" uid="uid://dfj2rgxbg66a0" path="res://bullet_hell/display/clear_transition.tscn" id="7_d2507"]
 [ext_resource type="PackedScene" uid="uid://bmqy68ba644tc" path="res://bullet_hell/display/bh_camera.tscn" id="7_ybxu1"]
@@ -50,7 +51,7 @@ stream = ExtResource("2_x7ol0")
 stream = ExtResource("3_eykkj")
 
 [node name="CorrectWord" type="AudioStreamPlayer" parent="SoundEffects"]
-stream = ExtResource("3_eykkj")
+stream = ExtResource("4_v1y8a")
 
 [node name="IncorrectWord" type="AudioStreamPlayer" parent="SoundEffects"]
 stream = ExtResource("4_qb53a")
