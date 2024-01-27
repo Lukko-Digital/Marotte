@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfj2rgxbg66a0"]
+[gd_scene load_steps=9 format=3 uid="uid://dfj2rgxbg66a0"]
 
 [ext_resource type="Texture2D" uid="uid://p1ch84or5111" path="res://assets/sprites/transition_jokeclear_left.png" id="1_uth4p"]
 [ext_resource type="Script" path="res://bullet_hell/display/transition.gd" id="1_uuok7"]
 [ext_resource type="Texture2D" uid="uid://58x6xqi23swt" path="res://assets/sprites/transition_jokeclear_right.png" id="2_uuj27"]
 [ext_resource type="Texture2D" uid="uid://ds0sr0nglpw51" path="res://assets/sprites/transition_jokeclear_center.png" id="3_soeb5"]
+[ext_resource type="Texture2D" uid="uid://y5cb6f8boows" path="res://assets/sprites/transition_jokeclear_full.png" id="5_en120"]
+[ext_resource type="AudioStream" uid="uid://bdtgfm7heklff" path="res://assets/audio/random_sfx_v1.mp3" id="6_4x0dv"]
 
 [sub_resource type="Animation" id="Animation_7tn0i"]
 resource_name = "clear"
@@ -17,7 +19,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1920, -0.25, 0, 0, -992, 960, -0.6, 33.7871, 0.25, 0),
+"points": PackedFloat32Array(1920, -0.25, 0, 0, -992, 1063, -0.6, 33.7871, 0.25, 0),
 "times": PackedFloat32Array(0, 0.9)
 }
 tracks/1/type = "bezier"
@@ -88,6 +90,55 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Pulse:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.95, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Pulse:scale:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.95, 1.35)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Pulse:scale:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.95, 1.35)
+}
+tracks/10/type = "audio"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AudioStreamPlayer")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_4x0dv")
+}],
+"times": PackedFloat32Array(0.8)
+}
+tracks/10/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ggtfr"]
 _data = {
@@ -107,21 +158,21 @@ color = Color(0, 0, 0, 1)
 
 [node name="Left" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 960.0
+offset_right = 996.0
 offset_bottom = 1080.0
 texture = ExtResource("1_uth4p")
 expand_mode = 4
 
 [node name="Right" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 960.0
+offset_left = 1063.0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_uuj27")
 expand_mode = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(888, 528)
+position = Vector2(960, 512)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_soeb5")
 
@@ -135,5 +186,13 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
+
+[node name="Pulse" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(960, 540)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_en120")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

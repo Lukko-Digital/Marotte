@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dfimnqqoeiet4"]
+[gd_scene load_steps=45 format=3 uid="uid://dfimnqqoeiet4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_ub4dj"]
 [ext_resource type="Texture2D" uid="uid://b3srkymm7ce0c" path="res://assets/sprites/fv_king-sheet.png" id="2_gs76b"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_f3xod"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_2stcm"]
 [ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="10_0q01d"]
+[ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="10_er8wh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uj64u"]
 atlas = ExtResource("2_gs76b")
@@ -397,7 +398,6 @@ text_overrun_behavior = 2
 stream = ExtResource("10_0q01d")
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
-visible = false
 z_index = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -410,6 +410,9 @@ libraries = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="pause_ui" parent="." instance=ExtResource("10_er8wh")]
+process_mode = 3
 
 [connection signal="active_speaker" from="." to="King" method="_on_dialogue_scene_active_speaker"]
 [connection signal="active_speaker" from="." to="Player" method="_on_dialogue_scene_active_speaker"]
