@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c5rvnoi1v7yxh"]
+[gd_scene load_steps=23 format=3 uid="uid://c5rvnoi1v7yxh"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/bh_ui.gd" id="1_3ae8p"]
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="2_i8vm2"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://ba7vtjrqco0g1" path="res://assets/fonts/Jokerfont-Regular.ttf" id="6_c052r"]
 [ext_resource type="Texture2D" uid="uid://bwjosdmwdx1hv" path="res://assets/sprites/bhj_ui.png" id="7_s6nqr"]
 [ext_resource type="Texture2D" uid="uid://cgsrd332288mh" path="res://assets/sprites/bh_jester_icon-sheet.png" id="8_cuupq"]
+[ext_resource type="Texture2D" uid="uid://cvjbd0m6w03xi" path="res://assets/sprites/bhj_jester-sheet.png" id="10_okw2p"]
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="11_q1s3a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
@@ -19,24 +20,7 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(1, 0.388235, 0.388235, 1)
 
 [sub_resource type="Animation" id="Animation_2246y"]
-resource_name = "stress0"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-
-[sub_resource type="Animation" id="Animation_kj2dl"]
-resource_name = "stress1"
+resource_name = "default"
 length = 1.4
 loop_mode = 1
 tracks/0/type = "value"
@@ -49,48 +33,54 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(368, 625)]
+}
+
+[sub_resource type="Animation" id="Animation_kj2dl"]
+resource_name = "stressed"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
 "values": [2, 3]
 }
-
-[sub_resource type="Animation" id="Animation_17vdh"]
-resource_name = "stress2"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_jug5x"]
-resource_name = "stress3"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [6, 7]
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(465, 625)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_01p1x"]
 _data = {
-"stress0": SubResource("Animation_2246y"),
-"stress1": SubResource("Animation_kj2dl"),
-"stress2": SubResource("Animation_17vdh"),
-"stress3": SubResource("Animation_jug5x")
+"default": SubResource("Animation_2246y"),
+"stressed": SubResource("Animation_kj2dl")
 }
 
 [sub_resource type="Animation" id="Animation_w1wvj"]
@@ -203,6 +193,7 @@ stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="UIPlayer" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(349, 675)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_2qqpm")
@@ -214,6 +205,18 @@ libraries = {
 "": SubResource("AnimationLibrary_01p1x")
 }
 
+[node name="UIJester" type="Sprite2D" parent="."]
+position = Vector2(368, 625)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("10_okw2p")
+hframes = 2
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UIJester"]
+libraries = {
+"": SubResource("AnimationLibrary_01p1x")
+}
+
 [node name="ThoughtBubble" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 91.0
@@ -221,7 +224,7 @@ offset_top = 90.0
 offset_right = 2935.0
 offset_bottom = 1304.0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_o3n0w")
+texture = ExtResource("4_h4xd1")
 
 [node name="Label" type="Label" parent="ThoughtBubble"]
 layout_mode = 1
@@ -245,6 +248,7 @@ text_overrun_behavior = 1
 one_shot = true
 
 [node name="JesterIcon" type="Sprite2D" parent="ThoughtBubble"]
+visible = false
 position = Vector2(400, 620)
 scale = Vector2(1.02, 1.02)
 texture = ExtResource("8_cuupq")
