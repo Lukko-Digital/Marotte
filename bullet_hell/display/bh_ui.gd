@@ -88,32 +88,40 @@ func _on_word_timer_timeout():
 
 func _on_script_handler_active_speaker(speaker):
 	var split = speaker.split("_")
-	match split[0]:
-		"Player":
-			thought_bubble.texture = player_thought_bubble
-			dialogue_label.size = Label_Size.PLAYER
-			dialogue_label.position = Label_Position.PLAYER
-			dialogue_label.set("theme_override_fonts/font", player_font)
-			jester_icon.visible = false
-		"Jester":
-			thought_bubble.texture = jester_thought_bubble
-			dialogue_label.size = Label_Size.JESTER
-			dialogue_label.position = Label_Position.JESTER
-			dialogue_label.set("theme_override_fonts/font", jester_font)
-			jester_icon.visible = true
-			match split[1]:
-				"neutral":
-					jester_icon.frame = Jester_Icon_Frames.NEUTRAL
-				"angry":
-					jester_icon.frame = Jester_Icon_Frames.ANGRY
-				"happy":
-					jester_icon.frame = Jester_Icon_Frames.HAPPY
+	if not jester_arena:
+		match split[0]:
+			"Player":
+				thought_bubble.texture = player_thought_bubble
+				dialogue_label.size = Label_Size.PLAYER
+				dialogue_label.position = Label_Position.PLAYER
+				dialogue_label.set("theme_override_fonts/font", player_font)
+				jester_icon.visible = false
+			"Jester":
+				thought_bubble.texture = jester_thought_bubble
+				dialogue_label.size = Label_Size.JESTER
+				dialogue_label.position = Label_Position.JESTER
+				dialogue_label.set("theme_override_fonts/font", jester_font)
+				jester_icon.visible = true
+				match split[1]:
+					"neutral":
+						jester_icon.frame = Jester_Icon_Frames.NEUTRAL
+					"angry":
+						jester_icon.frame = Jester_Icon_Frames.ANGRY
+					"happy":
+						jester_icon.frame = Jester_Icon_Frames.HAPPY
+	else:
+		thought_bubble.texture = jester_speech_bubble
+		dialogue_label.size = Label_Size.PLAYER
+		dialogue_label.position = Label_Position.PLAYER
+		dialogue_label.set("theme_override_fonts/font", jester_font)
+		jester_icon.visible = false
 
 
 func _on_script_handler_display_line(text):
 	dialogue_label.text = text
 	dialogue_label.visible_characters = 0
 	animate_display()
+
 
 func animate_display():
 	while dialogue_label.visible_characters < len(dialogue_label.text):
