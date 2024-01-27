@@ -65,6 +65,5 @@ libraries = {
 }
 
 [node name="StartTransition" parent="." instance=ExtResource("5_adcmg")]
-visible = false
 
 [connection signal="animation_finished" from="MovementTutorial/AnimationPlayer" to="MovementTutorial" method="_on_animation_player_animation_finished"]
