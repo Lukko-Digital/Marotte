@@ -1,0 +1,10 @@
+King_neutral: : 1
+King_neutral: GO ON: keypress
+King_neutral: TRY YOUR BEST: keypress
+Player_scared: i... i will...: keypress
+King_neutral: WHAT'S THAT? SAY IT WITH YOUR CHEST BOY.: keypress
+Player_scared: ...i will!: keypress
+King_neutral: FOR THE FIRST JOKE: keypress
+King_neutral: I PROPOSE A PUN: keypress
+Player_scared: uhhh... let me think...: keypress
+!transition: tutorial_level: 0

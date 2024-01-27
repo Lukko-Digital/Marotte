@@ -1,10 +1,10 @@
-King: : 1
-King: GO ON: keypress
-King: TRY YOUR BEST: keypress
-Player: i... i will...: keypress
-King: WHAT'S THAT? SAY IT WITH YOUR CHEST BOY.: keypress
-Player: ...i will!: keypress
-King: FOR THE FIRST JOKE: keypress
-King: I PROPOSE A PUN: keypress
-Player: uhhh... let me think...: keypress
+King_neutral: : 1
+King_neutral: GO ON: keypress
+King_disappointed: TRY YOUR BEST: keypress
+Player_pensive: i... i will...: keypress
+King_neutral: WHAT'S THAT? SAY IT WITH YOUR CHEST BOY.: keypress
+Player_pointing: ...i will!: keypress
+King_neutral: FOR THE FIRST JOKE: keypress
+King_disappointed: I PROPOSE A PUN: keypress
+Player_pensive: uhhh... let me think...: keypress
 !transition: tutorial_level: 0
