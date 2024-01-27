@@ -51,7 +51,7 @@ func next_line():
 
 func parse_line(line: String):
 	var split = line.split(": ")
-	var command = split[0].split("_")[0]
+	var command = split[0].split(" ")[0]
 	match command:
 		"!transition":
 			transition.play("end")
@@ -62,7 +62,7 @@ func parse_line(line: String):
 			audio_player.play()
 		"Player", "King":
 			active_speaker.emit(command)
-			change_emotion.emit(command, split[0].split("_")[1])
+			change_emotion.emit(command, split[0].split(" ")[1])
 			display_line.emit(split[1])
 			display_in_progress = true
 			
