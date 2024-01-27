@@ -52,7 +52,6 @@ func _ready():
 
 
 func _process(_delta):
-#	print(get_tree().current_scene.scene_file_path)
 	if not jester_arena:
 		if current_hp == 0:
 			death()
@@ -81,7 +80,6 @@ func death():
 	$UIPlayer.z_index = 5
 	
 	death_text_label.text = DEATH_TEXT[0]
-	print(death_text_label.text)
 	death_text_label.visible_characters = 0
 	death_text_label.visible = true
 	
@@ -95,6 +93,16 @@ func death():
 	$Death/TryAgain.visible = true
 	await get_tree().create_timer(0.2).timeout
 	$Death/GiveUp.visible = true
+
+
+func _on_try_again_button_up():
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+
+func _on_give_up_button_up():
+	get_tree().quit()
+
 
 func _set_current_hp(new_hp):
 	current_hp = clamp(new_hp, 0, MAX_HP)
