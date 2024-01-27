@@ -3,12 +3,11 @@ Player nervous: ...: keypress
 Jester neutral: you nervous?: keypress
 Player nervous_talking: N-no...: keypress
 Jester neutral: you’ve never done this before, have you?: keypress
-Jester neutral: Told jokes with an audience?: keypress
 Player nervous_talking: ...no.: keypress
-Jester neutral: Never, huh? I don’t know how people like you end up here.: keypress
-Jester neutral: I’ve performed for years and only now do I get a chance...: keypress
-Jester neutral: ... to become THE ROYAL JESTER.: keypress
+Jester neutral: never, huh? I don’t know how people like you end up here: keypress
+Jester neutral: i’ve performed for years, and this might be my last chance...: keypress
+Jester neutral: ...to become THE ROYAL JESTER: keypress
 Player nervous: ...: keypress
-Jester pointing: How about this? I’ll help you out.: keypress
-Jester pointing: You can practice on me. Tell me a joke.: keypress
+Jester pointing: how about this? i’ll help you out: keypress
+Jester pointing: you can practice on me, tell me a joke: keypress
 !transition: tutorial_level/tutorial_level: 0
