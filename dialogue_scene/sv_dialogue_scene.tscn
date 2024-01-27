@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bl1fy1m5y84p4"]
+[gd_scene load_steps=16 format=3 uid="uid://bl1fy1m5y84p4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_iqvk0"]
 [ext_resource type="Texture2D" uid="uid://b30p5j3pxonww" path="res://assets/sprites/sv_crowd.png" id="2_gruop"]

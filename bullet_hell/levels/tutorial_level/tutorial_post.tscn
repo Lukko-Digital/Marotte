@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkio7jmm04ies"]
+
+[ext_resource type="PackedScene" uid="uid://dfimnqqoeiet4" path="res://dialogue_scene/fv_dialogue_scene.tscn" id="1_mvu1e"]
+[ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition_scared_jester.tscn" id="2_st0pg"]
+
+[node name="tutorial_post" type="Node2D"]
+
+[node name="fv_dialogue_scene" parent="." instance=ExtResource("1_mvu1e")]
+script_file_path = "res://bullet_hell/levels/tutorial_level/tutorial_script_post.txt"
+
+[node name="StartTransition" parent="fv_dialogue_scene" instance=ExtResource("2_st0pg")]
+visible = false

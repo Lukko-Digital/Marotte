@@ -47,7 +47,7 @@ func parse_line(line: String):
 		"!transition":
 			transition.play("clear")
 			await transition.transition_finished
-			get_tree().change_scene_to_file("res://dialogue_scene/{dialogue}.tscn".format({"dialogue": split[1]}))
+			get_tree().change_scene_to_file("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]}))
 		"Player", "Jester_neutral", "Jester_angry", "Jester_happy":
 			active_speaker.emit(split[0])
 			display_line.emit(split[1])

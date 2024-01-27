@@ -43,4 +43,4 @@ Jester_neutral: okay that's enough enthusiasm for me today: 3
 Jester_neutral: we approach the climax: 3
 Jester_happy: it's a gimmie! the final line!: pickup
 !bullets: none: 0
-!transition: dialogue_scene: 0
+!transition: tutorial_level/tutorial_post: 0

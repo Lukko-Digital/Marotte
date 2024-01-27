@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dfimnqqoeiet4"]
+[gd_scene load_steps=44 format=3 uid="uid://dfimnqqoeiet4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_ub4dj"]
 [ext_resource type="Texture2D" uid="uid://b3srkymm7ce0c" path="res://assets/sprites/fv_king-sheet.png" id="2_gs76b"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_f3xod"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_2stcm"]
 [ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="10_0q01d"]
-[ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="11_gixrm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uj64u"]
 atlas = ExtResource("2_gs76b")
@@ -396,9 +395,6 @@ text_overrun_behavior = 2
 
 [node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_0q01d")
-
-[node name="StartTransition" parent="." instance=ExtResource("11_gixrm")]
-visible = false
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
 visible = false
