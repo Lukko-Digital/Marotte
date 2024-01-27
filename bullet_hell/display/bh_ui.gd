@@ -10,6 +10,7 @@ extends Control
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var color_animation: AnimationPlayer = $ScreenColor/AnimationPlayer
 @onready var player_image_animation: AnimationPlayer = $UIPlayer/AnimationPlayer
+@onready var jester_image_animation: AnimationPlayer = $UIJester/AnimationPlayer
 @onready var thought_bubble: TextureRect = $ThoughtBubble
 @onready var jester_icon: Sprite2D = $ThoughtBubble/JesterIcon
 @onready var dialogue_label: Label = $ThoughtBubble/Label
@@ -46,17 +47,20 @@ func _ready():
 
 
 func _process(_delta):
-	if current_hp <= MAX_HP * 0.2:
-		player_image_animation.play("stress3")
-		color_animation.speed_scale = 2
-		color_animation.play("pulse")
-	elif current_hp <= MAX_HP * 0.5:
-		player_image_animation.play("stress2")
-		color_animation.play("pulse")
-	elif current_hp <= MAX_HP * 0.7:
-		player_image_animation.play("stress1")
+	if not jester_arena:
+		if current_hp <= MAX_HP * 0.2:
+			player_image_animation.play("stress3")
+			color_animation.speed_scale = 2
+			color_animation.play("pulse")
+		elif current_hp <= MAX_HP * 0.5:
+			player_image_animation.play("stress2")
+			color_animation.play("pulse")
+		elif current_hp <= MAX_HP * 0.7:
+			player_image_animation.play("stress1")
+		else:
+			player_image_animation.play("stress0")
 	else:
-		player_image_animation.play("stress0")
+		jester_image_animation.play("default")
 
 
 func _set_current_hp(new_hp):
@@ -67,6 +71,8 @@ func _set_current_hp(new_hp):
 func _on_bullet_hell_game_use_jester_arena():
 	$Interface.texture = jester_interface
 	jester_arena = true
+	$UIJester.visible = true
+	$UIPlayer.visible = false
 
 
 func _on_bh_player_hit():

@@ -193,7 +193,6 @@ stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="UIPlayer" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(349, 675)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_2qqpm")
@@ -206,6 +205,7 @@ libraries = {
 }
 
 [node name="UIJester" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(368, 625)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("10_okw2p")
