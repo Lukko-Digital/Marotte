@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://h3yr68hxawqe"]
+[gd_scene load_steps=8 format=3 uid="uid://h3yr68hxawqe"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/transition.gd" id="1_fcb6q"]
 [ext_resource type="Texture2D" uid="uid://d31y43khqf4mn" path="res://assets/sprites/transition_jokeclear_confidentkid.png" id="2_620av"]
 [ext_resource type="Texture2D" uid="uid://bh8d1mtnq1hin" path="res://assets/sprites/transition_jokestart_right_jester.png" id="3_nfv7d"]
+[ext_resource type="Texture2D" uid="uid://cq7ff781mawno" path="res://assets/sprites/transition_jokestart_full_confidentkid_jester.png" id="4_01mwg"]
 
 [sub_resource type="Animation" id="Animation_6wk1v"]
 resource_name = "end"
-length = 1.3
+length = 1.4
 step = 0.05
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -29,6 +30,40 @@ tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1124.4, -0.25, 0, 0, -1085.11, 0, -0.6, 0, 0.15, -255.642),
 "times": PackedFloat32Array(0, 1.25)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pulse:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.05, 1.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pulse:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(1.1, 1.4)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pulse:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(1.1, 1.4)
 }
 
 [sub_resource type="Animation" id="Animation_7tn0i"]
@@ -109,7 +144,7 @@ color = Color(0, 0, 0, 1)
 [node name="Right" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 960.0
-offset_right = 1927.0
+offset_right = 1919.0
 offset_bottom = 1080.0
 texture = ExtResource("3_nfv7d")
 expand_mode = 4
@@ -120,6 +155,12 @@ layout_mode = 0
 offset_top = -1139.0
 offset_right = 960.0
 color = Color(0, 0, 0, 1)
+
+[node name="Pulse" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(960, 540)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_01mwg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
