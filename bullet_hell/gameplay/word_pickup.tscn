@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsvcuyyi7rvs7"]
 
 [ext_resource type="Script" path="res://bullet_hell/gameplay/word_pickup.gd" id="1_55d41"]
-[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="2_wgvjc"]
+[ext_resource type="FontFile" uid="uid://dgjjldljopiuv" path="res://assets/fonts/Ingamefont-Regular.ttf" id="2_uagr2"]
 
 [node name="word_pickup" type="Area2D" groups=["word"]]
 collision_layer = 0
@@ -19,7 +19,7 @@ offset_right = 0.5
 offset_bottom = 16.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_wgvjc")
+theme_override_fonts/font = ExtResource("2_uagr2")
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 vertical_alignment = 1
