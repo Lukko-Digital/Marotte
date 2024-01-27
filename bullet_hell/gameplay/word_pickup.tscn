@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsvcuyyi7rvs7"]
 
 [ext_resource type="Script" path="res://bullet_hell/gameplay/word_pickup.gd" id="1_55d41"]
-[ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="2_wgvjc"]
+[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="2_wgvjc"]
 
 [node name="word_pickup" type="Area2D" groups=["word"]]
 collision_layer = 0
