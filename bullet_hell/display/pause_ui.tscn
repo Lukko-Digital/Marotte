@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://biod12rdse4po"]
+
+[ext_resource type="Texture2D" uid="uid://dua8eapd8j1u8" path="res://assets/sprites/ui_pause_quit-sheet.png" id="1_8s6ed"]
+[ext_resource type="Script" path="res://bullet_hell/display/pause_ui.gd" id="1_g37k3"]
+[ext_resource type="Texture2D" uid="uid://ctbqcheadp6x6" path="res://assets/sprites/ui_pause_resume-sheet.png" id="2_porh4"]
+
+[node name="pause_ui" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g37k3")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.258824)
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 93.0
+offset_right = 1282.0
+offset_bottom = 1800.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_8s6ed")
+stretch_mode = 0
+
+[node name="Resume" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 883.0
+offset_top = 13.0
+offset_right = 2248.0
+offset_bottom = 2029.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_porh4")
+stretch_mode = 0
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
