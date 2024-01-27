@@ -2,7 +2,6 @@ extends TextureRect
 
 @export var character_name : String
 @export var dialogue_audio : DialogueAudioPlayer
-@export var front_view : bool
 
 @onready var label : Label = $Label
 @onready var text_timer : Timer = $TextTimer
@@ -14,8 +13,7 @@ const TEXT_SPEED = 0.08
 var current_speaker
 
 func _on_dialogue_scene_active_speaker(speaker):
-	if not front_view:
-		visible = speaker == character_name
+	visible = speaker == character_name
 	current_speaker = speaker
 
 func _on_dialogue_scene_display_line(text):

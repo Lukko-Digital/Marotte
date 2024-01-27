@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dfimnqqoeiet4"]
+[gd_scene load_steps=47 format=3 uid="uid://dfimnqqoeiet4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_ub4dj"]
 [ext_resource type="Texture2D" uid="uid://b3srkymm7ce0c" path="res://assets/sprites/fv_king-sheet.png" id="2_gs76b"]
@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://degd0b04aktu6" path="res://assets/sprites/fv_textbox_king.png" id="4_hj10r"]
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_f3xod"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_2stcm"]
+[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="9_4qmrl"]
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="10_d3ubh"]
 [ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="10_er8wh"]
+[ext_resource type="FontFile" uid="uid://ba7vtjrqco0g1" path="res://assets/fonts/Jokerfont-Regular.ttf" id="10_sl4ov"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uj64u"]
 atlas = ExtResource("2_gs76b")
@@ -359,7 +361,8 @@ animation = &"applause"
 script = ExtResource("3_mdkde")
 character_name = "Jester"
 
-[node name="DialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_audio")]
+[node name="KingDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_audio")]
+visible = false
 offset_left = 80.0
 offset_top = 619.0
 offset_right = 8935.0
@@ -368,10 +371,10 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_hj10r")
 stretch_mode = 2
 script = ExtResource("6_f3xod")
+character_name = "King"
 dialogue_audio = NodePath("../DialogueAudioPlayer")
-front_view = true
 
-[node name="Label" type="Label" parent="DialogueBox"]
+[node name="Label" type="Label" parent="KingDialogueBox"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -393,13 +396,86 @@ vertical_alignment = 1
 autowrap_mode = 2
 text_overrun_behavior = 2
 
-[node name="TextTimer" type="Timer" parent="DialogueBox"]
+[node name="TextTimer" type="Timer" parent="KingDialogueBox"]
+
+[node name="PlayerDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_audio")]
+offset_left = 80.0
+offset_top = 619.0
+offset_right = 8935.0
+offset_bottom = 2779.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_hj10r")
+stretch_mode = 2
+script = ExtResource("6_f3xod")
+character_name = "Player"
+dialogue_audio = NodePath("../DialogueAudioPlayer")
+
+[node name="Label" type="Label" parent="PlayerDialogueBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1758.0
+offset_top = -504.5
+offset_right = 1638.0
+offset_bottom = 444.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_4qmrl")
+theme_override_font_sizes/font_size = 300
+text = "you wot mate"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="TextTimer" type="Timer" parent="PlayerDialogueBox"]
+
+[node name="JesterDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_audio")]
+visible = false
+offset_left = 80.0
+offset_top = 619.0
+offset_right = 8935.0
+offset_bottom = 2779.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_hj10r")
+stretch_mode = 2
+script = ExtResource("6_f3xod")
+character_name = "Jester"
+dialogue_audio = NodePath("../DialogueAudioPlayer")
+
+[node name="Label" type="Label" parent="JesterDialogueBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1758.0
+offset_top = -504.5
+offset_right = 1638.0
+offset_bottom = 444.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("10_sl4ov")
+theme_override_font_sizes/font_size = 300
+text = "you wot mate"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="TextTimer" type="Timer" parent="JesterDialogueBox"]
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
 z_index = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "fade_in"
@@ -416,11 +492,19 @@ libraries = {
 [connection signal="active_speaker" from="." to="King" method="_on_dialogue_scene_active_speaker"]
 [connection signal="active_speaker" from="." to="Player" method="_on_dialogue_scene_active_speaker"]
 [connection signal="active_speaker" from="." to="Jester" method="_on_dialogue_scene_active_speaker"]
-[connection signal="active_speaker" from="." to="DialogueBox" method="_on_dialogue_scene_active_speaker"]
+[connection signal="active_speaker" from="." to="KingDialogueBox" method="_on_dialogue_scene_active_speaker"]
+[connection signal="active_speaker" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_active_speaker"]
+[connection signal="active_speaker" from="." to="JesterDialogueBox" method="_on_dialogue_scene_active_speaker"]
 [connection signal="change_emotion" from="." to="King" method="_on_dialogue_scene_change_emotion"]
 [connection signal="change_emotion" from="." to="Player" method="_on_dialogue_scene_change_emotion"]
 [connection signal="change_emotion" from="." to="Jester" method="_on_dialogue_scene_change_emotion"]
-[connection signal="display_line" from="." to="DialogueBox" method="_on_dialogue_scene_display_line"]
-[connection signal="speed_animation" from="." to="DialogueBox" method="_on_dialogue_scene_speed_animation"]
-[connection signal="text_animation_done" from="DialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
+[connection signal="display_line" from="." to="KingDialogueBox" method="_on_dialogue_scene_display_line"]
+[connection signal="display_line" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_display_line"]
+[connection signal="display_line" from="." to="JesterDialogueBox" method="_on_dialogue_scene_display_line"]
+[connection signal="speed_animation" from="." to="KingDialogueBox" method="_on_dialogue_scene_speed_animation"]
+[connection signal="speed_animation" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_speed_animation"]
+[connection signal="speed_animation" from="." to="JesterDialogueBox" method="_on_dialogue_scene_speed_animation"]
+[connection signal="text_animation_done" from="KingDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
+[connection signal="text_animation_done" from="PlayerDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
+[connection signal="text_animation_done" from="JesterDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
