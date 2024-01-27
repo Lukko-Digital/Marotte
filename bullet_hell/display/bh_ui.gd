@@ -16,6 +16,7 @@ extends Control
 @onready var dialogue_label: Label = $ThoughtBubble/Label
 @onready var text_timer: Timer = $ThoughtBubble/Label/TextTimer
 @onready var dialogue_audio: DialogueAudioPlayer = $ThoughtBubble/DialogueAudioPlayer
+@onready var death_sound: AudioStreamPlayer = $Death/DeathSound
 
 const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
@@ -67,6 +68,7 @@ func _process(_delta):
 
 
 func death():
+	death_sound.play()
 	player_image_animation.play("death")
 	$UIPlayer.z_index = 10
 	color_animation.play("black")

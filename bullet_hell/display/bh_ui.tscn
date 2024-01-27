@@ -266,6 +266,7 @@ _data = {
 }
 
 [node name="bh_ui" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_3ae8p")
@@ -384,3 +385,7 @@ color = Color(1, 1, 1, 0)
 libraries = {
 "": SubResource("AnimationLibrary_daw1h")
 }
+
+[node name="Death" type="Node" parent="."]
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="Death"]
