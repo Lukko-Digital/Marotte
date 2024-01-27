@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var bullet_spawn_sound: AudioStreamPlayer
+@export var warning_sound: AudioStreamPlayer
 
 @onready var bullet_scene = preload("res://bullet_hell/gameplay/bullet.tscn")
 @onready var warning_scene = preload("res://bullet_hell/gameplay/warning.tscn")
@@ -123,7 +124,9 @@ func circle(spawn_position: Vector2, speed=1, num_shots=16):
 	var shot_base_dir = Vector2(1,0)#spawn_position.rotated(PI/2)
 	
 	spawn(warning_scene, spawn_position, [warning_dir])
+	warning_sound.play()
 	await get_tree().create_timer(0.5).timeout
+	bullet_spawn_sound.play()
 	for i in range(num_shots):
 		spawn(
 			bullet_scene,

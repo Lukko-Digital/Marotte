@@ -48,6 +48,8 @@ script = ExtResource("1_ruomc")
 [node name="BulletSpawn" type="AudioStreamPlayer" parent="SoundEffects"]
 stream = ExtResource("2_x7ol0")
 
+[node name="BulletWarning" type="AudioStreamPlayer" parent="SoundEffects"]
+
 [node name="WordSpawn" type="AudioStreamPlayer" parent="SoundEffects"]
 stream = ExtResource("3_eykkj")
 
@@ -139,9 +141,10 @@ script = ExtResource("5_eia4t")
 visible = false
 z_index = 10
 
-[node name="bullet_pattern" parent="." node_paths=PackedStringArray("bullet_spawn_sound") instance=ExtResource("8_jtn82")]
+[node name="bullet_pattern" parent="." node_paths=PackedStringArray("bullet_spawn_sound", "warning_sound") instance=ExtResource("8_jtn82")]
 position = Vector2(1200, 500)
 bullet_spawn_sound = NodePath("../SoundEffects/BulletSpawn")
+warning_sound = NodePath("../SoundEffects/BulletWarning")
 
 [node name="pause_ui" parent="." instance=ExtResource("15_64oxy")]
 

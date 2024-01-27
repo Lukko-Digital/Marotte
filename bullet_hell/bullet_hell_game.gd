@@ -13,7 +13,6 @@ extends Node2D
 @onready var player: CharacterBody2D = $bh_player
 
 ## Sound Effects
-@onready var bullet_spawn_sound: AudioStreamPlayer = $SoundEffects/BulletSpawn
 @onready var word_spawn_sound: AudioStreamPlayer = $SoundEffects/WordSpawn
 @onready var correct_word_sound: AudioStreamPlayer = $SoundEffects/CorrectWord
 @onready var incorrect_word_sound: AudioStreamPlayer = $SoundEffects/IncorrectWord
