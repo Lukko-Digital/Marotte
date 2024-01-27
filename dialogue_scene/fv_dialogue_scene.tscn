@@ -3,15 +3,15 @@
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_ub4dj"]
 [ext_resource type="Texture2D" uid="uid://b3srkymm7ce0c" path="res://assets/sprites/fv_king-sheet.png" id="2_gs76b"]
 [ext_resource type="Script" path="res://dialogue_scene/character.gd" id="3_mdkde"]
-[ext_resource type="Texture2D" uid="uid://bqjq3ka1vwtc8" path="res://assets/sprites/fv_player-sheet.png" id="4_5rrts"]
-[ext_resource type="Texture2D" uid="uid://da8opq67ql8up" path="res://assets/sprites/fv_jester-sheet.png" id="4_f02j3"]
+[ext_resource type="Texture2D" uid="uid://b5d7xjspl0fg5" path="res://assets/sprites/fv_player-sheet.png" id="4_5rrts"]
+[ext_resource type="Texture2D" uid="uid://cixdjdu5ppfbp" path="res://assets/sprites/fv_jester-sheet.png" id="4_f02j3"]
 [ext_resource type="Texture2D" uid="uid://degd0b04aktu6" path="res://assets/sprites/fv_textbox_king.png" id="4_hj10r"]
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_f3xod"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_2stcm"]
-[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/Playerfont-Regular.ttf" id="9_4qmrl"]
+[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="9_4qmrl"]
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="10_d3ubh"]
-[ext_resource type="PackedScene" path="res://bullet_hell/display/pause_ui.tscn" id="10_er8wh"]
-[ext_resource type="FontFile" uid="uid://dmke1dcaagd0s" path="res://assets/fonts/Jokerfont-Regular.ttf" id="10_sl4ov"]
+[ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="10_er8wh"]
+[ext_resource type="FontFile" uid="uid://ba7vtjrqco0g1" path="res://assets/fonts/Jokerfont-Regular.ttf" id="10_sl4ov"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uj64u"]
 atlas = ExtResource("2_gs76b")
@@ -326,6 +326,7 @@ _data = {
 [node name="fv_dialogue_scene" type="CanvasLayer"]
 script = ExtResource("1_ub4dj")
 script_file_path = "res://dialogue_scene/test.txt"
+metadata/_edit_vertical_guides_ = [965.0]
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -336,6 +337,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="King" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(902, 340)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_gvjp7")
@@ -344,10 +346,10 @@ script = ExtResource("3_mdkde")
 character_name = "King"
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
-position = Vector2(950, 350)
+position = Vector2(952, 350)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_o328q")
-animation = &"pointing"
+animation = &"dark_eyes"
 offset = Vector2(-104.34, 0)
 script = ExtResource("3_mdkde")
 character_name = "Player"
@@ -472,6 +474,7 @@ text_overrun_behavior = 2
 [node name="TextTimer" type="Timer" parent="JesterDialogueBox"]
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
