@@ -17,8 +17,9 @@ extends Control
 @onready var text_timer: Timer = $ThoughtBubble/Label/TextTimer
 @onready var dialogue_audio: DialogueAudioPlayer = $ThoughtBubble/DialogueAudioPlayer
 @onready var death_text_label: Label = $Death/DeathText
+@onready var button_sound_animation: AnimationPlayer = $Death/ButtonSoundPlayer/AnimationPlayer
 
-const MAX_HP = 2
+const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
 var jester_arena = false
 var current_speaker
@@ -52,7 +53,6 @@ func _ready():
 
 
 func _process(_delta):
-#	print(get_tree().current_scene.scene_file_path)
 	if not jester_arena:
 		if current_hp == 0:
 			death()
@@ -81,20 +81,43 @@ func death():
 	$UIPlayer.z_index = 5
 	
 	death_text_label.text = DEATH_TEXT[0]
-	print(death_text_label.text)
 	death_text_label.visible_characters = 0
 	death_text_label.visible = true
 	
 	while death_text_label.visible_characters < len(death_text_label.text):
-		dialogue_audio.play_sound(current_speaker)
+		dialogue_audio.play_sound("Player")
 		death_text_label.visible_characters += 1
 		text_timer.start(TEXT_SPEED)
 		await text_timer.timeout
 	
 	await get_tree().create_timer(0.2).timeout
 	$Death/TryAgain.visible = true
+	button_sound_animation.stop(true)
+	button_sound_animation.play("spawn")
 	await get_tree().create_timer(0.2).timeout
 	$Death/GiveUp.visible = true
+	button_sound_animation.stop(true)
+	button_sound_animation.play("spawn")
+
+
+func _on_try_again_button_up():
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+
+func _on_give_up_button_up():
+	get_tree().quit()
+
+
+func _on_button_hover():
+	button_sound_animation.stop(true)
+	button_sound_animation.play("hover")
+
+
+func _on_button_press():
+	button_sound_animation.stop(true)
+	button_sound_animation.play("click")
+
 
 func _set_current_hp(new_hp):
 	current_hp = clamp(new_hp, 0, MAX_HP)

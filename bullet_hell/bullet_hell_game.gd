@@ -101,7 +101,7 @@ func _on_script_handler_spawn_joke_words(group):
 ## Spawn words in the four corners, with one being incorrect
 func spawn_words(group):
 	word_spawn_sound.play()
-	var word_map: Dictionary = word_groups.data[group]
+	var word_map: Dictionary = word_groups.data[group].duplicate(true)
 	var joke_text = word_map["!joke_text"]
 	word_map.erase("!joke_text")
 	
