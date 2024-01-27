@@ -4,7 +4,7 @@ King disappointed: TRY YOUR BEST: keypress
 Player pensive: i... i will...: keypress
 King dead_noblood: WHAT'S THAT? SAY IT WITH YOUR CHEST BOY.: keypress
 Player pointing: ...i will!: keypress
-King neutral: FOR THE FIRST JOKE: keypress
-King disappointed: I PROPOSE A PUN: keypress
+Jester pointing: FOR THE FIRST JOKE: keypress
+Jester death: I PROPOSE A PUN: keypress
 Player dark_eyes: uhhh... let me think...: keypress
 !transition: tutorial_level: 0

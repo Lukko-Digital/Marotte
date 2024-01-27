@@ -1,12 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://dfimnqqoeiet4"]
+[gd_scene load_steps=45 format=3 uid="uid://dfimnqqoeiet4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_ub4dj"]
 [ext_resource type="Texture2D" uid="uid://b3srkymm7ce0c" path="res://assets/sprites/fv_king-sheet.png" id="2_gs76b"]
 [ext_resource type="Script" path="res://dialogue_scene/character.gd" id="3_mdkde"]
-[ext_resource type="Texture2D" uid="uid://crr4xji06nr0i" path="res://assets/sprites/fv_player-sheet.png" id="4_5rrts"]
+[ext_resource type="Texture2D" uid="uid://b5d7xjspl0fg5" path="res://assets/sprites/fv_player-sheet.png" id="4_5rrts"]
+[ext_resource type="Texture2D" uid="uid://cixdjdu5ppfbp" path="res://assets/sprites/fv_jester-sheet.png" id="4_f02j3"]
 [ext_resource type="Texture2D" uid="uid://degd0b04aktu6" path="res://assets/sprites/fv_textbox_king.png" id="4_hj10r"]
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_f3xod"]
-[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="7_1h5jk"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_2stcm"]
 [ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="10_0q01d"]
 [ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="11_gixrm"]
@@ -62,35 +62,35 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4jsie"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1b0r"]
 atlas = ExtResource("4_5rrts")
 region = Rect2(1738, 1195, 1738, 1195)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k1jqm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_88cav"]
 atlas = ExtResource("4_5rrts")
 region = Rect2(1738, 2390, 1738, 1195)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_48xnh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3b5v"]
 atlas = ExtResource("4_5rrts")
 region = Rect2(1738, 0, 1738, 1195)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ab5qc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_esdty"]
 atlas = ExtResource("4_5rrts")
 region = Rect2(0, 0, 1738, 1195)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6l0jr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhvvj"]
 atlas = ExtResource("4_5rrts")
 region = Rect2(0, 2390, 1738, 1195)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_303nr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c30ji"]
 atlas = ExtResource("4_5rrts")
 region = Rect2(0, 1195, 1738, 1195)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8ssc6"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_o328q"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4jsie")
+"texture": SubResource("AtlasTexture_g1b0r")
 }],
 "loop": true,
 "name": &"dark_delivery",
@@ -98,7 +98,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k1jqm")
+"texture": SubResource("AtlasTexture_88cav")
 }],
 "loop": true,
 "name": &"dark_eyes",
@@ -106,7 +106,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_48xnh")
+"texture": SubResource("AtlasTexture_g3b5v")
 }],
 "loop": true,
 "name": &"nervous",
@@ -114,7 +114,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ab5qc")
+"texture": SubResource("AtlasTexture_esdty")
 }],
 "loop": true,
 "name": &"nervous_talking",
@@ -122,7 +122,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6l0jr")
+"texture": SubResource("AtlasTexture_uhvvj")
 }],
 "loop": true,
 "name": &"pensive",
@@ -130,7 +130,171 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_303nr")
+"texture": SubResource("AtlasTexture_c30ji")
+}],
+"loop": true,
+"name": &"pointing",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4jjc"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(0, 1323, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvsgi"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(6942, 1323, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x41v8"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(0, 2646, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7fy4"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(3471, 2646, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cipm7"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(6942, 2646, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nnae"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(0, 3969, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8g0n2"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(3471, 3969, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwa6c"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(6942, 3969, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itex7"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(0, 5292, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_relv7"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(3471, 5292, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ekmd"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(6942, 5292, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6frbj"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(0, 6615, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljbmv"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(3471, 6615, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcp71"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(6942, 6615, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71nvi"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(0, 7938, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6tbi"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(3471, 7938, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_055ln"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(3471, 1323, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfxdt"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(3471, 0, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0m3u"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(6942, 0, 3471, 1323)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ssc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4jjc")
+}],
+"loop": true,
+"name": &"applause",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvsgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x41v8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7fy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cipm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nnae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8g0n2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwa6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itex7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_relv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ekmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6frbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljbmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcp71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71nvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6tbi")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_055ln")
+}],
+"loop": true,
+"name": &"holding_mouth",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfxdt")
+}],
+"loop": true,
+"name": &"neutral",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0m3u")
 }],
 "loop": true,
 "name": &"pointing",
@@ -181,56 +345,21 @@ character_name = "King"
 visible = false
 position = Vector2(950, 350)
 scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_8ssc6")
-animation = &"dark_eyes"
+sprite_frames = SubResource("SpriteFrames_o328q")
+animation = &"pointing"
 script = ExtResource("3_mdkde")
 character_name = "Player"
 
-[node name="PlayerDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_noise")]
+[node name="Jester" type="AnimatedSprite2D" parent="."]
 visible = false
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -880.0
-offset_top = -461.0
-offset_right = 7975.0
-offset_bottom = 1699.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_hj10r")
-stretch_mode = 2
-script = ExtResource("6_f3xod")
-character_name = "Player"
-dialogue_noise = NodePath("../DialogueAudioPlayer")
+position = Vector2(957, 327)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_8ssc6")
+animation = &"applause"
+script = ExtResource("3_mdkde")
+character_name = "Jester"
 
-[node name="Label" type="Label" parent="PlayerDialogueBox"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1336.5
-offset_top = -476.0
-offset_right = 1336.5
-offset_bottom = 286.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_1h5jk")
-theme_override_font_sizes/font_size = 250
-text = "i uhhh ... umm"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-text_overrun_behavior = 2
-
-[node name="TextTimer" type="Timer" parent="PlayerDialogueBox"]
-
-[node name="KingDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_noise")]
+[node name="DialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_noise")]
 offset_left = 80.0
 offset_top = 619.0
 offset_right = 8935.0
@@ -239,10 +368,9 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_hj10r")
 stretch_mode = 2
 script = ExtResource("6_f3xod")
-character_name = "King"
 dialogue_noise = NodePath("../DialogueAudioPlayer")
 
-[node name="Label" type="Label" parent="KingDialogueBox"]
+[node name="Label" type="Label" parent="DialogueBox"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -264,7 +392,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 text_overrun_behavior = 2
 
-[node name="TextTimer" type="Timer" parent="KingDialogueBox"]
+[node name="TextTimer" type="Timer" parent="DialogueBox"]
 
 [node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_0q01d")
@@ -273,6 +401,7 @@ stream = ExtResource("10_0q01d")
 visible = false
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -288,14 +417,11 @@ libraries = {
 
 [connection signal="active_speaker" from="." to="King" method="_on_dialogue_scene_active_speaker"]
 [connection signal="active_speaker" from="." to="Player" method="_on_dialogue_scene_active_speaker"]
-[connection signal="active_speaker" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_active_speaker"]
-[connection signal="active_speaker" from="." to="KingDialogueBox" method="_on_dialogue_scene_active_speaker"]
+[connection signal="active_speaker" from="." to="Jester" method="_on_dialogue_scene_active_speaker"]
 [connection signal="change_emotion" from="." to="King" method="_on_dialogue_scene_change_emotion"]
 [connection signal="change_emotion" from="." to="Player" method="_on_dialogue_scene_change_emotion"]
-[connection signal="display_line" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_display_line"]
-[connection signal="display_line" from="." to="KingDialogueBox" method="_on_dialogue_scene_display_line"]
-[connection signal="speed_animation" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_speed_animation"]
-[connection signal="speed_animation" from="." to="KingDialogueBox" method="_on_dialogue_scene_speed_animation"]
-[connection signal="text_animation_done" from="PlayerDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
-[connection signal="text_animation_done" from="KingDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
+[connection signal="change_emotion" from="." to="Jester" method="_on_dialogue_scene_change_emotion"]
+[connection signal="display_line" from="." to="DialogueBox" method="_on_dialogue_scene_display_line"]
+[connection signal="speed_animation" from="." to="DialogueBox" method="_on_dialogue_scene_speed_animation"]
+[connection signal="text_animation_done" from="DialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

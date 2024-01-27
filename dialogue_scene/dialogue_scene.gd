@@ -60,7 +60,7 @@ func parse_line(line: String):
 		"!sound":
 			var audio_player: AudioStreamPlayer = get_node(split[1])
 			audio_player.play()
-		"Player", "King":
+		"Player", "King", "Jester":
 			active_speaker.emit(command)
 			change_emotion.emit(command, split[0].split(" ")[1])
 			display_line.emit(split[1])
