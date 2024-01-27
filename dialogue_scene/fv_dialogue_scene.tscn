@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://degd0b04aktu6" path="res://assets/sprites/fv_textbox_king.png" id="4_hj10r"]
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_f3xod"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_2stcm"]
-[ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="10_0q01d"]
+[ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="10_d3ubh"]
 [ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="10_er8wh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uj64u"]
@@ -359,7 +359,7 @@ animation = &"applause"
 script = ExtResource("3_mdkde")
 character_name = "Jester"
 
-[node name="DialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_noise")]
+[node name="DialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_audio")]
 offset_left = 80.0
 offset_top = 619.0
 offset_right = 8935.0
@@ -368,7 +368,8 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_hj10r")
 stretch_mode = 2
 script = ExtResource("6_f3xod")
-dialogue_noise = NodePath("../DialogueAudioPlayer")
+dialogue_audio = NodePath("../DialogueAudioPlayer")
+front_view = true
 
 [node name="Label" type="Label" parent="DialogueBox"]
 layout_mode = 1
@@ -394,9 +395,6 @@ text_overrun_behavior = 2
 
 [node name="TextTimer" type="Timer" parent="DialogueBox"]
 
-[node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_0q01d")
-
 [node name="FadeAnimation" type="ColorRect" parent="."]
 z_index = 2
 offset_right = 1920.0
@@ -412,11 +410,13 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 
 [node name="pause_ui" parent="." instance=ExtResource("10_er8wh")]
-process_mode = 3
+
+[node name="DialogueAudioPlayer" parent="." instance=ExtResource("10_d3ubh")]
 
 [connection signal="active_speaker" from="." to="King" method="_on_dialogue_scene_active_speaker"]
 [connection signal="active_speaker" from="." to="Player" method="_on_dialogue_scene_active_speaker"]
 [connection signal="active_speaker" from="." to="Jester" method="_on_dialogue_scene_active_speaker"]
+[connection signal="active_speaker" from="." to="DialogueBox" method="_on_dialogue_scene_active_speaker"]
 [connection signal="change_emotion" from="." to="King" method="_on_dialogue_scene_change_emotion"]
 [connection signal="change_emotion" from="." to="Player" method="_on_dialogue_scene_change_emotion"]
 [connection signal="change_emotion" from="." to="Jester" method="_on_dialogue_scene_change_emotion"]
