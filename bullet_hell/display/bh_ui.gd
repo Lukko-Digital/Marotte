@@ -17,6 +17,7 @@ extends Control
 @onready var text_timer: Timer = $ThoughtBubble/Label/TextTimer
 @onready var dialogue_audio: DialogueAudioPlayer = $ThoughtBubble/DialogueAudioPlayer
 @onready var death_text_label: Label = $Death/DeathText
+@onready var button_sound_animation: AnimationPlayer = $Death/ButtonSoundPlayer/AnimationPlayer
 
 const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
@@ -84,15 +85,19 @@ func death():
 	death_text_label.visible = true
 	
 	while death_text_label.visible_characters < len(death_text_label.text):
-		dialogue_audio.play_sound(current_speaker)
+		dialogue_audio.play_sound("Player")
 		death_text_label.visible_characters += 1
 		text_timer.start(TEXT_SPEED)
 		await text_timer.timeout
 	
 	await get_tree().create_timer(0.2).timeout
 	$Death/TryAgain.visible = true
+	button_sound_animation.stop(true)
+	button_sound_animation.play("spawn")
 	await get_tree().create_timer(0.2).timeout
 	$Death/GiveUp.visible = true
+	button_sound_animation.stop(true)
+	button_sound_animation.play("spawn")
 
 
 func _on_try_again_button_up():
@@ -102,6 +107,16 @@ func _on_try_again_button_up():
 
 func _on_give_up_button_up():
 	get_tree().quit()
+
+
+func _on_button_hover():
+	button_sound_animation.stop(true)
+	button_sound_animation.play("hover")
+
+
+func _on_button_press():
+	button_sound_animation.stop(true)
+	button_sound_animation.play("click")
 
 
 func _set_current_hp(new_hp):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c5rvnoi1v7yxh"]
+[gd_scene load_steps=43 format=3 uid="uid://c5rvnoi1v7yxh"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/bh_ui.gd" id="1_3ae8p"]
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="2_i8vm2"]
@@ -12,8 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://cgsrd332288mh" path="res://assets/sprites/bh_jester_icon-sheet.png" id="8_cuupq"]
 [ext_resource type="Texture2D" uid="uid://cvjbd0m6w03xi" path="res://assets/sprites/bhj_jester-sheet.png" id="10_okw2p"]
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="11_q1s3a"]
+[ext_resource type="AudioStream" uid="uid://ro0a8d227t7q" path="res://assets/audio/player_picks_wrong_v1.mp3" id="13_0avds"]
 [ext_resource type="Texture2D" uid="uid://3hm4iol5bwow" path="res://assets/sprites/ui_death_giveup.png" id="13_32x7d"]
+[ext_resource type="AudioStream" uid="uid://fk20nmoeualt" path="res://assets/audio/impact_extra_v1.mp3" id="13_seqc6"]
 [ext_resource type="Texture2D" uid="uid://hnv5msdnekqm" path="res://assets/sprites/ui_death_giveup_click.png" id="14_7ttxk"]
+[ext_resource type="AudioStream" uid="uid://t0qngodb46v4" path="res://assets/audio/mouse_hover_v1.mp3" id="14_n73gl"]
+[ext_resource type="AudioStream" uid="uid://bw8su1gy6f3tn" path="res://assets/audio/mouse_click_v1.mp3" id="15_48pho"]
 [ext_resource type="Texture2D" uid="uid://bsp270kruuox1" path="res://assets/sprites/ui_death_giveup_hover.png" id="15_h3upn"]
 [ext_resource type="Texture2D" uid="uid://bbym8sah6r2iw" path="res://assets/sprites/ui_death_tryagain.png" id="16_mtdww"]
 [ext_resource type="Texture2D" uid="uid://1u3tclefogso" path="res://assets/sprites/ui_death_tryagain_click.png" id="17_ehu76"]
@@ -254,6 +258,106 @@ _data = {
 "white_flash": SubResource("Animation_4pnvd")
 }
 
+[sub_resource type="Animation" id="Animation_lyt8g"]
+resource_name = "spawn"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_seqc6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_wpw63"]
+resource_name = "hover"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_n73gl")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [14.0]
+}
+
+[sub_resource type="Animation" id="Animation_f3rev"]
+resource_name = "click"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("15_48pho")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_067fd"]
+_data = {
+"click": SubResource("Animation_f3rev"),
+"hover": SubResource("Animation_wpw63"),
+"spawn": SubResource("Animation_lyt8g")
+}
+
 [node name="bh_ui" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -380,6 +484,15 @@ libraries = {
 [node name="Death" type="Node" parent="."]
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="Death"]
+stream = ExtResource("13_0avds")
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Death"]
+volume_db = 6.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Death/ButtonSoundPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_067fd")
+}
 
 [node name="DeathScreen" type="ColorRect" parent="Death"]
 visible = false
@@ -398,10 +511,10 @@ color = Color(0, 0, 0, 1)
 [node name="GiveUp" type="TextureButton" parent="Death"]
 visible = false
 z_index = 5
-offset_left = 1054.0
+offset_left = 1022.0
 offset_top = 705.0
-offset_right = 2272.0
-offset_bottom = 1147.0
+offset_right = 2811.0
+offset_bottom = 1174.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("13_32x7d")
 texture_pressed = ExtResource("14_7ttxk")
@@ -410,10 +523,10 @@ texture_hover = ExtResource("15_h3upn")
 [node name="TryAgain" type="TextureButton" parent="Death"]
 visible = false
 z_index = 5
-offset_left = 1002.0
+offset_left = 970.0
 offset_top = 501.0
-offset_right = 2752.0
-offset_bottom = 1171.0
+offset_right = 3279.0
+offset_bottom = 1231.0
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("16_mtdww")
 texture_pressed = ExtResource("17_ehu76")
@@ -422,9 +535,9 @@ texture_hover = ExtResource("18_27hju")
 [node name="DeathText" type="Label" parent="Death"]
 visible = false
 z_index = 5
-offset_left = 763.0
+offset_left = 784.0
 offset_top = 362.0
-offset_right = 1597.0
+offset_right = 1618.0
 offset_bottom = 466.0
 theme_override_fonts/font = ExtResource("4_feqy3")
 theme_override_font_sizes/font_size = 60
@@ -432,5 +545,9 @@ text = "you died of anxiety lmfao"
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[connection signal="button_down" from="Death/GiveUp" to="." method="_on_button_press"]
 [connection signal="button_up" from="Death/GiveUp" to="." method="_on_give_up_button_up"]
+[connection signal="mouse_entered" from="Death/GiveUp" to="." method="_on_button_hover"]
+[connection signal="button_down" from="Death/TryAgain" to="." method="_on_button_press"]
 [connection signal="button_up" from="Death/TryAgain" to="." method="_on_try_again_button_up"]
+[connection signal="mouse_entered" from="Death/TryAgain" to="." method="_on_button_hover"]
