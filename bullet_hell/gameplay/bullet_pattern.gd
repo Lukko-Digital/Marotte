@@ -26,15 +26,11 @@ const Direction = {
 
 var active_bullet_mode: String
 
-#func _ready():
-#	await get_tree().create_timer(0.5).timeout
-	
-#	horizontal_grid(Vector2(0,540), 5, 10, 1)
-#	vertical_grid(Vector2(960, 0), 10, 7, 1)
+func spawn(scene: PackedScene, spawn_position: Vector2, args: Array):
+	var instance = scene.instantiate()
+	instance.start(spawn_position, args)
+	add_child(instance)
 
-#	spiral(Vector2(960, 540), 3)
-
-#	circle(Vector2(960, 540))
 
 func horizontal_grid(spawn_position: Vector2, num_rows=3, num_cols=2, speed=1):
 	spawn_position = spawn_position - position
@@ -121,7 +117,7 @@ func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=1):
 
 
 ## Circle shot
-func circle(spawn_position: Vector2, num_shots=16):
+func circle(spawn_position: Vector2, speed=1, num_shots=16):
 	spawn_position = spawn_position - position
 	var warning_dir = spawn_position.rotated(PI)
 	var shot_base_dir = Vector2(1,0)#spawn_position.rotated(PI/2)
@@ -132,15 +128,11 @@ func circle(spawn_position: Vector2, num_shots=16):
 		spawn(
 			bullet_scene,
 			spawn_position,
-			[shot_base_dir.rotated(2*PI/num_shots*i)]
+			[shot_base_dir.rotated(2*PI/num_shots*i), 500*speed]
 		)
 
-func spawn(scene: PackedScene, spawn_position: Vector2, args: Array):
-	var instance = scene.instantiate()
-	instance.start(spawn_position, args)
-	add_child(instance)
 
-func circle_pattern():
+func circle_pattern(speed=1):
 	var direction = Direction.values().pick_random()
 	var spawn_position: Vector2
 	match direction:
@@ -153,7 +145,7 @@ func circle_pattern():
 		Direction.DOWN:
 			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
 			
-	circle(spawn_position)
+	circle(spawn_position, speed)
 
 
 
@@ -166,7 +158,13 @@ func spawn_bullet_pattern():
 			"double_circle":
 				for i in range(2):
 					circle_pattern()
-					
+				spawn_timer.wait_time = 3
+			"slow_circle":
+				circle_pattern(0.6)
+				spawn_timer.wait_time = 3
+			"slow_double_circle":
+				for i in range(2):
+					circle_pattern(0.6)
 				spawn_timer.wait_time = 3
 			"spiral":
 				spiral(game_center)
@@ -187,7 +185,7 @@ func _on_script_handler_spawn_bullets(pattern):
 			active_bullet_mode = "none"
 			## Very specific only used in the tutorial
 			await get_tree().create_timer(1).timeout
-			spawn(bullet_scene, Vector2(RIGHT_X - 130, TOP_Y + 80) - position, [Vector2()])
+			spawn(bullet_scene, Vector2(RIGHT_X - 130, TOP_Y + 80) - position, [Vector2(), 0])
 		_:
 			active_bullet_mode = pattern
 	spawn_bullet_pattern()
