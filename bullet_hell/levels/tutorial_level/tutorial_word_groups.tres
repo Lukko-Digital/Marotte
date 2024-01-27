@@ -13,26 +13,26 @@ data = {
 "huh?": true
 },
 "CALL A": {
-"!joke_text": "WHAT DO YOU CALL A ____ ____ __ ____",
+"!joke_text": "WHAT DO YOU CALL A ;;;; ;;;; ;; ;;;;",
 "CALL A": true,
 "EAT ARE": false,
 "I FORGET": false
 },
 "DO YOU": {
-"!joke_text": "WHAT DO YOU ____ _ ____ ____ __ ____",
+"!joke_text": "WHAT DO YOU ;;;; ; ;;;; ;;;; ;; ;;;;",
 "AM ARE": false,
 "DO YOU": true,
 "FOR AND": false
 },
 "FISH": {
-"!joke_text": "WHAT DO YOU CALL A FISH ____ __ ____",
+"!joke_text": "WHAT DO YOU CALL A FISH ;;;; ;; ;;;;",
 "BEAR": false,
 "BLIND GUY": false,
 "FISH": true,
 "FOX": false
 },
 "WHAT": {
-"!joke_text": "WHAT __ ___ ____ _ ____ ____ __ ____",
+"!joke_text": "WHAT ;; ;;; ;;;; ; ;;;; ;;;; ;; ;;;;",
 "WHAT": true
 },
 "WITH NO EYES": {
