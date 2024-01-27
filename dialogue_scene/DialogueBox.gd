@@ -8,10 +8,10 @@ extends TextureRect
 
 signal text_animation_done
 
-const TEXT_SPEED = 0.06
+const TEXT_SPEED = 0.08
 
-const VOICE_PITCH_MIN: float = 0.9
-const VOICE_PITCH_MAX: float = 1.5
+const VOICE_PITCH_MIN: float = 1
+const VOICE_PITCH_MAX: float = 1.3
 
 func _on_dialogue_scene_active_speaker(speaker):
 	visible = speaker == character_name
