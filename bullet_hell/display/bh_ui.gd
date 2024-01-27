@@ -20,7 +20,7 @@ const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
 var jester_arena = false
 
-const TEXT_SPEED = 0.03
+const TEXT_SPEED = 0.06
 
 const Label_Size = {
 	PLAYER = Vector2(2335, 835),
