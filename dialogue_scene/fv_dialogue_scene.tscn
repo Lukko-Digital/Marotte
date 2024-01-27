@@ -326,6 +326,7 @@ _data = {
 [node name="fv_dialogue_scene" type="CanvasLayer"]
 script = ExtResource("1_ub4dj")
 script_file_path = "res://dialogue_scene/test.txt"
+metadata/_edit_vertical_guides_ = [965.0]
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -336,6 +337,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="King" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(902, 340)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_gvjp7")
@@ -344,8 +346,7 @@ script = ExtResource("3_mdkde")
 character_name = "King"
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(950, 350)
+position = Vector2(903, 350)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_o328q")
 animation = &"pointing"
@@ -472,6 +473,7 @@ text_overrun_behavior = 2
 [node name="TextTimer" type="Timer" parent="JesterDialogueBox"]
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
