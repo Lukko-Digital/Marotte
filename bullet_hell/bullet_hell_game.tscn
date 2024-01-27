@@ -135,6 +135,7 @@ bullet_spawn_sound = NodePath("../SoundEffects/BulletSpawn")
 
 [connection signal="init_joke_text" from="." to="Environment/JokeLabel" method="_on_bullet_hell_game_init_joke_text"]
 [connection signal="spawn_bullet_pattern" from="." to="bullet_pattern" method="_on_bullet_hell_game_spawn_bullet_pattern"]
+[connection signal="use_jester_arena" from="." to="bh_ui" method="_on_bullet_hell_game_use_jester_arena"]
 [connection signal="timeout" from="Environment/WordTimer" to="." method="_on_word_timer_timeout"]
 [connection signal="timeout" from="Environment/WordTimer" to="bh_ui" method="_on_word_timer_timeout"]
 [connection signal="hit" from="bh_player" to="bh_ui" method="_on_bh_player_hit"]

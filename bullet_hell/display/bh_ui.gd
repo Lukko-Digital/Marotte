@@ -2,8 +2,10 @@ extends Control
 
 @export var player_thought_bubble: CompressedTexture2D
 @export var jester_thought_bubble: CompressedTexture2D
+@export var jester_speech_bubble: CompressedTexture2D
 @export var player_font: Font
 @export var jester_font: Font
+@export var jester_arena: CompressedTexture2D
 
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var color_animation: AnimationPlayer = $ScreenColor/AnimationPlayer
@@ -40,6 +42,7 @@ func _ready():
 	health_bar.max_value = MAX_HP
 	health_bar.value = MAX_HP
 
+
 func _process(_delta):
 	if current_hp <= MAX_HP * 0.2:
 		player_image_animation.play("stress3")
@@ -57,6 +60,10 @@ func _process(_delta):
 func _set_current_hp(new_hp):
 	current_hp = clamp(new_hp, 0, MAX_HP)
 	health_bar.value = current_hp
+
+
+func _on_bullet_hell_game_use_jester_arena():
+	$Interface.texture = jester_arena
 
 
 func _on_bh_player_hit():
