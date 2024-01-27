@@ -14,11 +14,12 @@ extends Control
 @onready var jester_icon: Sprite2D = $ThoughtBubble/JesterIcon
 @onready var dialogue_label: Label = $ThoughtBubble/Label
 @onready var text_timer: Timer = $ThoughtBubble/Label/TextTimer
-@onready var dialogue_noise: AudioStreamPlayer = $ThoughtBubble/DialogueAudioPlayer
+@onready var dialogue_audio: DialogueAudioPlayer = $ThoughtBubble/DialogueAudioPlayer
 
 const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
 var jester_arena = false
+var current_speaker
 
 const TEXT_SPEED = 0.06
 
@@ -88,6 +89,7 @@ func _on_word_timer_timeout():
 
 func _on_script_handler_active_speaker(speaker):
 	var split = speaker.split("_")
+	current_speaker = split[0]
 	if not jester_arena:
 		match split[0]:
 			"Player":
@@ -125,8 +127,7 @@ func _on_script_handler_display_line(text):
 
 func animate_display():
 	while dialogue_label.visible_characters < len(dialogue_label.text):
-		dialogue_noise.pitch_scale = randf_range(VOICE_PITCH_MIN, VOICE_PITCH_MAX)
-		dialogue_noise.play()
+		dialogue_audio.play_sound(current_speaker)
 		dialogue_label.visible_characters += 1
 		text_timer.start(TEXT_SPEED)
 		await text_timer.timeout

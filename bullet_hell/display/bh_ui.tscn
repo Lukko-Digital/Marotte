@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://ba7vtjrqco0g1" path="res://assets/fonts/Jokerfont-Regular.ttf" id="6_c052r"]
 [ext_resource type="Texture2D" uid="uid://bwjosdmwdx1hv" path="res://assets/sprites/bhj_ui.png" id="7_s6nqr"]
 [ext_resource type="Texture2D" uid="uid://cgsrd332288mh" path="res://assets/sprites/bh_jester_icon-sheet.png" id="8_cuupq"]
-[ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="8_ijuq7"]
+[ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="11_q1s3a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
 bg_color = Color(0, 0, 0, 1)
@@ -250,8 +250,7 @@ scale = Vector2(1.02, 1.02)
 texture = ExtResource("8_cuupq")
 hframes = 3
 
-[node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="ThoughtBubble"]
-stream = ExtResource("8_ijuq7")
+[node name="DialogueAudioPlayer" parent="ThoughtBubble" instance=ExtResource("11_q1s3a")]
 
 [node name="ScreenColor" type="ColorRect" parent="."]
 layout_mode = 1
