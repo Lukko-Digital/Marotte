@@ -1,16 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://by1v75ovunb1c"]
+[gd_scene load_steps=15 format=3 uid="uid://bl1fy1m5y84p4"]
 
-[ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_tsyg8"]
-[ext_resource type="Texture2D" uid="uid://b30p5j3pxonww" path="res://assets/sprites/sv_crowd.png" id="2_neox0"]
-[ext_resource type="Texture2D" uid="uid://d3hfhda0t51c6" path="res://assets/sprites/sv_king_neutral.png" id="3_mvlk4"]
-[ext_resource type="Texture2D" uid="uid://dtydkcfk4e8sn" path="res://assets/sprites/sv_player_scared.png" id="4_c8u2e"]
-[ext_resource type="Texture2D" uid="uid://h0uj0ye8u74p" path="res://assets/sprites/sv_textbox_kid.png" id="5_l4ayj"]
-[ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_ew3cy"]
-[ext_resource type="Texture2D" uid="uid://dr1a4q36857lj" path="res://assets/sprites/sv_textbox_king.png" id="6_o7lnw"]
-[ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="7_wr05v"]
-[ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="8_3lmr7"]
-[ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="8_ewfxd"]
-[ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="11_5jtwt"]
+[ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_iqvk0"]
+[ext_resource type="Texture2D" uid="uid://b30p5j3pxonww" path="res://assets/sprites/sv_crowd.png" id="2_gruop"]
+[ext_resource type="Texture2D" uid="uid://d3hfhda0t51c6" path="res://assets/sprites/sv_king_neutral.png" id="3_1c5or"]
+[ext_resource type="Script" path="res://dialogue_scene/character.gd" id="4_8em3g"]
+[ext_resource type="Texture2D" uid="uid://dtydkcfk4e8sn" path="res://assets/sprites/sv_player_scared.png" id="4_w5rsm"]
+[ext_resource type="Texture2D" uid="uid://h0uj0ye8u74p" path="res://assets/sprites/sv_textbox_kid.png" id="5_osgyf"]
+[ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_iwbhi"]
+[ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="7_yvt45"]
+[ext_resource type="Texture2D" uid="uid://dr1a4q36857lj" path="res://assets/sprites/sv_textbox_king.png" id="8_i55lg"]
+[ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_cdjw6"]
+[ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="10_xsrl6"]
+[ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="11_cku1h"]
 
 [sub_resource type="Animation" id="Animation_khwmw"]
 resource_name = "fade_in"
@@ -32,9 +33,9 @@ _data = {
 "fade_in": SubResource("Animation_khwmw")
 }
 
-[node name="dialogue_scene" type="CanvasLayer"]
-script = ExtResource("1_tsyg8")
-script_file_path = "res://dialogue_scene/test.txt"
+[node name="sv_dialogue_scene" type="CanvasLayer"]
+script = ExtResource("1_iqvk0")
+script_file_path = "res://dialogue_scene/test2.txt"
 
 [node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -48,23 +49,23 @@ color = Color(0, 0, 0, 1)
 offset_right = 9600.0
 offset_bottom = 5400.0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_neox0")
+texture = ExtResource("2_gruop")
 
-[node name="King" type="TextureRect" parent="."]
-offset_left = 849.0
-offset_top = 105.0
-offset_right = 5251.0
-offset_bottom = 4873.0
+[node name="King" type="Sprite2D" parent="."]
+position = Vector2(1284, 581)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_mvlk4")
+texture = ExtResource("3_1c5or")
+script = ExtResource("4_8em3g")
+character_name = "King"
+file_prefix = "sv_king"
 
-[node name="Player" type="TextureRect" parent="."]
-offset_left = 284.0
-offset_top = 451.0
-offset_right = 1295.0
-offset_bottom = 3152.0
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(397, 749)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_c8u2e")
+texture = ExtResource("4_w5rsm")
+script = ExtResource("4_8em3g")
+character_name = "Player"
+file_prefix = "sv_player"
 
 [node name="PlayerDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_noise")]
 visible = false
@@ -80,8 +81,8 @@ offset_bottom = 507.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_l4ayj")
-script = ExtResource("6_ew3cy")
+texture = ExtResource("5_osgyf")
+script = ExtResource("6_iwbhi")
 character_name = "Player"
 dialogue_noise = NodePath("../DialogueAudioPlayer")
 
@@ -99,7 +100,7 @@ offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_wr05v")
+theme_override_fonts/font = ExtResource("7_yvt45")
 theme_override_font_sizes/font_size = 250
 text = "i uhhh ... umm"
 horizontal_alignment = 1
@@ -116,8 +117,8 @@ offset_top = 104.0
 offset_right = 4680.0
 offset_bottom = 1753.0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("6_o7lnw")
-script = ExtResource("6_ew3cy")
+texture = ExtResource("8_i55lg")
+script = ExtResource("6_iwbhi")
 character_name = "King"
 dialogue_noise = NodePath("../DialogueAudioPlayer")
 
@@ -135,7 +136,7 @@ offset_bottom = 444.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("8_3lmr7")
+theme_override_fonts/font = ExtResource("9_cdjw6")
 theme_override_font_sizes/font_size = 300
 text = "you wot mate"
 horizontal_alignment = 1
@@ -146,9 +147,9 @@ text_overrun_behavior = 2
 [node name="TextTimer" type="Timer" parent="KingDialogueBox"]
 
 [node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_ewfxd")
+stream = ExtResource("10_xsrl6")
 
-[node name="StartTransition" parent="." instance=ExtResource("11_5jtwt")]
+[node name="StartTransition" parent="." instance=ExtResource("11_cku1h")]
 visible = false
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
@@ -167,6 +168,8 @@ libraries = {
 
 [connection signal="active_speaker" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_active_speaker"]
 [connection signal="active_speaker" from="." to="KingDialogueBox" method="_on_dialogue_scene_active_speaker"]
+[connection signal="change_emotion" from="." to="King" method="_on_dialogue_scene_change_emotion"]
+[connection signal="change_emotion" from="." to="Player" method="_on_dialogue_scene_change_emotion"]
 [connection signal="display_line" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_display_line"]
 [connection signal="display_line" from="." to="KingDialogueBox" method="_on_dialogue_scene_display_line"]
 [connection signal="speed_animation" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_speed_animation"]

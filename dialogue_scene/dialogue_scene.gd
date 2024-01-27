@@ -18,8 +18,7 @@ var advance_condition: Advance_Conditions
 signal active_speaker(speaker)
 signal display_line(text)
 signal speed_animation
-signal spawn_words(group)
-signal spawn_bullets(pattern)
+signal change_emotion(speaker, emotion)
 
 func _ready():
 	load_file()
@@ -52,13 +51,15 @@ func next_line():
 
 func parse_line(line: String):
 	var split = line.split(": ")
-	match split[0]:
+	var command = split[0].split("_")[0]
+	match command:
 		"!transition":
 			transition.play("end")
 			await transition.transition_finished
 			get_tree().change_scene_to_file("res://bullet_hell/levels/{level}/{level}.tscn".format({"level": split[1]}))
 		"Player", "King":
-			active_speaker.emit(split[0])
+			active_speaker.emit(command)
+			change_emotion.emit(command, split[0].split("_")[1])
 			display_line.emit(split[1])
 			display_in_progress = true
 			

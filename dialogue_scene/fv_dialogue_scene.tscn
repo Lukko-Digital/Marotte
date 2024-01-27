@@ -1,0 +1,175 @@
+[gd_scene load_steps=13 format=3 uid="uid://dfimnqqoeiet4"]
+
+[ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_ub4dj"]
+[ext_resource type="Texture2D" uid="uid://brr5xd3h0eh4w" path="res://assets/sprites/fv_king_neutral.png" id="2_i8ntk"]
+[ext_resource type="Script" path="res://dialogue_scene/character.gd" id="3_mdkde"]
+[ext_resource type="Texture2D" uid="uid://degd0b04aktu6" path="res://assets/sprites/fv_textbox_king.png" id="4_hj10r"]
+[ext_resource type="Texture2D" uid="uid://dug5n7twxbhcj" path="res://assets/sprites/fv_player_pointing.png" id="4_sli72"]
+[ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_f3xod"]
+[ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="7_1h5jk"]
+[ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_2stcm"]
+[ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="10_0q01d"]
+[ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="11_gixrm"]
+
+[sub_resource type="Animation" id="Animation_khwmw"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeAnimation:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nt54k"]
+_data = {
+"fade_in": SubResource("Animation_khwmw")
+}
+
+[node name="fv_dialogue_scene" type="CanvasLayer"]
+script = ExtResource("1_ub4dj")
+script_file_path = "res://dialogue_scene/test.txt"
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="King" type="Sprite2D" parent="."]
+position = Vector2(952, 364)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_i8ntk")
+script = ExtResource("3_mdkde")
+character_name = "King"
+file_prefix = "fv_king"
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(950, 350)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_sli72")
+script = ExtResource("3_mdkde")
+character_name = "Player"
+file_prefix = "fv_player"
+
+[node name="PlayerDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_noise")]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -880.0
+offset_top = -461.0
+offset_right = 7975.0
+offset_bottom = 1699.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_hj10r")
+stretch_mode = 2
+script = ExtResource("6_f3xod")
+character_name = "Player"
+dialogue_noise = NodePath("../DialogueAudioPlayer")
+
+[node name="Label" type="Label" parent="PlayerDialogueBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1336.5
+offset_top = -476.0
+offset_right = 1336.5
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_1h5jk")
+theme_override_font_sizes/font_size = 250
+text = "i uhhh ... umm"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="TextTimer" type="Timer" parent="PlayerDialogueBox"]
+
+[node name="KingDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_noise")]
+offset_left = 80.0
+offset_top = 619.0
+offset_right = 8935.0
+offset_bottom = 2779.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_hj10r")
+stretch_mode = 2
+script = ExtResource("6_f3xod")
+character_name = "King"
+dialogue_noise = NodePath("../DialogueAudioPlayer")
+
+[node name="Label" type="Label" parent="KingDialogueBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1758.0
+offset_top = -504.5
+offset_right = 1638.0
+offset_bottom = 444.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_2stcm")
+theme_override_font_sizes/font_size = 300
+text = "you wot mate"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="TextTimer" type="Timer" parent="KingDialogueBox"]
+
+[node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0q01d")
+
+[node name="StartTransition" parent="." instance=ExtResource("11_gixrm")]
+visible = false
+
+[node name="FadeAnimation" type="ColorRect" parent="."]
+visible = false
+z_index = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fade_in"
+libraries = {
+"": SubResource("AnimationLibrary_nt54k")
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="active_speaker" from="." to="King" method="_on_dialogue_scene_active_speaker"]
+[connection signal="active_speaker" from="." to="Player" method="_on_dialogue_scene_active_speaker"]
+[connection signal="active_speaker" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_active_speaker"]
+[connection signal="active_speaker" from="." to="KingDialogueBox" method="_on_dialogue_scene_active_speaker"]
+[connection signal="change_emotion" from="." to="King" method="_on_dialogue_scene_change_emotion"]
+[connection signal="change_emotion" from="." to="Player" method="_on_dialogue_scene_change_emotion"]
+[connection signal="display_line" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_display_line"]
+[connection signal="display_line" from="." to="KingDialogueBox" method="_on_dialogue_scene_display_line"]
+[connection signal="speed_animation" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_speed_animation"]
+[connection signal="speed_animation" from="." to="KingDialogueBox" method="_on_dialogue_scene_speed_animation"]
+[connection signal="text_animation_done" from="PlayerDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
+[connection signal="text_animation_done" from="KingDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
