@@ -3,6 +3,10 @@ extends Area2D
 @onready var label: Label = $Label
 @onready var hitbox: CollisionShape2D = $CollisionShape2D
 
+const CHAR_WIDTH = 19
+const HITBOX_SCALE = 0.8
+const HITBOX_HEIGHT = 25
+
 var correct
 var word
 var joke_text
@@ -22,7 +26,7 @@ func start(start_pos: Vector2, args: Array):
 func _ready():
 	label.text = word
 	var rect = RectangleShape2D.new()
-	rect.size = label.size
+	rect.size = Vector2(len(label.text) * CHAR_WIDTH, HITBOX_HEIGHT) * HITBOX_SCALE
 	hitbox.shape = rect
 
 

@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 500
+var speed: int
 var direction: Vector2
 
 
@@ -8,9 +8,7 @@ var direction: Vector2
 func start(start_pos: Vector2, args: Array):
 	position = start_pos
 	direction = args[0].normalized()
-	
-	if len(args) > 1:
-		speed = args[1]
+	speed = args[1]
 	
 	look_at(direction)
 
