@@ -9,7 +9,6 @@ extends Node2D
 @onready var warning_scene = preload("res://bullet_hell/gameplay/warning.tscn")
 @onready var word_scene = preload("res://bullet_hell/gameplay/word_pickup.tscn")
 @onready var word_timer: Timer = $Environment/WordTimer
-#@onready var bullet_timer: Timer = $Environment/BulletTimer
 @onready var player: CharacterBody2D = $bh_player
 
 ## Sound Effects
