@@ -1,9 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://dfimnqqoeiet4"]
+[gd_scene load_steps=25 format=3 uid="uid://dfimnqqoeiet4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_ub4dj"]
-[ext_resource type="Texture2D" uid="uid://brr5xd3h0eh4w" path="res://assets/sprites/fv_king_neutral.png" id="2_i8ntk"]
+[ext_resource type="Texture2D" uid="uid://b3srkymm7ce0c" path="res://assets/sprites/fv_king-sheet.png" id="2_gs76b"]
 [ext_resource type="Script" path="res://dialogue_scene/character.gd" id="3_mdkde"]
-[ext_resource type="Texture2D" uid="uid://b6ktxd68panxf" path="res://assets/sprites/fv_player-sheet.png" id="4_5rrts"]
+[ext_resource type="Texture2D" uid="uid://crr4xji06nr0i" path="res://assets/sprites/fv_player-sheet.png" id="4_5rrts"]
 [ext_resource type="Texture2D" uid="uid://degd0b04aktu6" path="res://assets/sprites/fv_textbox_king.png" id="4_hj10r"]
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_f3xod"]
 [ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="7_1h5jk"]
@@ -11,11 +11,51 @@
 [ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="10_0q01d"]
 [ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="11_gixrm"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj64u"]
+atlas = ExtResource("2_gs76b")
+region = Rect2(2272, 0, 2272, 1218)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfre7"]
+atlas = ExtResource("2_gs76b")
+region = Rect2(2272, 1218, 2272, 1218)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2ykr"]
+atlas = ExtResource("2_gs76b")
+region = Rect2(0, 1218, 2272, 1218)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7alpg"]
+atlas = ExtResource("2_gs76b")
+region = Rect2(0, 0, 2272, 1218)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_gvjp7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_i8ntk")
+"texture": SubResource("AtlasTexture_uj64u")
+}],
+"loop": true,
+"name": &"dead_blood",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfre7")
+}],
+"loop": true,
+"name": &"dead_noblood",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2ykr")
+}],
+"loop": true,
+"name": &"disappointed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7alpg")
 }],
 "loop": true,
 "name": &"neutral",
@@ -130,19 +170,19 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="King" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(952, 364)
-scale = Vector2(0.2, 0.2)
+position = Vector2(902, 340)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_gvjp7")
-animation = &"neutral"
+animation = &"dead_noblood"
 script = ExtResource("3_mdkde")
 character_name = "King"
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(950, 350)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8ssc6")
-animation = &"nervous"
+animation = &"dark_eyes"
 script = ExtResource("3_mdkde")
 character_name = "Player"
 
