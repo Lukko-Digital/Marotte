@@ -16,13 +16,18 @@ extends Control
 @onready var dialogue_label: Label = $ThoughtBubble/Label
 @onready var text_timer: Timer = $ThoughtBubble/Label/TextTimer
 @onready var dialogue_audio: DialogueAudioPlayer = $ThoughtBubble/DialogueAudioPlayer
+@onready var death_text_label: Label = $Death/DeathText
 
-const MAX_HP = 10
+const MAX_HP = 2
 var current_hp = MAX_HP : set = _set_current_hp
 var jester_arena = false
 var current_speaker
 
 const TEXT_SPEED = 0.06
+
+const DEATH_TEXT = [
+	"you died of anxiety lmfao"
+]
 
 const Label_Size = {
 	PLAYER = Vector2(2335, 835),
@@ -47,10 +52,11 @@ func _ready():
 
 
 func _process(_delta):
-	print(get_tree().current_scene.scene_file_path)
+#	print(get_tree().current_scene.scene_file_path)
 	if not jester_arena:
 		if current_hp == 0:
 			death()
+			set_process(false)
 		elif current_hp <= MAX_HP * 0.2:
 			player_image_animation.play("stress3")
 			color_animation.speed_scale = 2
@@ -67,12 +73,28 @@ func _process(_delta):
 
 
 func death():
-	player_image_animation.play("death")
-	$UIPlayer.z_index = 10
-	color_animation.play("black")
-	await get_tree().create_timer(0.01).timeout
 	get_tree().paused = true
-
+	
+	$Death/DeathSound.play()
+	$Death/DeathScreen.visible = true
+	player_image_animation.play("death")
+	$UIPlayer.z_index = 5
+	
+	death_text_label.text = DEATH_TEXT[0]
+	print(death_text_label.text)
+	death_text_label.visible_characters = 0
+	death_text_label.visible = true
+	
+	while death_text_label.visible_characters < len(death_text_label.text):
+		dialogue_audio.play_sound(current_speaker)
+		death_text_label.visible_characters += 1
+		text_timer.start(TEXT_SPEED)
+		await text_timer.timeout
+	
+	await get_tree().create_timer(0.2).timeout
+	$Death/TryAgain.visible = true
+	await get_tree().create_timer(0.2).timeout
+	$Death/GiveUp.visible = true
 
 func _set_current_hp(new_hp):
 	current_hp = clamp(new_hp, 0, MAX_HP)
