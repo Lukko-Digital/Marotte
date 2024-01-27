@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_ub4dj"]
 [ext_resource type="Texture2D" uid="uid://brr5xd3h0eh4w" path="res://assets/sprites/fv_king_neutral.png" id="2_i8ntk"]
 [ext_resource type="Script" path="res://dialogue_scene/character.gd" id="3_mdkde"]
-[ext_resource type="Texture2D" uid="uid://cgl2napqjxrq4" path="res://assets/sprites/fv_player-sheet.png" id="4_5rrts"]
+[ext_resource type="Texture2D" uid="uid://b6ktxd68panxf" path="res://assets/sprites/fv_player-sheet.png" id="4_5rrts"]
 [ext_resource type="Texture2D" uid="uid://degd0b04aktu6" path="res://assets/sprites/fv_textbox_king.png" id="4_hj10r"]
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_f3xod"]
-[ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="7_1h5jk"]
+[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="7_1h5jk"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_2stcm"]
 [ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="10_0q01d"]
 [ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="11_gixrm"]
@@ -142,7 +142,7 @@ character_name = "King"
 position = Vector2(950, 350)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8ssc6")
-animation = &"dark_delivery"
+animation = &"nervous"
 script = ExtResource("3_mdkde")
 character_name = "Player"
 
@@ -233,7 +233,6 @@ stream = ExtResource("10_0q01d")
 visible = false
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
-visible = false
 z_index = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
