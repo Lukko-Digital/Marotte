@@ -1,18 +1,15 @@
 Jester_neutral: : 2
-Jester_neutral: weird: 2
+Jester_neutral: this is your mind palace: 2
 !dialogue_words: A: 0
-Jester_neutral: my mind palace looks nothing like this: pickup
-Jester_neutral: that red bar over there is your “confidence”: 3
-Jester_neutral: as long as you can formulate the opening to your joke without losing all your confidence: 5
-Jester_neutral: the punch line will be no problem: 3
-Jester_neutral: performing a joke is something of a mental battle: 3
-Jester_neutral: for me, it usually has to do with forgetting my material.: 3
+Jester_neutral: weird... mine looks nothing like this: pickup
+Jester_neutral: performing a joke is something of a mental battle: 4
+Jester_neutral: that red bar over there is your “confidence”: 4
+Jester_neutral: as long as you can formulate the opening to your joke without losing "confidence": 6
 !dialogue_words: B: 0
-Jester_neutral: but for you it’s something else...: pickup
+Jester_neutral: the punch line will be no problem: pickup
 !bullets: still: 0
-Jester_happy: that red circle is called a “confidence boost” try grabbing it: hit
+Jester_happy: that red circle is called a “confidence boost”: hit
 Jester_neutral: just kidding: 3
-Jester_neutral: nine more of those and your confidence will be too low to deliver your joke: 4
 Jester_neutral: coming up with each word will require you to survive a bunch of those: 4
 Jester_neutral: just like this: 3
 !bullets: slow_circle: 2

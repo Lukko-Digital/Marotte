@@ -4,7 +4,7 @@ class_name DialogueAudioPlayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 const PITCH_RANGES = {
-	"Player" = [0.9, 1.1],
+	"Player" = [1.3, 1.6],
 	"King" = [0.9, 1.1],
 	"Jester" = [0.9, 1.1]
 }
