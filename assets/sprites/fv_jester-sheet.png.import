@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://d4ip8tm5fr2wu"
+=======
+uid="uid://da8opq67ql8up"
+>>>>>>> 86392540bd6fd7af9dd167d331d46766d78a0a8b
 path="res://.godot/imported/fv_jester-sheet.png-1758f288fd9665ceb70741db80c7e003.ctex"
 metadata={
 "vram_texture": false
