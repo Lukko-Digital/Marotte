@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://dl0s52uhiaau5"]
+
+[ext_resource type="Script" path="res://dialogue_scene/DialogueAudioPlayer.gd" id="1_npsxb"]
+[ext_resource type="AudioStream" uid="uid://bheqso7uj2huf" path="res://assets/audio/talking_sound_4a.mp3" id="1_p2rm1"]
+[ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="2_4yryk"]
+[ext_resource type="AudioStream" uid="uid://5tmxb5pmwon3" path="res://assets/audio/talking_sound_3a.mp3" id="3_rnne7"]
+
+[sub_resource type="Animation" id="Animation_gsb0w"]
+resource_name = "player"
+length = 0.25
+step = 0.01
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_p2rm1")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_ls618"]
+resource_name = "jester"
+length = 0.17
+step = 0.01
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_4yryk")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_oew68"]
+resource_name = "king"
+length = 0.14
+step = 0.01
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_rnne7")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yyfoh"]
+_data = {
+"jester": SubResource("Animation_ls618"),
+"king": SubResource("Animation_oew68"),
+"player": SubResource("Animation_gsb0w")
+}
+
+[node name="DialogueAudioPlayer" type="AudioStreamPlayer"]
+script = ExtResource("1_npsxb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yyfoh")
+}
