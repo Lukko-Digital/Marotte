@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
 [ext_resource type="Script" path="res://bullet_hell/display/thinking_bar.gd" id="2_uwvi3"]
-[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="2_waoyk"]
+[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/Playerfont-Regular.ttf" id="2_waoyk"]
 [ext_resource type="PackedScene" uid="uid://c5rvnoi1v7yxh" path="res://bullet_hell/display/bh_ui.tscn" id="3_5sicw"]
 [ext_resource type="Script" path="res://bullet_hell/display/JokeLabel.gd" id="3_ea24l"]
 [ext_resource type="Script" path="res://bullet_hell/script_handler.gd" id="5_eia4t"]
@@ -128,6 +128,7 @@ script = ExtResource("5_eia4t")
 
 [node name="ClearTransition" parent="script_handler" instance=ExtResource("7_d2507")]
 visible = false
+z_index = 10
 
 [node name="bullet_pattern" parent="." node_paths=PackedStringArray("bullet_spawn_sound") instance=ExtResource("8_jtn82")]
 position = Vector2(1200, 500)

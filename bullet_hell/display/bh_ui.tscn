@@ -1,15 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://c5rvnoi1v7yxh"]
+[gd_scene load_steps=21 format=3 uid="uid://c5rvnoi1v7yxh"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/bh_ui.gd" id="1_3ae8p"]
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="2_i8vm2"]
 [ext_resource type="Texture2D" uid="uid://cjik188370ui1" path="res://assets/sprites/bh_player-sheet.png" id="3_2qqpm"]
 [ext_resource type="Texture2D" uid="uid://d2b2wpen3jlgl" path="res://assets/sprites/bh_thought_bubble_jester.png" id="3_o3n0w"]
-[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="4_feqy3"]
-[ext_resource type="Texture2D" uid="uid://bwv47umqupynm" path="res://assets/sprites/bhj_dialogue_box.png" id="4_h4xd1"]
+[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/Playerfont-Regular.ttf" id="4_feqy3"]
 [ext_resource type="Texture2D" uid="uid://bh1hmydut2hns" path="res://assets/sprites/bh_thought_bubble.png" id="4_wqoy2"]
-[ext_resource type="FontFile" uid="uid://ba7vtjrqco0g1" path="res://assets/fonts/Jokerfont-Regular.ttf" id="6_c052r"]
-[ext_resource type="Texture2D" uid="uid://bwjosdmwdx1hv" path="res://assets/sprites/bhj_ui.png" id="7_s6nqr"]
-[ext_resource type="Texture2D" uid="uid://cgsrd332288mh" path="res://assets/sprites/bh_jester_icon-sheet.png" id="8_cuupq"]
+[ext_resource type="FontFile" uid="uid://dmke1dcaagd0s" path="res://assets/fonts/Jokerfont-Regular.ttf" id="6_c052r"]
+[ext_resource type="Texture2D" uid="uid://bp22uhmjck4p0" path="res://assets/sprites/bh_jester_icon-sheet.png" id="8_cuupq"]
 [ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="8_ijuq7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
@@ -154,10 +152,8 @@ anchors_preset = 0
 script = ExtResource("1_3ae8p")
 player_thought_bubble = ExtResource("4_wqoy2")
 jester_thought_bubble = ExtResource("3_o3n0w")
-jester_speech_bubble = ExtResource("4_h4xd1")
 player_font = ExtResource("4_feqy3")
 jester_font = ExtResource("6_c052r")
-jester_arena = ExtResource("7_s6nqr")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 layout_mode = 1
@@ -237,7 +233,6 @@ hframes = 3
 stream = ExtResource("8_ijuq7")
 
 [node name="ScreenColor" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
