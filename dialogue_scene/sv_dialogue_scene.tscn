@@ -1,11 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://bl1fy1m5y84p4"]
+[gd_scene load_steps=32 format=3 uid="uid://bl1fy1m5y84p4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_iqvk0"]
-[ext_resource type="Texture2D" uid="uid://b30p5j3pxonww" path="res://assets/sprites/sv_crowd.png" id="2_gruop"]
-[ext_resource type="Texture2D" uid="uid://d3hfhda0t51c6" path="res://assets/sprites/sv_king_neutral.png" id="3_1c5or"]
+[ext_resource type="Texture2D" uid="uid://cmguia25akxbf" path="res://assets/sprites/sv_crowd_back.png" id="2_a5hr8"]
+[ext_resource type="Texture2D" uid="uid://cbucwfx6xqgs" path="res://assets/sprites/sv_king-sheet.png" id="3_6lvt1"]
 [ext_resource type="Script" path="res://dialogue_scene/character.gd" id="4_8em3g"]
 [ext_resource type="Texture2D" uid="uid://dtydkcfk4e8sn" path="res://assets/sprites/sv_player_scared.png" id="4_w5rsm"]
 [ext_resource type="Texture2D" uid="uid://h0uj0ye8u74p" path="res://assets/sprites/sv_textbox_kid.png" id="5_osgyf"]
+[ext_resource type="Texture2D" uid="uid://cij6dvq3fbhan" path="res://assets/sprites/sv_jester-sheet.png" id="5_wr1dn"]
+[ext_resource type="Texture2D" uid="uid://clvqvc1hbpb1p" path="res://assets/sprites/sv_crowd_front.png" id="6_7w7gm"]
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_iwbhi"]
 [ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="7_yvt45"]
 [ext_resource type="Texture2D" uid="uid://dr1a4q36857lj" path="res://assets/sprites/sv_textbox_king.png" id="8_i55lg"]
@@ -13,14 +15,158 @@
 [ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="12_ccge0"]
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="12_fv4ax"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_je6ti"]
+atlas = ExtResource("3_6lvt1")
+region = Rect2(3021, 4082, 3021, 2041)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnpqh"]
+atlas = ExtResource("3_6lvt1")
+region = Rect2(0, 4082, 3021, 2041)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkii1"]
+atlas = ExtResource("3_6lvt1")
+region = Rect2(0, 6123, 3021, 2041)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khdue"]
+atlas = ExtResource("3_6lvt1")
+region = Rect2(0, 2041, 3021, 2041)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d7d5"]
+atlas = ExtResource("3_6lvt1")
+region = Rect2(0, 0, 3021, 2041)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs07m"]
+atlas = ExtResource("3_6lvt1")
+region = Rect2(3021, 2041, 3021, 2041)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rduc"]
+atlas = ExtResource("3_6lvt1")
+region = Rect2(3021, 0, 3021, 2041)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_agd5e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_1c5or")
+"texture": SubResource("AtlasTexture_je6ti")
+}],
+"loop": true,
+"name": &"crossed_arms",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnpqh")
+}],
+"loop": true,
+"name": &"dark",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkii1")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khdue")
+}],
+"loop": true,
+"name": &"hand_on_chin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d7d5")
 }],
 "loop": true,
 "name": &"neutral",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs07m")
+}],
+"loop": true,
+"name": &"pointing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rduc")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am8dd"]
+atlas = ExtResource("5_wr1dn")
+region = Rect2(0, 6342, 5264, 3171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7fur"]
+atlas = ExtResource("5_wr1dn")
+region = Rect2(5264, 0, 5264, 3171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmjnr"]
+atlas = ExtResource("5_wr1dn")
+region = Rect2(5264, 3171, 5264, 3171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yipn6"]
+atlas = ExtResource("5_wr1dn")
+region = Rect2(0, 3171, 5264, 3171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqp45"]
+atlas = ExtResource("5_wr1dn")
+region = Rect2(0, 0, 5264, 3171)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ydhqe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_am8dd")
+}],
+"loop": true,
+"name": &"bla_bla_bla",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7fur")
+}],
+"loop": true,
+"name": &"creepy",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"just_mask_leftover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmjnr")
+}],
+"loop": true,
+"name": &"look_around",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yipn6")
+}],
+"loop": true,
+"name": &"point",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqp45")
+}],
+"loop": true,
+"name": &"regular_crouch",
 "speed": 5.0
 }]
 
@@ -67,27 +213,42 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Crowd" type="TextureRect" parent="."]
+[node name="Crowd2" type="TextureRect" parent="."]
 offset_right = 9600.0
-offset_bottom = 5400.0
+offset_bottom = 4621.0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_gruop")
+texture = ExtResource("2_a5hr8")
 
 [node name="King" type="AnimatedSprite2D" parent="."]
-position = Vector2(1284, 581)
-scale = Vector2(0.2, 0.2)
+position = Vector2(1003, 532)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_agd5e")
-animation = &"neutral"
+animation = &"dead"
 script = ExtResource("4_8em3g")
 character_name = "King"
 
+[node name="Jester" type="AnimatedSprite2D" parent="."]
+position = Vector2(1132, 362)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_ydhqe")
+animation = &"point"
+script = ExtResource("4_8em3g")
+character_name = "Jester"
+
 [node name="Player" type="AnimatedSprite2D" parent="."]
-position = Vector2(397, 749)
+position = Vector2(300, 706)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_eh4lb")
 animation = &"scared"
 script = ExtResource("4_8em3g")
 character_name = "Player"
+
+[node name="Crowd" type="TextureRect" parent="."]
+offset_top = 453.0
+offset_right = 9600.0
+offset_bottom = 3587.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_7w7gm")
 
 [node name="PlayerDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_audio")]
 visible = false
@@ -168,7 +329,44 @@ text_overrun_behavior = 2
 
 [node name="TextTimer" type="Timer" parent="KingDialogueBox"]
 
+[node name="JesterDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_audio")]
+visible = false
+offset_left = 144.0
+offset_top = 104.0
+offset_right = 4680.0
+offset_bottom = 1753.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_i55lg")
+script = ExtResource("6_iwbhi")
+character_name = "King"
+dialogue_audio = NodePath("../DialogueAudioPlayer")
+
+[node name="Label" type="Label" parent="JesterDialogueBox"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1758.0
+offset_top = -504.5
+offset_right = 1638.0
+offset_bottom = 444.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_cdjw6")
+theme_override_font_sizes/font_size = 300
+text = "you wot mate"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="TextTimer" type="Timer" parent="JesterDialogueBox"]
+
 [node name="FadeAnimation" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -188,12 +386,17 @@ libraries = {
 
 [connection signal="active_speaker" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_active_speaker"]
 [connection signal="active_speaker" from="." to="KingDialogueBox" method="_on_dialogue_scene_active_speaker"]
+[connection signal="active_speaker" from="." to="JesterDialogueBox" method="_on_dialogue_scene_active_speaker"]
 [connection signal="change_emotion" from="." to="King" method="_on_dialogue_scene_change_emotion"]
 [connection signal="change_emotion" from="." to="Player" method="_on_dialogue_scene_change_emotion"]
+[connection signal="change_emotion" from="." to="Jester" method="_on_dialogue_scene_change_emotion"]
 [connection signal="display_line" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_display_line"]
 [connection signal="display_line" from="." to="KingDialogueBox" method="_on_dialogue_scene_display_line"]
+[connection signal="display_line" from="." to="JesterDialogueBox" method="_on_dialogue_scene_display_line"]
 [connection signal="speed_animation" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_speed_animation"]
 [connection signal="speed_animation" from="." to="KingDialogueBox" method="_on_dialogue_scene_speed_animation"]
+[connection signal="speed_animation" from="." to="JesterDialogueBox" method="_on_dialogue_scene_speed_animation"]
 [connection signal="text_animation_done" from="PlayerDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
 [connection signal="text_animation_done" from="KingDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
+[connection signal="text_animation_done" from="JesterDialogueBox" to="." method="_on_dialogue_box_text_animation_done"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
