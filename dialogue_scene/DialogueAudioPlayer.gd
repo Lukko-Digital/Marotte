@@ -1,4 +1,5 @@
 extends AudioStreamPlayer
+class_name DialogueAudioPlayer
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
