@@ -144,8 +144,8 @@ script = ExtResource("1_fcb6q")
 
 [node name="Left" type="TextureRect" parent="."]
 layout_mode = 0
+offset_top = -1080.0
 offset_right = 972.0
-offset_bottom = 1080.0
 texture = ExtResource("2_620av")
 expand_mode = 4
 
@@ -160,8 +160,9 @@ color = Color(0, 0, 0, 1)
 [node name="Right" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 960.0
+offset_top = 1124.4
 offset_right = 1919.0
-offset_bottom = 1080.0
+offset_bottom = 2204.4
 texture = ExtResource("3_nfv7d")
 expand_mode = 4
 
@@ -175,7 +176,7 @@ color = Color(0, 0, 0, 1)
 [node name="Pulse" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(960, 540)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_01mwg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
