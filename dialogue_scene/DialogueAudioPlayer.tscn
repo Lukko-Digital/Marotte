@@ -73,6 +73,7 @@ _data = {
 }
 
 [node name="DialogueAudioPlayer" type="AudioStreamPlayer"]
+volume_db = -8.565
 script = ExtResource("1_npsxb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
