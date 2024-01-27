@@ -1,15 +1,101 @@
-[gd_scene load_steps=13 format=3 uid="uid://dfimnqqoeiet4"]
+[gd_scene load_steps=21 format=3 uid="uid://dfimnqqoeiet4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_ub4dj"]
 [ext_resource type="Texture2D" uid="uid://brr5xd3h0eh4w" path="res://assets/sprites/fv_king_neutral.png" id="2_i8ntk"]
 [ext_resource type="Script" path="res://dialogue_scene/character.gd" id="3_mdkde"]
+[ext_resource type="Texture2D" uid="uid://cgl2napqjxrq4" path="res://assets/sprites/fv_player-sheet.png" id="4_5rrts"]
 [ext_resource type="Texture2D" uid="uid://degd0b04aktu6" path="res://assets/sprites/fv_textbox_king.png" id="4_hj10r"]
-[ext_resource type="Texture2D" uid="uid://dug5n7twxbhcj" path="res://assets/sprites/fv_player_pointing.png" id="4_sli72"]
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_f3xod"]
 [ext_resource type="FontFile" uid="uid://ii8v2jwulfll" path="res://assets/fonts/playerfont-Regular.ttf" id="7_1h5jk"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_2stcm"]
 [ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="10_0q01d"]
 [ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="11_gixrm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvjp7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i8ntk")
+}],
+"loop": true,
+"name": &"neutral",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jsie"]
+atlas = ExtResource("4_5rrts")
+region = Rect2(1738, 1195, 1738, 1195)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1jqm"]
+atlas = ExtResource("4_5rrts")
+region = Rect2(1738, 2390, 1738, 1195)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48xnh"]
+atlas = ExtResource("4_5rrts")
+region = Rect2(1738, 0, 1738, 1195)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab5qc"]
+atlas = ExtResource("4_5rrts")
+region = Rect2(0, 0, 1738, 1195)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l0jr"]
+atlas = ExtResource("4_5rrts")
+region = Rect2(0, 2390, 1738, 1195)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_303nr"]
+atlas = ExtResource("4_5rrts")
+region = Rect2(0, 1195, 1738, 1195)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ssc6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jsie")
+}],
+"loop": true,
+"name": &"dark_delivery",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1jqm")
+}],
+"loop": true,
+"name": &"dark_eyes",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48xnh")
+}],
+"loop": true,
+"name": &"nervous",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab5qc")
+}],
+"loop": true,
+"name": &"nervous_talking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l0jr")
+}],
+"loop": true,
+"name": &"pensive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_303nr")
+}],
+"loop": true,
+"name": &"pointing",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_khwmw"]
 resource_name = "fade_in"
@@ -43,21 +129,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="King" type="Sprite2D" parent="."]
+[node name="King" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(952, 364)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_i8ntk")
+sprite_frames = SubResource("SpriteFrames_gvjp7")
+animation = &"neutral"
 script = ExtResource("3_mdkde")
 character_name = "King"
-file_prefix = "fv_king"
 
-[node name="Player" type="Sprite2D" parent="."]
+[node name="Player" type="AnimatedSprite2D" parent="."]
 position = Vector2(950, 350)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_sli72")
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_8ssc6")
+animation = &"dark_delivery"
 script = ExtResource("3_mdkde")
 character_name = "Player"
-file_prefix = "fv_player"
 
 [node name="PlayerDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_noise")]
 visible = false
