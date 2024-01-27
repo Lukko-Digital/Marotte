@@ -397,7 +397,6 @@ text_overrun_behavior = 2
 stream = ExtResource("10_0q01d")
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
-visible = false
 z_index = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
