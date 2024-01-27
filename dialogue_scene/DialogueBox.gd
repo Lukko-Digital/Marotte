@@ -8,7 +8,7 @@ extends TextureRect
 
 signal text_animation_done
 
-const TEXT_SPEED = 0.03
+const TEXT_SPEED = 0.06
 
 const VOICE_PITCH_MIN: float = 0.9
 const VOICE_PITCH_MAX: float = 1.5
