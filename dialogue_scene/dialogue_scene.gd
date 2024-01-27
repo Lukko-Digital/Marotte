@@ -56,7 +56,7 @@ func parse_line(line: String):
 		"!transition":
 			transition.play("end")
 			await transition.transition_finished
-			get_tree().change_scene_to_file("res://bullet_hell/levels/{level}/{level}.tscn".format({"level": split[1]}))
+			get_tree().change_scene_to_file("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]}))
 		"!sound":
 			var audio_player: AudioStreamPlayer = get_node(split[1])
 			audio_player.play()

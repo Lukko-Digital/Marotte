@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bl1fy1m5y84p4"]
+[gd_scene load_steps=16 format=3 uid="uid://bl1fy1m5y84p4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_iqvk0"]
 [ext_resource type="Texture2D" uid="uid://b30p5j3pxonww" path="res://assets/sprites/sv_crowd.png" id="2_gruop"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dr1a4q36857lj" path="res://assets/sprites/sv_textbox_king.png" id="8_i55lg"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_cdjw6"]
 [ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="10_xsrl6"]
-[ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="11_cku1h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_agd5e"]
 animations = [{
@@ -170,9 +169,6 @@ text_overrun_behavior = 2
 
 [node name="DialogueAudioPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_xsrl6")
-
-[node name="StartTransition" parent="." instance=ExtResource("11_cku1h")]
-visible = false
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
 z_index = 2

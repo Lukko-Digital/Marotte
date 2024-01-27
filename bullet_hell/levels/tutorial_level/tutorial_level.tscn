@@ -4,7 +4,7 @@
 [ext_resource type="JSON" uid="uid://cr5g2v1mpve7b" path="res://bullet_hell/levels/tutorial_level/tutorial_word_groups.tres" id="2_xbiqt"]
 [ext_resource type="Texture2D" uid="uid://do3fotxa4wlpo" path="res://assets/sprites/bh_movement_tutorial.png" id="3_mjsbp"]
 [ext_resource type="Script" path="res://bullet_hell/levels/tutorial_level/movement_tutorial.gd" id="4_52q1e"]
-[ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="5_adcmg"]
+[ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition_scared_jester.tscn" id="5_adcmg"]
 
 [sub_resource type="Animation" id="Animation_8fari"]
 resource_name = "fade"

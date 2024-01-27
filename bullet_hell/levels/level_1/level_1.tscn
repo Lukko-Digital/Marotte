@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dj6e7xh4njtlj" path="res://bullet_hell/bullet_hell_game.tscn" id="1_0kqsq"]
 [ext_resource type="JSON" uid="uid://cr5g2v1mpve7b" path="res://bullet_hell/levels/tutorial_level/tutorial_word_groups.tres" id="2_hntel"]
-[ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="3_ydxq3"]
+[ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition_scared_jester.tscn" id="3_ydxq3"]
 
 [node name="Level1" type="Node2D"]
 
