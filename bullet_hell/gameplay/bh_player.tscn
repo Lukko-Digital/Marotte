@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxtfc3ofiogqk"]
+[gd_scene load_steps=11 format=3 uid="uid://dxtfc3ofiogqk"]
 
 [ext_resource type="Script" path="res://bullet_hell/gameplay/bh_player.gd" id="1_6oy4i"]
 [ext_resource type="Texture2D" uid="uid://bwc40rw0bkkuv" path="res://assets/sprites/bh_player_ingame-sheet.png" id="2_f2llj"]
+[ext_resource type="AudioStream" uid="uid://q2mlwy2kvy14" path="res://assets/audio/player_getting_hit_v1.mp3" id="3_qb7mf"]
 
 [sub_resource type="Animation" id="Animation_m2g1d"]
 resource_name = "idle"
@@ -105,7 +106,6 @@ libraries = {
 }
 
 [node name="PhysicalCollider" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_03du0")
 
 [node name="HitBox" type="Area2D" parent="."]
@@ -115,6 +115,7 @@ collision_mask = 5
 shape = SubResource("CapsuleShape2D_mmh3d")
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qb7mf")
 
 [node name="WalkSound" type="AudioStreamPlayer" parent="."]
 
