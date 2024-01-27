@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c5rvnoi1v7yxh"]
+[gd_scene load_steps=35 format=3 uid="uid://c5rvnoi1v7yxh"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/bh_ui.gd" id="1_3ae8p"]
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="2_i8vm2"]
@@ -12,6 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://cgsrd332288mh" path="res://assets/sprites/bh_jester_icon-sheet.png" id="8_cuupq"]
 [ext_resource type="Texture2D" uid="uid://cvjbd0m6w03xi" path="res://assets/sprites/bhj_jester-sheet.png" id="10_okw2p"]
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="11_q1s3a"]
+[ext_resource type="Texture2D" uid="uid://3hm4iol5bwow" path="res://assets/sprites/ui_death_giveup.png" id="13_32x7d"]
+[ext_resource type="Texture2D" uid="uid://hnv5msdnekqm" path="res://assets/sprites/ui_death_giveup_click.png" id="14_7ttxk"]
+[ext_resource type="Texture2D" uid="uid://bsp270kruuox1" path="res://assets/sprites/ui_death_giveup_hover.png" id="15_h3upn"]
+[ext_resource type="Texture2D" uid="uid://bbym8sah6r2iw" path="res://assets/sprites/ui_death_tryagain.png" id="16_mtdww"]
+[ext_resource type="Texture2D" uid="uid://1u3tclefogso" path="res://assets/sprites/ui_death_tryagain_click.png" id="17_ehu76"]
+[ext_resource type="Texture2D" uid="uid://kykoylc38rko" path="res://assets/sprites/ui_death_tryagain_hover.png" id="18_27hju"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
 bg_color = Color(0, 0, 0, 1)
@@ -306,6 +312,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("10_okw2p")
 hframes = 2
 vframes = 2
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UIJester"]
 libraries = {
@@ -387,3 +394,40 @@ offset_bottom = 129.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="GiveUp" type="TextureButton" parent="Death"]
+visible = false
+z_index = 5
+offset_left = 1054.0
+offset_top = 705.0
+offset_right = 2272.0
+offset_bottom = 1147.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("13_32x7d")
+texture_pressed = ExtResource("14_7ttxk")
+texture_hover = ExtResource("15_h3upn")
+
+[node name="TryAgain" type="TextureButton" parent="Death"]
+visible = false
+z_index = 5
+offset_left = 1002.0
+offset_top = 501.0
+offset_right = 2752.0
+offset_bottom = 1171.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("16_mtdww")
+texture_pressed = ExtResource("17_ehu76")
+texture_hover = ExtResource("18_27hju")
+
+[node name="DeathText" type="Label" parent="Death"]
+visible = false
+z_index = 5
+offset_left = 763.0
+offset_top = 362.0
+offset_right = 1597.0
+offset_bottom = 466.0
+theme_override_fonts/font = ExtResource("4_feqy3")
+theme_override_font_sizes/font_size = 60
+text = "you died of anxiety lmfao"
+horizontal_alignment = 1
+autowrap_mode = 2

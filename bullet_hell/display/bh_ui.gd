@@ -17,7 +17,7 @@ extends Control
 @onready var text_timer: Timer = $ThoughtBubble/Label/TextTimer
 @onready var dialogue_audio: DialogueAudioPlayer = $ThoughtBubble/DialogueAudioPlayer
 
-const MAX_HP = 10
+const MAX_HP = 2
 var current_hp = MAX_HP : set = _set_current_hp
 var jester_arena = false
 var current_speaker
@@ -70,7 +70,7 @@ func death():
 	$Death/DeathSound.play()
 	$Death/DeathScreen.visible = true
 	player_image_animation.play("death")
-	$UIPlayer.z_index = 10
+	$UIPlayer.z_index = 5
 #	await get_tree().create_timer(0.01).timeout
 	get_tree().paused = true
 
