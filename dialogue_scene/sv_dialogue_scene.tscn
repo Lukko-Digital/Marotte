@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bl1fy1m5y84p4"]
+[gd_scene load_steps=17 format=3 uid="uid://bl1fy1m5y84p4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_iqvk0"]
 [ext_resource type="Texture2D" uid="uid://b30p5j3pxonww" path="res://assets/sprites/sv_crowd.png" id="2_gruop"]
@@ -12,6 +12,28 @@
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_cdjw6"]
 [ext_resource type="AudioStream" uid="uid://cel7jvuqs5oix" path="res://assets/audio/talking_sound_2.mp3" id="10_xsrl6"]
 [ext_resource type="PackedScene" uid="uid://b7fxxr2ugd05q" path="res://bullet_hell/display/start_transition.tscn" id="11_cku1h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_agd5e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1c5or")
+}],
+"loop": true,
+"name": &"neutral",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eh4lb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_w5rsm")
+}],
+"loop": true,
+"name": &"scared",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_khwmw"]
 resource_name = "fade_in"
@@ -51,21 +73,21 @@ offset_bottom = 5400.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_gruop")
 
-[node name="King" type="Sprite2D" parent="."]
+[node name="King" type="AnimatedSprite2D" parent="."]
 position = Vector2(1284, 581)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_1c5or")
+sprite_frames = SubResource("SpriteFrames_agd5e")
+animation = &"neutral"
 script = ExtResource("4_8em3g")
 character_name = "King"
-file_prefix = "sv_king"
 
-[node name="Player" type="Sprite2D" parent="."]
+[node name="Player" type="AnimatedSprite2D" parent="."]
 position = Vector2(397, 749)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_w5rsm")
+sprite_frames = SubResource("SpriteFrames_eh4lb")
+animation = &"scared"
 script = ExtResource("4_8em3g")
 character_name = "Player"
-file_prefix = "sv_player"
 
 [node name="PlayerDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_noise")]
 visible = false

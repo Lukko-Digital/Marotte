@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://b50nbt0ngli2s"
+=======
+uid="uid://r07snelnakyq"
+>>>>>>> 038500522d9db4577c36ac5d6f3501d3dd7bbdbf
 path="res://.godot/imported/bh_jester_icon-sheet.png-b1c2e31a4115ebe1d14c2e266a660290.ctex"
 metadata={
 "vram_texture": false
