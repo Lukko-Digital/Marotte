@@ -5,7 +5,7 @@ extends Control
 @export var jester_speech_bubble: CompressedTexture2D
 @export var player_font: Font
 @export var jester_font: Font
-@export var jester_arena: CompressedTexture2D
+@export var jester_interface: CompressedTexture2D
 
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var color_animation: AnimationPlayer = $ScreenColor/AnimationPlayer
@@ -18,6 +18,7 @@ extends Control
 
 const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
+var jester_arena = false
 
 const TEXT_SPEED = 0.03
 
@@ -63,7 +64,8 @@ func _set_current_hp(new_hp):
 
 
 func _on_bullet_hell_game_use_jester_arena():
-	$Interface.texture = jester_arena
+	$Interface.texture = jester_interface
+	jester_arena = true
 
 
 func _on_bh_player_hit():
@@ -74,7 +76,7 @@ func _on_bh_player_hit():
 func _on_word_picked(correct, _joke_text):
 	if correct:
 		current_hp += 2
-		color_animation.play("white_flash")
+		color_animation.play("big_white_flash")
 	else:
 		current_hp -= 2
 		color_animation.play("red_flash")
