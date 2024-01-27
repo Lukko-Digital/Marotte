@@ -18,7 +18,7 @@ extends Control
 @onready var dialogue_audio: DialogueAudioPlayer = $ThoughtBubble/DialogueAudioPlayer
 @onready var death_text_label: Label = $Death/DeathText
 
-const MAX_HP = 2
+const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
 var jester_arena = false
 var current_speaker
