@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dtydkcfk4e8sn" path="res://assets/sprites/sv_player_scared.png" id="4_w5rsm"]
 [ext_resource type="Texture2D" uid="uid://h0uj0ye8u74p" path="res://assets/sprites/sv_textbox_kid.png" id="5_osgyf"]
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_iwbhi"]
-[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="7_yvt45"]
+[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/Playerfont-Regular.ttf" id="7_yvt45"]
 [ext_resource type="Texture2D" uid="uid://dr1a4q36857lj" path="res://assets/sprites/sv_textbox_king.png" id="8_i55lg"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_cdjw6"]
 [ext_resource type="AudioStream" uid="uid://bheqso7uj2huf" path="res://assets/audio/talking_sound_4a.mp3" id="11_3p0ef"]
-[ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="12_ccge0"]
+[ext_resource type="PackedScene" path="res://bullet_hell/display/pause_ui.tscn" id="12_ccge0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_agd5e"]
 animations = [{

@@ -73,10 +73,10 @@ tracks/5/path = NodePath("ColorRect:color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 2.05, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0.2), Color(0, 0, 0, 0.2), Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.482353)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -97,10 +97,10 @@ tracks/7/path = NodePath("Pulse:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.95, 1.25),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.9, 0.95, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/8/type = "bezier"
 tracks/8/imported = false
@@ -136,7 +136,7 @@ tracks/10/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("6_4x0dv")
 }],
-"times": PackedFloat32Array(0.8)
+"times": PackedFloat32Array(0.85)
 }
 tracks/10/use_blend = true
 
@@ -154,7 +154,7 @@ script = ExtResource("1_uuok7")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.482353)
 
 [node name="Left" type="TextureRect" parent="."]
 layout_mode = 0
@@ -185,12 +185,11 @@ libraries = {
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
 [node name="Pulse" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(960, 540)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_en120")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
