@@ -19,6 +19,7 @@ func _ready():
 	load_file()
 	parse_line(game_script[0])
 	Events.word_picked.connect(_on_word_picked)
+	current_line = Checkpoint.reload_point
 
 
 func load_file():
@@ -44,7 +45,12 @@ func parse_line(line: String):
 			spawn_joke_words.emit(split[1])
 		"!bullets":
 			spawn_bullets.emit(split[1])
+		"!checkpoint":
+			Checkpoint.reload_point = current_line
+			next_line()
+			return
 		"!transition":
+			Checkpoint.reload_point = 0
 			transition.play("clear")
 			await transition.transition_finished
 			get_tree().change_scene_to_file("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]}))
