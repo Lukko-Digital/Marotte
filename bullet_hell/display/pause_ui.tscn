@@ -1,8 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://biod12rdse4po"]
+[gd_scene load_steps=14 format=3 uid="uid://biod12rdse4po"]
 
-[ext_resource type="Texture2D" uid="uid://dua8eapd8j1u8" path="res://assets/sprites/ui_pause_quit-sheet.png" id="1_8s6ed"]
 [ext_resource type="Script" path="res://bullet_hell/display/pause_ui.gd" id="1_g37k3"]
-[ext_resource type="Texture2D" uid="uid://ctbqcheadp6x6" path="res://assets/sprites/ui_pause_resume-sheet.png" id="2_porh4"]
+[ext_resource type="Texture2D" uid="uid://dxtegasxjwcmn" path="res://assets/sprites/ui_pause_quit.png" id="2_q4d3x"]
+[ext_resource type="Texture2D" uid="uid://c2338rwatl6ax" path="res://assets/sprites/ui_pause_quit_click.png" id="3_mfe8o"]
+[ext_resource type="Texture2D" uid="uid://3lkoqmrhwf7f" path="res://assets/sprites/ui_pause_quit_hover.png" id="4_y6mjw"]
+[ext_resource type="Texture2D" uid="uid://c6qt0rt0dijr7" path="res://assets/sprites/ui_pause_resume.png" id="5_6mqx8"]
+[ext_resource type="Texture2D" uid="uid://3lgt8yi8kdn" path="res://assets/sprites/ui_pause_resume_click.png" id="6_pajyi"]
+[ext_resource type="Texture2D" uid="uid://rrocdfbchglx" path="res://assets/sprites/ui_pause_resume_hover.png" id="7_u4nbo"]
+[ext_resource type="AudioStream" uid="uid://t0qngodb46v4" path="res://assets/audio/mouse_hover_v1.mp3" id="8_t2sib"]
+[ext_resource type="AudioStream" uid="uid://bw8su1gy6f3tn" path="res://assets/audio/mouse_click_v1.mp3" id="9_yhnb6"]
+[ext_resource type="Script" path="res://bullet_hell/display/button_audio_player.gd" id="10_e7q4f"]
+
+[sub_resource type="Animation" id="Animation_eev4r"]
+resource_name = "hover"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_t2sib")
+}],
+"times": PackedFloat32Array(-0.1)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_muvpx"]
+resource_name = "click"
+length = 0.2
+step = 0.01
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_yhnb6")
+}],
+"times": PackedFloat32Array(-0.04)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t75iw"]
+_data = {
+"click": SubResource("Animation_muvpx"),
+"hover": SubResource("Animation_eev4r")
+}
 
 [node name="pause_ui" type="Control"]
 process_mode = 3
@@ -23,23 +75,38 @@ color = Color(0, 0, 0, 0.258824)
 
 [node name="Quit" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 201.0
-offset_top = 93.0
-offset_right = 1282.0
-offset_bottom = 1800.0
+offset_left = 704.0
+offset_top = 565.0
+offset_right = 1729.0
+offset_bottom = 1034.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("1_8s6ed")
-stretch_mode = 0
+texture_normal = ExtResource("2_q4d3x")
+texture_pressed = ExtResource("3_mfe8o")
+texture_hover = ExtResource("4_y6mjw")
 
 [node name="Resume" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 883.0
-offset_top = 13.0
-offset_right = 2248.0
-offset_bottom = 2029.0
+offset_left = 631.0
+offset_top = 210.0
+offset_right = 1947.0
+offset_bottom = 797.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("2_porh4")
+texture_normal = ExtResource("5_6mqx8")
+texture_pressed = ExtResource("6_pajyi")
+texture_hover = ExtResource("7_u4nbo")
 stretch_mode = 0
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t75iw")
+}
+script = ExtResource("10_e7q4f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="mouse_entered" from="Quit" to="AnimationPlayer" method="_on_mouse_entered"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Quit" to="AnimationPlayer" method="_on_pressed"]
+[connection signal="mouse_entered" from="Resume" to="AnimationPlayer" method="_on_mouse_entered"]
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Resume" to="AnimationPlayer" method="_on_pressed"]
