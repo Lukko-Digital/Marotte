@@ -16,22 +16,26 @@ Jester_neutral: just like this: 3
 !joke_words: WHAT: 3
 !bullets: none: 0
 Jester_happy: there it is! the starting word!: pickup
+!checkpoint
 Jester_neutral: you also get a bit of a confidence boost when you get the word right: 3
 !bullets: slow_circle: 3
 !joke_words: DO YOU: 2
 !bullets: none: 0
 Jester_neutral: sometimes you'll need to use logic to figure out the next part of the joke: pickup
+!checkpoint
 Jester_happy: nice!: 1
 !bullets: slow_circle: 3
 !joke_words: CALL A: 2
 !bullets: none: 0
 Jester_neutral: i'll let you figure this one out: pickup
+!checkpoint
 Jester_happy: look at you go: 2
 !bullets: slow_circle: 4
 !joke_words: FISH: 0
 !bullets: none: 0
 Jester_neutral: in situations like this, your subconscious knows the answer: 3
 Jester_neutral: (hint hint it's fish): pickup
+!checkpoint
 Jester_happy: incredible!: 2
 Jester_neutral: ...: 1
 Jester_neutral: okay that's enough enthusiasm for me today: 3
