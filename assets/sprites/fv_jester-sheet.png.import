@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5d7xjspl0fg5"
-path="res://.godot/imported/fv_player-sheet.png-4fab326ffaec6e514e33d744121430fc.ctex"
+uid="uid://cixdjdu5ppfbp"
+path="res://.godot/imported/fv_jester-sheet.png-1758f288fd9665ceb70741db80c7e003.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fv_player-sheet.png"
-dest_files=["res://.godot/imported/fv_player-sheet.png-4fab326ffaec6e514e33d744121430fc.ctex"]
+source_file="res://assets/sprites/fv_jester-sheet.png"
+dest_files=["res://.godot/imported/fv_jester-sheet.png-1758f288fd9665ceb70741db80c7e003.ctex"]
 
 [params]
 

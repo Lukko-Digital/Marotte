@@ -9,6 +9,7 @@ extends Control
 @onready var color_animation: AnimationPlayer = $ScreenColor/AnimationPlayer
 @onready var player_image_animation: AnimationPlayer = $UIPlayer/AnimationPlayer
 @onready var thought_bubble: TextureRect = $ThoughtBubble
+@onready var jester_icon: Sprite2D = $ThoughtBubble/JesterIcon
 @onready var dialogue_label: Label = $ThoughtBubble/Label
 @onready var text_timer: Timer = $ThoughtBubble/Label/TextTimer
 @onready var dialogue_noise: AudioStreamPlayer = $ThoughtBubble/DialogueAudioPlayer
@@ -28,6 +29,8 @@ const Label_Position = {
 	PLAYER = Vector2(235, 175),
 	JESTER = Vector2(925, 175)
 }
+
+enum Jester_Icon_Frames { NEUTRAL, ANGRY, HAPPY }
 
 const VOICE_PITCH_MIN = 0.9
 const VOICE_PITCH_MAX = 1.5
@@ -75,17 +78,27 @@ func _on_word_timer_timeout():
 
 
 func _on_script_handler_active_speaker(speaker):
-	match speaker:
+	var split = speaker.split("_")
+	match split[0]:
 		"Player":
 			thought_bubble.texture = player_thought_bubble
 			dialogue_label.size = Label_Size.PLAYER
 			dialogue_label.position = Label_Position.PLAYER
 			dialogue_label.set("theme_override_fonts/font", player_font)
+			jester_icon.visible = false
 		"Jester":
 			thought_bubble.texture = jester_thought_bubble
 			dialogue_label.size = Label_Size.JESTER
 			dialogue_label.position = Label_Position.JESTER
 			dialogue_label.set("theme_override_fonts/font", jester_font)
+			jester_icon.visible = true
+			match split[1]:
+				"neutral":
+					jester_icon.frame = Jester_Icon_Frames.NEUTRAL
+				"angry":
+					jester_icon.frame = Jester_Icon_Frames.ANGRY
+				"happy":
+					jester_icon.frame = Jester_Icon_Frames.HAPPY
 
 
 func _on_script_handler_display_line(text):
