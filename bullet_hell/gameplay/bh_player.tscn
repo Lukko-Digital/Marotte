@@ -81,8 +81,9 @@ _data = {
 "run_up": SubResource("Animation_nxgai")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_538sq"]
-size = Vector2(53, 60)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_03du0"]
+radius = 26.0
+height = 60.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mmh3d"]
 radius = 17.0
@@ -96,7 +97,7 @@ script = ExtResource("1_6oy4i")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_f2llj")
 vframes = 10
-frame = 3
+frame = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
@@ -104,7 +105,8 @@ libraries = {
 }
 
 [node name="PhysicalCollider" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_538sq")
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_03du0")
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_mask = 5
