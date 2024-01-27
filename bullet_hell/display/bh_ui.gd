@@ -19,7 +19,7 @@ extends Control
 @onready var death_text_label: Label = $Death/DeathText
 @onready var button_sound_animation: AnimationPlayer = $Death/ButtonSoundPlayer/AnimationPlayer
 
-const MAX_HP = 1
+const MAX_HP = 10
 var current_hp = MAX_HP : set = _set_current_hp
 var jester_arena = false
 var current_speaker
@@ -79,12 +79,11 @@ func death():
 	$Death/DeathScreen.visible = true
 	player_image_animation.play("death")
 	$UIPlayer.z_index = 5
+	await get_tree().create_timer(1).timeout
 	
 	death_text_label.text = DEATH_TEXT[0]
 	death_text_label.visible_characters = 0
 	death_text_label.visible = true
-	
-	await get_tree().create_timer(0.5).timeout
 	while death_text_label.visible_characters < len(death_text_label.text):
 		dialogue_audio.play_sound("Player")
 		death_text_label.visible_characters += 1
