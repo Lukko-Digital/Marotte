@@ -47,8 +47,11 @@ func _ready():
 
 
 func _process(_delta):
+	print(get_tree().current_scene.scene_file_path)
 	if not jester_arena:
-		if current_hp <= MAX_HP * 0.2:
+		if current_hp == 0:
+			death()
+		elif current_hp <= MAX_HP * 0.2:
 			player_image_animation.play("stress3")
 			color_animation.speed_scale = 2
 			color_animation.play("pulse")
@@ -61,6 +64,14 @@ func _process(_delta):
 			player_image_animation.play("stress0")
 	else:
 		jester_image_animation.play("default")
+
+
+func death():
+	player_image_animation.play("death")
+	$UIPlayer.z_index = 10
+	color_animation.play("black")
+	await get_tree().create_timer(0.01).timeout
+	get_tree().paused = true
 
 
 func _set_current_hp(new_hp):
