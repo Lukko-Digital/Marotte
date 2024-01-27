@@ -1,46 +1,46 @@
-Jester: : 2
-Jester: What’s going on??: 3
+Jester_neutral: : 2
+Jester_neutral: What’s going on??: 3
 !dialogue_words: A: 0
-Jester: My mental palace looks nothing like this.: pickup
-Jester: That red bar over there is your “confidence”: 3
-Jester: As long as you can formulate the opening to your joke without losing all your confidence: 5
-Jester: The punch line will be no problem.: 3
-Jester: We jesters only have to win this mental battle.: 3
-Jester: For me, it usually has to do with forgetting my material.: 3
+Jester_neutral: My mental palace looks nothing like this.: pickup
+Jester_neutral: That red bar over there is your “confidence”: 3
+Jester_neutral: As long as you can formulate the opening to your joke without losing all your confidence: 5
+Jester_neutral: The punch line will be no problem.: 3
+Jester_neutral: We jesters only have to win this mental battle.: 3
+Jester_neutral: For me, it usually has to do with forgetting my material.: 3
 !dialogue_words: B: 0
-Jester: But for you it’s something else...: pickup
+Jester_neutral: But for you it’s something else...: pickup
 !bullets: still: 0
-Jester: That red circle is called a “CONFIDENCE BOOST” Try touching it.: hit
-Jester: Just kidding: 3
-Jester: Nine more of those and your confidence will be too low to deliver your joke.: 4
-Jester: Coming up with each word will require you to survive a bunch of those: 4
-Jester: Just like this: 3
+Jester_neutral: That red circle is called a “CONFIDENCE BOOST” Try touching it.: hit
+Jester_neutral: Just kidding: 3
+Jester_neutral: Nine more of those and your confidence will be too low to deliver your joke.: 4
+Jester_neutral: Coming up with each word will require you to survive a bunch of those: 4
+Jester_neutral: Just like this: 3
 !bullets: slow_circle: 2
 !joke_words: WHAT: 3
 !bullets: none: 0
-Jester: There it is! The starting word!: pickup
-Jester: You also get a bit of a confidence boost when you get the word right: 3
+Jester_happy: There it is! The starting word!: pickup
+Jester_neutral: You also get a bit of a confidence boost when you get the word right: 3
 !bullets: slow_circle: 3
 !joke_words: DO YOU: 2
 !bullets: none: 0
-Jester: Sometimes you'll need to use logic to figure out the next part of the joke: pickup
-Jester: Nice!: 1
+Jester_neutral: Sometimes you'll need to use logic to figure out the next part of the joke: pickup
+Jester_happy: Nice!: 1
 !bullets: slow_circle: 3
 !joke_words: CALL A: 2
 !bullets: none: 0
-Jester: I'll let you figure this one out: pickup
-Jester: Look at you go: 2
+Jester_neutral: I'll let you figure this one out: pickup
+Jester_happy: Look at you go: 2
 !bullets: slow_circle: 4
 !joke_words: FISH: 0
 !bullets: none: 0
-Jester: In situations like this, your subconscious knows the answer: 3
-Jester: (hint hint it's fish): pickup
-Jester: Incredible!: 2
-Jester: ...: 1
-Jester: Okay that's enough enthusiasm for me today: 3
+Jester_neutral: In situations like this, your subconscious knows the answer: 3
+Jester_neutral: (hint hint it's fish): pickup
+Jester_happy: Incredible!: 2
+Jester_neutral: ...: 1
+Jester_neutral: Okay that's enough enthusiasm for me today: 3
 !bullets: slow_double_circle: 8
 !joke_words: WITH NO EYES: 0
-Jester: We approach the climax: 3
-Jester: It's a gimmie! The final line!: pickup
+Jester_neutral: We approach the climax: 3
+Jester_happy: It's a gimmie! The final line!: pickup
 !bullets: none: 0
 !transition: dialogue_scene: 0
