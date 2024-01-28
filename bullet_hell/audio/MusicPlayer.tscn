@@ -10,3 +10,4 @@ script = ExtResource("1_y6f2o")
 [node name="WithoutIntro" type="AudioStreamPlayer" parent="."]
 
 [connection signal="finished" from="WithIntro" to="." method="_on_with_intro_finished"]
+[connection signal="finished" from="WithoutIntro" to="." method="_on_without_intro_finished"]
