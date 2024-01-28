@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkio7jmm04ies"]
 
 [ext_resource type="PackedScene" uid="uid://dfimnqqoeiet4" path="res://dialogue_scene/fv_dialogue_scene.tscn" id="1_mvu1e"]
-[ext_resource type="PackedScene" uid="uid://b0hucyb4mxueh" path="res://bullet_hell/display/start_transition_to_dialogue.tscn" id="2_drnyp"]
+[ext_resource type="PackedScene" uid="uid://jbsk5np48sqp" path="res://bullet_hell/display/start_transition_to_dialogue.tscn" id="2_drnyp"]
 
 [node name="tutorial_post" type="Node2D"]
 

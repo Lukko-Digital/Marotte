@@ -340,7 +340,7 @@ offset_bottom = 1753.0
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("8_i55lg")
 script = ExtResource("6_iwbhi")
-character_name = "King"
+character_name = "Jester"
 dialogue_audio = NodePath("../DialogueAudioPlayer")
 
 [node name="Label" type="Label" parent="JesterDialogueBox"]
