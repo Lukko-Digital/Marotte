@@ -275,6 +275,8 @@ func spawn_bullet_pattern():
 			wall_pattern("1", Vector2(-1, 0), 1)
 		"wall_2":
 			wall_pattern("2", Vector2(-1, 0), .8)
+		"wall_3":
+			wall_pattern("3", Vector2(-1, 0), .8)
 		"wall_chicken_1":
 			wall_pattern("chicken_1", Vector2(-1, 0), 0.6)
 		"wall_chicken_1_slow":

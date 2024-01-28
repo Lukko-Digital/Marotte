@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7gppaeifhh6y"]
+
+[ext_resource type="Script" path="res://bullet_hell/gameplay/bullet_wall_pattern.gd" id="1_qpemg"]
+[ext_resource type="PackedScene" path="res://bullet_hell/gameplay/long_bullet_2.tscn" id="3_gx8bb"]
+
+[node name="bullet_wall_pattern" type="Node2D"]
+position = Vector2(0, 47)
+script = ExtResource("1_qpemg")
+
+[node name="long_bullet" parent="." instance=ExtResource("3_gx8bb")]
+position = Vector2(748, 214)

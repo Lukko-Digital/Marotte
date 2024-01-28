@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bekf7ecrsqgge"
+path="res://.godot/imported/noise for king_final.mp3-28a6d8aae9c3b6626ec7bed97f739166.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/noise for king_final.mp3"
+dest_files=["res://.godot/imported/noise for king_final.mp3-28a6d8aae9c3b6626ec7bed97f739166.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

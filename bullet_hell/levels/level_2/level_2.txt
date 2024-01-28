@@ -17,9 +17,7 @@ Player: what should the knight do?: pickup
 !bullets: wall_2: 7
 !joke_words: TO THE: pickup
 Player: i need a dark and twisted finale!: 1
-!bullets: zombies: 2
-!bullets: wall_chicken_1_slow: 0
-!bullets: zombies: 4
+!bullets: zombies: 6
 !joke_words: ZOMBIE: pickup
 !bullets: none: 0
 !transition: level_2/Level_2_post: 0
