@@ -34,4 +34,4 @@ Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 !bullets: double_circle: 7
 !joke_words: HEAD: pickup
 !bullets: none: 0
-!final_transition: tutorial_level/tutorial_level: 0
+!final_transition: final_level_pt2/final_level_pt2: 0

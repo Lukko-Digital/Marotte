@@ -3,7 +3,8 @@ Player_pensive: what do you call a fish with no eyes?: keypress
 Jester_neutral: what?: keypress
 Player_pointing: "FSH!": keypress
 Jester_applause: bravo! classic yet original. tasteful yet crude: keypress
-Jester_pointing: You could be the royal Jester_yet: keypress
+Jester_pointing: You could be the royal jester yet: keypress
 Jester_neutral: but not all audiences share my incredible sense of humor: keypress
-Jester_pointing: looks like it's time for your audience. good luck!: keypress
+Jester_pointing: looks like it's time for your audition...: keypress
+Jester_pointing: may the best jester win: keypress
 !transition: level_1/level_1_pre: 0

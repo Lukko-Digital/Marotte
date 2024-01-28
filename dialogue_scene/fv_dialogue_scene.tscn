@@ -143,14 +143,6 @@ animations = [{
 atlas = ExtResource("4_f02j3")
 region = Rect2(0, 1323, 3471, 1323)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gvsgi"]
-atlas = ExtResource("4_f02j3")
-region = Rect2(6942, 1323, 3471, 1323)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x41v8"]
-atlas = ExtResource("4_f02j3")
-region = Rect2(0, 2646, 3471, 1323)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_l7fy4"]
 atlas = ExtResource("4_f02j3")
 region = Rect2(3471, 2646, 3471, 1323)
@@ -207,6 +199,14 @@ region = Rect2(3471, 7938, 3471, 1323)
 atlas = ExtResource("4_f02j3")
 region = Rect2(3471, 1323, 3471, 1323)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_benoc"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(6942, 1323, 3471, 1323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i2b4"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(0, 2646, 3471, 1323)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tfxdt"]
 atlas = ExtResource("4_f02j3")
 region = Rect2(3471, 0, 3471, 1323)
@@ -227,24 +227,18 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gvsgi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x41v8")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_l7fy4")
 }, {
-"duration": 1.0,
+"duration": 4.0,
 "texture": SubResource("AtlasTexture_cipm7")
 }, {
-"duration": 1.0,
+"duration": 4.0,
 "texture": SubResource("AtlasTexture_3nnae")
 }, {
-"duration": 1.0,
+"duration": 4.0,
 "texture": SubResource("AtlasTexture_8g0n2")
 }, {
-"duration": 1.0,
+"duration": 4.0,
 "texture": SubResource("AtlasTexture_rwa6c")
 }, {
 "duration": 1.0,
@@ -284,6 +278,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"Jester_holding_mouth",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_benoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1i2b4")
+}],
+"loop": true,
+"name": &"Jester_laughing",
 "speed": 5.0
 }, {
 "frames": [{
@@ -346,6 +351,7 @@ script = ExtResource("3_mdkde")
 character_name = "King"
 
 [node name="Player" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(952, 350)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_o328q")
@@ -355,11 +361,12 @@ script = ExtResource("3_mdkde")
 character_name = "Player"
 
 [node name="Jester" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(957, 327)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8ssc6")
-animation = &"Jester_pointing"
+animation = &"Jester_death"
+frame = 13
+frame_progress = 1.0
 script = ExtResource("3_mdkde")
 character_name = "Jester"
 

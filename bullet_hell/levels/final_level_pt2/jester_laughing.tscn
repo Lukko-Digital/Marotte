@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://lf6tcpnfkr5g"]
+
+[ext_resource type="PackedScene" uid="uid://dfimnqqoeiet4" path="res://dialogue_scene/fv_dialogue_scene.tscn" id="1_uy65g"]
+
+[node name="jester_laughing" type="Node2D"]
+
+[node name="fv_dialogue_scene" parent="." instance=ExtResource("1_uy65g")]
+script_file_path = "res://bullet_hell/levels/final_level_pt2/jester_laughing.txt"
+
+[node name="JesterDeathSound" type="AudioStreamPlayer" parent="fv_dialogue_scene"]

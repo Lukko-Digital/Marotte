@@ -1,0 +1,4 @@
+Jester_holding_mouth: ...: 2
+Jester_laughing: HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA: 5
+!sound: JesterDeathSound: 0
+Jester_death: : 1

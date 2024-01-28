@@ -1,13 +1,14 @@
-[gd_scene load_steps=25 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=26 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
 [ext_resource type="Script" path="res://bullet_hell/display/thinking_bar.gd" id="2_uwvi3"]
-[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="2_waoyk"]
-[ext_resource type="AudioStream" uid="uid://svv85a61ic8l" path="res://assets/audio/bullets_firing_v1.mp3" id="2_x7ol0"]
+[ext_resource type="AudioStream" uid="uid://bb2xjd8g3dvy7" path="res://assets/audio/bullets_firing_v2.mp3" id="2_vitci"]
+[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/Playerfont-Regular.ttf" id="2_waoyk"]
 [ext_resource type="PackedScene" uid="uid://c5rvnoi1v7yxh" path="res://bullet_hell/display/bh_ui.tscn" id="3_5sicw"]
 [ext_resource type="Script" path="res://bullet_hell/display/JokeLabel.gd" id="3_ea24l"]
 [ext_resource type="AudioStream" uid="uid://duv6ir6qw1ig5" path="res://assets/audio/player_picks_correct_v1.mp3" id="3_eykkj"]
+[ext_resource type="AudioStream" uid="uid://2q4ffrxsf5l3" path="res://assets/audio/bullets_warning.mp3" id="3_t18k8"]
 [ext_resource type="AudioStream" uid="uid://ro0a8d227t7q" path="res://assets/audio/player_picks_wrong_v1.mp3" id="4_qb53a"]
 [ext_resource type="AudioStream" uid="uid://ce7i5toq7o6lp" path="res://assets/audio/player_picks_correct_v2.mp3" id="4_v1y8a"]
 [ext_resource type="Script" path="res://bullet_hell/script_handler.gd" id="5_eia4t"]
@@ -16,7 +17,7 @@
 [ext_resource type="Script" path="res://bullet_hell/display/RedJokeLabel.gd" id="8_3axfu"]
 [ext_resource type="FontFile" uid="uid://4onft5ytn1tk" path="res://assets/fonts/Jokerfont3-Regular.ttf" id="8_24ksl"]
 [ext_resource type="PackedScene" uid="uid://cyjcpt38w0tyo" path="res://bullet_hell/gameplay/bullet_pattern.tscn" id="8_jtn82"]
-[ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="15_64oxy"]
+[ext_resource type="PackedScene" path="res://bullet_hell/display/pause_ui.tscn" id="15_64oxy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65c2p"]
 
@@ -48,9 +49,10 @@ script = ExtResource("1_ruomc")
 [node name="SoundEffects" type="Node" parent="."]
 
 [node name="BulletSpawn" type="AudioStreamPlayer" parent="SoundEffects"]
-stream = ExtResource("2_x7ol0")
+stream = ExtResource("2_vitci")
 
 [node name="BulletWarning" type="AudioStreamPlayer" parent="SoundEffects"]
+stream = ExtResource("3_t18k8")
 
 [node name="WordSpawn" type="AudioStreamPlayer" parent="SoundEffects"]
 stream = ExtResource("3_eykkj")
