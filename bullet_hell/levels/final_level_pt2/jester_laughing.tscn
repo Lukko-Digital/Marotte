@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwsowhqewh3jd"]
+[gd_scene load_steps=7 format=3 uid="uid://bwsowhqewh3jd"]
 
 [ext_resource type="PackedScene" uid="uid://dfimnqqoeiet4" path="res://dialogue_scene/fv_dialogue_scene.tscn" id="1_uy65g"]
 [ext_resource type="AudioStream" uid="uid://btr22djsuwumd" path="res://assets/audio/crack_1_v1.mp3" id="2_80ssl"]
 [ext_resource type="AudioStream" uid="uid://bwounuf1l3uyq" path="res://assets/audio/shine_and_explosion_v1.mp3" id="3_nxkuo"]
 [ext_resource type="AudioStream" uid="uid://q3sgogcxnjdb" path="res://assets/audio/crack_2_v1.mp3" id="4_etqp0"]
 [ext_resource type="AudioStream" uid="uid://bl6d5c2x87ars" path="res://assets/audio/crack_3_v1.mp3" id="5_64cw7"]
+[ext_resource type="PackedScene" uid="uid://jbsk5np48sqp" path="res://bullet_hell/display/start_transition_to_dialogue.tscn" id="6_hrql8"]
 
 [node name="jester_laughing" type="Node2D"]
 
@@ -22,3 +23,5 @@ stream = ExtResource("4_etqp0")
 
 [node name="JesterCrackSound3" type="AudioStreamPlayer" parent="fv_dialogue_scene"]
 stream = ExtResource("5_64cw7")
+
+[node name="StartTransition" parent="fv_dialogue_scene" instance=ExtResource("6_hrql8")]

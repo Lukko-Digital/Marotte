@@ -1,0 +1,5 @@
+Jester_just_mask_leftover: : 0
+King_dead: : 0
+Player_scared: --: keypress
+Player_scared: what--: keypress
+Player_scared: : keypress

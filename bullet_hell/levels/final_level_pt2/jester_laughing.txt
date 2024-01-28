@@ -8,3 +8,4 @@ Jester_crack2: NO: 1.5
 Jester_crack3: --!: 2
 !sound: JesterDeathSound: 0
 Jester_death: ...: 1
+!transition: final_level_pt2/final_sv: 0
