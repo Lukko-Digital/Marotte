@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bwsowhqewh3jd"]
 
 [ext_resource type="PackedScene" uid="uid://dfimnqqoeiet4" path="res://dialogue_scene/fv_dialogue_scene.tscn" id="1_uy65g"]
-[ext_resource type="AudioStream" uid="uid://btr22djsuwumd" path="res://assets/audio/crack_1_v1.mp3" id="2_80ssl"]
-[ext_resource type="AudioStream" uid="uid://bwounuf1l3uyq" path="res://assets/audio/shine_and_explosion_v1.mp3" id="3_nxkuo"]
-[ext_resource type="AudioStream" uid="uid://q3sgogcxnjdb" path="res://assets/audio/crack_2_v1.mp3" id="4_etqp0"]
-[ext_resource type="AudioStream" uid="uid://bl6d5c2x87ars" path="res://assets/audio/crack_3_v1.mp3" id="5_64cw7"]
+[ext_resource type="AudioStream" uid="uid://bjyu6g10ekjqi" path="res://assets/audio/jester_death/crack_1_v2.mp3" id="2_kwp6u"]
+[ext_resource type="AudioStream" uid="uid://ci10xcho0yvor" path="res://assets/audio/jester_death/death.mp3" id="3_4jb8o"]
+[ext_resource type="AudioStream" uid="uid://cnfmu5yi3sglw" path="res://assets/audio/jester_death/crack_2_v2.mp3" id="4_2hab0"]
+[ext_resource type="AudioStream" uid="uid://cm607cj54qiiu" path="res://assets/audio/jester_death/crack_3_v2.mp3" id="5_jl181"]
 [ext_resource type="PackedScene" uid="uid://jbsk5np48sqp" path="res://bullet_hell/display/start_transition_to_dialogue.tscn" id="6_hrql8"]
 
 [node name="jester_laughing" type="Node2D"]
@@ -13,15 +13,15 @@
 script_file_path = "res://bullet_hell/levels/final_level_pt2/jester_laughing.txt"
 
 [node name="JesterCrackSound1" type="AudioStreamPlayer" parent="fv_dialogue_scene"]
-stream = ExtResource("2_80ssl")
+stream = ExtResource("2_kwp6u")
 
 [node name="JesterDeathSound" type="AudioStreamPlayer" parent="fv_dialogue_scene"]
-stream = ExtResource("3_nxkuo")
+stream = ExtResource("3_4jb8o")
 
 [node name="JesterCrackSound2" type="AudioStreamPlayer" parent="fv_dialogue_scene"]
-stream = ExtResource("4_etqp0")
+stream = ExtResource("4_2hab0")
 
 [node name="JesterCrackSound3" type="AudioStreamPlayer" parent="fv_dialogue_scene"]
-stream = ExtResource("5_64cw7")
+stream = ExtResource("5_jl181")
 
 [node name="StartTransition" parent="fv_dialogue_scene" instance=ExtResource("6_hrql8")]
