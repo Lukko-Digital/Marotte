@@ -6,5 +6,7 @@
 [node name="level_2_pre" type="Node2D"]
 
 [node name="sv_dialogue_scene" parent="." instance=ExtResource("1_uqfmf")]
+script_file_path = "res://bullet_hell/levels/level_2/level_2_pre.txt"
 
 [node name="StartTransition" parent="sv_dialogue_scene" instance=ExtResource("2_08g0j")]
+visible = false
