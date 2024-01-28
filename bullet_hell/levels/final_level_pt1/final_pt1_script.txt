@@ -14,7 +14,6 @@ Jester_neutral: what will he come up wit next?: 2
 Jester_happy: COULDN'T ITS COULDN'T I KNOW THE ANSWER!: pickup
 Jester_happy: RIGHT RIGHT RIGHT!! DING DING DING: 2
 !bullets: rapid_double_circle: 7
-!checkpoint
 !joke_words: GET: pickup
 !bullets: none: 0
 Jester_neutral: ...: 2
