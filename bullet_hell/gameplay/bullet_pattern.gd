@@ -191,10 +191,12 @@ func zombies(speed=0.25):
 	spawn_position = spawn_position - position
 	var warning_dir = spawn_position.rotated(PI)
 	
+	warning_sound.play()
 	spawn(warning_scene, spawn_position, [warning_dir])
 	
 	await get_tree().create_timer(0.5).timeout
 	
+	bullet_spawn_sound.play()
 	spawn(zombie_scene, spawn_position, [player, speed, position])
 
 
