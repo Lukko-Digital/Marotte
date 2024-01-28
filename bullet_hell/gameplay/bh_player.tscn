@@ -116,6 +116,7 @@ shape = SubResource("CapsuleShape2D_mmh3d")
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_qb7mf")
+volume_db = -8.914
 
 [node name="WalkSound" type="AudioStreamPlayer" parent="."]
 
