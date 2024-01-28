@@ -1,5 +1,4 @@
 King_dead: : 0.01
 Jester_dead: : 0.01
-Player_scared: --: keypress
-Player_scared: what--: keypress
-Player_scared: : keypress
+Player_scared: ...: keypress
+Player_scared: .......: keypress
