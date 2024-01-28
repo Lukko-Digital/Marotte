@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dfimnqqoeiet4"]
+[gd_scene load_steps=47 format=3 uid="uid://dfimnqqoeiet4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_ub4dj"]
 [ext_resource type="Texture2D" uid="uid://b3srkymm7ce0c" path="res://assets/sprites/fv_king-sheet.png" id="2_gs76b"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="10_d3ubh"]
 [ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="10_er8wh"]
 [ext_resource type="FontFile" uid="uid://4onft5ytn1tk" path="res://assets/fonts/Jokerfont3-Regular.ttf" id="10_lmtyc"]
+[ext_resource type="AudioStream" uid="uid://bdtgfm7heklff" path="res://assets/audio/random_sfx_v1.mp3" id="13_itybw"]
+[ext_resource type="Script" path="res://dialogue_scene/DialogueAudioPlayer.gd" id="14_ee63c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uj64u"]
 atlas = ExtResource("2_gs76b")
@@ -509,6 +511,10 @@ libraries = {
 [node name="pause_ui" parent="." instance=ExtResource("10_er8wh")]
 
 [node name="DialogueAudioPlayer" parent="." instance=ExtResource("10_d3ubh")]
+
+[node name="Joke" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_itybw")
+script = ExtResource("14_ee63c")
 
 [connection signal="active_speaker" from="." to="King" method="_on_dialogue_scene_active_speaker"]
 [connection signal="active_speaker" from="." to="Player" method="_on_dialogue_scene_active_speaker"]

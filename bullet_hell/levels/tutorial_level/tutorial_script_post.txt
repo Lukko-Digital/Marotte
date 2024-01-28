@@ -1,6 +1,7 @@
 Player_pensive: : 0.5
 Player_pensive: what do you call a fish with no eyes?: keypress
 Jester_neutral: what?: keypress
+!sound: Joke: 0.1
 Player_pointing: "FSH!": keypress
 Jester_applause: bravo! classic yet original. tasteful yet crude: keypress
 Jester_pointing: You could be the royal jester yet: keypress
