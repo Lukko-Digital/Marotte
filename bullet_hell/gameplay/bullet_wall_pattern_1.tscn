@@ -1,0 +1,137 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceya7ofpqhh3"]
+
+[ext_resource type="Script" path="res://bullet_hell/gameplay/bullet_wall_pattern.gd" id="1_miawd"]
+[ext_resource type="PackedScene" uid="uid://dn165sri2shss" path="res://bullet_hell/gameplay/long_bullet_1.tscn" id="1_v2bmt"]
+[ext_resource type="PackedScene" uid="uid://dgs8f2bxdht0x" path="res://bullet_hell/gameplay/long_bullet_2.tscn" id="2_n0mr5"]
+
+[node name="bullet_wall_pattern" type="Node2D"]
+position = Vector2(0, 47)
+script = ExtResource("1_miawd")
+
+[node name="long_bullet" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(879, 410)
+
+[node name="long_bullet5" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(1298, 615)
+
+[node name="long_bullet8" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(1966, 454)
+
+[node name="long_bullet9" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(2158, 238)
+
+[node name="long_bullet3" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(709, -590)
+rotation = 3.14159
+
+[node name="long_bullet20" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(888, -550)
+rotation = 3.14159
+
+[node name="long_bullet11" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(1535, -384)
+rotation = 3.14159
+
+[node name="long_bullet12" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(1753, -359)
+rotation = 3.14159
+
+[node name="long_bullet14" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(2147, -810)
+rotation = 3.14159
+
+[node name="long_bullet15" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(2342, -810)
+rotation = 3.14159
+
+[node name="long_bullet18" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(2548, -465)
+rotation = 3.14159
+
+[node name="long_bullet2" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(710, 486)
+
+[node name="long_bullet6" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(1532, 683)
+
+[node name="long_bullet19" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(1071, 686)
+
+[node name="long_bullet7" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(1752, 588)
+
+[node name="long_bullet16" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(2347, 560)
+
+[node name="long_bullet17" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(2553, 512)
+
+[node name="long_bullet4" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(1075, -630)
+rotation = 3.14159
+
+[node name="long_bullet10" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(1271, -497)
+rotation = 3.14159
+
+[node name="long_bullet21" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(2900, 175)
+
+[node name="long_bullet22" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(3319, 380)
+
+[node name="long_bullet23" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(3987, 219)
+
+[node name="long_bullet24" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(4175, 111)
+
+[node name="long_bullet25" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(2730, -825)
+rotation = 3.14159
+
+[node name="long_bullet26" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(2909, -785)
+rotation = 3.14159
+
+[node name="long_bullet27" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(3556, -619)
+rotation = 3.14159
+
+[node name="long_bullet28" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(3774, -594)
+rotation = 3.14159
+
+[node name="long_bullet29" parent="." instance=ExtResource("1_v2bmt")]
+position = Vector2(4569, -700)
+rotation = 3.14159
+
+[node name="long_bullet30" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(2735, 565)
+
+[node name="long_bullet31" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(3553, 448)
+
+[node name="long_bullet32" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(3092, 451)
+
+[node name="long_bullet33" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(3773, 353)
+
+[node name="long_bullet34" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(4368, 325)
+
+[node name="long_bullet35" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(4574, 277)
+
+[node name="long_bullet36" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(3096, -865)
+rotation = 3.14159
+
+[node name="long_bullet37" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(3292, -732)
+rotation = 3.14159
+
+[node name="long_bullet13" parent="." instance=ExtResource("2_n0mr5")]
+position = Vector2(1955, -715)
+rotation = 3.14159

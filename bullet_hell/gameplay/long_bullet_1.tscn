@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn165sri2shss"]
+
+[ext_resource type="Script" path="res://bullet_hell/gameplay/long_bullet.gd" id="1_y6obw"]
+[ext_resource type="Texture2D" uid="uid://boqfny4hnbmv2" path="res://assets/sprites/bh_wall_king.png" id="2_4wwqm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgphr"]
+radius = 28.0
+height = 814.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yywxl"]
+radius = 14.0
+height = 770.0
+
+[node name="long_bullet" type="Area2D" groups=["wall_bullet"]]
+z_index = -5
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_y6obw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_4wwqm")
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_pgphr")
+
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="HitBox2" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CapsuleShape2D_yywxl")
