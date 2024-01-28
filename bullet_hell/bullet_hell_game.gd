@@ -29,12 +29,17 @@ const BOTTOM_Y = 892
 ## Spawn locations
 const PLAYER_SPAWN = Vector2(1200, 500)
 const WORD_SPAWN_X_OFFSET = 130
-const WORD_SPAWN_Y_OFFSET = 80
-const Word_Spawn = {
+const WORD_SPAWN_Y_OFFSET = 50
+const Corner_Word_Spawn = {
 	TOP_LEFT = Vector2(LEFT_X + WORD_SPAWN_X_OFFSET, TOP_Y + WORD_SPAWN_Y_OFFSET),
 	BOT_LEFT = Vector2(LEFT_X + WORD_SPAWN_X_OFFSET, BOTTOM_Y - WORD_SPAWN_Y_OFFSET),
 	TOP_RIGHT = Vector2(RIGHT_X - WORD_SPAWN_X_OFFSET, TOP_Y + WORD_SPAWN_Y_OFFSET),
 	BOT_RIGHT = Vector2(RIGHT_X - WORD_SPAWN_X_OFFSET, BOTTOM_Y - WORD_SPAWN_Y_OFFSET)
+}
+const CENTER_X = LEFT_X + (RIGHT_X - LEFT_X)/2
+const Top_Bot_Word_Spawn = {
+	TOP = Vector2(CENTER_X, TOP_Y + WORD_SPAWN_Y_OFFSET),
+	BOT = Vector2(CENTER_X, BOTTOM_Y - WORD_SPAWN_Y_OFFSET)
 }
 
 ## Bullet Modes
@@ -104,15 +109,16 @@ func spawn_words(group):
 	var word_map: Dictionary = word_groups.data[group].duplicate(true)
 	var joke_text = word_map["!joke_text"]
 	word_map.erase("!joke_text")
-	
-	var spawn_locations = Word_Spawn.values()
-	spawn_locations.shuffle()
+
+	var spawn_map = Corner_Word_Spawn if len(word_map) > 2 else Top_Bot_Word_Spawn
+	var spawn_points = spawn_map.values()
+	spawn_points.shuffle()
 	
 	for word in word_map:
 		var correct = word_map[word]
 		spawn(
 			word_scene,
-			spawn_locations.pop_back(),
+			spawn_points.pop_back(),
 			[
 				correct,
 				word,

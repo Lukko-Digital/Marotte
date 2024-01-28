@@ -33,7 +33,7 @@ func spawn(scene: PackedScene, spawn_position: Vector2, args: Array):
 	add_child(instance)
 
 
-func horizontal_grid(spawn_position: Vector2, num_rows=3, num_cols=2, speed=1):
+func horizontal_grid(spawn_position: Vector2, num_rows=3, num_cols=2, speed=0.5):
 	spawn_position = spawn_position - position
 	var warning_dir = spawn_position.rotated(PI)
 	if warning_dir.is_zero_approx():
@@ -55,13 +55,13 @@ func horizontal_grid(spawn_position: Vector2, num_rows=3, num_cols=2, speed=1):
 					+ Vector2(0,1) * height/num_rows * (j+0.5) 
 					- Vector2(0, height/2) 
 					+ Vector2(0,1) * height/num_rows/2 * (i%2 - 0.5),
-				[shot_base_dir, 250*speed]
+				[shot_base_dir, speed]
 			)
 		
-		await get_tree().create_timer(0.5/speed).timeout
+		await get_tree().create_timer(0.25/speed).timeout
 
 
-func vertical_grid(spawn_position: Vector2, num_rows=2, num_cols=3, speed=1):
+func vertical_grid(spawn_position: Vector2, num_rows=2, num_cols=3, speed=0.5):
 	spawn_position = spawn_position - position
 	var warning_dir = spawn_position.rotated(PI)
 	if warning_dir.is_zero_approx():
@@ -83,13 +83,13 @@ func vertical_grid(spawn_position: Vector2, num_rows=2, num_cols=3, speed=1):
 					+ Vector2(1,0) * width/num_cols * (j+0.5) 
 					- Vector2(width/2,0) 
 					+ Vector2(1,0) * width/num_cols/2 * (i%2 - 0.5),
-				[shot_base_dir, 250*speed]
+				[shot_base_dir, speed]
 			)
 		
-		await get_tree().create_timer(0.5/speed).timeout
+		await get_tree().create_timer(0.25/speed).timeout
 
 
-func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=1):
+func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=0.5):
 	spawn_position = spawn_position - position
 	var warning_dir = spawn_position.rotated(PI)
 	if warning_dir.is_zero_approx():
@@ -112,7 +112,7 @@ func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=1):
 			spawn(
 				bullet_scene,
 				spawn_position,
-				[shot_base_dir.rotated((2*PI/num_arms)*i + (PI/8)*j), 250*speed]
+				[shot_base_dir.rotated((2*PI/num_arms)*i + (PI/8)*j), speed]
 			)
 		await get_tree().create_timer(0.2/speed).timeout
 
@@ -131,7 +131,7 @@ func circle(spawn_position: Vector2, speed=1, num_shots=16):
 		spawn(
 			bullet_scene,
 			spawn_position,
-			[shot_base_dir.rotated(2*PI/num_shots*i), 500*speed]
+			[shot_base_dir.rotated(2*PI/num_shots*i), speed]
 		)
 
 
@@ -151,31 +151,42 @@ func circle_pattern(speed=1):
 	circle(spawn_position, speed)
 
 
+func wall_pattern(number: int, direction: Vector2, speed=0.5):
+	var instance = load("res://bullet_hell/gameplay/bullet_wall_pattern_%d.tscn" % number).instantiate()
+	instance.start(direction, speed)
+	add_child(instance)
+
 
 func spawn_bullet_pattern():
 	match active_bullet_mode:
 		"circle":
 			circle_pattern()
 			spawn_timer.wait_time = 3
+			spawn_timer.start()
 		"double_circle":
 			for i in range(2):
 				circle_pattern()
 			spawn_timer.wait_time = 3
+			spawn_timer.start()
 		"slow_circle":
 			circle_pattern(0.6)
 			spawn_timer.wait_time = 3
+			spawn_timer.start()
 		"slow_double_circle":
 			for i in range(2):
 				circle_pattern(0.6)
 			spawn_timer.wait_time = 3
+			spawn_timer.start()
 		"spiral":
 			spiral(game_center)
 			spawn_timer.wait_time = 3
+			spawn_timer.start()
 		"grid":
 			horizontal_grid(Vector2(RIGHT_X, game_center.y))
 			spawn_timer.wait_time = 1
-			
-	spawn_timer.start()
+			spawn_timer.start()
+		"wall_1":
+			wall_pattern(1, Vector2(-1, 0))
 
 
 func _on_script_handler_spawn_bullets(pattern):

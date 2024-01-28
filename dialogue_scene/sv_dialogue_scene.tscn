@@ -5,12 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://cbucwfx6xqgs" path="res://assets/sprites/sv_king-sheet.png" id="3_6lvt1"]
 [ext_resource type="Script" path="res://dialogue_scene/character.gd" id="4_8em3g"]
 [ext_resource type="Texture2D" uid="uid://dtydkcfk4e8sn" path="res://assets/sprites/sv_player_scared.png" id="4_w5rsm"]
-[ext_resource type="Texture2D" uid="uid://h0uj0ye8u74p" path="res://assets/sprites/sv_textbox_kid.png" id="5_osgyf"]
 [ext_resource type="Texture2D" uid="uid://cij6dvq3fbhan" path="res://assets/sprites/sv_jester-sheet.png" id="5_wr1dn"]
 [ext_resource type="Texture2D" uid="uid://clvqvc1hbpb1p" path="res://assets/sprites/sv_crowd_front.png" id="6_7w7gm"]
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_iwbhi"]
 [ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="7_yvt45"]
 [ext_resource type="Texture2D" uid="uid://dr1a4q36857lj" path="res://assets/sprites/sv_textbox_king.png" id="8_i55lg"]
+[ext_resource type="Texture2D" uid="uid://6btsqtssxxg4" path="res://assets/sprites/sv_textbox_player.png" id="8_l0dj8"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_cdjw6"]
 [ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="12_ccge0"]
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="12_fv4ax"]
@@ -223,7 +223,7 @@ texture = ExtResource("2_a5hr8")
 position = Vector2(1003, 532)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_agd5e")
-animation = &"King_talking"
+animation = &"King_dead"
 script = ExtResource("4_8em3g")
 character_name = "King"
 
@@ -258,14 +258,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -725.0
-offset_top = -915.0
-offset_right = 2648.0
-offset_bottom = 507.0
+offset_left = -757.0
+offset_top = -999.0
+offset_right = 2616.0
+offset_bottom = 651.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_osgyf")
+texture = ExtResource("8_l0dj8")
 script = ExtResource("6_iwbhi")
 character_name = "Player"
 dialogue_audio = NodePath("../DialogueAudioPlayer")
@@ -367,7 +367,6 @@ text_overrun_behavior = 2
 [node name="TextTimer" type="Timer" parent="JesterDialogueBox"]
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
-visible = false
 z_index = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
