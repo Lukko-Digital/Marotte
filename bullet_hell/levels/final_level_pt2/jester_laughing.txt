@@ -8,3 +8,4 @@ Jester_crack2: NO: keypress
 Jester_crack3: --!: keypress
 !sound: JesterDeathSound: 0
 Jester_death: : 2
+!transition: final_level_pt2/final_sv: 0
