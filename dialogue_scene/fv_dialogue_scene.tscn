@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dfimnqqoeiet4"]
+[gd_scene load_steps=48 format=3 uid="uid://dfimnqqoeiet4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_ub4dj"]
 [ext_resource type="Texture2D" uid="uid://b3srkymm7ce0c" path="res://assets/sprites/fv_king-sheet.png" id="2_gs76b"]
@@ -157,6 +157,10 @@ region = Rect2(3471, 3969, 3471, 1323)
 atlas = ExtResource("4_f02j3")
 region = Rect2(6942, 3969, 3471, 1323)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0tip"]
+atlas = ExtResource("4_f02j3")
+region = Rect2(6942, 7938, 3471, 1323)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_itex7"]
 atlas = ExtResource("4_f02j3")
 region = Rect2(0, 5292, 3471, 1323)
@@ -241,6 +245,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Jester_crack3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0tip")
+}],
+"loop": true,
+"name": &"Jester_dead_king",
 "speed": 5.0
 }, {
 "frames": [{
@@ -370,7 +382,7 @@ visible = false
 position = Vector2(952, 350)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_o328q")
-animation = &"Player_pointing"
+animation = &"Player_dark_delivery"
 offset = Vector2(-104.34, 0)
 script = ExtResource("3_mdkde")
 character_name = "Player"
@@ -379,7 +391,7 @@ character_name = "Player"
 position = Vector2(957, 327)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8ssc6")
-animation = &"Jester_death"
+animation = &"Jester_dead_king"
 script = ExtResource("3_mdkde")
 character_name = "Jester"
 

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs1cuiinmhkv2"]
+
+[ext_resource type="PackedScene" uid="uid://dfimnqqoeiet4" path="res://dialogue_scene/fv_dialogue_scene.tscn" id="1_vdsqy"]
+[ext_resource type="PackedScene" uid="uid://jbsk5np48sqp" path="res://bullet_hell/display/start_transition_to_dialogue.tscn" id="2_4lw7s"]
+
+[node name="level_2_post" type="Node2D"]
+
+[node name="fv_dialogue_scene" parent="." instance=ExtResource("1_vdsqy")]
+script_file_path = "res://bullet_hell/levels/level_2/level_2_post.txt"
+
+[node name="StartTransition" parent="fv_dialogue_scene" instance=ExtResource("2_4lw7s")]
+visible = false
