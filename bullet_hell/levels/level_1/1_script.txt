@@ -1,3 +1,3 @@
 Jester_neutral: : 2
 !bullets: wall_1: 1
-!bullets: slow_circle: 0
+!bullets: fast_circle: 0
