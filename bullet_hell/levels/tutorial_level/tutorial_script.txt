@@ -33,12 +33,12 @@ Jester_happy: look at you go: 2
 !bullets: slow_circle: 4
 !joke_words: FISH: 0
 !bullets: none: 0
-Jester_neutral: in situations like this, your subconscious knows the answer: 3
+Jester_neutral: in situations like this, your subconscious knows the answer: 5
 Jester_neutral: (hint hint it's fish): pickup
 !checkpoint
 Jester_happy: incredible!: 2
 Jester_neutral: ...: 1
-Jester_neutral: okay that's enough enthusiasm for me today: 3
+Jester_neutral: that's enough enthusiasm from  me today: 3
 !bullets: slow_double_circle: 8
 !joke_words: WITH NO EYES: 0
 Jester_neutral: we approach the climax: 3
