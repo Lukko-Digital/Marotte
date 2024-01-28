@@ -19,7 +19,7 @@ extends Control
 @onready var death_text_label: Label = $Death/DeathText
 @onready var button_sound_animation: AnimationPlayer = $Death/ButtonSoundPlayer/AnimationPlayer
 
-const MAX_HP = 10
+const MAX_HP = 5
 var current_hp = MAX_HP : set = _set_current_hp
 var jester_arena = false
 var current_speaker
