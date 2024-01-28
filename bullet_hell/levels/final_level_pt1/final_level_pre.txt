@@ -1,6 +1,5 @@
 !jester: : 0
-Player_scared: : 0.5
-Player_scared: ...: keypress
+Jester_regular_crouch: : 0.2
 Jester_regular_crouch: hey there!: keypress
 Jester_look_around: seems like you've lost your audience...: keypress
 Jester_creepy: ah, but you still have me!: keypress
@@ -14,7 +13,7 @@ Jester_bla_bla_bla: bla bla revenge bla seeking power whatever: keypress
 Jester_regular_crouch: enough about me: keypress
 Jester_point: what about YOU?: keypress
 Jester_creepy: alone in the room with a m u r d e r e r ?: keypress
-Player_scared: : keypress
+Player_scared: ...: keypress
 Jester_bla_bla_bla: how about this...?: keypress
 Jester_regular_crouch: despite my incredible sense of humor: keypress
 Jester_regular_crouch: i haven't laughed in many years...: keypress
