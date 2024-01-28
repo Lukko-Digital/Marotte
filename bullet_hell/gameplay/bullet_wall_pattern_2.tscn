@@ -8,7 +8,50 @@ position = Vector2(0, 47)
 script = ExtResource("1_ph4u1")
 
 [node name="long_bullet" parent="." instance=ExtResource("2_l1axo")]
-position = Vector2(1000, 553)
+position = Vector2(565, 412)
 
 [node name="long_bullet2" parent="." instance=ExtResource("2_l1axo")]
-position = Vector2(1248, 383)
+position = Vector2(794, 316)
+
+[node name="long_bullet3" parent="." instance=ExtResource("2_l1axo")]
+position = Vector2(644, -579)
+rotation = -3.14159
+
+[node name="long_bullet4" parent="." instance=ExtResource("2_l1axo")]
+position = Vector2(885, -709)
+rotation = -3.14159
+
+[node name="long_bullet5" parent="." instance=ExtResource("2_l1axo")]
+position = Vector2(992, 372)
+
+[node name="long_bullet6" parent="." instance=ExtResource("2_l1axo")]
+position = Vector2(1284, 647)
+
+[node name="long_bullet7" parent="." instance=ExtResource("2_l1axo")]
+position = Vector2(1100, -574)
+rotation = -3.14159
+
+[node name="long_bullet8" parent="." instance=ExtResource("2_l1axo")]
+position = Vector2(1280, -298)
+rotation = -3.14159
+
+[node name="long_bullet9" parent="." instance=ExtResource("2_l1axo")]
+position = Vector2(1639, 279)
+
+[node name="long_bullet10" parent="." instance=ExtResource("2_l1axo")]
+position = Vector2(1635, -666)
+rotation = -3.14159
+
+[node name="long_bullet11" parent="." instance=ExtResource("2_l1axo")]
+position = Vector2(1833, -388)
+rotation = -3.14159
+
+[node name="long_bullet12" parent="." instance=ExtResource("2_l1axo")]
+position = Vector2(1837, 557)
+
+[node name="long_bullet13" parent="." instance=ExtResource("2_l1axo")]
+position = Vector2(2044, -663)
+rotation = -3.14159
+
+[node name="long_bullet14" parent="." instance=ExtResource("2_l1axo")]
+position = Vector2(2048, 282)
