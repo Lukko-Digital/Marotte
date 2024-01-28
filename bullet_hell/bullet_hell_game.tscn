@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=25 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bmqy68ba644tc" path="res://bullet_hell/display/bh_camera.tscn" id="7_ybxu1"]
 [ext_resource type="Script" path="res://bullet_hell/display/RedJokeLabel.gd" id="8_3axfu"]
 [ext_resource type="PackedScene" uid="uid://cyjcpt38w0tyo" path="res://bullet_hell/gameplay/bullet_pattern.tscn" id="8_jtn82"]
+[ext_resource type="FontFile" uid="uid://b1r3qdk554orc" path="res://assets/fonts/Jokerfont2-Regular.ttf" id="8_vxlx4"]
 [ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="15_64oxy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65c2p"]
@@ -73,6 +74,7 @@ text = "WHY COULDN'T ;;; ;;; ;; ;; ;;;;"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_ea24l")
+jester_font = ExtResource("8_vxlx4")
 
 [node name="RedJokeLabel" type="Label" parent="Environment"]
 visible = false
