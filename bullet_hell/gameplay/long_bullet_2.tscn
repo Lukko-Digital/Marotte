@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgs8f2bxdht0x"]
+
+[ext_resource type="Script" path="res://bullet_hell/gameplay/long_bullet.gd" id="1_l1rgq"]
+[ext_resource type="Texture2D" uid="uid://tlj6pdu8rgg0" path="res://assets/sprites/bh_wall_jester.png" id="2_nwwj3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgphr"]
+radius = 28.0
+height = 814.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yywxl"]
+radius = 14.0
+height = 770.0
+
+[node name="long_bullet" type="Area2D" groups=["wall_bullet"]]
+z_index = -5
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_l1rgq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_nwwj3")
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_pgphr")
+
+[node name="AnimatableBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="HitBox2" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("CapsuleShape2D_yywxl")

@@ -9,6 +9,6 @@
 [node name="bullet_hell_game" parent="." node_paths=PackedStringArray("transition") instance=ExtResource("1_0kqsq")]
 script_file_path = "res://bullet_hell/levels/level_1/1_script.txt"
 word_groups = ExtResource("2_hntel")
-transition = NodePath("../StartTransition")
+transition = NodePath("StartTransition")
 
-[node name="StartTransition" parent="." instance=ExtResource("3_ydxq3")]
+[node name="StartTransition" parent="bullet_hell_game" instance=ExtResource("3_ydxq3")]
