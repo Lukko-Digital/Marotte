@@ -462,7 +462,6 @@ hframes = 4
 [node name="DialogueAudioPlayer" parent="ThoughtBubble" instance=ExtResource("11_q1s3a")]
 
 [node name="ScreenColor" type="ColorRect" parent="."]
-visible = false
 z_index = 10
 layout_mode = 1
 anchors_preset = 15
