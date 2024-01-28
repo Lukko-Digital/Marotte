@@ -1,0 +1,19 @@
+Jester_neutral: : 2
+Jester_happy: this better be good!!!: 3
+!bullets: circle: 7
+!joke_words: WHY: 3
+!bullets: none: 0
+Jester_happy: WHY why WHY I WANT TO KNOW WHY: pickup
+Jester_happy: INCREDIBLE: 1
+Jester_neutral: what will he come up wit next?: 2
+!bullets: circle: 7
+!joke_words: COULDN'T: 3
+!bullets: none: 0
+Jester_happy: COULDN'T ITS COULDN'T I KNOW THE ANSWER!: pickup
+Jester_happy: RIGHT RIGHT RIGHT!! DING DING DING: 2
+!bullets: circle: 7
+!joke_words: GET: pickup
+!bullets: none: 0
+Jester_neutral: ...: 2
+Jester_angry: that wasn't the right word: 2
+!bullets: circle: 7
