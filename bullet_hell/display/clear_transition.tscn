@@ -90,10 +90,10 @@ tracks/5/path = NodePath("ColorRect:color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 2.05, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0.2), Color(0, 0, 0, 0.2), Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.501961)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -176,26 +176,27 @@ script = ExtResource("1_uuok7")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
 [node name="Left" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 996.0
+offset_left = -960.0
+offset_right = 36.0
 offset_bottom = 1080.0
 texture = ExtResource("1_uth4p")
 expand_mode = 4
 
 [node name="Right" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1063.0
-offset_right = 1920.0
+offset_left = 1920.0
+offset_right = 2777.0
 offset_bottom = 1080.0
 texture = ExtResource("2_uuj27")
 expand_mode = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(960, 512)
-scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_soeb5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -207,12 +208,12 @@ libraries = {
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
 [node name="Pulse" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(960, 540)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_en120")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
