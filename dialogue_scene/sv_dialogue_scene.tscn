@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bl1fy1m5y84p4"]
+[gd_scene load_steps=35 format=3 uid="uid://bl1fy1m5y84p4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_iqvk0"]
 [ext_resource type="Texture2D" uid="uid://cmguia25akxbf" path="res://assets/sprites/sv_crowd_back.png" id="2_a5hr8"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="12_ccge0"]
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="12_fv4ax"]
 [ext_resource type="FontFile" uid="uid://4onft5ytn1tk" path="res://assets/fonts/Jokerfont3-Regular.ttf" id="13_khcyr"]
+[ext_resource type="Texture2D" uid="uid://dg4yx8oc3jjyi" path="res://assets/sprites/sv_textbox_jester.png" id="13_lntni"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je6ti"]
 atlas = ExtResource("3_6lvt1")
@@ -231,15 +232,16 @@ texture = ExtResource("2_a5hr8")
 position = Vector2(1003, 532)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_agd5e")
-animation = &"King_neutral"
+animation = &"King_dead"
 script = ExtResource("4_8em3g")
 character_name = "King"
 
 [node name="Jester" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(1132, 362)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ydhqe")
-animation = &"Jester_dead"
+animation = &"Jester_regular_crouch"
 script = ExtResource("4_8em3g")
 character_name = "Jester"
 
@@ -265,10 +267,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -757.0
-offset_top = -999.0
-offset_right = 2616.0
-offset_bottom = 651.0
+offset_left = -827.0
+offset_top = -989.0
+offset_right = 2546.0
+offset_bottom = 661.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.2, 0.2)
@@ -339,12 +341,12 @@ text_overrun_behavior = 2
 
 [node name="JesterDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_audio")]
 visible = false
-offset_left = 144.0
-offset_top = 104.0
-offset_right = 4680.0
-offset_bottom = 1753.0
+offset_left = 152.0
+offset_top = 46.0
+offset_right = 4688.0
+offset_bottom = 1695.0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("8_i55lg")
+texture = ExtResource("13_lntni")
 script = ExtResource("6_iwbhi")
 character_name = "Jester"
 dialogue_audio = NodePath("../DialogueAudioPlayer")
@@ -356,10 +358,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1758.0
-offset_top = -504.5
-offset_right = 1638.0
-offset_bottom = 444.5
+offset_left = -1908.0
+offset_top = -424.5
+offset_right = 957.0
+offset_bottom = 524.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -374,6 +376,7 @@ text_overrun_behavior = 2
 [node name="TextTimer" type="Timer" parent="JesterDialogueBox"]
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
