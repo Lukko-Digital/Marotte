@@ -268,6 +268,8 @@ func spawn_bullet_pattern():
 			spawn_timer.wait_time = 1
 			spawn_timer.start()
 		"wall_1":
+			wall_pattern("1", Vector2(-1, 0), 1)
+		"wall_2":
 			wall_pattern("1", Vector2(-1, 0), 0.5)
 		"wall_chicken_1":
 			wall_pattern("chicken_1", Vector2(-1, 0), 0.4)

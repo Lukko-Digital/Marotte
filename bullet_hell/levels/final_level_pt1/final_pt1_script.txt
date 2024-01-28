@@ -5,7 +5,7 @@ Jester_happy: this better be good!!!: 3
 !bullets: none: 0
 Jester_happy: WHY why WHY I WANT TO KNOW WHY: pickup
 Jester_happy: INCREDIBLE: 2
-Jester_neutral: what will he come up wit next?: 2
+Jester_neutral: what will he come up with next!?!?!?: 2
 !bullets: final_spiral: 2.5
 !bullets: final_reverse_spiral: 2.5
 !bullets: final_spiral: 0
@@ -25,16 +25,13 @@ Jester_angry: that wasn't the right word: 2
 !bullets: fast_circle: 2
 !bullets: none: 0
 !joke_words: OUT: pickup
-!bullets: none: 0
 Jester_angry: why aren't you telling the joke: 2
 !bullets: final_circle_grid: 7
 !joke_words: OF: pickup
-!bullets: none: 0
 Jester_angry: I WAS PROMISED A JOKE: 2
 !bullets: crazy_spiral: 7
 !joke_words: MY: pickup
-!bullets: none: 0
-Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAA: 2
+Jester_angry: STOP IT STOP IT STOP IT STOP IT: 2
 !bullets: final_grid: 0
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 3
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 5
