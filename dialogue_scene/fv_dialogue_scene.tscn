@@ -377,7 +377,7 @@ character_name = "Player"
 position = Vector2(957, 327)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8ssc6")
-animation = &"Jester_crack1"
+animation = &"Jester_death"
 script = ExtResource("3_mdkde")
 character_name = "Jester"
 
