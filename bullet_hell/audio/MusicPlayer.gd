@@ -15,3 +15,7 @@ func _ready():
 
 func _on_with_intro_finished():
 	without_intro_player.play()
+
+
+func _on_without_intro_finished():
+	without_intro_player.play()
