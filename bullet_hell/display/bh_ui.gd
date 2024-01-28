@@ -27,7 +27,9 @@ var current_speaker
 const TEXT_SPEED = 0.06
 
 const DEATH_TEXT = [
-	"you died of anxiety"
+	"you died of anxiety",
+	"you lost all confidence",
+	"game over"
 ]
 
 const Label_Size = {
