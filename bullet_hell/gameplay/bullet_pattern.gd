@@ -232,7 +232,7 @@ func _on_script_handler_spawn_bullets(pattern):
 			spawn_timer.stop()
 			## Very specific only used in the tutorial
 			await get_tree().create_timer(1).timeout
-			spawn(bullet_scene, Vector2(RIGHT_X - 130, TOP_Y + 80) - position, [Vector2(), 0])
+			spawn(bullet_scene, Vector2(RIGHT_X - width/2, TOP_Y + 120) - position, [Vector2(), 0])
 		_:
 			active_bullet_mode = pattern
 	spawn_bullet_pattern()
