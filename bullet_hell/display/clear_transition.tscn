@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfj2rgxbg66a0"]
+[gd_scene load_steps=10 format=3 uid="uid://dfj2rgxbg66a0"]
 
 [ext_resource type="Texture2D" uid="uid://p1ch84or5111" path="res://assets/sprites/transition_jokeclear_left.png" id="1_uth4p"]
 [ext_resource type="Script" path="res://bullet_hell/display/transition.gd" id="1_uuok7"]
 [ext_resource type="Texture2D" uid="uid://58x6xqi23swt" path="res://assets/sprites/transition_jokeclear_right.png" id="2_uuj27"]
 [ext_resource type="Texture2D" uid="uid://ds0sr0nglpw51" path="res://assets/sprites/transition_jokeclear_center.png" id="3_soeb5"]
 [ext_resource type="Texture2D" uid="uid://y5cb6f8boows" path="res://assets/sprites/transition_jokeclear_full.png" id="5_en120"]
-[ext_resource type="AudioStream" uid="uid://bdtgfm7heklff" path="res://assets/audio/random_sfx_v1.mp3" id="6_4x0dv"]
+[ext_resource type="AudioStream" uid="uid://bq1qt1ic15d5j" path="res://assets/audio/joke_clear_woosh.mp3" id="5_x851b"]
+[ext_resource type="AudioStream" uid="uid://5o5v68wsug12" path="res://assets/audio/joke_clear_pulse.mp3" id="6_bxwg5"]
 
 [sub_resource type="Animation" id="Animation_7tn0i"]
 resource_name = "clear"
@@ -73,10 +74,10 @@ tracks/5/path = NodePath("ColorRect:color")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 2.05, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.55),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0.2), Color(0, 0, 0, 0.2), Color(0, 0, 0, 1)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.47451)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -97,10 +98,10 @@ tracks/7/path = NodePath("Pulse:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.95, 1.25),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.9, 0.95, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/8/type = "bezier"
 tracks/8/imported = false
@@ -134,9 +135,13 @@ tracks/10/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("6_4x0dv")
+"stream": ExtResource("5_x851b")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_bxwg5")
 }],
-"times": PackedFloat32Array(0.8)
+"times": PackedFloat32Array(0, 0.95)
 }
 tracks/10/use_blend = true
 
@@ -154,7 +159,7 @@ script = ExtResource("1_uuok7")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.47451)
 
 [node name="Left" type="TextureRect" parent="."]
 layout_mode = 0
@@ -185,7 +190,7 @@ libraries = {
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0.785564)
 
 [node name="Pulse" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
