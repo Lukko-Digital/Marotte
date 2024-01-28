@@ -280,9 +280,9 @@ func spawn_bullet_pattern():
 		"wall_chicken_1_slow":
 			wall_pattern("chicken_1", Vector2(-1, 0), 0.25)
 		"wall_chicken_2":
-			wall_pattern("chicken_2", Vector2(-1, 0), 0.7)
+			wall_pattern("chicken_2", Vector2(-1, 0), 0.6)
 		"wall_chicken_3":
-			wall_pattern("chicken_3", Vector2(-1, 0), 0.8)
+			wall_pattern("chicken_3", Vector2(-1, 0), 0.6)
 		"zombies":
 			zombies()
 			spawn_timer.wait_time = 1

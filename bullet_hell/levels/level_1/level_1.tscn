@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqkhhsrby17yd"]
+[gd_scene load_steps=6 format=3 uid="uid://dqkhhsrby17yd"]
 
 [ext_resource type="PackedScene" uid="uid://dj6e7xh4njtlj" path="res://bullet_hell/bullet_hell_game.tscn" id="1_0kqsq"]
 [ext_resource type="JSON" uid="uid://dv1k1amh4rxr1" path="res://bullet_hell/levels/level_1/1_word_groups.tres" id="2_xo781"]
 [ext_resource type="PackedScene" uid="uid://dcvn7q84asb6c" path="res://bullet_hell/display/start_transition_scared_king.tscn" id="3_ekrug"]
 [ext_resource type="PackedScene" uid="uid://g4kts1tujkt6" path="res://bullet_hell/audio/MusicPlayer.tscn" id="4_05ebj"]
-[ext_resource type="AudioStream" uid="uid://dh2hgv6h51sfb" path="res://assets/audio/music/level_1_music.mp3" id="5_iulxs"]
-[ext_resource type="AudioStream" uid="uid://budy21bw8rlbj" path="res://assets/audio/music/tutorial_music.mp3" id="6_rt4pv"]
+[ext_resource type="AudioStream" uid="uid://btlhp3m5b4wxw" path="res://assets/audio/music/level_1_music.mp3" id="5_iulxs"]
 
 [node name="Level1" type="Node2D"]
 
@@ -18,5 +17,5 @@ transition = NodePath("StartTransition")
 
 [node name="MusicPlayer" parent="." instance=ExtResource("4_05ebj")]
 with_intro = ExtResource("5_iulxs")
-without_intro = ExtResource("6_rt4pv")
+without_intro = ExtResource("5_iulxs")
 volume = -15

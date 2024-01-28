@@ -11,9 +11,9 @@ Player: it’s gotta be a classic...: 2
 !joke_words: CHICKEN: pickup
 !bullets: none: 1
 Jester_chicken: don’t make the same mistakes i did...: 3
-!bullets: wall_chicken_1: 7
+!bullets: wall_chicken_1: 5
 !joke_words: CROSS: pickup
-!bullets: wall_chicken_2: 6
+!bullets: wall_chicken_2: 4
 !joke_words: THE: pickup
 !bullets: wall_chicken_3: 0
 !bullets: circle: 5
