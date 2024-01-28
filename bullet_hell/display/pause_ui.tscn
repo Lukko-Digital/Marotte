@@ -11,25 +11,6 @@
 [ext_resource type="AudioStream" uid="uid://bw8su1gy6f3tn" path="res://assets/audio/mouse_click_v1.mp3" id="9_yhnb6"]
 [ext_resource type="Script" path="res://bullet_hell/display/button_audio_player.gd" id="10_e7q4f"]
 
-[sub_resource type="Animation" id="Animation_eev4r"]
-resource_name = "hover"
-length = 0.2
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("8_t2sib")
-}],
-"times": PackedFloat32Array(-0.1)
-}
-tracks/0/use_blend = true
-
 [sub_resource type="Animation" id="Animation_muvpx"]
 resource_name = "click"
 length = 0.2
@@ -47,6 +28,25 @@ tracks/0/keys = {
 "stream": ExtResource("9_yhnb6")
 }],
 "times": PackedFloat32Array(-0.04)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_eev4r"]
+resource_name = "hover"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_t2sib")
+}],
+"times": PackedFloat32Array(-0.1)
 }
 tracks/0/use_blend = true
 

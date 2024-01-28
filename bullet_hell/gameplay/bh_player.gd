@@ -44,6 +44,10 @@ func _on_hit_box_area_entered(area):
 		area.queue_free()
 		emit_signal("hit")
 		hit_sound.play()
-		modulate = Color(1,0,0)
+		modulate = Color(1,0,0,0.75)
+		hitbox.collision_mask = 0
 		await get_tree().create_timer(0.1).timeout
+		modulate = Color(1,1,1,0.75)
+		await get_tree().create_timer(0.4).timeout
 		modulate = Color(1,1,1)
+		hitbox.collision_mask = 5
