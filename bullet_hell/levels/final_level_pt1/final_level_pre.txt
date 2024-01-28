@@ -1,0 +1,28 @@
+!jester: : 0
+Player_scared: : 0.5
+Player_scared: ...: keypress
+Jester_regular_crouch: hey there!: keypress
+Jester_regular_crouch: seems like you've lost your audience...: keypress
+Jester_regular_crouch: ah, but you still have me!: keypress
+Player_scared: i-i... uh... i n-need to: keypress
+Jester_regular_crouch: where are you going?: keypress
+Jester_regular_crouch: STAY RIGHT THERE.: keypress
+Player_scared: you...: keypress
+Jester_regular_crouch: i know exactly what you're going to say: keypress
+Jester_regular_crouch: hOw CoUlD yOU? wHy ? ?: keypress
+Jester_regular_crouch: bla bla revenge bla seeking power whatever: keypress
+Jester_regular_crouch: enough about me: keypress
+Jester_regular_crouch: what about YOU?: keypress
+Jester_regular_crouch: alone in the room with a m u r d e r e r ?: keypress
+Player_scared: : keypress
+Jester_regular_crouch: how about this...?: keypress
+Jester_regular_crouch: despite my incredible sense of humor: keypress
+Jester_regular_crouch: i haven't laughed in many years...: keypress
+Jester_regular_crouch: i simply: keypress
+Jester_regular_crouch: know: keypress
+Jester_regular_crouch: every: keypress
+Jester_regular_crouch: joke: keypress
+Jester_regular_crouch: i wrote most of them...: keypress
+Jester_regular_crouch: so make me laugh, and i'll let you live: keypress
+Jester_regular_crouch: sound fair?: keypress
+!transition: final_level_pt1/final_level_pt1: 0
