@@ -1,3 +1,39 @@
-Jester_neutral: : 2
-!bullets: zombies: 1
+Player: What joke should I tell?
 
+Pattern 1: TBD
+
+Reveal words:
+“WHY” : progress
+“SO AHH” : “that’s not right…”
+“IDK” : “I DONT KNOW!”
+“UHHH” “not sure about that…”
+
+Pattern 2: TBD
+
+Player: I need more words!
+
+Reveal words:
+“DID THE” : progress
+“IS AM” : “definitely not!”
+“FOR WHAT” : “what does that even mean?”
+
+Pattern 3: TBD
+
+Player: It’s gotta be a classic…
+
+Reveal words:
+“CHICKEN” : progress
+“BEEF” : “not the joke i was thinking of!”
+“PORK” : “no that’s not how i remember it going…”
+
+Chicken icon: don’t make the same mistakes i did…
+
+Pattern 4:
+Player is respawned at the top of the screen
+Car shaped bullets moving left and right block its way between it and the final words, and it has to cross this road back and forth for each word
+
+“CROSS” at bottom
+
+“THE” at top
+
+“ROAD” at bottom again

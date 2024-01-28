@@ -1,0 +1,12 @@
+[gd_resource type="JSON" format=3 uid="uid://d25t1x1fbc78a"]
+
+[resource]
+data = {
+"WHY": {
+"!joke_text": "WHY ;;; ;;; ;;;;;;; ;;;;; ;;; ;;;;",
+"IDK": false,
+"SO AHH": false,
+"UHHH": false,
+"WHY": true
+}
+}

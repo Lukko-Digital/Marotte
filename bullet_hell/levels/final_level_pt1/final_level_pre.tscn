@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2s1243t1qa1t"]
+[gd_scene load_steps=3 format=3 uid="uid://dyu3vtd2eyoin"]
 
 [ext_resource type="PackedScene" uid="uid://bl1fy1m5y84p4" path="res://dialogue_scene/sv_dialogue_scene.tscn" id="1_5qgpv"]
 [ext_resource type="PackedScene" uid="uid://h3yr68hxawqe" path="res://bullet_hell/display/start_transition_confident_jester.tscn" id="2_jsk2n"]

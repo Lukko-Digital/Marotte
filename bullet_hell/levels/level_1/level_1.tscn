@@ -1,14 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://dqkhhsrby17yd"]
 
 [ext_resource type="PackedScene" uid="uid://dj6e7xh4njtlj" path="res://bullet_hell/bullet_hell_game.tscn" id="1_0kqsq"]
-[ext_resource type="JSON" uid="uid://cr5g2v1mpve7b" path="res://bullet_hell/levels/tutorial_level/tutorial_word_groups.tres" id="2_hntel"]
+[ext_resource type="JSON" uid="uid://d25t1x1fbc78a" path="res://bullet_hell/levels/level_1/1_word_groups.tres" id="2_xo781"]
 [ext_resource type="PackedScene" uid="uid://dbegxetdjc8u0" path="res://bullet_hell/display/start_transition_scared_jester.tscn" id="3_ydxq3"]
 
 [node name="Level1" type="Node2D"]
 
 [node name="bullet_hell_game" parent="." node_paths=PackedStringArray("transition") instance=ExtResource("1_0kqsq")]
 script_file_path = "res://bullet_hell/levels/level_1/1_script.txt"
-word_groups = ExtResource("2_hntel")
+word_groups = ExtResource("2_xo781")
 transition = NodePath("StartTransition")
 
 [node name="StartTransition" parent="bullet_hell_game" instance=ExtResource("3_ydxq3")]
+metadata/_edit_use_anchors_ = true

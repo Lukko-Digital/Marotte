@@ -104,9 +104,9 @@ script = ExtResource("10_e7q4f")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[connection signal="button_down" from="Quit" to="AnimationPlayer" method="_on_pressed"]
 [connection signal="mouse_entered" from="Quit" to="AnimationPlayer" method="_on_mouse_entered"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Quit" to="AnimationPlayer" method="_on_pressed"]
+[connection signal="button_down" from="Resume" to="AnimationPlayer" method="_on_pressed"]
 [connection signal="mouse_entered" from="Resume" to="AnimationPlayer" method="_on_mouse_entered"]
-[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Resume" to="AnimationPlayer" method="_on_pressed"]
