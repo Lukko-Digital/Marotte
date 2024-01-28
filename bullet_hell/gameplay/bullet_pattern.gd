@@ -153,42 +153,46 @@ func circle_pattern(speed=1):
 
 
 func spawn_bullet_pattern():
-	while active_bullet_mode != "none":
-		match active_bullet_mode:
-			"circle":
+	match active_bullet_mode:
+		"circle":
+			circle_pattern()
+			spawn_timer.wait_time = 3
+		"double_circle":
+			for i in range(2):
 				circle_pattern()
-				spawn_timer.wait_time = 3
-			"double_circle":
-				for i in range(2):
-					circle_pattern()
-				spawn_timer.wait_time = 3
-			"slow_circle":
+			spawn_timer.wait_time = 3
+		"slow_circle":
+			circle_pattern(0.6)
+			spawn_timer.wait_time = 3
+		"slow_double_circle":
+			for i in range(2):
 				circle_pattern(0.6)
-				spawn_timer.wait_time = 3
-			"slow_double_circle":
-				for i in range(2):
-					circle_pattern(0.6)
-				spawn_timer.wait_time = 3
-			"spiral":
-				spiral(game_center)
-				spawn_timer.wait_time = 3
-			"grid":
-				horizontal_grid(Vector2(RIGHT_X, game_center.y))
-				spawn_timer.wait_time = 1
-				
-		spawn_timer.start()
-		await spawn_timer.timeout
+			spawn_timer.wait_time = 3
+		"spiral":
+			spiral(game_center)
+			spawn_timer.wait_time = 3
+		"grid":
+			horizontal_grid(Vector2(RIGHT_X, game_center.y))
+			spawn_timer.wait_time = 1
+			
+	spawn_timer.start()
 
 
 func _on_script_handler_spawn_bullets(pattern):
 	match pattern:
 		"none":
 			active_bullet_mode = "none"
+			spawn_timer.stop()
 		"still":
 			active_bullet_mode = "none"
+			spawn_timer.stop()
 			## Very specific only used in the tutorial
 			await get_tree().create_timer(1).timeout
 			spawn(bullet_scene, Vector2(RIGHT_X - 130, TOP_Y + 80) - position, [Vector2(), 0])
 		_:
 			active_bullet_mode = pattern
+	spawn_bullet_pattern()
+
+
+func _on_spawn_timer_timeout():
 	spawn_bullet_pattern()

@@ -7,5 +7,6 @@ position = Vector2(960, 540)
 script = ExtResource("1_1h7jv")
 
 [node name="SpawnTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
