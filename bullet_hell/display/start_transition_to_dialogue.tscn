@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0hucyb4mxueh"]
+[gd_scene load_steps=4 format=3 uid="uid://jbsk5np48sqp"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/transition.gd" id="1_yao5w"]
 
