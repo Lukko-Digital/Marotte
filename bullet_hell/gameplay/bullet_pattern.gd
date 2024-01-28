@@ -150,10 +150,10 @@ func circle_pattern(speed=1.0):
 		Direction.DOWN:
 			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
 			
-	circle(spawn_position-position, speed)
+	circle(spawn_position, speed)
 
 
-func zombies(speed=0.5):
+func zombies(speed=0.25):
 	var direction = Direction.values().pick_random()
 	var spawn_position: Vector2
 	match direction:
@@ -166,6 +166,13 @@ func zombies(speed=0.5):
 		Direction.DOWN:
 			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
 			
+	spawn_position = spawn_position - position
+	var warning_dir = spawn_position.rotated(PI)
+	
+	spawn(warning_scene, spawn_position, [warning_dir])
+	
+	await get_tree().create_timer(0.5).timeout
+	
 	spawn(zombie_scene, spawn_position, [player, speed, position])
 
 

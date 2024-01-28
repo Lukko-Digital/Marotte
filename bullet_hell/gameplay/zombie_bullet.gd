@@ -7,6 +7,7 @@ var player: CharacterBody2D
 var offset: Vector2
 
 @onready var timer: Timer = $Timer
+@onready var sprite: Sprite2D = $Sprite2D
 
 
 ## Expect args to contain one Vector2 which represents the direction
@@ -19,7 +20,6 @@ func start(start_pos: Vector2, args: Array):
 
 func _physics_process(delta):
 	look_at(player.position)
-	modulate = Color(1,1,1,timer.wait_time/5)
 	
 	var direction = (player.position - (position + offset)).normalized()
 	position += direction * speed * delta
