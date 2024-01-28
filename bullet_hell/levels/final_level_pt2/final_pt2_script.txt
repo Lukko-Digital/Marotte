@@ -1,15 +1,28 @@
 Jester_neutral: what's going on???: 2
-!bullets: double_circle: 0
+!bullets: rapid_double_circle: 3
 !joke_words: HA1: pickup
-Jester_neutral: what are you doing!: 6
+!bullets: none: 0
+Jester_neutral: what are you doing!: 2
+!bullets: zombies: 4
 !joke_words: HA2: pickup
-Jester_neutral: stop that!!!: 6
+!bullets: none: 0
+Jester_neutral: stop that!!!: 2
+!bullets: fast_circle: 4
 !joke_words: HA3: pickup
-Jester_neutral: seriously stop: 6
+!bullets: none: 0
+Jester_neutral: seriously stop: 2
+!bullets: fast_zombies: 4
 !joke_words: HA4: pickup
-Jester_angry: that's way too much laughing: 6
+!bullets: none: 0
+Jester_angry: that's way too much laughing: 2
+!bullets: crazy_circle_grid: 4
 !joke_words: HA5: pickup
-Jester_angry: THAT'S TOO MUCH: 6
+!bullets: none: 0
+Jester_angry: THAT'S TOO MUCH: 2
+!bullets: crazy_spiral: 3
+!bullets: crazy_spiral_reverse: 3
+!bullets: crazy_spiral: 3
+!bullets: crazy_spiral_reverse: 0
 !joke_words: HA6: pickup
 !bullets: none: 0
 !final_transition: final_level_pt2/jester_laughing: 0

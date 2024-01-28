@@ -1,0 +1,173 @@
+[gd_scene load_steps=19 format=3 uid="uid://dqagvmbjdnptb"]
+
+[ext_resource type="Script" path="res://bullet_hell/display/title_screne.gd" id="1_fd6gk"]
+[ext_resource type="Texture2D" uid="uid://bh4js2b0k3aa7" path="res://assets/sprites/ui_titlescreen_bg.png" id="1_rnq50"]
+[ext_resource type="Texture2D" uid="uid://dstfmdr7igsun" path="res://assets/sprites/ui_titlescreen_title.png" id="2_5h4lc"]
+[ext_resource type="Texture2D" uid="uid://c3ub5ul2cmg5o" path="res://assets/sprites/ui_titlescreen_newgame.png" id="3_of0ng"]
+[ext_resource type="Texture2D" uid="uid://cco8h8u5do7gx" path="res://assets/sprites/ui_titlescreen_newgame_click.png" id="4_nqshd"]
+[ext_resource type="Texture2D" uid="uid://ccyylnnatiyh4" path="res://assets/sprites/ui_titlescreen_newgame_hover.png" id="5_m0gag"]
+[ext_resource type="Texture2D" uid="uid://dpbnf6evk4lcs" path="res://assets/sprites/ui_titlescreen_quit.png" id="6_2x6mt"]
+[ext_resource type="Texture2D" uid="uid://bw36fvelul7vr" path="res://assets/sprites/ui_titlescreen_quit_click.png" id="7_p7jra"]
+[ext_resource type="Texture2D" uid="uid://dt8c8ckti4bpt" path="res://assets/sprites/ui_titlescreen_quit_hover.png" id="8_r0hpr"]
+[ext_resource type="PackedScene" uid="uid://jbsk5np48sqp" path="res://bullet_hell/display/start_transition_to_dialogue.tscn" id="10_o82nr"]
+[ext_resource type="AudioStream" uid="uid://bw8su1gy6f3tn" path="res://assets/audio/mouse_click_v1.mp3" id="11_e4gin"]
+[ext_resource type="AudioStream" uid="uid://t0qngodb46v4" path="res://assets/audio/mouse_hover_v1.mp3" id="12_lw6i5"]
+[ext_resource type="Script" path="res://bullet_hell/display/button_audio_player.gd" id="13_45bbx"]
+
+[sub_resource type="Animation" id="Animation_khwmw"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeAnimation:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nt54k"]
+_data = {
+"fade_in": SubResource("Animation_khwmw")
+}
+
+[sub_resource type="Animation" id="Animation_muvpx"]
+resource_name = "click"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_e4gin")
+}],
+"times": PackedFloat32Array(-0.04)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
+}
+
+[sub_resource type="Animation" id="Animation_eev4r"]
+resource_name = "hover"
+length = 0.2
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_lw6i5")
+}],
+"times": PackedFloat32Array(-0.1)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [14.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t75iw"]
+_data = {
+"click": SubResource("Animation_muvpx"),
+"hover": SubResource("Animation_eev4r")
+}
+
+[node name="title_screne" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fd6gk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_rnq50")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_5h4lc")
+
+[node name="NewGame" type="TextureButton" parent="."]
+offset_left = 83.0
+offset_top = 560.0
+offset_right = 2392.0
+offset_bottom = 1290.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("3_of0ng")
+texture_pressed = ExtResource("4_nqshd")
+texture_hover = ExtResource("5_m0gag")
+
+[node name="Quit" type="TextureButton" parent="."]
+offset_left = 136.0
+offset_top = 731.0
+offset_right = 1925.0
+offset_bottom = 1200.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("6_2x6mt")
+texture_pressed = ExtResource("7_p7jra")
+texture_hover = ExtResource("8_r0hpr")
+
+[node name="StartTransition" parent="." instance=ExtResource("10_o82nr")]
+visible = false
+layout_mode = 1
+
+[node name="FadeAnimation" type="ColorRect" parent="."]
+z_index = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fade_in"
+libraries = {
+"": SubResource("AnimationLibrary_nt54k")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t75iw")
+}
+script = ExtResource("13_45bbx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 6.0
+
+[connection signal="button_down" from="NewGame" to="AnimationPlayer2" method="_on_pressed"]
+[connection signal="mouse_entered" from="NewGame" to="AnimationPlayer2" method="_on_mouse_entered"]
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="button_down" from="Quit" to="AnimationPlayer2" method="_on_pressed"]
+[connection signal="mouse_entered" from="Quit" to="AnimationPlayer2" method="_on_mouse_entered"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
