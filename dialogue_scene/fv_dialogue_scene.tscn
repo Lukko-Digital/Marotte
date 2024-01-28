@@ -523,6 +523,7 @@ libraries = {
 [node name="pause_ui" parent="." instance=ExtResource("10_er8wh")]
 
 [node name="DialogueAudioPlayer" parent="." instance=ExtResource("10_d3ubh")]
+volume_db = -3.0
 
 [node name="Joke" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_itybw")

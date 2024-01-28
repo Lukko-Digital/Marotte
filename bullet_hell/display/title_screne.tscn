@@ -108,18 +108,21 @@ anchors_preset = 0
 script = ExtResource("1_fd6gk")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_rnq50")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_5h4lc")
 
 [node name="NewGame" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 83.0
 offset_top = 560.0
 offset_right = 2392.0
@@ -130,6 +133,7 @@ texture_pressed = ExtResource("4_nqshd")
 texture_hover = ExtResource("5_m0gag")
 
 [node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 136.0
 offset_top = 731.0
 offset_right = 1925.0
@@ -145,6 +149,7 @@ layout_mode = 1
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
 z_index = 2
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
