@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://btwxir20cc3mx"]
 
 [ext_resource type="Script" path="res://bullet_hell/levels/credits/credits.gd" id="1_2roeg"]
-[ext_resource type="Texture2D" uid="uid://py7e6allllve" path="res://assets/sprites/ui_credits_scroll.png" id="1_eweln"]
+[ext_resource type="Texture2D" uid="uid://qtv1h673lxf5" path="res://assets/sprites/ui_credits_scroll.png" id="1_eweln"]
 [ext_resource type="AudioStream" uid="uid://fk20nmoeualt" path="res://assets/audio/impact_extra_v1.mp3" id="2_4s4xt"]
 [ext_resource type="PackedScene" uid="uid://g4kts1tujkt6" path="res://bullet_hell/audio/MusicPlayer.tscn" id="4_jqhca"]
-[ext_resource type="AudioStream" uid="uid://budy21bw8rlbj" path="res://assets/audio/music/tutorial_music.mp3" id="5_gc1m2"]
+[ext_resource type="AudioStream" uid="uid://crsffacl2mofj" path="res://assets/audio/music/credits.mp3" id="5_ihnv8"]
 
 [sub_resource type="Animation" id="Animation_uh1qg"]
 resource_name = "new_animation"
@@ -123,8 +123,8 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="MusicPlayer" parent="." instance=ExtResource("4_jqhca")]
-with_intro = ExtResource("5_gc1m2")
-without_intro = ExtResource("5_gc1m2")
+with_intro = ExtResource("5_ihnv8")
+without_intro = ExtResource("5_ihnv8")
 volume = -10
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
