@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://mut0lwnv7t78"]
+[gd_scene load_steps=7 format=3 uid="uid://mut0lwnv7t78"]
 
 [ext_resource type="PackedScene" uid="uid://dj6e7xh4njtlj" path="res://bullet_hell/bullet_hell_game.tscn" id="1_3d2vw"]
 [ext_resource type="JSON" uid="uid://bcrgfmlqrnbye" path="res://bullet_hell/levels/final_level_pt2/final_pt2_words.tres" id="2_m6og6"]
 [ext_resource type="PackedScene" uid="uid://dcag0t5a047ce" path="res://bullet_hell/display/start_transition_from_black.tscn" id="3_ehjx4"]
+[ext_resource type="PackedScene" uid="uid://g4kts1tujkt6" path="res://bullet_hell/audio/MusicPlayer.tscn" id="4_hbmcl"]
+[ext_resource type="AudioStream" uid="uid://bdya1aek51288" path="res://assets/audio/music/final_level_2_music.mp3" id="5_j88sk"]
+[ext_resource type="AudioStream" uid="uid://c7nrahuqqc2dj" path="res://assets/audio/music/final_level_2_music_nointro.mp3" id="6_t0d56"]
 
 [node name="final_level_pt2" type="Node2D"]
 
@@ -14,3 +17,8 @@ jester_arena = true
 transition = NodePath("../StartTransition")
 
 [node name="StartTransition" parent="." instance=ExtResource("3_ehjx4")]
+
+[node name="MusicPlayer" parent="." instance=ExtResource("4_hbmcl")]
+with_intro = ExtResource("5_j88sk")
+without_intro = ExtResource("6_t0d56")
+volume = -15
