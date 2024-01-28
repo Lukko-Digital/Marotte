@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=24 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://bullet_hell/script_handler.gd" id="5_eia4t"]
 [ext_resource type="PackedScene" uid="uid://dfj2rgxbg66a0" path="res://bullet_hell/display/clear_transition.tscn" id="7_d2507"]
 [ext_resource type="PackedScene" uid="uid://bmqy68ba644tc" path="res://bullet_hell/display/bh_camera.tscn" id="7_ybxu1"]
+[ext_resource type="Script" path="res://bullet_hell/display/RedJokeLabel.gd" id="8_3axfu"]
 [ext_resource type="PackedScene" uid="uid://cyjcpt38w0tyo" path="res://bullet_hell/gameplay/bullet_pattern.tscn" id="8_jtn82"]
 [ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="15_64oxy"]
 
@@ -85,8 +86,7 @@ theme_override_font_sizes/font_size = 70
 text = "GET OUT OF MY HEAD"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("3_ea24l")
-red = true
+script = ExtResource("8_3axfu")
 
 [node name="WordTimer" type="Timer" parent="Environment"]
 wait_time = 5.0
