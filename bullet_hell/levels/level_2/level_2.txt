@@ -1,0 +1,22 @@
+Player: I haven’t memorized any dark jokes...: 3
+!bullets: quick_circle: 3
+!joke_words: WHAT: pickup
+!joke_words: DID: pickup
+!joke_words: THE: pickup
+!bullets: none: 0
+Player: What next?: 2
+!bullets: final_spiral: 2.5
+!bullets: final_reverse_spiral: 2.5
+!bullets: final_spiral: 0
+Player: Something relatable...?: 2
+!bullets: none: 0
+!joke_words: KNIGHT: pickup
+!bullets: final_circle_grid: 4
+!joke_words: SAY: 0
+!bullets: none: 0
+Player: What should the knight do?: pickup
+!bullets: zombies: 2
+!joke_words: TO THE: pickup
+Player: I need a dark and twisted finale!: 2
+!joke_words: ZOMBIE: pickup
+!bullets: none: 0

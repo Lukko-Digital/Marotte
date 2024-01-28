@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://blswcpeqrxkkb"]
+
+[ext_resource type="PackedScene" uid="uid://dj6e7xh4njtlj" path="res://bullet_hell/bullet_hell_game.tscn" id="1_0ajff"]
+[ext_resource type="JSON" uid="uid://cdhqclmy6kq4t" path="res://bullet_hell/levels/level_2/level_2_words.tres" id="2_7jh1e"]
+[ext_resource type="PackedScene" uid="uid://d4cmwufycjqln" path="res://bullet_hell/display/start_transition_confident_king.tscn" id="3_v3md7"]
+
+[node name="level_2" type="Node2D"]
+
+[node name="bullet_hell_game" parent="." node_paths=PackedStringArray("transition") instance=ExtResource("1_0ajff")]
+script_file_path = "res://bullet_hell/levels/level_2/level_2.txt"
+word_groups = ExtResource("2_7jh1e")
+transition = NodePath("../StartTransition")
+
+[node name="StartTransition" parent="." instance=ExtResource("3_v3md7")]

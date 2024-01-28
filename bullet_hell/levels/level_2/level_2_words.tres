@@ -1,0 +1,39 @@
+[gd_resource type="JSON" format=3 uid="uid://cdhqclmy6kq4t"]
+
+[resource]
+data = {
+"DID": {
+"!joke_text": "WHAT DID ;;; ;;;;;; ;;; ;; ;;; ;;;;;;",
+"DID": true
+},
+"KNIGHT": {
+"!joke_text": "WHAT DID THE KNIGHT ;;; ;; ;;; ;;;;;;",
+"FROG": false,
+"GOBLIN": false,
+"KNIGHT": true
+},
+"SAY": {
+"!joke_text": "WHAT DID THE KNIGHT SAY ;; ;;; ;;;;;;",
+"FEET": false,
+"SAY": true,
+"SHOVEL": false,
+"SWIM": false
+},
+"THE": {
+"!joke_text": "WHAT DID THE ;;;;;; ;;; ;; ;;; ;;;;;;",
+"THE": true
+},
+"TO THE": {
+"!joke_text": "WHAT DID THE KNIGHT SAY TO THE ;;;;;;",
+"TO THE": true
+},
+"WHAT": {
+"!joke_text": "WHAT ;;; ;;; ;;;;;; ;;; ;; ;;; ;;;;;;",
+"WHAT": true
+},
+"ZOMBIE": {
+"!joke_text": "WHAT DID THE KNIGHT SAY TO THE ZOMBIE",
+"NORMAL GUY": false,
+"ZOMBIE": true
+}
+}
