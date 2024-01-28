@@ -1,7 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://kx5wyf4hj878"]
+[gd_scene load_steps=8 format=3 uid="uid://kx5wyf4hj878"]
 
 [ext_resource type="PackedScene" uid="uid://dfimnqqoeiet4" path="res://dialogue_scene/fv_dialogue_scene.tscn" id="1_bga1l"]
 [ext_resource type="PackedScene" uid="uid://dbegxetdjc8u0" path="res://bullet_hell/display/start_transition_scared_jester.tscn" id="2_yahel"]
+[ext_resource type="Texture2D" uid="uid://d3vhryddk82f1" path="res://assets/sprites/fv_tutorial_space-sheet.png" id="3_nohuw"]
+[ext_resource type="Script" path="res://bullet_hell/display/space_bar_tutorial.gd" id="4_gjqmk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_css6w"]
+atlas = ExtResource("3_nohuw")
+region = Rect2(0, 0, 2003, 1317)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n3ji"]
+atlas = ExtResource("3_nohuw")
+region = Rect2(0, 1317, 2003, 1317)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ehbsw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_css6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n3ji")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
 
 [node name="tutorial_pre" type="Node2D"]
 
@@ -10,3 +34,11 @@ script_file_path = "res://bullet_hell/levels/tutorial_level/tutorial_script_pre.
 
 [node name="StartTransition" parent="fv_dialogue_scene" instance=ExtResource("2_yahel")]
 visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fv_dialogue_scene"]
+z_index = 10
+position = Vector2(1600, 911)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_ehbsw")
+frame_progress = 0.0802425
+script = ExtResource("4_gjqmk")
