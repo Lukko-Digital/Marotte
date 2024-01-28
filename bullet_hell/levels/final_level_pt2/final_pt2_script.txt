@@ -1,20 +1,20 @@
-Jester_neutral: what's going on???: 2
+Jester_neutral: wait... what's going on?: 2
 !bullets: rapid_double_circle: 3
 !joke_words: HA1: pickup
 !bullets: none: 0
-Jester_neutral: what are you doing!: 2
+Jester_neutral: stop that, seriously: 2
 !bullets: zombies: 4
 !joke_words: HA2: pickup
 !bullets: none: 0
-Jester_neutral: stop that!!!: 2
+Jester_neutral: SERIOUSLY STOP: 2
 !bullets: fast_circle: 4
 !joke_words: HA3: pickup
 !bullets: none: 0
-Jester_neutral: seriously stop: 2
+Jester_neutral: STOP IT STOP IT STOP: 2
 !bullets: fast_zombies: 4
 !joke_words: HA4: pickup
 !bullets: none: 0
-Jester_angry: that's way too much laughing: 2
+Jester_angry: THATS WAY TOO MUCH STOP: 2
 !bullets: crazy_circle_grid: 4
 !joke_words: HA5: pickup
 !bullets: none: 0

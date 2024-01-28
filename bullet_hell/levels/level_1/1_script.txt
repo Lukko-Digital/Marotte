@@ -1,12 +1,12 @@
-Player: What joke should I tell?: 3
+Player: what joke should I tell?: 3
 !bullets: circle: 3
 !joke_words: WHY: pickup
 !bullets: double_circle: 3
-Player: I need more words!: 2
+Player: i need more words!: 2
 !joke_words: DID THE: pickup
 !bullets: none: 2
 !bullets: spiral_warning: 3
-Player: It’s gotta be a classic...: 2
+Player: it’s gotta be a classic...: 2
 !bullets: none: 0
 !joke_words: CHICKEN: pickup
 !bullets: none: 1
