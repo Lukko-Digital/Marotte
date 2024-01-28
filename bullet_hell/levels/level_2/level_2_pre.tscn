@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://uj52l6o8webo"]
+
+[ext_resource type="PackedScene" uid="uid://bl1fy1m5y84p4" path="res://dialogue_scene/sv_dialogue_scene.tscn" id="1_uqfmf"]
+[ext_resource type="PackedScene" uid="uid://d4cmwufycjqln" path="res://bullet_hell/display/start_transition_confident_king.tscn" id="2_08g0j"]
+
+[node name="level_2_pre" type="Node2D"]
+
+[node name="sv_dialogue_scene" parent="." instance=ExtResource("1_uqfmf")]
+
+[node name="StartTransition" parent="sv_dialogue_scene" instance=ExtResource("2_08g0j")]
