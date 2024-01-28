@@ -21,7 +21,3 @@ func _on_bullet_hell_game_init_joke_text(joke_text):
 		text = joke_text.substr(1)
 	else:
 		text = joke_text
-	if Checkpoint.white_joke_text:
-		text = Checkpoint.white_joke_text
-	if Checkpoint.red_joke_text:
-		modulate = Color(Color.WHITE, 0.3)
