@@ -12,4 +12,4 @@ Jester_angry: that's way too much laughing: 6
 Jester_angry: THAT'S TOO MUCH: 6
 !joke_words: HA6: pickup
 !bullets: none: 0
-!final_transition: final_level_pt2/final_level_pt2: 0
+!final_transition: final_level_pt2/jester_laughing: 0
