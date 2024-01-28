@@ -308,7 +308,7 @@ func spawn_bullet_pattern():
 			spawn_timer.wait_time = 2
 			spawn_timer.start()
 		"crazy_circle_grid":
-			circle_grid(1.2, 6)
+			circle_grid(1, 6)
 			spawn_timer.wait_time = 2
 			spawn_timer.start()
 

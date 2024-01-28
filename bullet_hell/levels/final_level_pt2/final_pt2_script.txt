@@ -7,9 +7,7 @@ Jester_neutral: wait... what's going on?: 2
 !joke_words: HA1: pickup
 !bullets: none: 0
 Jester_neutral: stop that, seriously: 2
-!bullets: zombies: 2
-!bullets: wall_right: 3
-!bullets: wall_left: 2
+!bullets: fast_zombies: 4
 !joke_words: HA2: pickup
 !bullets: none: 0
 Jester_angry: SERIOUSLY STOP: 2
@@ -17,6 +15,7 @@ Jester_angry: SERIOUSLY STOP: 2
 !joke_words: HA3: pickup
 !bullets: none: 0
 Jester_angry: STOP IT STOP IT STOP: 2
+!bullets: circle: 0
 !bullets: wall_left: 2
 !bullets: wall_right: 2
 !bullets: wall_top: 2
