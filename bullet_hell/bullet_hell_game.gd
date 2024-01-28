@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var script_file_path: String
+@export_file var script_file_path
 @export var word_groups: JSON
 @export var start_joke_text: String
 @export var jester_arena: bool
