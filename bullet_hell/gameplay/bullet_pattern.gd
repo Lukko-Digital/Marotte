@@ -240,8 +240,8 @@ func spawn_bullet_pattern():
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"spiral_warning":
-			spiral(game_center, 3, 8, 0.5, 0.5, 1.5)
-			spawn_timer.wait_time = 3
+			spiral(game_center, 3, 8, 0.5, 1, 1.5)
+			spawn_timer.wait_time = 3.25
 			spawn_timer.start()
 		"final_spiral":
 			spiral(game_center, 3, 8, 0.8)
