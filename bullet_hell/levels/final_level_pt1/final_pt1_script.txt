@@ -35,6 +35,7 @@ Jester_angry: I WAS PROMISED A JOKE: 2
 !bullets: crazy_spiral: 7
 !joke_words: MY: pickup
 !bullets: none: 0
+!checkpoint
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAA: 2
 !bullets: final_grid: 0
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 3
