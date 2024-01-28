@@ -68,10 +68,25 @@ offset_right = 1683.0
 offset_bottom = 983.0
 theme_override_fonts/font = ExtResource("2_waoyk")
 theme_override_font_sizes/font_size = 50
-text = "WHAT DO YOU CALL A FISH WITH NO EYES"
+text = "WHY COULDN'T ;;; ;;; ;; ;; ;;;;"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_ea24l")
+
+[node name="RedJokeLabel" type="Label" parent="Environment"]
+visible = false
+offset_left = 702.0
+offset_top = 901.0
+offset_right = 1683.0
+offset_bottom = 989.0
+theme_override_colors/font_color = Color(1, 0.388235, 0.388235, 1)
+theme_override_fonts/font = ExtResource("2_waoyk")
+theme_override_font_sizes/font_size = 70
+text = "GET OUT OF MY HEAD"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_ea24l")
+red = true
 
 [node name="WordTimer" type="Timer" parent="Environment"]
 wait_time = 5.0
