@@ -457,7 +457,7 @@ visible = false
 position = Vector2(400, 620)
 scale = Vector2(1.02, 1.02)
 texture = ExtResource("8_cuupq")
-hframes = 3
+hframes = 4
 
 [node name="DialogueAudioPlayer" parent="ThoughtBubble" instance=ExtResource("11_q1s3a")]
 

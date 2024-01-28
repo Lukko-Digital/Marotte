@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://daxlcjb3brate"]
+
+[ext_resource type="Script" path="res://bullet_hell/gameplay/bullet_wall_pattern.gd" id="1_i0wag"]
+[ext_resource type="PackedScene" uid="uid://dn165sri2shss" path="res://bullet_hell/gameplay/long_bullet_1.tscn" id="2_l05e5"]
+
+[node name="bullet_wall_pattern" type="Node2D"]
+rotation = 3.14159
+script = ExtResource("1_i0wag")
+
+[node name="long_bullet2" parent="." instance=ExtResource("2_l05e5")]
+position = Vector2(700, 480)
+
+[node name="long_bullet3" parent="." instance=ExtResource("2_l05e5")]
+position = Vector2(700, -480)
+rotation = 3.14159
+
+[node name="long_bullet4" parent="." instance=ExtResource("2_l05e5")]
+position = Vector2(1123, 244)
+
+[node name="long_bullet5" parent="." instance=ExtResource("2_l05e5")]
+position = Vector2(1123, -716)
+rotation = 3.14159
+
+[node name="long_bullet6" parent="." instance=ExtResource("2_l05e5")]
+position = Vector2(1532, 701)
+
+[node name="long_bullet7" parent="." instance=ExtResource("2_l05e5")]
+position = Vector2(1532, -259)
+rotation = 3.14159
+
+[node name="long_bullet8" parent="." instance=ExtResource("2_l05e5")]
+position = Vector2(2000, 482)
+
+[node name="long_bullet9" parent="." instance=ExtResource("2_l05e5")]
+position = Vector2(2000, -478)
+rotation = 3.14159

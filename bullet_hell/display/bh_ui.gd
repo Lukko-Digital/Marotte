@@ -41,7 +41,7 @@ const Label_Position = {
 	JESTER = Vector2(925, 175)
 }
 
-enum Jester_Icon_Frames { NEUTRAL, ANGRY, HAPPY }
+enum Jester_Icon_Frames { NEUTRAL, ANGRY, HAPPY, CHICKEN }
 
 const VOICE_PITCH_MIN = 0.9
 const VOICE_PITCH_MAX = 1.5
@@ -181,6 +181,8 @@ func _on_script_handler_active_speaker(speaker):
 						jester_icon.frame = Jester_Icon_Frames.ANGRY
 					"happy":
 						jester_icon.frame = Jester_Icon_Frames.HAPPY
+					"chicken":
+						jester_icon.frame = Jester_Icon_Frames.CHICKEN
 	else:
 		match split[1]:
 			"neutral":
