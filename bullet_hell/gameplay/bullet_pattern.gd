@@ -275,6 +275,10 @@ func spawn_bullet_pattern():
 			zombies()
 			spawn_timer.wait_time = 1
 			spawn_timer.start()
+		"fast_zombies":
+			zombies(0.35)
+			spawn_timer.wait_time = 1
+			spawn_timer.start()
 		"circle_grid":
 			circle_grid()
 			spawn_timer.wait_time = 3
