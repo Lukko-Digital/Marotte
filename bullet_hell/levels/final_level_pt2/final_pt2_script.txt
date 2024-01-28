@@ -1,2 +1,15 @@
 Jester_neutral: what's going on???: 2
 !bullets: double_circle: 0
+!joke_words: HA1: pickup
+Jester_neutral: what are you doing!: 6
+!joke_words: HA2: pickup
+Jester_neutral: stop that!!!: 6
+!joke_words: HA3: pickup
+Jester_neutral: seriously stop: 6
+!joke_words: HA4: pickup
+Jester_neutral: that's way too much laughing: 6
+!joke_words: HA5: pickup
+Jester_neutral: THAT'S TOO MUCH: 6
+!joke_words: HA6: pickup
+!bullets: none: 0
+!final_transition: final_level_pt2/final_level_pt2: 0

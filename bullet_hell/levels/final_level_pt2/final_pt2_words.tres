@@ -1,4 +1,29 @@
 [gd_resource type="JSON" format=3 uid="uid://bcrgfmlqrnbye"]
 
 [resource]
-data = null
+data = {
+"HA1": {
+"!joke_text": "HA ;; ;; ;; ;; ;;",
+"HA": true
+},
+"HA2": {
+"!joke_text": "HA HA ;; ;; ;; ;;",
+"HA": true
+},
+"HA3": {
+"!joke_text": "HA HA HA ;; ;; ;;",
+"HA": true
+},
+"HA4": {
+"!joke_text": "HA HA HA HA ;; ;;",
+"HA": true
+},
+"HA5": {
+"!joke_text": "HA HA HA HA HA ;;",
+"HA": true
+},
+"HA6": {
+"!joke_text": "HA HA HA HA HA HA",
+"HA": true
+}
+}
