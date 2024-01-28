@@ -91,7 +91,7 @@ func vertical_grid(spawn_position: Vector2, num_rows=2, num_cols=3, speed=0.5):
 		await get_tree().create_timer(0.25/speed).timeout
 
 
-func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=0.5):
+func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=0.5, rotate_dir=1):
 	spawn_position = spawn_position - position
 	var warning_dir = spawn_position.rotated(PI)
 	if warning_dir.is_zero_approx():
@@ -114,7 +114,7 @@ func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=0.5):
 			spawn(
 				bullet_scene,
 				spawn_position,
-				[shot_base_dir.rotated((2*PI/num_arms)*i + (PI/8)*j), speed]
+				[shot_base_dir.rotated((2*PI/num_arms)*i + rotate_dir * (PI/8)*j), speed]
 			)
 		await get_tree().create_timer(0.2/speed).timeout
 
@@ -211,6 +211,11 @@ func spawn_bullet_pattern():
 				circle_pattern()
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
+		"rapid_double_circle":
+			for i in range(2):
+				circle_pattern()
+			spawn_timer.wait_time = 1.5
+			spawn_timer.start()
 		"slow_circle":
 			circle_pattern(0.6)
 			spawn_timer.wait_time = 3
@@ -226,6 +231,14 @@ func spawn_bullet_pattern():
 			spawn_timer.start()
 		"spiral":
 			spiral(game_center)
+			spawn_timer.wait_time = 3
+			spawn_timer.start()
+		"final_spiral":
+			spiral(game_center, 2, 8, 0.7)
+			spawn_timer.wait_time = 3
+			spawn_timer.start()
+		"final_reverse_spiral":
+			spiral(game_center, 2, 8, 0.7, -1)
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"grid":
