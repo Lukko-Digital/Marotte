@@ -27,14 +27,11 @@ Jester_angry: I WAS PROMISED A JOKE: 2
 !bullets: double_circle: 7
 !joke_words: MY: pickup
 !bullets: none: 0
-Jester_angry: STOP WHAT ARE YOU SAYING: 2
-!bullets: double_circle: 7
-!joke_words: HEAD: pickup
-!bullets: none: 0
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAA: 2
 !bullets: grid: 0
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 3
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 5
+!bullets: double_circle: 7
+!joke_words: HEAD: pickup
 !bullets: none: 0
-!joke_words: TELL ME A JOKE: 0
-Jester_neutral: y-you don’t think im funny?: pickup
+!final_transition: tutorial_level/tutorial_level: 0
