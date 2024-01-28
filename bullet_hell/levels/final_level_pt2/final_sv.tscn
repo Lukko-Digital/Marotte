@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cegic7k7lm3ek"]
+
+[ext_resource type="PackedScene" uid="uid://bl1fy1m5y84p4" path="res://dialogue_scene/sv_dialogue_scene.tscn" id="1_nfei7"]
+
+[node name="final_sv" type="Node2D"]
+
+[node name="sv_dialogue_scene" parent="." instance=ExtResource("1_nfei7")]
+script_file_path = "res://bullet_hell/levels/final_level_pt2/final_sv.txt"
