@@ -1,0 +1,43 @@
+[gd_resource type="JSON" format=3 uid="uid://c4wbt0w13irr1"]
+
+[resource]
+data = {
+"COULDN'T": {
+"!joke_text": "WHY COULDN'T ;;; ;;; ;; ;; ;;;;",
+"COULDN'T": true,
+"DID": false,
+"SHOULD": false,
+"WON'T": false
+},
+"GET": {
+"!joke_text": "!GET ;;; ;; ;; ;;;;",
+"GET": true
+},
+"HEAD": {
+"!joke_text": "!GET OUT OF MY HEAD",
+"HEAD": true
+},
+"MY": {
+"!joke_text": "!GET OUT OF MY ;;;;",
+"MY": true
+},
+"OF": {
+"!joke_text": "!GET OUT OF ;; ;;;;",
+"OF": true
+},
+"OUT": {
+"!joke_text": "!GET OUT ;; ;; ;;;;",
+"OUT": true
+},
+"TELL ME A JOKE": {
+"!joke_text": "!GET OUT OF MY HEAD",
+"TELL ME A JOKE": true
+},
+"WHY": {
+"!joke_text": "WHY ;;;;;;; ;;; ;;; ;; ;; ;;;;",
+"WHAT": false,
+"WHERE": false,
+"WHO": false,
+"WHY": true
+}
+}
