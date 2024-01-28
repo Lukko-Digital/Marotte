@@ -340,6 +340,7 @@ text_overrun_behavior = 2
 [node name="TextTimer" type="Timer" parent="KingDialogueBox"]
 
 [node name="JesterDialogueBox" type="TextureRect" parent="." node_paths=PackedStringArray("dialogue_audio")]
+visible = false
 offset_left = 152.0
 offset_top = 46.0
 offset_right = 4688.0
