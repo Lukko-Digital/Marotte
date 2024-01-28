@@ -2,6 +2,30 @@
 
 [resource]
 data = {
+"CHICKEN": {
+"!joke_text": "WHY DID THE CHICKEN ;;;;; ;;; ;;;;",
+"BEEF": false,
+"CHICKEN": true,
+"PORK": false
+},
+"CROSS": {
+"!joke_text": "WHY DID THE CHICKEN CROSS ;;; ;;;;",
+"CROSS": true
+},
+"DID THE": {
+"!joke_text": "WHY DID THE ;;;;;;; ;;;;; ;;; ;;;;",
+"DID THE": true,
+"FOR WHAT": false,
+"IS AM": false
+},
+"ROAD": {
+"!joke_text": "WHY DID THE CHICKEN CROSS THE ROAD",
+"ROAD": true
+},
+"THE": {
+"!joke_text": "WHY DID THE CHICKEN CROSS THE ;;;;",
+"THE": true
+},
 "WHY": {
 "!joke_text": "WHY ;;; ;;; ;;;;;;; ;;;;; ;;; ;;;;",
 "IDK": false,

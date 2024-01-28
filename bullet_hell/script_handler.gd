@@ -51,19 +51,15 @@ func parse_line(line: String):
 			return
 		"!transition":
 			Checkpoint.reload_point = 0
-			Checkpoint.white_joke_text = ""
-			Checkpoint.red_joke_text = ""
 			transition.play("clear")
 			await transition.transition_finished
 			get_tree().change_scene_to_file("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]}))
 		"!final_transition":
 			Checkpoint.reload_point = 0
-			Checkpoint.white_joke_text = ""
-			Checkpoint.red_joke_text = ""
 			transition.play("black")
 			await transition.transition_finished
 			get_tree().change_scene_to_file("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]}))
-		"Player", "Jester_neutral", "Jester_angry", "Jester_happy":
+		"Player", "Jester_neutral", "Jester_angry", "Jester_happy", "Jester_chicken":
 			active_speaker.emit(split[0])
 			display_line.emit(split[1])
 		_:

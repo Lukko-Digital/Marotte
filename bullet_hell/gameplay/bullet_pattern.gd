@@ -93,7 +93,7 @@ func vertical_grid(spawn_position: Vector2, num_rows=2, num_cols=3, speed=0.5):
 		await get_tree().create_timer(0.25/speed).timeout
 
 
-func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=0.5, rotate_dir=1):
+func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=0.5, rotate_dir=1, warning_time=0.5):
 	spawn_position = spawn_position - position
 	var warning_dir = spawn_position.rotated(PI)
 	if warning_dir.is_zero_approx():
@@ -107,7 +107,7 @@ func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=0.5, rotate_
 	for i in range(num_arms):
 		spawn(warning_scene, spawn_position, [warning_dir.rotated((2*PI/num_arms)*i)])
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(warning_time).timeout
 	
 	if shot_base_dir.is_zero_approx():
 		shot_base_dir = Vector2(0,0)
@@ -200,8 +200,8 @@ func zombies(speed=0.25):
 	spawn(zombie_scene, spawn_position, [player, speed, position])
 
 
-func wall_pattern(number: int, direction: Vector2, speed=0.5):
-	var instance = load("res://bullet_hell/gameplay/bullet_wall_pattern_%d.tscn" % number).instantiate()
+func wall_pattern(pattern: String, direction: Vector2, speed=0.5):
+	var instance = load("res://bullet_hell/gameplay/bullet_wall_pattern_%s.tscn" % pattern).instantiate()
 	instance.start(direction, speed)
 	add_child(instance)
 
@@ -239,6 +239,10 @@ func spawn_bullet_pattern():
 			spiral(game_center)
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
+		"spiral_warning":
+			spiral(game_center, 3, 8, 0.5, 1, 1.5)
+			spawn_timer.wait_time = 3.25
+			spawn_timer.start()
 		"final_spiral":
 			spiral(game_center, 3, 8, 0.8)
 			spawn_timer.wait_time = 3
@@ -260,7 +264,13 @@ func spawn_bullet_pattern():
 			spawn_timer.wait_time = 1
 			spawn_timer.start()
 		"wall_1":
-			wall_pattern(1, Vector2(-1, 0))
+			wall_pattern("1", Vector2(-1, 0), 0.5)
+		"wall_chicken_1":
+			wall_pattern("chicken_1", Vector2(-1, 0), 0.4)
+		"wall_chicken_2":
+			wall_pattern("chicken_2", Vector2(-1, 0), 0.5)
+		"wall_chicken_3":
+			wall_pattern("chicken_3", Vector2(-1, 0), 0.6)
 		"zombies":
 			zombies()
 			spawn_timer.wait_time = 1
