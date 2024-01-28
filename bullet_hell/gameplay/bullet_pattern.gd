@@ -255,6 +255,10 @@ func spawn_bullet_pattern():
 			spiral(game_center, 5, 8, 1, -1)
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
+		"crazy_spiral_reverse":
+			spiral(game_center, 5, 8, 1, -1)
+			spawn_timer.wait_time = 3
+			spawn_timer.start()
 		"grid":
 			horizontal_grid(Vector2(RIGHT_X, game_center.y))
 			spawn_timer.wait_time = 1
@@ -285,6 +289,10 @@ func spawn_bullet_pattern():
 			spawn_timer.start()
 		"final_circle_grid":
 			circle_grid(1, 4)
+			spawn_timer.wait_time = 2
+			spawn_timer.start()
+		"crazy_circle_grid":
+			circle_grid(1.2, 6)
 			spawn_timer.wait_time = 2
 			spawn_timer.start()
 
