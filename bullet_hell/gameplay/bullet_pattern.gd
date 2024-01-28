@@ -101,6 +101,7 @@ func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=0.5, rotate_
 	if shot_base_dir.is_zero_approx():
 		shot_base_dir = Vector2(1,0)
 	
+	warning_sound.play()
 	for i in range(num_arms):
 		spawn(warning_scene, spawn_position, [warning_dir.rotated((2*PI/num_arms)*i)])
 	
@@ -110,6 +111,7 @@ func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=0.5, rotate_
 		shot_base_dir = Vector2(0,0)
 	
 	for j in range(num_shots):
+		bullet_spawn_sound.play()
 		for i in range(num_arms):
 			spawn(
 				bullet_scene,
