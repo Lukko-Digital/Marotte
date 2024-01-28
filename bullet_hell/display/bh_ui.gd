@@ -68,8 +68,6 @@ func _process(_delta):
 			player_image_animation.play("stress1")
 		else:
 			player_image_animation.play("stress0")
-	else:
-		jester_image_animation.play("default")
 
 
 func death():
@@ -125,10 +123,16 @@ func _set_current_hp(new_hp):
 
 
 func _on_bullet_hell_game_use_jester_arena():
-	$Interface.texture = jester_interface
 	jester_arena = true
+	$Interface.texture = jester_interface
 	$UIJester.visible = true
 	$UIPlayer.visible = false
+	jester_icon.visible = false
+	jester_image_animation.play("default")
+	thought_bubble.texture = jester_speech_bubble
+	dialogue_label.size = Label_Size.PLAYER
+	dialogue_label.position = Label_Position.PLAYER
+	dialogue_label.set("theme_override_fonts/font", jester_font)
 
 
 func _on_bh_player_hit():
@@ -174,11 +178,11 @@ func _on_script_handler_active_speaker(speaker):
 					"happy":
 						jester_icon.frame = Jester_Icon_Frames.HAPPY
 	else:
-		thought_bubble.texture = jester_speech_bubble
-		dialogue_label.size = Label_Size.PLAYER
-		dialogue_label.position = Label_Position.PLAYER
-		dialogue_label.set("theme_override_fonts/font", jester_font)
-		jester_icon.visible = false
+		match split[1]:
+			"neutral":
+				jester_image_animation.play("default")
+			"angry":
+				jester_image_animation.play("stressed")
 
 
 func _on_script_handler_display_line(text):
