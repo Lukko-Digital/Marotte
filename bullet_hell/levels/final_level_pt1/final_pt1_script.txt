@@ -30,11 +30,12 @@ Jester_angry: why aren't you telling the joke: 2
 !joke_words: OF: pickup
 !bullets: none: 0
 Jester_angry: I WAS PROMISED A JOKE: 2
-!bullets: crazy_spiral: 7
+!bullets: rapid_double_circle: 2
+!bullets: crazy_spiral: 2
 !joke_words: MY: pickup
 !bullets: none: 0
 Jester_angry: STOP IT STOP IT STOP IT STOP IT: 2
-!bullets: final_grid: 0
+!bullets: fast_circle: 0
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 3
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 5
 !joke_words: HEAD: pickup
