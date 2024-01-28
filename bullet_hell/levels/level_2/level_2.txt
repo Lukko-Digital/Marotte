@@ -15,8 +15,10 @@ Player: Something relatable...?: 2
 !joke_words: SAY: 0
 !bullets: none: 0
 Player: What should the knight do?: pickup
-!bullets: zombies: 2
+!bullets: wall_2: 12
 !joke_words: TO THE: pickup
-Player: I need a dark and twisted finale!: 2
+Player: I need a dark and twisted finale!: 1
+!bullets: zombies: 8
 !joke_words: ZOMBIE: pickup
 !bullets: none: 0
+!transition: level_2/Level_2_post: 0
