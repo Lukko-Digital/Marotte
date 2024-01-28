@@ -1,4 +1,4 @@
-King_dead: : 0.01
-Jester_dead: : 0.01
+!jester: : 0
+Jester_dead: : 0.00001
 Player_scared: ...: keypress
 Player_scared: .......: keypress
