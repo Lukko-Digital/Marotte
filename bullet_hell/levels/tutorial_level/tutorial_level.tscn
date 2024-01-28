@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dja6cv76f00ic"]
+[gd_scene load_steps=11 format=3 uid="uid://dja6cv76f00ic"]
 
 [ext_resource type="PackedScene" uid="uid://dj6e7xh4njtlj" path="res://bullet_hell/bullet_hell_game.tscn" id="1_skd7g"]
 [ext_resource type="JSON" uid="uid://cr5g2v1mpve7b" path="res://bullet_hell/levels/tutorial_level/tutorial_word_groups.tres" id="2_xbiqt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://bullet_hell/levels/tutorial_level/movement_tutorial.gd" id="4_52q1e"]
 [ext_resource type="PackedScene" uid="uid://dbegxetdjc8u0" path="res://bullet_hell/display/start_transition_scared_jester.tscn" id="5_adcmg"]
 [ext_resource type="AudioStream" uid="uid://budy21bw8rlbj" path="res://assets/audio/music/tutorial_music.mp3" id="6_7iv71"]
+[ext_resource type="PackedScene" uid="uid://g4kts1tujkt6" path="res://bullet_hell/audio/MusicPlayer.tscn" id="6_sx3wy"]
 
 [sub_resource type="Animation" id="Animation_8fari"]
 resource_name = "fade"
@@ -67,9 +68,9 @@ libraries = {
 
 [node name="StartTransition" parent="." instance=ExtResource("5_adcmg")]
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_7iv71")
-volume_db = -15.0
-autoplay = true
+[node name="MusicPlayer" parent="." instance=ExtResource("6_sx3wy")]
+with_intro = ExtResource("6_7iv71")
+without_intro = ExtResource("6_7iv71")
+volume = -15
 
 [connection signal="animation_finished" from="MovementTutorial/AnimationPlayer" to="MovementTutorial" method="_on_animation_player_animation_finished"]
