@@ -47,9 +47,11 @@ func horizontal_grid(spawn_position: Vector2, num_rows=3, num_cols=2, speed=0.5)
 		
 	await get_tree().create_timer(0.5).timeout
 	
+	warning_sound.play()
 	spawn(warning_scene, spawn_position, [warning_dir])
 	
 	for i in range(num_cols):
+		bullet_spawn_sound.play()
 		for j in range(num_rows):
 			spawn(
 				bullet_scene,
@@ -236,15 +238,23 @@ func spawn_bullet_pattern():
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"final_spiral":
-			spiral(game_center, 2, 8, 0.7)
+			spiral(game_center, 3, 8, 0.8)
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"final_reverse_spiral":
-			spiral(game_center, 2, 8, 0.7, -1)
+			spiral(game_center, 3, 8, 0.8, -1)
+			spawn_timer.wait_time = 3
+			spawn_timer.start()
+		"crazy_spiral":
+			spiral(game_center, 5, 8, 1, -1)
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"grid":
 			horizontal_grid(Vector2(RIGHT_X, game_center.y))
+			spawn_timer.wait_time = 1
+			spawn_timer.start()
+		"final_grid":
+			horizontal_grid(Vector2(RIGHT_X, game_center.y), 5, 3, 0.8)
 			spawn_timer.wait_time = 1
 			spawn_timer.start()
 		"wall_1":
@@ -256,6 +266,10 @@ func spawn_bullet_pattern():
 		"circle_grid":
 			circle_grid()
 			spawn_timer.wait_time = 3
+			spawn_timer.start()
+		"final_circle_grid":
+			circle_grid(1, 4)
+			spawn_timer.wait_time = 2
 			spawn_timer.start()
 
 

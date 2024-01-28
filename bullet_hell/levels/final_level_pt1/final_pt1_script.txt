@@ -14,23 +14,29 @@ Jester_neutral: what will he come up wit next?: 2
 Jester_happy: COULDN'T ITS COULDN'T I KNOW THE ANSWER!: pickup
 Jester_happy: RIGHT RIGHT RIGHT!! DING DING DING: 2
 !bullets: rapid_double_circle: 7
+!checkpoint
 !joke_words: GET: pickup
 !bullets: none: 0
 Jester_neutral: ...: 2
 Jester_angry: that wasn't the right word: 2
-!bullets: fast_circle: 7
+!bullets: fast_circle: 2
+!bullets: none: 2
+!bullets: fast_circle: 2
+!bullets: none: 2
+!bullets: fast_circle: 2
+!bullets: none: 0
 !joke_words: OUT: pickup
 !bullets: none: 0
 Jester_angry: why aren't you telling the joke: 2
-!bullets: double_circle: 7
+!bullets: final_circle_grid: 7
 !joke_words: OF: pickup
 !bullets: none: 0
 Jester_angry: I WAS PROMISED A JOKE: 2
-!bullets: double_circle: 7
+!bullets: crazy_spiral: 7
 !joke_words: MY: pickup
 !bullets: none: 0
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAA: 2
-!bullets: grid: 0
+!bullets: final_grid: 0
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 3
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 5
 !joke_words: HEAD: pickup
