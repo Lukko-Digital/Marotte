@@ -1,40 +1,22 @@
-Player: what joke should I tell?
-
-Pattern 1: TBD
-
-Reveal words:
-“WHY” : progress
-“SO AHH” : “that’s not right…”
-“IDK” : “I DONT KNOW!”
-“UHHH” “not sure about that…”
-
-Pattern 2: TBD
-
-Player: i need more words!
-
-Reveal words:
-“DID THE” : progress
-“IS AM” : “definitely not!”
-“FOR WHAT” : “what does that even mean?”
-
-Pattern 3: TBD
-
-Player: it’s gotta be a classic…
-
-Reveal words:
-“CHICKEN” : progress
-“BEEF” : “not the joke i was thinking of!”
-“PORK” : “no that’s not how i remember it going…”
-
-Chicken icon: don’t make the same mistakes i did…
-
-Pattern 4:
-Player is respawned at the top of the screen
-Car shaped bullets moving left and right block its way between it and the final words, and it has to cross this road back and forth for each word
-
-“CROSS” at bottom
-
-“THE” at top
-
-“ROAD” at bottom again
+Player: What joke should I tell?: 3
+!bullets: circle: 3
+!joke_words: WHY: pickup
+!bullets: double_circle: 3
+Player: I need more words!: 2
+!joke_words: DID THE: pickup
+!bullets: none: 2
+!bullets: spiral_warning: 3
+Player: It’s gotta be a classic...: 2
+!bullets: none: 0
+!joke_words: CHICKEN: pickup
+!bullets: none: 1
+Jester_chicken: don’t make the same mistakes i did...: 3
+!bullets: wall_chicken_1: 7
+!joke_words: CROSS: pickup
+!bullets: wall_chicken_2: 6
+!joke_words: THE: pickup
+!bullets: wall_chicken_3: 0
+!bullets: circle: 5
+!joke_words: ROAD: pickup
+!bullets: none: 0
 !transition: level_1/level_1_post: 0
