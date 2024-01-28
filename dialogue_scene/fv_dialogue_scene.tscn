@@ -1,16 +1,16 @@
-[gd_scene load_steps=47 format=3 uid="uid://dfimnqqoeiet4"]
+[gd_scene load_steps=45 format=3 uid="uid://dfimnqqoeiet4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_ub4dj"]
 [ext_resource type="Texture2D" uid="uid://b3srkymm7ce0c" path="res://assets/sprites/fv_king-sheet.png" id="2_gs76b"]
 [ext_resource type="Script" path="res://dialogue_scene/character.gd" id="3_mdkde"]
-[ext_resource type="Texture2D" uid="uid://b5d7xjspl0fg5" path="res://assets/sprites/fv_player-sheet.png" id="4_5rrts"]
-[ext_resource type="Texture2D" uid="uid://cixdjdu5ppfbp" path="res://assets/sprites/fv_jester-sheet.png" id="4_f02j3"]
+[ext_resource type="Texture2D" uid="uid://bqjq3ka1vwtc8" path="res://assets/sprites/fv_player-sheet.png" id="4_5rrts"]
+[ext_resource type="Texture2D" uid="uid://da8opq67ql8up" path="res://assets/sprites/fv_jester-sheet.png" id="4_f02j3"]
 [ext_resource type="Texture2D" uid="uid://degd0b04aktu6" path="res://assets/sprites/fv_textbox_king.png" id="4_hj10r"]
 [ext_resource type="Script" path="res://dialogue_scene/DialogueBox.gd" id="6_f3xod"]
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_2stcm"]
-[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="9_4qmrl"]
+[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/Playerfont-Regular.ttf" id="9_4qmrl"]
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="10_d3ubh"]
-[ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="10_er8wh"]
+[ext_resource type="PackedScene" path="res://bullet_hell/display/pause_ui.tscn" id="10_er8wh"]
 [ext_resource type="FontFile" uid="uid://ba7vtjrqco0g1" path="res://assets/fonts/Jokerfont-Regular.ttf" id="10_sl4ov"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uj64u"]
@@ -143,23 +143,15 @@ animations = [{
 atlas = ExtResource("4_f02j3")
 region = Rect2(0, 1323, 3471, 1323)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l7fy4"]
-atlas = ExtResource("4_f02j3")
-region = Rect2(3471, 2646, 3471, 1323)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cipm7"]
-atlas = ExtResource("4_f02j3")
-region = Rect2(6942, 2646, 3471, 1323)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3nnae"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cucy7"]
 atlas = ExtResource("4_f02j3")
 region = Rect2(0, 3969, 3471, 1323)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8g0n2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ogl"]
 atlas = ExtResource("4_f02j3")
 region = Rect2(3471, 3969, 3471, 1323)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rwa6c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmqkp"]
 atlas = ExtResource("4_f02j3")
 region = Rect2(6942, 3969, 3471, 1323)
 
@@ -227,25 +219,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l7fy4")
+"texture": SubResource("AtlasTexture_cucy7")
+}],
+"loop": true,
+"name": &"Jester_crack1",
+"speed": 5.0
 }, {
-"duration": 4.0,
-"texture": SubResource("AtlasTexture_cipm7")
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3ogl")
+}],
+"loop": true,
+"name": &"Jester_crack2",
+"speed": 5.0
 }, {
-"duration": 4.0,
-"texture": SubResource("AtlasTexture_3nnae")
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmqkp")
+}],
+"loop": true,
+"name": &"Jester_crack3",
+"speed": 5.0
 }, {
-"duration": 4.0,
-"texture": SubResource("AtlasTexture_8g0n2")
-}, {
-"duration": 4.0,
-"texture": SubResource("AtlasTexture_rwa6c")
-}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_itex7")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_relv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ekmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6frbj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ekmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6frbj")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0ekmd")
@@ -364,9 +377,7 @@ character_name = "Player"
 position = Vector2(957, 327)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8ssc6")
-animation = &"Jester_death"
-frame = 13
-frame_progress = 1.0
+animation = &"Jester_crack1"
 script = ExtResource("3_mdkde")
 character_name = "Jester"
 

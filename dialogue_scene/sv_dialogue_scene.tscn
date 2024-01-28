@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bl1fy1m5y84p4"]
+[gd_scene load_steps=33 format=3 uid="uid://bl1fy1m5y84p4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_iqvk0"]
 [ext_resource type="Texture2D" uid="uid://cmguia25akxbf" path="res://assets/sprites/sv_crowd_back.png" id="2_a5hr8"]
@@ -110,6 +110,10 @@ region = Rect2(0, 6342, 5264, 3171)
 atlas = ExtResource("5_wr1dn")
 region = Rect2(5264, 0, 5264, 3171)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwqhx"]
+atlas = ExtResource("5_wr1dn")
+region = Rect2(5264, 6342, 5264, 3171)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmjnr"]
 atlas = ExtResource("5_wr1dn")
 region = Rect2(5264, 3171, 5264, 3171)
@@ -140,7 +144,10 @@ animations = [{
 "name": &"Jester_creepy",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwqhx")
+}],
 "loop": true,
 "name": &"Jester_just_mask_leftover",
 "speed": 5.0
@@ -228,11 +235,10 @@ script = ExtResource("4_8em3g")
 character_name = "King"
 
 [node name="Jester" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(1132, 362)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ydhqe")
-animation = &"Jester_regular_crouch"
+animation = &"Jester_just_mask_leftover"
 script = ExtResource("4_8em3g")
 character_name = "Jester"
 
