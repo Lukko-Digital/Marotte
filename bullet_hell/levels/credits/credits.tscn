@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://btwxir20cc3mx"]
+[gd_scene load_steps=8 format=3 uid="uid://btwxir20cc3mx"]
 
-[ext_resource type="Texture2D" uid="uid://qtv1h673lxf5" path="res://assets/sprites/ui_credits_scroll.png" id="1_eweln"]
+[ext_resource type="Script" path="res://bullet_hell/levels/credits/credits.gd" id="1_2roeg"]
+[ext_resource type="Texture2D" uid="uid://py7e6allllve" path="res://assets/sprites/ui_credits_scroll.png" id="1_eweln"]
 [ext_resource type="AudioStream" uid="uid://fk20nmoeualt" path="res://assets/audio/impact_extra_v1.mp3" id="2_4s4xt"]
 
 [sub_resource type="Animation" id="Animation_uh1qg"]
@@ -89,12 +90,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2roeg")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = -47.0074
 offset_right = 3840.0
-offset_bottom = 8118.99
+offset_bottom = 8166.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_eweln")
 
@@ -118,3 +119,5 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
