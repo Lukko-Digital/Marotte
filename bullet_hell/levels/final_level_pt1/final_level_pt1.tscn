@@ -9,7 +9,7 @@
 [node name="bullet_hell_game" parent="." node_paths=PackedStringArray("transition") instance=ExtResource("1_5xc0c")]
 script_file_path = "res://bullet_hell/levels/final_level_pt1/final_pt1_script.txt"
 word_groups = ExtResource("2_tljpd")
-start_joke_text = ";;; ;;;;;;; ;;; ;;; ;; ;; ;;;;"
+start_joke_text = "!;;; ;;;;;;; ;;; ;;; ;; ;; ;;;;"
 transition = NodePath("../StartTransition")
 
 [node name="StartTransition" parent="." instance=ExtResource("3_65tqd")]
