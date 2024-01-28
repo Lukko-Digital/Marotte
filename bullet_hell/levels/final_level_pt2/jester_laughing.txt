@@ -1,10 +1,10 @@
 Jester_holding_mouth: ...: keypress
-Jester_laughing: HAHAHAHAHAHAHA: 1
+Jester_laughing: HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA: keypress
 !sound: JesterCrackSound1: 0
-Jester_crack1: WAIT-: 1
+Jester_crack1: WAIT-: keypress
 !sound: JesterCrackSound2: 0
-Jester_crack2: NO: 1
+Jester_crack2: NO: keypress
 !sound: JesterCrackSound3: 0
-Jester_crack3: --!: 2
+Jester_crack3: --!: keypress
 !sound: JesterDeathSound: 0
-Jester_death: ...: 1
+Jester_death: : 2
