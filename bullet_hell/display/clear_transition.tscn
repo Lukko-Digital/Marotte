@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfj2rgxbg66a0"]
+[gd_scene load_steps=9 format=3 uid="uid://dfj2rgxbg66a0"]
 
 [ext_resource type="Texture2D" uid="uid://c0j4pcllbo836" path="res://assets/sprites/transition_jokeclear_left.png" id="1_uth4p"]
 [ext_resource type="Script" path="res://bullet_hell/display/transition.gd" id="1_uuok7"]
 [ext_resource type="Texture2D" uid="uid://c17mhaq5f81en" path="res://assets/sprites/transition_jokeclear_right.png" id="2_uuj27"]
 [ext_resource type="Texture2D" uid="uid://co6ivjts1rsn8" path="res://assets/sprites/transition_jokeclear_center.png" id="3_soeb5"]
 [ext_resource type="Texture2D" uid="uid://y5cb6f8boows" path="res://assets/sprites/transition_jokeclear_full.png" id="5_en120"]
-[ext_resource type="AudioStream" uid="uid://bdtgfm7heklff" path="res://assets/audio/random_sfx_v1.mp3" id="6_4x0dv"]
 
 [sub_resource type="Animation" id="Animation_7tn0i"]
 resource_name = "clear"
@@ -97,10 +96,10 @@ tracks/7/path = NodePath("Pulse:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(1.05, 1.1, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": []
 }
 tracks/8/type = "bezier"
 tracks/8/imported = false
@@ -131,18 +130,30 @@ tracks/10/path = NodePath("AudioStreamPlayer")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("6_4x0dv")
-}],
-"times": PackedFloat32Array(0, 1.05)
+"clips": [],
+"times": PackedFloat32Array()
 }
 tracks/10/use_blend = false
 
+[sub_resource type="Animation" id="Animation_7j5i3"]
+resource_name = "black"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ggtfr"]
 _data = {
-"black": SubResource("Animation_qi6dj"),
+"black": SubResource("Animation_7j5i3"),
 "clear": SubResource("Animation_7tn0i")
 }
 
@@ -186,7 +197,7 @@ libraries = {
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 0.566998)
+color = Color(0, 0, 0, 1)
 
 [node name="Pulse" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
