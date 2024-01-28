@@ -233,7 +233,7 @@ visible = false
 position = Vector2(1132, 362)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ydhqe")
-animation = &"Jester_bla_bla_bla"
+animation = &"Jester_regular_crouch"
 script = ExtResource("4_8em3g")
 character_name = "Jester"
 

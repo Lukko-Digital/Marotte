@@ -120,10 +120,10 @@ func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=0.5):
 
 
 ## Circle shot
-func circle(spawn_position: Vector2, speed=1.0, num_shots=16):
+func circle(spawn_position: Vector2, speed=1.0, num_shots=16, rotation=0):
 	spawn_position = spawn_position - position
 	var warning_dir = spawn_position.rotated(PI)
-	var shot_base_dir = Vector2(1,0)#spawn_position.rotated(PI/2)
+	var shot_base_dir = Vector2(1,0).rotated(rotation)
 	
 	spawn(warning_scene, spawn_position, [warning_dir])
 	warning_sound.play()
@@ -151,6 +151,24 @@ func circle_pattern(speed=1.0):
 			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
 			
 	circle(spawn_position, speed)
+
+
+func circle_grid(speed=0.5, rounds=3):
+	var direction = Direction.values().pick_random()
+	var spawn_position: Vector2
+	match direction:
+		Direction.LEFT:
+			spawn_position = Vector2(LEFT_X, randi_range(TOP_Y, BOTTOM_Y))
+		Direction.RIGHT:
+			spawn_position = Vector2(RIGHT_X, randi_range(TOP_Y, BOTTOM_Y))
+		Direction.UP:
+			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), TOP_Y)
+		Direction.DOWN:
+			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
+			
+	for i in range(rounds):
+		await get_tree().create_timer(0.25/speed).timeout
+		circle(spawn_position, speed, 16, (PI/16) * i)
 
 
 func zombies(speed=0.25):
@@ -219,6 +237,10 @@ func spawn_bullet_pattern():
 		"zombies":
 			zombies()
 			spawn_timer.wait_time = 1
+			spawn_timer.start()
+		"circle_grid":
+			circle_grid()
+			spawn_timer.wait_time = 3
 			spawn_timer.start()
 
 
