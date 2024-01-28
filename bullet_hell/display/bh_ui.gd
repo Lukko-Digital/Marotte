@@ -150,7 +150,7 @@ func _on_word_picked(correct, _joke_text):
 		current_hp += 2
 		color_animation.play("big_white_flash")
 	else:
-		current_hp -= 2
+		current_hp -= 1
 		color_animation.play("red_flash")
 
 

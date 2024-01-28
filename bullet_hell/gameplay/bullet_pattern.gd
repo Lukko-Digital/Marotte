@@ -248,15 +248,15 @@ func spawn_bullet_pattern():
 			spawn_timer.wait_time = 3.25
 			spawn_timer.start()
 		"final_spiral":
-			spiral(game_center, 3, 8, 0.8)
+			spiral(game_center, 4, 8, 1)
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"final_reverse_spiral":
-			spiral(game_center, 3, 8, 0.8, -1)
+			spiral(game_center, 4, 8, .8, -1)
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"crazy_spiral":
-			spiral(game_center, 5, 8, 1, -1)
+			spiral(game_center, 5, 8, .8, -1)
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"crazy_spiral_reverse":

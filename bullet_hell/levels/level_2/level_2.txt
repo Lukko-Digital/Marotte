@@ -5,12 +5,12 @@ Player: i haven’t memorized any dark jokes...: 3
 !joke_words: THE: pickup
 !bullets: none: 0
 Player: what next?: 2
-!bullets: final_spiral: 2.5
-!bullets: final_reverse_spiral: 2.5
+!bullets: final_spiral: 2
+!bullets: final_reverse_spiral: 1
 Player: a relatable character...?: 0
 !bullets: none: 0
 !joke_words: KNIGHT: pickup
-!bullets: final_circle_grid: 4
+!bullets: final_circle_grid: 2.5
 !joke_words: SAY: 0
 !bullets: none: 0
 Player: what should the knight do?: pickup
