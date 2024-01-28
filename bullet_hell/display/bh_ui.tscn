@@ -258,8 +258,8 @@ _data = {
 "white_flash": SubResource("Animation_4pnvd")
 }
 
-[sub_resource type="Animation" id="Animation_lyt8g"]
-resource_name = "spawn"
+[sub_resource type="Animation" id="Animation_f3rev"]
+resource_name = "click"
 length = 0.5
 tracks/0/type = "audio"
 tracks/0/imported = false
@@ -271,7 +271,7 @@ tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("13_seqc6")
+"stream": ExtResource("15_48pho")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -286,7 +286,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [6.0]
 }
 
 [sub_resource type="Animation" id="Animation_wpw63"]
@@ -320,8 +320,8 @@ tracks/1/keys = {
 "values": [14.0]
 }
 
-[sub_resource type="Animation" id="Animation_f3rev"]
-resource_name = "click"
+[sub_resource type="Animation" id="Animation_lyt8g"]
+resource_name = "spawn"
 length = 0.5
 tracks/0/type = "audio"
 tracks/0/imported = false
@@ -333,7 +333,7 @@ tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("15_48pho")
+"stream": ExtResource("13_seqc6")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -348,7 +348,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [6.0]
+"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_067fd"]
@@ -397,12 +397,11 @@ stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="UIPlayer" type="Sprite2D" parent="."]
-position = Vector2(368, 625)
+position = Vector2(362, 668)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_2qqpm")
 hframes = 3
 vframes = 3
-frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UIPlayer"]
 libraries = {
@@ -463,6 +462,7 @@ hframes = 3
 [node name="DialogueAudioPlayer" parent="ThoughtBubble" instance=ExtResource("11_q1s3a")]
 
 [node name="ScreenColor" type="ColorRect" parent="."]
+visible = false
 z_index = 10
 layout_mode = 1
 anchors_preset = 15

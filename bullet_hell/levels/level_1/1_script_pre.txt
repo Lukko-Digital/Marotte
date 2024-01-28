@@ -1,0 +1,17 @@
+King talking: : 0.5
+King talking: you: keypress
+King talking: You think you can amuse me?: keypress
+Player scared: yes sire. I-i do.: keypress
+King hand_on_chin: ...: keypress
+King hand_on_chin: We are meant to laugh at your jokes jester: keypress
+King hand_on_chin: Not your pitiful demeanor.: keypress
+Player scared: ...: keypress
+King talking: Hah. That was a joke.: keypress
+King pointing: But do not mistake this audition for one.: keypress
+Player scared: I will do m-my best.: keypress
+King talking: "M-M-M-MY MY BEST": keypress
+King crossed_arms: Do not make me laugh.: keypress
+Player scared: ...?: keypress
+King talking: for your first trial, you must...: keypress
+King talking: Tell me a joke as old as time.: keypress
+!transition: level_1/level_1: 0

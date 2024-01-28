@@ -223,11 +223,12 @@ texture = ExtResource("2_a5hr8")
 position = Vector2(1003, 532)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_agd5e")
-animation = &"dead"
+animation = &"crossed_arms"
 script = ExtResource("4_8em3g")
 character_name = "King"
 
 [node name="Jester" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(1132, 362)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ydhqe")
