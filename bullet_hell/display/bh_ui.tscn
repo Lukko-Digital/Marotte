@@ -402,7 +402,6 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_2qqpm")
 hframes = 3
 vframes = 3
-frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UIPlayer"]
 libraries = {
@@ -411,11 +410,12 @@ libraries = {
 
 [node name="UIJester" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(368, 625)
+position = Vector2(465, 625)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("10_okw2p")
 hframes = 2
 vframes = 2
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UIJester"]
 libraries = {
@@ -462,6 +462,7 @@ hframes = 4
 [node name="DialogueAudioPlayer" parent="ThoughtBubble" instance=ExtResource("11_q1s3a")]
 
 [node name="ScreenColor" type="ColorRect" parent="."]
+visible = false
 z_index = 10
 layout_mode = 1
 anchors_preset = 15
@@ -473,7 +474,7 @@ offset_right = 2049.0
 offset_bottom = 1209.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0)
+color = Color(1, 1, 1, 0.282353)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenColor"]
 libraries = {
@@ -486,7 +487,7 @@ libraries = {
 stream = ExtResource("13_0avds")
 
 [node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Death"]
-volume_db = 6.0
+volume_db = 14.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Death/ButtonSoundPlayer"]
 libraries = {
@@ -508,7 +509,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="GiveUp" type="TextureButton" parent="Death"]
-process_mode = 3
 visible = false
 z_index = 5
 offset_left = 1022.0
@@ -521,7 +521,6 @@ texture_pressed = ExtResource("14_7ttxk")
 texture_hover = ExtResource("15_h3upn")
 
 [node name="TryAgain" type="TextureButton" parent="Death"]
-process_mode = 3
 visible = false
 z_index = 5
 offset_left = 970.0
