@@ -36,7 +36,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_uj64u")
 }],
 "loop": true,
-"name": &"dead_blood",
+"name": &"King_dead_blood",
 "speed": 5.0
 }, {
 "frames": [{
@@ -44,7 +44,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_mfre7")
 }],
 "loop": true,
-"name": &"dead_noblood",
+"name": &"King_dead_noblood",
 "speed": 5.0
 }, {
 "frames": [{
@@ -52,7 +52,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_s2ykr")
 }],
 "loop": true,
-"name": &"disappointed",
+"name": &"King_disappointed",
 "speed": 5.0
 }, {
 "frames": [{
@@ -60,7 +60,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_7alpg")
 }],
 "loop": true,
-"name": &"neutral",
+"name": &"King_neutral",
 "speed": 5.0
 }]
 
@@ -95,7 +95,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_g1b0r")
 }],
 "loop": true,
-"name": &"dark_delivery",
+"name": &"Player_dark_delivery",
 "speed": 5.0
 }, {
 "frames": [{
@@ -103,7 +103,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_88cav")
 }],
 "loop": true,
-"name": &"dark_eyes",
+"name": &"Player_dark_eyes",
 "speed": 5.0
 }, {
 "frames": [{
@@ -111,7 +111,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_g3b5v")
 }],
 "loop": true,
-"name": &"nervous",
+"name": &"Player_nervous",
 "speed": 5.0
 }, {
 "frames": [{
@@ -119,7 +119,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_esdty")
 }],
 "loop": true,
-"name": &"nervous_talking",
+"name": &"Player_nervous_talking",
 "speed": 5.0
 }, {
 "frames": [{
@@ -127,7 +127,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_uhvvj")
 }],
 "loop": true,
-"name": &"pensive",
+"name": &"Player_pensive",
 "speed": 5.0
 }, {
 "frames": [{
@@ -135,7 +135,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_c30ji")
 }],
 "loop": true,
-"name": &"pointing",
+"name": &"Player_pointing",
 "speed": 5.0
 }]
 
@@ -222,7 +222,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_a4jjc")
 }],
 "loop": true,
-"name": &"applause",
+"name": &"Jester_applause",
 "speed": 5.0
 }, {
 "frames": [{
@@ -275,7 +275,7 @@ animations = [{
 "texture": null
 }],
 "loop": false,
-"name": &"death",
+"name": &"Jester_death",
 "speed": 10.0
 }, {
 "frames": [{
@@ -283,7 +283,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_055ln")
 }],
 "loop": true,
-"name": &"holding_mouth",
+"name": &"Jester_holding_mouth",
 "speed": 5.0
 }, {
 "frames": [{
@@ -291,7 +291,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_tfxdt")
 }],
 "loop": true,
-"name": &"neutral",
+"name": &"Jester_neutral",
 "speed": 5.0
 }, {
 "frames": [{
@@ -299,7 +299,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_h0m3u")
 }],
 "loop": true,
-"name": &"pointing",
+"name": &"Jester_pointing",
 "speed": 5.0
 }]
 
@@ -341,7 +341,7 @@ visible = false
 position = Vector2(902, 340)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_gvjp7")
-animation = &"dead_noblood"
+animation = &"King_neutral"
 script = ExtResource("3_mdkde")
 character_name = "King"
 
@@ -349,7 +349,7 @@ character_name = "King"
 position = Vector2(952, 350)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_o328q")
-animation = &"dark_eyes"
+animation = &"Player_pointing"
 offset = Vector2(-104.34, 0)
 script = ExtResource("3_mdkde")
 character_name = "Player"
@@ -359,7 +359,7 @@ visible = false
 position = Vector2(957, 327)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8ssc6")
-animation = &"applause"
+animation = &"Jester_pointing"
 script = ExtResource("3_mdkde")
 character_name = "Jester"
 
