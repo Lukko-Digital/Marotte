@@ -10,7 +10,7 @@
 
 [sub_resource type="Animation" id="Animation_7tn0i"]
 resource_name = "clear"
-length = 2.5
+length = 3.0
 step = 0.05
 tracks/0/type = "bezier"
 tracks/0/imported = false
@@ -137,7 +137,7 @@ tracks/10/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("5_x851b")
 }, {
-"end_offset": 0.0,
+"end_offset": 0.00933015,
 "start_offset": 0.0,
 "stream": ExtResource("6_bxwg5")
 }],
@@ -159,26 +159,27 @@ script = ExtResource("1_uuok7")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 0.47451)
+color = Color(0, 0, 0, 0)
 
 [node name="Left" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 996.0
+offset_left = -960.0
+offset_right = 36.0
 offset_bottom = 1080.0
 texture = ExtResource("1_uth4p")
 expand_mode = 4
 
 [node name="Right" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1063.0
-offset_right = 1920.0
+offset_left = 1920.0
+offset_right = 2777.0
 offset_bottom = 1080.0
 texture = ExtResource("2_uuj27")
 expand_mode = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(960, 512)
-scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_soeb5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -190,12 +191,12 @@ libraries = {
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 0.785564)
+color = Color(0, 0, 0, 0)
 
 [node name="Pulse" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(960, 540)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_en120")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

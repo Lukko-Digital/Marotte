@@ -1,9 +1,9 @@
 Player nervous: : 0.5
-Player pensive: What do you call a fish with no eyes?: keypress
-Jester neutral: What?: keypress
+Player pensive: what do you call a fish with no eyes?: keypress
+Jester neutral: what?: keypress
 Player pointing: "FSH!": keypress
-Jester applause: Bravo! Classic yet original. Tasteful yet crude.: keypress
-Jester pointing: You could be the royal jester yet.: keypress
-Jester neutral: But not all audiences share my incredible sense of humor.: keypress
-Jester pointing: Looks like it's time for you to shine. Godspeed!: keypress
+Jester applause: bravo! classic yet original. tasteful yet crude: keypress
+Jester pointing: You could be the royal jester yet: keypress
+Jester neutral: but not all audiences share my incredible sense of humor: keypress
+Jester pointing: looks like it's time for your audience. good luck!: keypress
 !transition: level_1/level_1_pre: 0
