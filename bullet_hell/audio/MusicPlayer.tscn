@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://g4kts1tujkt6"]
+
+[ext_resource type="Script" path="res://bullet_hell/audio/MusicPlayer.gd" id="1_y6f2o"]
+
+[node name="MusicPlayer" type="Node"]
+script = ExtResource("1_y6f2o")
+
+[node name="WithIntro" type="AudioStreamPlayer" parent="."]
+
+[node name="WithoutIntro" type="AudioStreamPlayer" parent="."]
+
+[connection signal="finished" from="WithIntro" to="." method="_on_with_intro_finished"]
