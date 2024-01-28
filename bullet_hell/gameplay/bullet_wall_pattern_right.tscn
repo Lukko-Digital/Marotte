@@ -11,7 +11,7 @@ script = ExtResource("1_46qb0")
 position = Vector2(748, 214)
 
 [node name="long_bullet2" parent="." instance=ExtResource("2_jckvv")]
-position = Vector2(541, 409)
+position = Vector2(568, 409)
 
 [node name="long_bullet3" parent="." instance=ExtResource("2_jckvv")]
-position = Vector2(312, 617)
+position = Vector2(384, 611)
