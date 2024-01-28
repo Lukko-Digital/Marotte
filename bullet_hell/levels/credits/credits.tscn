@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://btwxir20cc3mx"]
 
 [ext_resource type="Script" path="res://bullet_hell/levels/credits/credits.gd" id="1_2roeg"]
-[ext_resource type="Texture2D" uid="uid://py7e6allllve" path="res://assets/sprites/ui_credits_scroll.png" id="1_eweln"]
+[ext_resource type="Texture2D" uid="uid://qtv1h673lxf5" path="res://assets/sprites/ui_credits_scroll.png" id="1_eweln"]
 [ext_resource type="AudioStream" uid="uid://fk20nmoeualt" path="res://assets/audio/impact_extra_v1.mp3" id="2_4s4xt"]
 
 [sub_resource type="Animation" id="Animation_uh1qg"]
@@ -39,8 +39,8 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(2, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, 0, 0, 0.666667, 0, -0.00252622, -0.666667, 0, 2, -15.5117, -274.154, -1.52015, 228, 9.12682, -1336.82, -2884.67, -6.43037, 930.728, 0.882299, -92.4871, -3003, -0.817608, 0.644531, 0.25, 0),
-"times": PackedFloat32Array(0, 1, 5, 23, 25)
+"points": PackedFloat32Array(0, 0, 0, 0.666667, 0, 0, -0.666667, 0, 0.258325, -0.683012, -72.9488, -0.509359, 61.7415, 9.44734, -1319.99, -2884.67, -6.5573, 930.974, 0.882299, -92.4871, -3003, -0.817608, 0.644531, 0.25, 0),
+"times": PackedFloat32Array(0, 2, 3, 23, 25)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8c5o4"]
