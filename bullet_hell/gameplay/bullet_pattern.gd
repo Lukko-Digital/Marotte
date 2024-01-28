@@ -233,7 +233,7 @@ func spawn_bullet_pattern():
 			spawn_timer.start()
 		"quick_circle":
 			circle_pattern()
-			spawn_timer.wait_time = 0.75
+			spawn_timer.wait_time = 1.2
 			spawn_timer.start()
 		"fast_circle":
 			circle_pattern(1.5)
@@ -274,9 +274,11 @@ func spawn_bullet_pattern():
 		"wall_1":
 			wall_pattern("1", Vector2(-1, 0), 1)
 		"wall_2":
-			wall_pattern("1", Vector2(-1, 0), 1)
+			wall_pattern("2", Vector2(-1, 0), .8)
 		"wall_chicken_1":
 			wall_pattern("chicken_1", Vector2(-1, 0), 0.6)
+		"wall_chicken_1_slow":
+			wall_pattern("chicken_1", Vector2(-1, 0), 0.25)
 		"wall_chicken_2":
 			wall_pattern("chicken_2", Vector2(-1, 0), 0.7)
 		"wall_chicken_3":
