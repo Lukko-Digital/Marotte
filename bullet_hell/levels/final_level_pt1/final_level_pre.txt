@@ -3,7 +3,7 @@ Jester_regular_crouch: : 0.2
 Jester_regular_crouch: hey there!: keypress
 Jester_look_around: seems like you've lost your audience...: keypress
 Jester_creepy: ah, but you still have me!: keypress
-Player_scared: i-i... uh... i n-need to: keypress
+Player_scared: i, i... uh... i n, need to: keypress
 Jester_regular_crouch: where are you going?: keypress
 Jester_point: STAY RIGHT THERE.: keypress
 Player_scared: you...: keypress
