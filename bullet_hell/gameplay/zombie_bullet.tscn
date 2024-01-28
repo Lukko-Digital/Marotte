@@ -1,7 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnvgtuq4queyg"]
+[gd_scene load_steps=9 format=3 uid="uid://dnvgtuq4queyg"]
 
 [ext_resource type="Script" path="res://bullet_hell/gameplay/zombie_bullet.gd" id="1_j3x7r"]
-[ext_resource type="Texture2D" uid="uid://imqylc0xaao7" path="res://assets/sprites/bh_zombie.png" id="2_c2pkl"]
+[ext_resource type="Texture2D" uid="uid://b1sg4pxhfmn5d" path="res://assets/sprites/bh_zombie-sheet.png" id="2_6dh5q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q87xo"]
+atlas = ExtResource("2_6dh5q")
+region = Rect2(0, 0, 620, 504)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3q8n"]
+atlas = ExtResource("2_6dh5q")
+region = Rect2(0, 0, 620, 504)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vix3w"]
+atlas = ExtResource("2_6dh5q")
+region = Rect2(0, 504, 620, 504)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj5eg"]
+atlas = ExtResource("2_6dh5q")
+region = Rect2(0, 1008, 620, 504)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_danty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q87xo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3q8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vix3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3q8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vix3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3q8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vix3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3q8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj5eg")
+}],
+"loop": false,
+"name": &"run",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w2ha0"]
 radius = 34.0
@@ -12,16 +68,17 @@ collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_j3x7r")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 rotation = -1.5708
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_c2pkl")
+sprite_frames = SubResource("SpriteFrames_danty")
+animation = &"run"
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_w2ha0")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
