@@ -2,3 +2,4 @@
 Jester_dead: : 0.00001
 Player_scared: ...: keypress
 Player_scared: .......: keypress
+!transition: credits/credits: 0
