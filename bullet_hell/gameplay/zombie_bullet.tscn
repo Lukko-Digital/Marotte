@@ -30,33 +30,60 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 6.0,
 "texture": SubResource("AtlasTexture_k3q8n")
 }, {
-"duration": 1.0,
+"duration": 6.0,
 "texture": SubResource("AtlasTexture_vix3w")
 }, {
-"duration": 1.0,
+"duration": 6.0,
 "texture": SubResource("AtlasTexture_k3q8n")
 }, {
-"duration": 1.0,
+"duration": 6.0,
 "texture": SubResource("AtlasTexture_vix3w")
 }, {
-"duration": 1.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_k3q8n")
 }, {
-"duration": 1.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_vix3w")
 }, {
-"duration": 1.0,
+"duration": 4.0,
 "texture": SubResource("AtlasTexture_k3q8n")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_vix3w")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_k3q8n")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_vix3w")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_k3q8n")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_vix3w")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_k3q8n")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_vix3w")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_k3q8n")
+}, {
+"duration": 8.0,
+"texture": SubResource("AtlasTexture_vix3w")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kj5eg")
 }],
 "loop": false,
 "name": &"run",
-"speed": 5.0
+"speed": 20.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w2ha0"]
@@ -73,12 +100,13 @@ rotation = -1.5708
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_danty")
 animation = &"run"
+frame = 16
+frame_progress = 1.0
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_w2ha0")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
