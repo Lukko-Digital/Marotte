@@ -58,7 +58,7 @@ func _process(_delta):
 	if current_hp == 0:
 		death()
 		set_process(false)
-	if not jester_arena:
+	elif not jester_arena:
 		if current_hp <= MAX_HP * 0.2:
 			player_image_animation.play("stress3")
 			color_animation.speed_scale = 2
@@ -79,7 +79,6 @@ func death():
 	$Death/DeathScreen.visible = true
 	$UIJester.visible = false
 	$UIPlayer.visible = true
-	player_image_animation.stop()
 	player_image_animation.play("death")
 	$UIPlayer.z_index = 5
 	await get_tree().create_timer(1).timeout
