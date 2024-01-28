@@ -236,7 +236,7 @@ func spawn_bullet_pattern():
 			spawn_timer.wait_time = .75
 			spawn_timer.start()
 		"fast_circle":
-			circle_pattern(1.2)
+			circle_pattern(.9)
 			spawn_timer.wait_time = 0.5
 			spawn_timer.start()
 		"spiral":
@@ -256,7 +256,7 @@ func spawn_bullet_pattern():
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"crazy_spiral":
-			spiral(game_center, 5, 8, .8, -1)
+			spiral(game_center, 5, 8, .6, -1)
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"crazy_spiral_reverse":
