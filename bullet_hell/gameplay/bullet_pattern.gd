@@ -256,11 +256,11 @@ func spawn_bullet_pattern():
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"crazy_spiral":
-			spiral(game_center, 5, 8, .6, -1)
+			spiral(game_center, 5, 8, .4, -1)
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"crazy_spiral_reverse":
-			spiral(game_center, 5, 8, 1, -1)
+			spiral(game_center, 5, 8, .4, -1)
 			spawn_timer.wait_time = 3
 			spawn_timer.start()
 		"grid":
