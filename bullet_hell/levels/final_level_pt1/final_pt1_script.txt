@@ -33,7 +33,6 @@ Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAA: 2
 !bullets: grid: 0
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 3
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 5
-!bullets: double_circle: 7
 !joke_words: HEAD: pickup
 !bullets: none: 0
 !final_transition: final_level_pt2/final_level_pt2: 0
