@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=22 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
@@ -6,7 +6,6 @@
 [ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="2_waoyk"]
 [ext_resource type="AudioStream" uid="uid://svv85a61ic8l" path="res://assets/audio/bullets_firing_v1.mp3" id="2_x7ol0"]
 [ext_resource type="PackedScene" uid="uid://c5rvnoi1v7yxh" path="res://bullet_hell/display/bh_ui.tscn" id="3_5sicw"]
-[ext_resource type="AudioStream" uid="uid://2q4ffrxsf5l3" path="res://assets/audio/bullets_warning.mp3" id="3_6vekp"]
 [ext_resource type="Script" path="res://bullet_hell/display/JokeLabel.gd" id="3_ea24l"]
 [ext_resource type="AudioStream" uid="uid://duv6ir6qw1ig5" path="res://assets/audio/player_picks_correct_v1.mp3" id="3_eykkj"]
 [ext_resource type="AudioStream" uid="uid://ro0a8d227t7q" path="res://assets/audio/player_picks_wrong_v1.mp3" id="4_qb53a"]
@@ -24,21 +23,8 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6x2by"]
 bg_color = Color(1, 1, 1, 0.156863)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_fpm7c"]
-a = Vector2(758, 73)
-b = Vector2(758, 892)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_1jwpp"]
-a = Vector2(1625, 73)
-b = Vector2(1625, 892)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_ls2kp"]
-a = Vector2(758, 73)
-b = Vector2(1625, 73)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_0thoo"]
-a = Vector2(1625, 892)
-b = Vector2(758, 892)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw25b"]
+size = Vector2(205, 1023)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upp13"]
 size = Vector2(992, 946)
@@ -52,8 +38,6 @@ script = ExtResource("1_ruomc")
 stream = ExtResource("2_x7ol0")
 
 [node name="BulletWarning" type="AudioStreamPlayer" parent="SoundEffects"]
-stream = ExtResource("3_6vekp")
-volume_db = 8.0
 
 [node name="WordSpawn" type="AudioStreamPlayer" parent="SoundEffects"]
 stream = ExtResource("3_eykkj")
@@ -98,6 +82,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="ThinkingBar" type="ProgressBar" parent="Environment/WordTimer"]
+visible = false
 offset_left = 702.0
 offset_top = 895.0
 offset_right = 1683.0
@@ -124,16 +109,22 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="Left" type="CollisionShape2D" parent="Environment/Walls"]
-shape = SubResource("SegmentShape2D_fpm7c")
+position = Vector2(655, 513)
+shape = SubResource("RectangleShape2D_tw25b")
 
 [node name="Right" type="CollisionShape2D" parent="Environment/Walls"]
-shape = SubResource("SegmentShape2D_1jwpp")
+position = Vector2(1729, 510)
+shape = SubResource("RectangleShape2D_tw25b")
 
-[node name="Top" type="CollisionShape2D" parent="Environment/Walls"]
-shape = SubResource("SegmentShape2D_ls2kp")
+[node name="Right2" type="CollisionShape2D" parent="Environment/Walls"]
+position = Vector2(1197, -26)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_tw25b")
 
-[node name="Bottom" type="CollisionShape2D" parent="Environment/Walls"]
-shape = SubResource("SegmentShape2D_0thoo")
+[node name="Right3" type="CollisionShape2D" parent="Environment/Walls"]
+position = Vector2(1190, 995)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_tw25b")
 
 [node name="BulletDespawnArea" type="Area2D" parent="Environment"]
 visible = false
