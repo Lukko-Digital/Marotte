@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Lukko Ggj"
+config/name="Marotte"
 run/main_scene="res://bullet_hell/display/title_screne.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
