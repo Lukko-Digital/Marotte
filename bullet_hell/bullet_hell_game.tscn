@@ -158,10 +158,11 @@ script = ExtResource("5_eia4t")
 visible = false
 z_index = 10
 
-[node name="bullet_pattern" parent="." node_paths=PackedStringArray("bullet_spawn_sound", "warning_sound") instance=ExtResource("8_jtn82")]
+[node name="bullet_pattern" parent="." node_paths=PackedStringArray("bullet_spawn_sound", "warning_sound", "player") instance=ExtResource("8_jtn82")]
 position = Vector2(1200, 500)
 bullet_spawn_sound = NodePath("../SoundEffects/BulletSpawn")
 warning_sound = NodePath("../SoundEffects/BulletWarning")
+player = NodePath("../bh_player")
 
 [node name="pause_ui" parent="." instance=ExtResource("15_64oxy")]
 
