@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyu3vtd2eyoin"]
+[gd_scene load_steps=5 format=3 uid="uid://dyu3vtd2eyoin"]
 
 [ext_resource type="PackedScene" uid="uid://bl1fy1m5y84p4" path="res://dialogue_scene/sv_dialogue_scene.tscn" id="1_5qgpv"]
 [ext_resource type="PackedScene" uid="uid://h3yr68hxawqe" path="res://bullet_hell/display/start_transition_confident_jester.tscn" id="2_jsk2n"]
+[ext_resource type="PackedScene" uid="uid://g4kts1tujkt6" path="res://bullet_hell/audio/MusicPlayer.tscn" id="3_nwwgt"]
+[ext_resource type="AudioStream" uid="uid://bekf7ecrsqgge" path="res://assets/audio/music/noise for king_final.mp3" id="4_0nea3"]
 
 [node name="final_level_pre" type="Node2D"]
 
@@ -10,3 +12,8 @@ script_file_path = "res://bullet_hell/levels/final_level_pt1/final_level_pre.txt
 
 [node name="StartTransition" parent="sv_dialogue_scene" instance=ExtResource("2_jsk2n")]
 visible = false
+
+[node name="MusicPlayer" parent="." instance=ExtResource("3_nwwgt")]
+with_intro = ExtResource("4_0nea3")
+without_intro = ExtResource("4_0nea3")
+volume = -5
