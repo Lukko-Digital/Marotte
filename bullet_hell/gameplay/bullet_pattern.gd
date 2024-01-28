@@ -233,7 +233,7 @@ func spawn_bullet_pattern():
 			spawn_timer.start()
 		"quick_circle":
 			circle_pattern()
-			spawn_timer.wait_time = 1.2
+			spawn_timer.wait_time = .75
 			spawn_timer.start()
 		"fast_circle":
 			circle_pattern(1.5)
