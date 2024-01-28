@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bl1fy1m5y84p4"]
+[gd_scene load_steps=33 format=3 uid="uid://bl1fy1m5y84p4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_iqvk0"]
 [ext_resource type="Texture2D" uid="uid://cmguia25akxbf" path="res://assets/sprites/sv_crowd_back.png" id="2_a5hr8"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://dyon7poiilo3p" path="res://assets/fonts/Kingfont-Regular.ttf" id="9_cdjw6"]
 [ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="12_ccge0"]
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="12_fv4ax"]
+[ext_resource type="FontFile" uid="uid://4onft5ytn1tk" path="res://assets/fonts/Jokerfont3-Regular.ttf" id="13_khcyr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je6ti"]
 atlas = ExtResource("3_6lvt1")
@@ -356,7 +357,7 @@ offset_bottom = 444.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("9_cdjw6")
+theme_override_fonts/font = ExtResource("13_khcyr")
 theme_override_font_sizes/font_size = 300
 text = "you wot mate"
 horizontal_alignment = 1

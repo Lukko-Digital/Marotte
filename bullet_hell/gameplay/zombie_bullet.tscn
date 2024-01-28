@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnvgtuq4queyg"]
+
+[ext_resource type="Script" path="res://bullet_hell/gameplay/zombie_bullet.gd" id="1_j3x7r"]
+[ext_resource type="Texture2D" uid="uid://imqylc0xaao7" path="res://assets/sprites/bh_zombie.png" id="2_c2pkl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w2ha0"]
+radius = 34.0
+
+[node name="zombie_bullet" type="Area2D" groups=["bullet"]]
+z_index = -5
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_j3x7r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_c2pkl")
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w2ha0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

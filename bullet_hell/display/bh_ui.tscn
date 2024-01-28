@@ -7,10 +7,10 @@
 [ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="4_feqy3"]
 [ext_resource type="Texture2D" uid="uid://bwv47umqupynm" path="res://assets/sprites/bhj_dialogue_box.png" id="4_h4xd1"]
 [ext_resource type="Texture2D" uid="uid://bh1hmydut2hns" path="res://assets/sprites/bh_thought_bubble.png" id="4_wqoy2"]
-[ext_resource type="FontFile" uid="uid://ba7vtjrqco0g1" path="res://assets/fonts/Jokerfont-Regular.ttf" id="6_c052r"]
 [ext_resource type="Texture2D" uid="uid://bwjosdmwdx1hv" path="res://assets/sprites/bhj_ui.png" id="7_s6nqr"]
 [ext_resource type="Texture2D" uid="uid://cgsrd332288mh" path="res://assets/sprites/bh_jester_icon-sheet.png" id="8_cuupq"]
 [ext_resource type="Texture2D" uid="uid://cvjbd0m6w03xi" path="res://assets/sprites/bhj_jester-sheet.png" id="10_okw2p"]
+[ext_resource type="FontFile" uid="uid://4onft5ytn1tk" path="res://assets/fonts/Jokerfont3-Regular.ttf" id="11_fwgg0"]
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="11_q1s3a"]
 [ext_resource type="AudioStream" uid="uid://ro0a8d227t7q" path="res://assets/audio/player_picks_wrong_v1.mp3" id="13_0avds"]
 [ext_resource type="Texture2D" uid="uid://3hm4iol5bwow" path="res://assets/sprites/ui_death_giveup.png" id="13_32x7d"]
@@ -367,7 +367,7 @@ player_thought_bubble = ExtResource("4_wqoy2")
 jester_thought_bubble = ExtResource("3_o3n0w")
 jester_speech_bubble = ExtResource("4_h4xd1")
 player_font = ExtResource("4_feqy3")
-jester_font = ExtResource("6_c052r")
+jester_font = ExtResource("11_fwgg0")
 jester_interface = ExtResource("7_s6nqr")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
@@ -442,7 +442,7 @@ offset_bottom = 835.0
 grow_horizontal = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("6_c052r")
+theme_override_fonts/font = ExtResource("11_fwgg0")
 theme_override_font_sizes/font_size = 200
 text = "josh feet pics..."
 vertical_alignment = 1
@@ -474,7 +474,7 @@ offset_right = 2049.0
 offset_bottom = 1209.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0)
+color = Color(1, 1, 1, 0.282353)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenColor"]
 libraries = {

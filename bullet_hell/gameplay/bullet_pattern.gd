@@ -2,9 +2,11 @@ extends Node2D
 
 @export var bullet_spawn_sound: AudioStreamPlayer
 @export var warning_sound: AudioStreamPlayer
+@export var player: CharacterBody2D
 
 @onready var bullet_scene = preload("res://bullet_hell/gameplay/bullet.tscn")
 @onready var warning_scene = preload("res://bullet_hell/gameplay/warning.tscn")
+@onready var zombie_scene = preload("res://bullet_hell/gameplay/zombie_bullet.tscn")
 @onready var spawn_timer : Timer = $SpawnTimer
 
 const LEFT_X = 758
@@ -118,7 +120,7 @@ func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=0.5):
 
 
 ## Circle shot
-func circle(spawn_position: Vector2, speed=1, num_shots=16):
+func circle(spawn_position: Vector2, speed=1.0, num_shots=16):
 	spawn_position = spawn_position - position
 	var warning_dir = spawn_position.rotated(PI)
 	var shot_base_dir = Vector2(1,0)#spawn_position.rotated(PI/2)
@@ -135,7 +137,7 @@ func circle(spawn_position: Vector2, speed=1, num_shots=16):
 		)
 
 
-func circle_pattern(speed=1):
+func circle_pattern(speed=1.0):
 	var direction = Direction.values().pick_random()
 	var spawn_position: Vector2
 	match direction:
@@ -149,6 +151,29 @@ func circle_pattern(speed=1):
 			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
 			
 	circle(spawn_position, speed)
+
+
+func zombies(speed=0.25):
+	var direction = Direction.values().pick_random()
+	var spawn_position: Vector2
+	match direction:
+		Direction.LEFT:
+			spawn_position = Vector2(LEFT_X, randi_range(TOP_Y, BOTTOM_Y))
+		Direction.RIGHT:
+			spawn_position = Vector2(RIGHT_X, randi_range(TOP_Y, BOTTOM_Y))
+		Direction.UP:
+			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), TOP_Y)
+		Direction.DOWN:
+			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
+			
+	spawn_position = spawn_position - position
+	var warning_dir = spawn_position.rotated(PI)
+	
+	spawn(warning_scene, spawn_position, [warning_dir])
+	
+	await get_tree().create_timer(0.5).timeout
+	
+	spawn(zombie_scene, spawn_position, [player, speed, position])
 
 
 func wall_pattern(number: int, direction: Vector2, speed=0.5):
@@ -191,6 +216,10 @@ func spawn_bullet_pattern():
 			spawn_timer.start()
 		"wall_1":
 			wall_pattern(1, Vector2(-1, 0))
+		"zombies":
+			zombies()
+			spawn_timer.wait_time = 1
+			spawn_timer.start()
 
 
 func _on_script_handler_spawn_bullets(pattern):
