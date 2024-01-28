@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dj6e7xh4njtlj"]
+[gd_scene load_steps=24 format=3 uid="uid://dj6e7xh4njtlj"]
 
 [ext_resource type="PackedScene" uid="uid://dxtfc3ofiogqk" path="res://bullet_hell/gameplay/bh_player.tscn" id="1_le3bt"]
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
@@ -74,7 +74,6 @@ text = "WHY COULDN'T ;;; ;;; ;; ;; ;;;;"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_ea24l")
-jester_font = ExtResource("8_24ksl")
 
 [node name="RedJokeLabel" type="Label" parent="Environment"]
 visible = false
