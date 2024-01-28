@@ -27,7 +27,7 @@ var current_speaker
 const TEXT_SPEED = 0.06
 
 const DEATH_TEXT = [
-	"you died of anxiety lmfao"
+	"you died of anxiety"
 ]
 
 const Label_Size = {
@@ -82,7 +82,7 @@ func death():
 	$UIPlayer.z_index = 5
 	await get_tree().create_timer(1).timeout
 	
-	death_text_label.text = DEATH_TEXT[0]
+	death_text_label.text = DEATH_TEXT.pick_random()
 	death_text_label.visible_characters = 0
 	death_text_label.visible = true
 	while death_text_label.visible_characters < len(death_text_label.text):
