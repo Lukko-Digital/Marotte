@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dfimnqqoeiet4" path="res://dialogue_scene/fv_dialogue_scene.tscn" id="1_bga1l"]
 [ext_resource type="PackedScene" uid="uid://dbegxetdjc8u0" path="res://bullet_hell/display/start_transition_scared_jester.tscn" id="2_yahel"]
-[ext_resource type="Texture2D" uid="uid://d3vhryddk82f1" path="res://assets/sprites/fv_tutorial_space-sheet.png" id="3_nohuw"]
+[ext_resource type="Texture2D" uid="uid://dvexgmtmcxq1" path="res://assets/sprites/fv_tutorial_space-sheet.png" id="3_nohuw"]
 [ext_resource type="Script" path="res://bullet_hell/display/space_bar_tutorial.gd" id="4_gjqmk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_css6w"]
@@ -37,8 +37,8 @@ visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fv_dialogue_scene"]
 z_index = 10
-position = Vector2(1600, 911)
-scale = Vector2(0.2, 0.2)
+position = Vector2(1655, 913)
+scale = Vector2(0.10429, 0.10429)
 sprite_frames = SubResource("SpriteFrames_ehbsw")
 frame_progress = 0.0802425
 script = ExtResource("4_gjqmk")
