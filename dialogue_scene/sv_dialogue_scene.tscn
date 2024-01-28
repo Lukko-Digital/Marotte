@@ -393,6 +393,7 @@ libraries = {
 [node name="pause_ui" parent="." instance=ExtResource("12_ccge0")]
 
 [node name="DialogueAudioPlayer" parent="." instance=ExtResource("12_fv4ax")]
+volume_db = -3.0
 
 [connection signal="active_speaker" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_active_speaker"]
 [connection signal="active_speaker" from="." to="KingDialogueBox" method="_on_dialogue_scene_active_speaker"]
