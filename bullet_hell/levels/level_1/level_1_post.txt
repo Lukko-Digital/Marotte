@@ -1,2 +1,8 @@
 Player_pensive: : 0.5
 Player_pensive: why did the chicken cross the road?: keypress
+King_neutral: ...: keypress
+!sound: Joke: 0
+Player_pointing: to get-!! : 0.5
+King_disappointed: To get to the other side?: keypress
+Player_nervous: ...: keypress
+!transition: level_2/level_2_pre: 0
