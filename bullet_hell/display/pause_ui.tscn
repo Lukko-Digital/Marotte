@@ -75,22 +75,22 @@ color = Color(0, 0, 0, 0.258824)
 
 [node name="Quit" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 704.0
-offset_top = 565.0
-offset_right = 1729.0
-offset_bottom = 1034.0
-scale = Vector2(0.5, 0.5)
+offset_left = 852.0
+offset_top = 490.0
+offset_right = 1933.0
+offset_bottom = 1001.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("2_q4d3x")
 texture_pressed = ExtResource("3_mfe8o")
 texture_hover = ExtResource("4_y6mjw")
 
 [node name="Resume" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 631.0
-offset_top = 210.0
-offset_right = 1947.0
-offset_bottom = 797.0
-scale = Vector2(0.5, 0.5)
+offset_left = 823.5
+offset_top = 350.0
+offset_right = 2188.5
+offset_bottom = 1022.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("5_6mqx8")
 texture_pressed = ExtResource("6_pajyi")
 texture_hover = ExtResource("7_u4nbo")
@@ -109,4 +109,5 @@ script = ExtResource("10_e7q4f")
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="button_down" from="Resume" to="AnimationPlayer" method="_on_pressed"]
 [connection signal="mouse_entered" from="Resume" to="AnimationPlayer" method="_on_mouse_entered"]
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Resume" to="AnimationPlayer" method="_on_pressed"]
