@@ -59,14 +59,14 @@ func _process(_delta):
 		death()
 		set_process(false)
 	elif not jester_arena:
-		if current_hp <= MAX_HP * 0.2:
+		if current_hp <= MAX_HP * 0.4:
 			player_image_animation.play("stress3")
 			color_animation.speed_scale = 2
 			color_animation.play("pulse")
-		elif current_hp <= MAX_HP * 0.5:
+		elif current_hp <= MAX_HP * 0.6:
 			player_image_animation.play("stress2")
 			color_animation.play("pulse")
-		elif current_hp <= MAX_HP * 0.7:
+		elif current_hp <= MAX_HP * 0.8:
 			player_image_animation.play("stress1")
 		else:
 			player_image_animation.play("stress0")
