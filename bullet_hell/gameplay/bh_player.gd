@@ -39,25 +39,23 @@ func handle_animation(direction: Vector2):
 	if direction != Vector2():
 		walk_sound.play()
 
+func on_hit():
+	emit_signal("hit")
+	hit_sound.play()
+	modulate = Color(1,0,0,0.75)
+	i_frames()
+
+func i_frames():
+	hitbox.collision_mask = 0
+	await get_tree().create_timer(0.1).timeout
+	modulate = Color(1,1,1,0.75)
+	await get_tree().create_timer(0.4).timeout
+	modulate = Color(1,1,1)
+	hitbox.collision_mask = 5
+
 func _on_hit_box_area_entered(area):
 	if area.is_in_group("bullet"):
 		area.queue_free()
-		emit_signal("hit")
-		hit_sound.play()
-		modulate = Color(1,0,0,0.75)
-		hitbox.collision_mask = 0
-		await get_tree().create_timer(0.1).timeout
-		modulate = Color(1,1,1,0.75)
-		await get_tree().create_timer(0.4).timeout
-		modulate = Color(1,1,1)
-		hitbox.collision_mask = 5
+		on_hit()
 	elif area.is_in_group("wall_bullet"):
-		emit_signal("hit")
-		hit_sound.play()
-		modulate = Color(1,0,0,0.75)
-		hitbox.collision_mask = 0
-		await get_tree().create_timer(0.1).timeout
-		modulate = Color(1,1,1,0.75)
-		await get_tree().create_timer(0.4).timeout
-		modulate = Color(1,1,1)
-		hitbox.collision_mask = 5
+		on_hit()
