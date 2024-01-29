@@ -31,7 +31,6 @@ Jester_angry: why aren't you telling the joke: 2
 !bullets: none: 0
 Jester_angry: I WAS PROMISED A JOKE: 2
 !bullets: rapid_double_circle: 2
-!bullets: crazy_spiral: 2
 !joke_words: MY: pickup
 !bullets: none: 0
 Jester_angry: STOP IT STOP IT STOP IT STOP IT: 2
