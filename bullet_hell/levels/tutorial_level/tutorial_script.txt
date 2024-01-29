@@ -33,7 +33,7 @@ Jester_happy: look at you go: 2
 !bullets: slow_circle: 4
 !joke_words: FISH: 0
 !bullets: none: 0
-Jester_neutral: sometimes, your subconscious knows the answer (it's the fish): pickup
+Jester_neutral: sometimes, your subconscious will know (it's the fish): pickup
 !checkpoint
 Jester_happy: incredible!: 2
 Jester_neutral: ...: 1

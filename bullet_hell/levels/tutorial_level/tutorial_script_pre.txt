@@ -1,7 +1,7 @@
 Player_nervous: : 0.5
 Player_nervous: ...: keypress
 Jester_neutral: you nervous?: keypress
-Player_nervous_talking: N-no...: keypress
+Player_nervous_talking: N, no...: keypress
 Jester_neutral: you’ve never done this before, have you?: keypress
 Player_nervous_talking: ...no.: keypress
 Jester_neutral: never, huh? I don’t know how people like you end up here: keypress
