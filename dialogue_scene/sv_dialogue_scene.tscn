@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bl1fy1m5y84p4"]
+[gd_scene load_steps=36 format=3 uid="uid://bl1fy1m5y84p4"]
 
 [ext_resource type="Script" path="res://dialogue_scene/dialogue_scene.gd" id="1_iqvk0"]
 [ext_resource type="Texture2D" uid="uid://cmguia25akxbf" path="res://assets/sprites/sv_crowd_back.png" id="2_a5hr8"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dl0s52uhiaau5" path="res://dialogue_scene/DialogueAudioPlayer.tscn" id="12_fv4ax"]
 [ext_resource type="FontFile" uid="uid://4onft5ytn1tk" path="res://assets/fonts/Jokerfont3-Regular.ttf" id="13_khcyr"]
 [ext_resource type="Texture2D" uid="uid://dg4yx8oc3jjyi" path="res://assets/sprites/sv_textbox_jester.png" id="13_lntni"]
+[ext_resource type="AudioStream" uid="uid://bdtgfm7heklff" path="res://assets/audio/random_sfx_v1.mp3" id="17_xirfp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je6ti"]
 atlas = ExtResource("3_6lvt1")
@@ -376,11 +377,10 @@ text_overrun_behavior = 2
 [node name="TextTimer" type="Timer" parent="JesterDialogueBox"]
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
-visible = false
 z_index = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "fade_in"
@@ -394,6 +394,9 @@ libraries = {
 
 [node name="DialogueAudioPlayer" parent="." instance=ExtResource("12_fv4ax")]
 volume_db = -3.0
+
+[node name="Joke" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_xirfp")
 
 [connection signal="active_speaker" from="." to="PlayerDialogueBox" method="_on_dialogue_scene_active_speaker"]
 [connection signal="active_speaker" from="." to="KingDialogueBox" method="_on_dialogue_scene_active_speaker"]

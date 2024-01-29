@@ -1,4 +1,4 @@
-!jester: : 0
+!jester: : 0.1
 Jester_regular_crouch: : 0.2
 Jester_regular_crouch: hey there!: keypress
 Jester_look_around: seems like you've lost your audience...: keypress

@@ -61,6 +61,7 @@ func parse_line(line: String):
 			var audio_player: AudioStreamPlayer = get_node(split[1])
 			audio_player.play()
 		"!jester":
+			await ready
 			get_node("Jester").visible = true
 			get_node("Crowd").visible = false
 			get_node("Crowd2").visible = false

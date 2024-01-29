@@ -1,4 +1,4 @@
-Player: i haven’t memorized any dark jokes...: 3
+Player: i haven't memorized any dark jokes...: 3
 !bullets: quick_circle: 3
 !joke_words: WHAT: pickup
 !joke_words: DID: pickup
@@ -20,4 +20,4 @@ Player: i need a dark and twisted finale!: 1
 !bullets: zombies: 6
 !joke_words: ZOMBIE: pickup
 !bullets: none: 0
-!transition: level_2/Level_2_post: 0
+!transition: level_2/level_2_post: 0

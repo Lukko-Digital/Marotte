@@ -1,3 +1,4 @@
+Player_dark_eyes: : 0.5
 Player_dark_eyes: what did the knight say to the zombie?: keypress
 King_dead_noblood: ...: keypress
 !sound: Joke: 0
