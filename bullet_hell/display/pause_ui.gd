@@ -1,13 +1,11 @@
 extends Control
 
-func _ready():
-	$Resume.grab_focus()
-
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		visible = !visible
 		get_tree().paused = !get_tree().paused
+		$Resume.grab_focus()
 
 
 func _on_quit_pressed():
