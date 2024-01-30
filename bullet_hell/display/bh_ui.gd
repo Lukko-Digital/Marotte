@@ -110,7 +110,8 @@ func _on_try_again_button_up():
 
 
 func _on_give_up_button_up():
-	get_tree().quit()
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://bullet_hell/display/title_screne.tscn")
 
 
 func _on_button_hover():

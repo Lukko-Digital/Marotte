@@ -9,7 +9,8 @@ func _unhandled_input(event):
 
 
 func _on_quit_pressed():
-	get_tree().quit()
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://bullet_hell/display/title_screne.tscn")
 
 
 func _on_resume_pressed():
