@@ -14,6 +14,7 @@ signal hit
 
 func _ready():
 	invuln_timer.wait_time = INVULN_DURATION
+	Events.level_complete.connect(_on_level_complete)
 
 
 func _physics_process(_delta):
@@ -66,3 +67,6 @@ func _on_hit_box_area_entered(area):
 		on_hit()
 	elif area.is_in_group("wall_bullet") and invuln_timer.is_stopped():
 		on_hit()
+
+func _on_level_complete():
+	invuln_timer.start(3)
