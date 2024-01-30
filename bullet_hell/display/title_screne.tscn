@@ -128,9 +128,11 @@ offset_top = 560.0
 offset_right = 2392.0
 offset_bottom = 1290.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_bottom = NodePath("../Quit")
 texture_normal = ExtResource("3_of0ng")
 texture_pressed = ExtResource("4_nqshd")
 texture_hover = ExtResource("5_m0gag")
+texture_focused = ExtResource("5_m0gag")
 
 [node name="Quit" type="TextureButton" parent="."]
 layout_mode = 0
@@ -139,15 +141,18 @@ offset_top = 731.0
 offset_right = 1925.0
 offset_bottom = 1200.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_top = NodePath("../NewGame")
 texture_normal = ExtResource("6_2x6mt")
 texture_pressed = ExtResource("7_p7jra")
 texture_hover = ExtResource("8_r0hpr")
+texture_focused = ExtResource("8_r0hpr")
 
 [node name="StartTransition" parent="." instance=ExtResource("10_o82nr")]
 visible = false
 layout_mode = 1
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 layout_mode = 0
 offset_right = 1920.0

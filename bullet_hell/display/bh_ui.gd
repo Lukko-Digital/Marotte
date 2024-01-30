@@ -95,6 +95,7 @@ func death():
 	$ScreenColor.visible = false
 	await get_tree().create_timer(0.5).timeout
 	$Death/TryAgain.visible = true
+	$Death/TryAgain.grab_focus()
 	button_sound_animation.stop(true)
 	button_sound_animation.play("spawn")
 	await get_tree().create_timer(0.3).timeout

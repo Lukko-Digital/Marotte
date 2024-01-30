@@ -515,9 +515,11 @@ offset_top = 705.0
 offset_right = 2811.0
 offset_bottom = 1174.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_top = NodePath("../TryAgain")
 texture_normal = ExtResource("13_32x7d")
 texture_pressed = ExtResource("14_7ttxk")
 texture_hover = ExtResource("15_h3upn")
+texture_focused = ExtResource("15_h3upn")
 
 [node name="TryAgain" type="TextureButton" parent="Death"]
 visible = false
@@ -527,9 +529,11 @@ offset_top = 501.0
 offset_right = 3279.0
 offset_bottom = 1231.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_bottom = NodePath("../GiveUp")
 texture_normal = ExtResource("16_mtdww")
 texture_pressed = ExtResource("17_ehu76")
 texture_hover = ExtResource("18_27hju")
+texture_focused = ExtResource("18_27hju")
 
 [node name="DeathText" type="Label" parent="Death"]
 visible = false

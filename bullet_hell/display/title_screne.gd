@@ -3,6 +3,9 @@ extends Control
 @onready var transition : Transition = $StartTransition
 var tutorial: PackedScene = preload("res://bullet_hell/levels/tutorial_level/tutorial_pre.tscn")
 
+func _ready():
+	$NewGame.grab_focus()
+
 
 func _on_quit_pressed():
 	get_tree().quit()

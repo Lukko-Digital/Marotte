@@ -103,9 +103,11 @@ offset_top = 490.0
 offset_right = 1933.0
 offset_bottom = 1001.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_top = NodePath("../Resume")
 texture_normal = ExtResource("2_q4d3x")
 texture_pressed = ExtResource("3_mfe8o")
 texture_hover = ExtResource("4_y6mjw")
+texture_focused = ExtResource("4_y6mjw")
 
 [node name="Resume" type="TextureButton" parent="."]
 layout_mode = 0
@@ -114,9 +116,11 @@ offset_top = 350.0
 offset_right = 2188.5
 offset_bottom = 1022.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_bottom = NodePath("../Quit")
 texture_normal = ExtResource("5_6mqx8")
 texture_pressed = ExtResource("6_pajyi")
 texture_hover = ExtResource("7_u4nbo")
+texture_focused = ExtResource("7_u4nbo")
 stretch_mode = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
