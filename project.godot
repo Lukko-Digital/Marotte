@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Events="*res://bullet_hell/autoload/events.gd"
 Checkpoint="*res://bullet_hell/autoload/checkpoint.gd"
+Difficulty="*res://bullet_hell/autoload/difficulty.gd"
 
 [display]
 
