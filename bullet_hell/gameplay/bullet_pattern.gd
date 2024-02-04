@@ -171,7 +171,8 @@ func circle_grid(speed=0.5, rounds=3):
 			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
 			
 	for i in range(rounds):
-		await get_tree().create_timer(0.25/speed).timeout
+		var wait_time = (0.25/speed) * (1/Difficulty.bullet_speed_modifier)
+		await get_tree().create_timer(wait_time).timeout
 		circle(spawn_position, speed, 16, (PI/16) * i)
 
 
@@ -210,67 +211,52 @@ func spawn_bullet_pattern():
 	match active_bullet_mode:
 		"circle":
 			circle_pattern()
-			spawn_timer.wait_time = 3
-			spawn_timer.start()
+			set_spawn_timer(3)
 		"double_circle":
 			for i in range(2):
 				circle_pattern()
-			spawn_timer.wait_time = 3
-			spawn_timer.start()
+			set_spawn_timer(3)
 		"rapid_double_circle":
 			for i in range(2):
 				circle_pattern()
-			spawn_timer.wait_time = 1.5
-			spawn_timer.start()
+			set_spawn_timer(1.5)
 		"slow_circle":
 			circle_pattern(0.6)
-			spawn_timer.wait_time = 3
-			spawn_timer.start()
+			set_spawn_timer(3)
 		"slow_double_circle":
 			for i in range(2):
 				circle_pattern(0.6)
-			spawn_timer.wait_time = 3
-			spawn_timer.start()
+			set_spawn_timer(3)
 		"quick_circle":
 			circle_pattern()
-			spawn_timer.wait_time = .75
-			spawn_timer.start()
+			set_spawn_timer(0.75)
 		"fast_circle":
 			circle_pattern(.9)
-			spawn_timer.wait_time = 0.5
-			spawn_timer.start()
+			set_spawn_timer(0.5)
 		"spiral":
 			spiral(game_center)
-			spawn_timer.wait_time = 3
-			spawn_timer.start()
+			set_spawn_timer(3)
 		"spiral_warning":
 			spiral(game_center, 3, 8, 0.5, 1, 1.5)
-			spawn_timer.wait_time = 3.25
-			spawn_timer.start()
+			set_spawn_timer(3.25)
 		"final_spiral":
 			spiral(game_center, 4, 8, 1)
-			spawn_timer.wait_time = 3
-			spawn_timer.start()
+			set_spawn_timer(3)
 		"final_reverse_spiral":
 			spiral(game_center, 4, 8, .8, -1)
-			spawn_timer.wait_time = 3
-			spawn_timer.start()
+			set_spawn_timer(3)
 		"crazy_spiral":
 			spiral(game_center, 5, 8, .5, -1)
-			spawn_timer.wait_time = 3
-			spawn_timer.start()
+			set_spawn_timer(3)
 		"crazy_spiral_reverse":
 			spiral(game_center, 5, 8, .5, -1)
-			spawn_timer.wait_time = 3
-			spawn_timer.start()
+			set_spawn_timer(3)
 		"grid":
 			horizontal_grid(Vector2(RIGHT_X, game_center.y))
-			spawn_timer.wait_time = 1
-			spawn_timer.start()
+			set_spawn_timer(1)
 		"final_grid":
 			horizontal_grid(Vector2(RIGHT_X, game_center.y), 5, 3, 0.8)
-			spawn_timer.wait_time = 1
-			spawn_timer.start()
+			set_spawn_timer(1)
 		"wall_1":
 			wall_pattern("1", Vector2(-1, 0), 1)
 		"wall_2":
@@ -293,25 +279,23 @@ func spawn_bullet_pattern():
 			wall_pattern("chicken_3", Vector2(-1, 0), 0.6)
 		"zombies":
 			zombies()
-			spawn_timer.wait_time = 1
-			spawn_timer.start()
+			set_spawn_timer(1)
 		"fast_zombies":
 			zombies(0.35)
-			spawn_timer.wait_time = 1
-			spawn_timer.start()
+			set_spawn_timer(1)
 		"circle_grid":
 			circle_grid()
-			spawn_timer.wait_time = 3
-			spawn_timer.start()
+			set_spawn_timer(3)
 		"final_circle_grid":
 			circle_grid(1, 4)
-			spawn_timer.wait_time = 2
-			spawn_timer.start()
+			set_spawn_timer(2)
 		"crazy_circle_grid":
 			circle_grid(.8, 5)
-			spawn_timer.wait_time = 2
-			spawn_timer.start()
+			set_spawn_timer(2)
 
+func set_spawn_timer(time: float):
+	spawn_timer.wait_time = time * (1/Difficulty.bullet_speed_modifier)
+	spawn_timer.start()
 
 func _on_script_handler_spawn_bullets(pattern):
 	match pattern:
