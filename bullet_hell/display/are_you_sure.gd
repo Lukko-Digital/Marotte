@@ -1,5 +1,6 @@
 extends Control
 
+signal dont_quit
 
 func start():
 	$Nope.grab_focus()
@@ -13,3 +14,4 @@ func _on_yes_pressed():
 
 func _on_nope_pressed():
 	visible = false
+	dont_quit.emit()

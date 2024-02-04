@@ -17,3 +17,7 @@ func _on_quit_pressed():
 func _on_resume_pressed():
 	visible = false
 	get_tree().paused = false
+
+
+func _on_are_you_sure_dont_quit():
+	$Resume.grab_focus()
