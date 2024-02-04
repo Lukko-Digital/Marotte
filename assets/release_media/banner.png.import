@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u8jnnkkcjd0v"
-path="res://.godot/imported/ui_credits_scroll.png-277482466bdafd3efaa7e109ada24d46.ctex"
+uid="uid://cn44gnvoo8y7t"
+path="res://.godot/imported/banner.png-b4892e4e996b818ebd5171146422f650.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui_credits_scroll.png"
-dest_files=["res://.godot/imported/ui_credits_scroll.png-277482466bdafd3efaa7e109ada24d46.ctex"]
+source_file="res://assets/release_media/banner.png"
+dest_files=["res://.godot/imported/banner.png-b4892e4e996b818ebd5171146422f650.ctex"]
 
 [params]
 
