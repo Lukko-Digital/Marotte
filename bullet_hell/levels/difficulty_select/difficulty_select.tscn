@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d2nv01sfn3ipv"]
+[gd_scene load_steps=19 format=3 uid="uid://d2nv01sfn3ipv"]
 
 [ext_resource type="Texture2D" uid="uid://bfdavm3spuc7a" path="res://assets/sprites/difficulty_menu/ui_difficulty_bottom.png" id="1_888jj"]
 [ext_resource type="Script" path="res://bullet_hell/levels/difficulty_select/difficulty_select.gd" id="1_ifc6c"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://t0qngodb46v4" path="res://assets/audio/mouse_hover_v1.mp3" id="9_j50l1"]
 [ext_resource type="AudioStream" uid="uid://fk20nmoeualt" path="res://assets/audio/impact_extra_v1.mp3" id="10_nqhtt"]
 [ext_resource type="Script" path="res://bullet_hell/display/button_audio_player.gd" id="11_yt707"]
+[ext_resource type="PackedScene" uid="uid://jbsk5np48sqp" path="res://bullet_hell/display/start_transition_to_dialogue.tscn" id="14_ickwx"]
 
 [sub_resource type="Animation" id="Animation_muvpx"]
 resource_name = "click"
@@ -159,6 +160,10 @@ script = ExtResource("11_yt707")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = 6.0
+
+[node name="StartTransition" parent="." instance=ExtResource("14_ickwx")]
+visible = false
+layout_mode = 1
 
 [connection signal="focus_entered" from="Difficult" to="AnimationPlayer" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Difficult" to="AnimationPlayer" method="_on_mouse_entered"]

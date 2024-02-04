@@ -1,5 +1,6 @@
 extends Control
 
+@onready var transition : Transition = $StartTransition
 var tutorial: PackedScene = preload("res://bullet_hell/levels/tutorial_level/tutorial_pre.tscn")
 
 func _unhandled_input(event):
@@ -11,9 +12,15 @@ func _unhandled_input(event):
 
 func _on_normal_pressed():
 	Difficulty.set_difficulty(Difficulty.Difficulties.NORMAL)
-	get_tree().change_scene_to_packed(tutorial)
+	transition_to_tutorial()
 
 
 func _on_difficult_pressed():
 	Difficulty.set_difficulty(Difficulty.Difficulties.HARD)
+	transition_to_tutorial()
+
+func transition_to_tutorial():
+	transition.visible = true
+	transition.play("end")
+	await transition.transition_finished
 	get_tree().change_scene_to_packed(tutorial)
