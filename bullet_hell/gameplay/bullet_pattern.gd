@@ -37,23 +37,15 @@ func spawn(scene: PackedScene, spawn_position: Vector2, args: Array):
 
 func spiral(spawn_position: Vector2, num_arms=2, num_shots=6, speed=0.5, rotate_dir=1, warning_time=0.5):
 	spawn_position = spawn_position - position
-	var warning_dir = spawn_position.rotated(PI)
-	if warning_dir.is_zero_approx():
-		warning_dir = Vector2(1,0)
-	
-	var shot_base_dir = spawn_position.rotated(PI)
-	if shot_base_dir.is_zero_approx():
-		shot_base_dir = Vector2(1,0)
 	
 	warning_sound.play()
+	var warning_dir = Vector2(1,0)
 	for i in range(num_arms):
 		spawn(warning_scene, spawn_position, [warning_dir.rotated((2*PI/num_arms)*i)])
 	
 	await get_tree().create_timer(warning_time).timeout
 	
-	if shot_base_dir.is_zero_approx():
-		shot_base_dir = Vector2(0,0)
-	
+	var shot_base_dir = Vector2(1,0).rotated(randf_range(0,2)*PI)
 	for j in range(num_shots):
 		bullet_spawn_sound.play()
 		for i in range(num_arms):
