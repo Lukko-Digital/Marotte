@@ -135,7 +135,7 @@ libraries = {
 script = ExtResource("11_v2mnh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = 6.0
+volume_db = 14.0
 
 [connection signal="focus_entered" from="Yes" to="AnimationPlayer" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Yes" to="AnimationPlayer" method="_on_mouse_entered"]
