@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://drjlwvkl7s68m"]
+[gd_scene load_steps=9 format=3 uid="uid://drjlwvkl7s68m"]
 
+[ext_resource type="Script" path="res://bullet_hell/display/are_you_sure.gd" id="1_5a4d8"]
 [ext_resource type="Texture2D" uid="uid://b2iwoa5dfxui3" path="res://assets/sprites/ui_pause_areyousure_border.png" id="1_p85ya"]
 [ext_resource type="Texture2D" uid="uid://yhuehm8en6go" path="res://assets/sprites/ui_pause_areyousure_yes.png" id="2_3qgwc"]
 [ext_resource type="Texture2D" uid="uid://c5kryk0tyalbw" path="res://assets/sprites/ui_pause_areyousure_yes_click.png" id="3_xfb4j"]
@@ -11,6 +12,7 @@
 [node name="are_you_sure" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_5a4d8")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -36,9 +38,11 @@ offset_top = -28.0
 offset_right = 669.0
 offset_bottom = 420.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_right = NodePath("../Nope")
 texture_normal = ExtResource("2_3qgwc")
 texture_pressed = ExtResource("3_xfb4j")
 texture_hover = ExtResource("4_3vjcj")
+texture_focused = ExtResource("4_3vjcj")
 
 [node name="Nope" type="TextureButton" parent="."]
 layout_mode = 0
@@ -47,6 +51,13 @@ offset_top = -28.0
 offset_right = 1005.0
 offset_bottom = 420.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_left = NodePath("../Yes")
 texture_normal = ExtResource("5_5sohe")
 texture_pressed = ExtResource("6_egn3u")
 texture_hover = ExtResource("7_wu17c")
+texture_focused = ExtResource("7_wu17c")
+
+[connection signal="button_up" from="Yes" to="." method="_on_yes_button_up"]
+[connection signal="pressed" from="Yes" to="." method="_on_yes_pressed"]
+[connection signal="button_up" from="Nope" to="." method="_on_nope_button_up"]
+[connection signal="pressed" from="Nope" to="." method="_on_nope_pressed"]
