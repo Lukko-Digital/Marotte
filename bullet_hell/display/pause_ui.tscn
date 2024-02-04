@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://biod12rdse4po"]
+[gd_scene load_steps=15 format=3 uid="uid://biod12rdse4po"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/pause_ui.gd" id="1_g37k3"]
 [ext_resource type="Texture2D" uid="uid://dxtegasxjwcmn" path="res://assets/sprites/ui_pause_quit.png" id="2_q4d3x"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://t0qngodb46v4" path="res://assets/audio/mouse_hover_v1.mp3" id="8_t2sib"]
 [ext_resource type="AudioStream" uid="uid://bw8su1gy6f3tn" path="res://assets/audio/mouse_click_v1.mp3" id="9_yhnb6"]
 [ext_resource type="Script" path="res://bullet_hell/display/button_audio_player.gd" id="10_e7q4f"]
+[ext_resource type="PackedScene" uid="uid://drjlwvkl7s68m" path="res://bullet_hell/display/are_you_sure.tscn" id="11_jwc4m"]
 
 [sub_resource type="Animation" id="Animation_muvpx"]
 resource_name = "click"
@@ -132,10 +133,21 @@ script = ExtResource("10_e7q4f")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = 6.0
 
+[node name="are_you_sure" parent="." instance=ExtResource("11_jwc4m")]
+visible = false
+layout_mode = 0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 960.0
+offset_bottom = 540.0
+
 [connection signal="button_down" from="Quit" to="AnimationPlayer" method="_on_pressed"]
+[connection signal="focus_entered" from="Quit" to="AnimationPlayer" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Quit" to="AnimationPlayer" method="_on_mouse_entered"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="button_down" from="Resume" to="AnimationPlayer" method="_on_pressed"]
+[connection signal="focus_entered" from="Resume" to="AnimationPlayer" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Resume" to="AnimationPlayer" method="_on_mouse_entered"]
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Resume" to="AnimationPlayer" method="_on_pressed"]
+[connection signal="dont_quit" from="are_you_sure" to="." method="_on_are_you_sure_dont_quit"]
