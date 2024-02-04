@@ -145,22 +145,15 @@ func spawn_bullet_pattern():
 	match active_bullet_mode:
 		"circle":
 			circle_pattern()
-			set_spawn_timer(3)
+			set_spawn_timer(2)
 		"double_circle":
 			for i in range(2):
 				circle_pattern()
-			set_spawn_timer(3)
+			set_spawn_timer(2.5)
 		"rapid_double_circle":
 			for i in range(2):
 				circle_pattern()
 			set_spawn_timer(1.5)
-		"slow_circle":
-			circle_pattern(0.6)
-			set_spawn_timer(3)
-		"slow_double_circle":
-			for i in range(2):
-				circle_pattern(0.6)
-			set_spawn_timer(3)
 		"quick_circle":
 			circle_pattern()
 			set_spawn_timer(0.75)
