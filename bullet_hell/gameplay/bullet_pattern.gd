@@ -113,7 +113,7 @@ func circle_grid(speed=0.5, rounds=3):
 			spawn_position = Vector2(randi_range(LEFT_X, RIGHT_X), BOTTOM_Y)
 			
 	for i in range(rounds):
-		var wait_time = (0.25/speed) * (1/Difficulty.bullet_speed_modifier)
+		var wait_time = (0.25/speed) * Difficulty.circle_grid_interval
 		await get_tree().create_timer(wait_time).timeout
 		circle(spawn_position, speed, 16, (PI/16) * i)
 
