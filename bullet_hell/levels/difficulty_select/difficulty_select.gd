@@ -10,6 +10,14 @@ func _unhandled_input(event):
 		$Normal.grab_focus()
 
 
+func _on_difficult_mouse_entered():
+	$Difficult.grab_focus()
+
+
+func _on_normal_mouse_entered():
+	$Normal.grab_focus()
+
+
 func _on_normal_pressed():
 	Difficulty.set_difficulty(Difficulty.Difficulties.NORMAL)
 	transition_to_tutorial()
@@ -18,6 +26,7 @@ func _on_normal_pressed():
 func _on_difficult_pressed():
 	Difficulty.set_difficulty(Difficulty.Difficulties.HARD)
 	transition_to_tutorial()
+
 
 func transition_to_tutorial():
 	transition.visible = true
