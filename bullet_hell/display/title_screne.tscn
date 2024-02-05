@@ -131,7 +131,6 @@ scale = Vector2(0.2, 0.2)
 focus_neighbor_bottom = NodePath("../Quit")
 texture_normal = ExtResource("3_of0ng")
 texture_pressed = ExtResource("4_nqshd")
-texture_hover = ExtResource("5_m0gag")
 texture_focused = ExtResource("5_m0gag")
 
 [node name="Quit" type="TextureButton" parent="."]
@@ -144,7 +143,6 @@ scale = Vector2(0.2, 0.2)
 focus_neighbor_top = NodePath("../NewGame")
 texture_normal = ExtResource("6_2x6mt")
 texture_pressed = ExtResource("7_p7jra")
-texture_hover = ExtResource("8_r0hpr")
 texture_focused = ExtResource("8_r0hpr")
 
 [node name="StartTransition" parent="." instance=ExtResource("10_o82nr")]
@@ -175,9 +173,13 @@ script = ExtResource("13_45bbx")
 volume_db = 6.0
 
 [connection signal="button_down" from="NewGame" to="AnimationPlayer2" method="_on_pressed"]
+[connection signal="focus_entered" from="NewGame" to="AnimationPlayer2" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="NewGame" to="." method="_on_new_game_mouse_entered"]
 [connection signal="mouse_entered" from="NewGame" to="AnimationPlayer2" method="_on_mouse_entered"]
 [connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="button_down" from="Quit" to="AnimationPlayer2" method="_on_pressed"]
+[connection signal="focus_entered" from="Quit" to="AnimationPlayer2" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="mouse_entered" from="Quit" to="AnimationPlayer2" method="_on_mouse_entered"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
