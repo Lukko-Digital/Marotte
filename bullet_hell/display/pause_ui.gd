@@ -19,6 +19,8 @@ func _on_resume_mouse_entered():
 
 
 func _on_quit_pressed():
+	$Resume.hide()
+	$Quit.hide()
 	are_you_sure.start()
 
 
@@ -28,4 +30,6 @@ func _on_resume_pressed():
 
 
 func _on_are_you_sure_dont_quit():
+	$Resume.show()
+	$Quit.show()
 	$Resume.grab_focus()
