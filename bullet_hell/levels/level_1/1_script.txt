@@ -1,7 +1,7 @@
 Player: what joke should I tell?: 3
-!bullets: circle: 3
+!bullets: circle_lvl1: 3
 !joke_words: WHY: pickup
-!bullets: double_circle: 3
+!bullets: double_circle_lvl1: 3
 Player: i need more words!: 2
 !joke_words: DID THE: pickup
 !bullets: none: 2
@@ -16,7 +16,7 @@ Jester_chicken: don’t make the same mistakes i did...: 3
 !bullets: wall_chicken_2: 5.5
 !joke_words: THE: pickup
 !bullets: wall_chicken_3: 0
-!bullets: circle: 5.5
+!bullets: circle_lvl1: 5.5
 !joke_words: ROAD: pickup
 !bullets: none: 0
 !transition: level_1/level_1_post: 0

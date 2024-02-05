@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dqagvmbjdnptb"]
+[gd_scene load_steps=21 format=3 uid="uid://dqagvmbjdnptb"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/title_screne.gd" id="1_fd6gk"]
 [ext_resource type="Texture2D" uid="uid://bh4js2b0k3aa7" path="res://assets/sprites/ui_titlescreen_bg.png" id="1_rnq50"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://bw8su1gy6f3tn" path="res://assets/audio/mouse_click_v1.mp3" id="11_e4gin"]
 [ext_resource type="AudioStream" uid="uid://t0qngodb46v4" path="res://assets/audio/mouse_hover_v1.mp3" id="12_lw6i5"]
 [ext_resource type="Script" path="res://bullet_hell/display/button_audio_player.gd" id="13_45bbx"]
+[ext_resource type="PackedScene" uid="uid://g4kts1tujkt6" path="res://bullet_hell/audio/MusicPlayer.tscn" id="14_2kf6l"]
+[ext_resource type="AudioStream" uid="uid://bblye6eqvsail" path="res://assets/audio/music/title_music.mp3" id="15_cndd0"]
 
 [sub_resource type="Animation" id="Animation_khwmw"]
 resource_name = "fade_in"
@@ -171,6 +173,11 @@ script = ExtResource("13_45bbx")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = 6.0
+
+[node name="MusicPlayer" parent="." instance=ExtResource("14_2kf6l")]
+with_intro = ExtResource("15_cndd0")
+without_intro = ExtResource("15_cndd0")
+volume = -5
 
 [connection signal="button_down" from="NewGame" to="AnimationPlayer2" method="_on_pressed"]
 [connection signal="focus_entered" from="NewGame" to="AnimationPlayer2" method="_on_mouse_entered"]

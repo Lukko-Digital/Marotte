@@ -150,6 +150,13 @@ func spawn_bullet_pattern():
 			for i in range(2):
 				circle_pattern()
 			set_spawn_timer(2.5)
+		"circle_lvl1":
+			circle_pattern()
+			set_spawn_timer(1.3)
+		"double_circle_lvl1":
+			for i in range(2):
+				circle_pattern(.5)
+			set_spawn_timer(1.8)
 		"rapid_double_circle":
 			for i in range(2):
 				circle_pattern()
@@ -164,7 +171,7 @@ func spawn_bullet_pattern():
 			spiral(game_center)
 			set_spawn_timer(3)
 		"spiral_warning":
-			spiral(game_center, 3, 8, 0.5, 1, 1.5)
+			spiral(game_center, 3, 8, 0.65, 1, 1.5)
 			set_spawn_timer(3.25)
 		"final_spiral":
 			spiral(game_center, 4, 8, .8)
