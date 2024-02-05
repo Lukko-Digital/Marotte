@@ -512,7 +512,6 @@ scale = Vector2(0.2, 0.2)
 focus_neighbor_top = NodePath("../TryAgain")
 texture_normal = ExtResource("13_32x7d")
 texture_pressed = ExtResource("14_7ttxk")
-texture_hover = ExtResource("15_h3upn")
 texture_focused = ExtResource("15_h3upn")
 
 [node name="TryAgain" type="TextureButton" parent="Death"]
@@ -526,7 +525,6 @@ scale = Vector2(0.2, 0.2)
 focus_neighbor_bottom = NodePath("../GiveUp")
 texture_normal = ExtResource("16_mtdww")
 texture_pressed = ExtResource("17_ehu76")
-texture_hover = ExtResource("18_27hju")
 texture_focused = ExtResource("18_27hju")
 
 [node name="DeathText" type="Label" parent="Death"]
@@ -558,12 +556,14 @@ offset_top = 540.0
 offset_right = 960.0
 offset_bottom = 540.0
 
+[connection signal="button_down" from="Death/GiveUp" to="Death/ButtonSoundAnimation" method="_on_pressed"]
 [connection signal="button_up" from="Death/GiveUp" to="." method="_on_give_up_button_up"]
 [connection signal="focus_entered" from="Death/GiveUp" to="Death/ButtonSoundAnimation" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Death/GiveUp" to="." method="_on_give_up_mouse_entered"]
 [connection signal="mouse_entered" from="Death/GiveUp" to="Death/ButtonSoundAnimation" method="_on_mouse_entered"]
-[connection signal="pressed" from="Death/GiveUp" to="Death/ButtonSoundAnimation" method="_on_pressed"]
+[connection signal="button_down" from="Death/TryAgain" to="Death/ButtonSoundAnimation" method="_on_pressed"]
 [connection signal="button_up" from="Death/TryAgain" to="." method="_on_try_again_button_up"]
 [connection signal="focus_entered" from="Death/TryAgain" to="Death/ButtonSoundAnimation" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Death/TryAgain" to="." method="_on_try_again_mouse_entered"]
 [connection signal="mouse_entered" from="Death/TryAgain" to="Death/ButtonSoundAnimation" method="_on_mouse_entered"]
-[connection signal="pressed" from="Death/TryAgain" to="Death/ButtonSoundAnimation" method="_on_pressed"]
 [connection signal="dont_quit" from="Death/are_you_sure" to="." method="_on_are_you_sure_dont_quit"]

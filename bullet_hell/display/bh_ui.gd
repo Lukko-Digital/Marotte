@@ -109,6 +109,14 @@ func _on_try_again_button_up():
 	get_tree().reload_current_scene()
 
 
+func _on_try_again_mouse_entered():
+	$Death/TryAgain.grab_focus()
+
+
+func _on_give_up_mouse_entered():
+	$Death/GiveUp.grab_focus()
+
+
 func _on_give_up_button_up():
 	$Death/are_you_sure.start()
 
