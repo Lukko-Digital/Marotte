@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://uj52l6o8webo"]
+[gd_scene load_steps=5 format=3 uid="uid://uj52l6o8webo"]
 
 [ext_resource type="PackedScene" uid="uid://bl1fy1m5y84p4" path="res://dialogue_scene/sv_dialogue_scene.tscn" id="1_uqfmf"]
 [ext_resource type="PackedScene" uid="uid://d4cmwufycjqln" path="res://bullet_hell/display/start_transition_confident_king.tscn" id="2_08g0j"]
+[ext_resource type="PackedScene" uid="uid://g4kts1tujkt6" path="res://bullet_hell/audio/MusicPlayer.tscn" id="3_7e57g"]
+[ext_resource type="AudioStream" uid="uid://dp65xgio4wdhs" path="res://assets/audio/music/talking_with_king.mp3" id="4_nqrxe"]
 
 [node name="level_2_pre" type="Node2D"]
 
@@ -10,3 +12,8 @@ script_file_path = "res://bullet_hell/levels/level_2/level_2_pre.txt"
 
 [node name="StartTransition" parent="sv_dialogue_scene" instance=ExtResource("2_08g0j")]
 visible = false
+
+[node name="MusicPlayer" parent="." instance=ExtResource("3_7e57g")]
+with_intro = ExtResource("4_nqrxe")
+without_intro = ExtResource("4_nqrxe")
+volume = -5
