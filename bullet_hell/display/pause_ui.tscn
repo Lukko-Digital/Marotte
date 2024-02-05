@@ -128,7 +128,7 @@ script = ExtResource("1_g37k3")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 0.258824)
+color = Color(0, 0, 0, 0.596078)
 
 [node name="Quit" type="TextureButton" parent="."]
 layout_mode = 0
