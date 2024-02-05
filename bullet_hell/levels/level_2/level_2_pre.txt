@@ -1,3 +1,4 @@
+!nextscene: level_2/level_2: 0
 King_pointing: : 0.5
 King_pointing: Not only have you failed to make me laugh...: keypress
 King_crossed_arms: But that joke was created only two weeks ago.: keypress
@@ -5,11 +6,11 @@ King_crossed_arms: When we paved the first roads outside the castle,: keypress
 King_talking: We witnessed a curious chicken...: keypress
 King_neutral: ...: keypress
 King_hand_on_chin: You know the rest.: keypress
-Player_scared: i-i just thought: keypress
+Player_scared: i, i just thought: keypress
 King_hand_on_chin: Well try thinking a little harder, jester.: keypress
 King_hand_on_chin: ...: keypress
 King_talking: I suppose I'll give you another chance.: keypress
-Player_scared: th-thank you!: keypress
+Player_scared: th, thank you!: keypress
 King_neutral: For your next trial...: keypress
 King_pointing: Tell me a joke that would even make the devil scowl...!: keypress
 King_talking: A joke that could only be formulated...: keypress

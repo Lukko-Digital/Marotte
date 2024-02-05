@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d4cmwufycjqln"]
+[gd_scene load_steps=12 format=3 uid="uid://d4cmwufycjqln"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/transition.gd" id="1_wl8ia"]
 [ext_resource type="Texture2D" uid="uid://d31y43khqf4mn" path="res://assets/sprites/transition_jokeclear_confidentkid.png" id="2_f4bua"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bv4l02cx0y738" path="res://assets/sprites/transition_jokestart_full_confidentkid_king.png" id="4_1vdo6"]
 [ext_resource type="AudioStream" uid="uid://ium5iscnenqo" path="res://assets/audio/joke_start_woosh.mp3" id="5_qomue"]
 [ext_resource type="AudioStream" uid="uid://by703u8akmhym" path="res://assets/audio/joke_start_pulse.mp3" id="6_eygo8"]
+[ext_resource type="Texture2D" uid="uid://cd72oivwabptc" path="res://assets/sprites/loading_spin.png" id="7_fhyi4"]
+[ext_resource type="Script" path="res://bullet_hell/display/loading_spin.gd" id="8_vw0jr"]
 
 [sub_resource type="Animation" id="Animation_6wk1v"]
 resource_name = "end"
@@ -149,9 +151,8 @@ script = ExtResource("1_wl8ia")
 
 [node name="Left" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = -194.196
+offset_top = -1080.0
 offset_right = 972.0
-offset_bottom = 885.804
 texture = ExtResource("2_f4bua")
 expand_mode = 4
 
@@ -166,9 +167,9 @@ color = Color(0, 0, 0, 1)
 [node name="Right" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 953.0
-offset_top = 207.947
+offset_top = 1124.4
 offset_right = 1920.0
-offset_bottom = 1287.95
+offset_bottom = 2204.4
 texture = ExtResource("3_i6ebl")
 expand_mode = 4
 
@@ -189,5 +190,12 @@ texture = ExtResource("4_1vdo6")
 libraries = {
 "": SubResource("AnimationLibrary_ggtfr")
 }
+
+[node name="Loading" type="Sprite2D" parent="AnimationPlayer"]
+visible = false
+position = Vector2(1810, 960)
+scale = Vector2(0.186585, 0.186585)
+texture = ExtResource("7_fhyi4")
+script = ExtResource("8_vw0jr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

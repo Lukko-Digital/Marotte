@@ -1,3 +1,4 @@
+!nextscene: final_level_pt2/final_sv: 0
 Jester_holding_mouth: ...: keypress
 Jester_laughing: HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA: keypress
 !sound: JesterCrackSound1: 0

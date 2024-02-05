@@ -8,7 +8,7 @@ var direction: Vector2
 func start(start_pos: Vector2, args: Array):
 	position = start_pos
 	direction = args[0].normalized()
-	speed = args[1] * 500
+	speed = args[1] * 500 * Difficulty.bullet_speed_modifier
 	
 
 func _physics_process(delta):

@@ -1,3 +1,4 @@
+!nextscene: final_level_pt1/final_level_pt1: 0
 !jester: : 0.1
 Jester_regular_crouch: : 0.2
 Jester_regular_crouch: hey there!: keypress

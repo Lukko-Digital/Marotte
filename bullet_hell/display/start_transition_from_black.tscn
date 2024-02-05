@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcag0t5a047ce"]
+[gd_scene load_steps=6 format=3 uid="uid://bdgqejw6hem3f"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/transition.gd" id="1_ifh6f"]
+[ext_resource type="Texture2D" uid="uid://cd72oivwabptc" path="res://assets/sprites/loading_spin.png" id="2_lejtu"]
+[ext_resource type="Script" path="res://bullet_hell/display/loading_spin.gd" id="3_sxmna"]
 
 [sub_resource type="Animation" id="Animation_wlank"]
 resource_name = "start"
@@ -47,9 +49,16 @@ script = ExtResource("1_ifh6f")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 0)
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_xdq76")
 }
+
+[node name="Loading" type="Sprite2D" parent="AnimationPlayer"]
+visible = false
+position = Vector2(1810, 960)
+scale = Vector2(0.186585, 0.186585)
+texture = ExtResource("2_lejtu")
+script = ExtResource("3_sxmna")

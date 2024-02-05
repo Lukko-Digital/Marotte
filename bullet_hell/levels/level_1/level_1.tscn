@@ -18,4 +18,4 @@ transition = NodePath("StartTransition")
 [node name="MusicPlayer" parent="." instance=ExtResource("4_05ebj")]
 with_intro = ExtResource("5_iulxs")
 without_intro = ExtResource("5_iulxs")
-volume = -15
+volume = -5

@@ -6,6 +6,7 @@ extends CanvasLayer
 
 var active_label: Label
 var display_in_progress = false
+var path : String
 
 var game_script: PackedStringArray
 var current_line: int = 0
@@ -53,11 +54,13 @@ func parse_line(line: String):
 	var split = line.split(": ")
 	var command = split[0].split("_")[0]
 	match command:
+		"!nextscene":
+			path = "res://bullet_hell/levels/{level}.tscn".format({"level": split[1]})
+			ResourceLoader.load_threaded_request(path)
 		"!transition":
-			ResourceLoader.load_threaded_request("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]}))
 			transition.play("end")
 			await transition.transition_finished
-			var packed_scene := ResourceLoader.load_threaded_get("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]})) as PackedScene
+			var packed_scene := ResourceLoader.load_threaded_get(path) as PackedScene
 			get_tree().change_scene_to_packed(packed_scene)
 		"!sound":
 			var audio_player: AudioStreamPlayer = get_node(split[1])

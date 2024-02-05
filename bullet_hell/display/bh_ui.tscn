@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c5rvnoi1v7yxh"]
+[gd_scene load_steps=45 format=3 uid="uid://c5rvnoi1v7yxh"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/bh_ui.gd" id="1_3ae8p"]
 [ext_resource type="Texture2D" uid="uid://banxhtgki4vbs" path="res://assets/sprites/bh_interface.png" id="2_i8vm2"]
@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://bbym8sah6r2iw" path="res://assets/sprites/ui_death_tryagain.png" id="16_mtdww"]
 [ext_resource type="Texture2D" uid="uid://1u3tclefogso" path="res://assets/sprites/ui_death_tryagain_click.png" id="17_ehu76"]
 [ext_resource type="Texture2D" uid="uid://kykoylc38rko" path="res://assets/sprites/ui_death_tryagain_hover.png" id="18_27hju"]
+[ext_resource type="Script" path="res://bullet_hell/display/button_audio_player.gd" id="22_88uro"]
+[ext_resource type="PackedScene" uid="uid://drjlwvkl7s68m" path="res://bullet_hell/display/are_you_sure.tscn" id="23_au4lb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbpsm"]
 bg_color = Color(0, 0, 0, 1)
@@ -258,13 +260,13 @@ _data = {
 "white_flash": SubResource("Animation_4pnvd")
 }
 
-[sub_resource type="Animation" id="Animation_f3rev"]
+[sub_resource type="Animation" id="Animation_muvpx"]
 resource_name = "click"
-length = 0.5
+length = 0.2
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
+tracks/0/path = NodePath("AudioStreamPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -273,13 +275,13 @@ tracks/0/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("15_48pho")
 }],
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(-0.04)
 }
 tracks/0/use_blend = true
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:volume_db")
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -289,13 +291,13 @@ tracks/1/keys = {
 "values": [6.0]
 }
 
-[sub_resource type="Animation" id="Animation_wpw63"]
+[sub_resource type="Animation" id="Animation_eev4r"]
 resource_name = "hover"
-length = 0.5
+length = 0.2
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
+tracks/0/path = NodePath("AudioStreamPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -304,13 +306,13 @@ tracks/0/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("14_n73gl")
 }],
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(-0.1)
 }
 tracks/0/use_blend = true
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:volume_db")
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -320,13 +322,13 @@ tracks/1/keys = {
 "values": [14.0]
 }
 
-[sub_resource type="Animation" id="Animation_lyt8g"]
+[sub_resource type="Animation" id="Animation_ru2mo"]
 resource_name = "spawn"
 length = 0.5
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
+tracks/0/path = NodePath("AudioStreamPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -341,21 +343,21 @@ tracks/0/use_blend = true
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:volume_db")
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [-3.0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_067fd"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t75iw"]
 _data = {
-"click": SubResource("Animation_f3rev"),
-"hover": SubResource("Animation_wpw63"),
-"spawn": SubResource("Animation_lyt8g")
+"click": SubResource("Animation_muvpx"),
+"hover": SubResource("Animation_eev4r"),
+"spawn": SubResource("Animation_ru2mo")
 }
 
 [node name="bh_ui" type="Control"]
@@ -485,14 +487,6 @@ libraries = {
 [node name="DeathSound" type="AudioStreamPlayer" parent="Death"]
 stream = ExtResource("13_0avds")
 
-[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Death"]
-volume_db = 14.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Death/ButtonSoundPlayer"]
-libraries = {
-"": SubResource("AnimationLibrary_067fd")
-}
-
 [node name="DeathScreen" type="ColorRect" parent="Death"]
 visible = false
 z_index = 4
@@ -515,9 +509,10 @@ offset_top = 705.0
 offset_right = 2811.0
 offset_bottom = 1174.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_top = NodePath("../TryAgain")
 texture_normal = ExtResource("13_32x7d")
 texture_pressed = ExtResource("14_7ttxk")
-texture_hover = ExtResource("15_h3upn")
+texture_focused = ExtResource("15_h3upn")
 
 [node name="TryAgain" type="TextureButton" parent="Death"]
 visible = false
@@ -527,9 +522,10 @@ offset_top = 501.0
 offset_right = 3279.0
 offset_bottom = 1231.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_bottom = NodePath("../GiveUp")
 texture_normal = ExtResource("16_mtdww")
 texture_pressed = ExtResource("17_ehu76")
-texture_hover = ExtResource("18_27hju")
+texture_focused = ExtResource("18_27hju")
 
 [node name="DeathText" type="Label" parent="Death"]
 visible = false
@@ -544,9 +540,30 @@ text = "you died of anxiety lmfao"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[connection signal="button_down" from="Death/GiveUp" to="." method="_on_button_press"]
+[node name="ButtonSoundAnimation" type="AnimationPlayer" parent="Death"]
+libraries = {
+"": SubResource("AnimationLibrary_t75iw")
+}
+script = ExtResource("22_88uro")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Death"]
+
+[node name="are_you_sure" parent="Death" instance=ExtResource("23_au4lb")]
+visible = false
+z_index = 10
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 960.0
+offset_bottom = 540.0
+
+[connection signal="button_down" from="Death/GiveUp" to="Death/ButtonSoundAnimation" method="_on_pressed"]
 [connection signal="button_up" from="Death/GiveUp" to="." method="_on_give_up_button_up"]
-[connection signal="mouse_entered" from="Death/GiveUp" to="." method="_on_button_hover"]
-[connection signal="button_down" from="Death/TryAgain" to="." method="_on_button_press"]
+[connection signal="focus_entered" from="Death/GiveUp" to="Death/ButtonSoundAnimation" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Death/GiveUp" to="." method="_on_give_up_mouse_entered"]
+[connection signal="mouse_entered" from="Death/GiveUp" to="Death/ButtonSoundAnimation" method="_on_mouse_entered"]
+[connection signal="button_down" from="Death/TryAgain" to="Death/ButtonSoundAnimation" method="_on_pressed"]
 [connection signal="button_up" from="Death/TryAgain" to="." method="_on_try_again_button_up"]
-[connection signal="mouse_entered" from="Death/TryAgain" to="." method="_on_button_hover"]
+[connection signal="focus_entered" from="Death/TryAgain" to="Death/ButtonSoundAnimation" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Death/TryAgain" to="." method="_on_try_again_mouse_entered"]
+[connection signal="mouse_entered" from="Death/TryAgain" to="Death/ButtonSoundAnimation" method="_on_mouse_entered"]
+[connection signal="dont_quit" from="Death/are_you_sure" to="." method="_on_are_you_sure_dont_quit"]

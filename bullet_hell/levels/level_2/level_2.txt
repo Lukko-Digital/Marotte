@@ -1,3 +1,4 @@
+!nextscene: level_2/level_2_post: 0
 Player: i haven't memorized any dark jokes...: 3
 !bullets: quick_circle: 3
 !joke_words: WHAT: pickup
@@ -14,7 +15,7 @@ Player: a relatable character...?: 0
 !joke_words: SAY: 0
 !bullets: none: 0
 Player: what should the knight do?: pickup
-!bullets: wall_2: 7
+!bullets: wall_2: 8
 !joke_words: TO THE: pickup
 Player: i need a dark and twisted finale!: 1
 !bullets: zombies: 6

@@ -1,3 +1,4 @@
+!nextscene: final_level_pt2/jester_laughing: 0
 Jester_neutral: wait... what's going on?: 2
 !bullets: wall_right: 2
 !bullets: wall_top: 2
@@ -16,12 +17,16 @@ Jester_angry: SERIOUSLY STOP: 2
 !bullets: none: 0
 Jester_angry: STOP IT STOP IT STOP: 2
 !bullets: circle: 0
+!bullets: none: 0
 !bullets: wall_left: 2.5
 !bullets: circle: 0
+!bullets: none: 0
 !bullets: wall_right: 2.5
 !bullets: circle: 0
+!bullets: none: 0
 !bullets: wall_top: 2.5
 !bullets: circle: 0
+!bullets: none: 0
 !bullets: wall_bottom: 2.5
 !bullets: double_circle: 0
 !joke_words: HA4: pickup

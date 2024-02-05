@@ -1,3 +1,4 @@
+!nextscene: level_1/level_1: 0
 King_talking: : 0.5
 King_talking: you: keypress
 King_talking: You think you can amuse me?: keypress

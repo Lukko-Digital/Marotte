@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://btwxir20cc3mx"]
 
 [ext_resource type="Script" path="res://bullet_hell/levels/credits/credits.gd" id="1_2roeg"]
-[ext_resource type="Texture2D" uid="uid://py7e6allllve" path="res://assets/sprites/ui_credits_scroll.png" id="1_eweln"]
+[ext_resource type="Texture2D" uid="uid://u8jnnkkcjd0v" path="res://assets/sprites/ui_credits_scroll.png" id="1_eweln"]
 [ext_resource type="AudioStream" uid="uid://fk20nmoeualt" path="res://assets/audio/impact_extra_v1.mp3" id="2_4s4xt"]
 [ext_resource type="PackedScene" uid="uid://g4kts1tujkt6" path="res://bullet_hell/audio/MusicPlayer.tscn" id="4_jqhca"]
 [ext_resource type="AudioStream" uid="uid://crsffacl2mofj" path="res://assets/audio/music/credits.mp3" id="5_ihnv8"]
@@ -125,6 +125,6 @@ libraries = {
 [node name="MusicPlayer" parent="." instance=ExtResource("4_jqhca")]
 with_intro = ExtResource("5_ihnv8")
 without_intro = ExtResource("5_ihnv8")
-volume = -10
+volume = -7
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,3 +1,4 @@
+!nextscene: tutorial_level/tutorial_post: 0
 Jester_neutral: : 2
 Jester_neutral: this is your mind palace: 2
 !dialogue_words: A: 0
@@ -12,33 +13,33 @@ Jester_happy: that red circle is called a “confidence boost”: hit
 Jester_neutral: just kidding: 3
 Jester_neutral: coming up with each word will require you to survive a bunch of those: 5
 Jester_neutral: just like this: 3
-!bullets: slow_circle: 2
+!bullets: circle: 2
 !joke_words: WHAT: 3
 !bullets: none: 0
 Jester_happy: there it is! the starting word!: pickup
 !checkpoint
 Jester_neutral: you also get a bit of a confidence boost when you get the word right: 3
-!bullets: slow_circle: 3
+!bullets: circle: 3
 !joke_words: DO YOU: 2
 !bullets: none: 0
 Jester_neutral: sometimes you'll need to use logic to figure out the next part of the joke: pickup
 !checkpoint
 Jester_happy: nice!: 1
-!bullets: slow_circle: 3
+!bullets: circle: 3
 !joke_words: CALL A: 2
 !bullets: none: 0
 Jester_neutral: i'll let you figure this one out: pickup
 !checkpoint
 Jester_happy: look at you go: 2
-!bullets: slow_circle: 4
+!bullets: circle: 4
 !joke_words: FISH: 0
 !bullets: none: 0
-Jester_neutral: sometimes, your subconscious will know (it's the fish): pickup
+Jester_neutral: sometimes, your subconscious will know. it's the fish.: pickup
 !checkpoint
 Jester_happy: incredible!: 2
 Jester_neutral: ...: 1
 Jester_neutral: that's enough enthusiasm from  me today: 3
-!bullets: slow_double_circle: 8
+!bullets: double_circle: 8
 !joke_words: WITH NO EYES: 0
 Jester_neutral: we approach the climax: 3
 Jester_happy: it's a gimmie! the final line!: pickup

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8p8x6gdfvfy7"]
+[gd_scene load_steps=4 format=3 uid="uid://b8p8x6gdfvfy7"]
 
 [ext_resource type="PackedScene" uid="uid://dfimnqqoeiet4" path="res://dialogue_scene/fv_dialogue_scene.tscn" id="1_vdsqy"]
 [ext_resource type="PackedScene" uid="uid://jbsk5np48sqp" path="res://bullet_hell/display/start_transition_to_dialogue.tscn" id="2_4lw7s"]
+[ext_resource type="AudioStream" uid="uid://bvvessqfhyi1e" path="res://assets/audio/king_thud.mp3" id="3_35wq2"]
 
 [node name="level_2_post" type="Node2D"]
 
@@ -10,3 +11,6 @@ script_file_path = "res://bullet_hell/levels/level_2/level_2_post.txt"
 
 [node name="StartTransition" parent="fv_dialogue_scene" instance=ExtResource("2_4lw7s")]
 visible = false
+
+[node name="KingThud" type="AudioStreamPlayer" parent="fv_dialogue_scene"]
+stream = ExtResource("3_35wq2")

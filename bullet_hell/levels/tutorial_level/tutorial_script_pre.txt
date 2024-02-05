@@ -1,10 +1,12 @@
+!nextscene: tutorial_level/tutorial_level: 0
 Player_nervous: : 0.5
+Player_nervous: ...: keypress
+Jester_neutral: you're next up to see the king...: keypress
+Jester_neutral: good for you: keypress
 Player_nervous: ...: keypress
 Jester_neutral: you nervous?: keypress
 Player_nervous_talking: N, no...: keypress
-Jester_neutral: you’ve never done this before, have you?: keypress
-Player_nervous_talking: ...no.: keypress
-Jester_neutral: never, huh? I don’t know how people like you end up here: keypress
+Jester_neutral: i don’t know how people like you end up here: keypress
 Jester_neutral: i’ve performed for years, and this might be my last chance...: keypress
 Jester_neutral: ...to become THE ROYAL JESTER: keypress
 Player_nervous: ...: keypress

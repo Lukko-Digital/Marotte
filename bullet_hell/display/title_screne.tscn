@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dqagvmbjdnptb"]
+[gd_scene load_steps=21 format=3 uid="uid://dqagvmbjdnptb"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/title_screne.gd" id="1_fd6gk"]
 [ext_resource type="Texture2D" uid="uid://bh4js2b0k3aa7" path="res://assets/sprites/ui_titlescreen_bg.png" id="1_rnq50"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://bw8su1gy6f3tn" path="res://assets/audio/mouse_click_v1.mp3" id="11_e4gin"]
 [ext_resource type="AudioStream" uid="uid://t0qngodb46v4" path="res://assets/audio/mouse_hover_v1.mp3" id="12_lw6i5"]
 [ext_resource type="Script" path="res://bullet_hell/display/button_audio_player.gd" id="13_45bbx"]
+[ext_resource type="PackedScene" uid="uid://g4kts1tujkt6" path="res://bullet_hell/audio/MusicPlayer.tscn" id="14_2kf6l"]
+[ext_resource type="AudioStream" uid="uid://bblye6eqvsail" path="res://assets/audio/music/title_music.mp3" id="15_cndd0"]
 
 [sub_resource type="Animation" id="Animation_khwmw"]
 resource_name = "fade_in"
@@ -128,9 +130,10 @@ offset_top = 560.0
 offset_right = 2392.0
 offset_bottom = 1290.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_bottom = NodePath("../Quit")
 texture_normal = ExtResource("3_of0ng")
 texture_pressed = ExtResource("4_nqshd")
-texture_hover = ExtResource("5_m0gag")
+texture_focused = ExtResource("5_m0gag")
 
 [node name="Quit" type="TextureButton" parent="."]
 layout_mode = 0
@@ -139,15 +142,17 @@ offset_top = 731.0
 offset_right = 1925.0
 offset_bottom = 1200.0
 scale = Vector2(0.2, 0.2)
+focus_neighbor_top = NodePath("../NewGame")
 texture_normal = ExtResource("6_2x6mt")
 texture_pressed = ExtResource("7_p7jra")
-texture_hover = ExtResource("8_r0hpr")
+texture_focused = ExtResource("8_r0hpr")
 
 [node name="StartTransition" parent="." instance=ExtResource("10_o82nr")]
 visible = false
 layout_mode = 1
 
 [node name="FadeAnimation" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 layout_mode = 0
 offset_right = 1920.0
@@ -169,10 +174,19 @@ script = ExtResource("13_45bbx")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = 6.0
 
+[node name="MusicPlayer" parent="." instance=ExtResource("14_2kf6l")]
+with_intro = ExtResource("15_cndd0")
+without_intro = ExtResource("15_cndd0")
+volume = -5
+
 [connection signal="button_down" from="NewGame" to="AnimationPlayer2" method="_on_pressed"]
+[connection signal="focus_entered" from="NewGame" to="AnimationPlayer2" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="NewGame" to="." method="_on_new_game_mouse_entered"]
 [connection signal="mouse_entered" from="NewGame" to="AnimationPlayer2" method="_on_mouse_entered"]
 [connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="button_down" from="Quit" to="AnimationPlayer2" method="_on_pressed"]
+[connection signal="focus_entered" from="Quit" to="AnimationPlayer2" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="mouse_entered" from="Quit" to="AnimationPlayer2" method="_on_mouse_entered"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,8 +1,12 @@
+!nextscene: final_level_pt1/final_level_pre: 0
 Player_dark_eyes: : 0.5
 Player_dark_eyes: what did the knight say to the zombie?: keypress
 King_dead_noblood: ...: keypress
 !sound: Joke: 0
 Player_dark_delivery: ahhh! don't eat me!: keypress
-Jester_dead_king: ...: keypress
-Jester_dead_king: that was hilarious!: keypress
+King_dead_noblood: ...: keypress
+King_dead_blood: ......: keypress
+!sound: KingThud: 0
+Jester_gone: : 1
+Jester_neutral: that was hilarious!: keypress
 !transition: final_level_pt1/final_level_pre: 0

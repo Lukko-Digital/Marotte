@@ -1,3 +1,4 @@
+!nextscene: final_level_pt2/final_level_pt2: 0
 Jester_neutral: : 2
 Jester_happy: this better be good!!!: 3
 !bullets: rapid_double_circle: 7

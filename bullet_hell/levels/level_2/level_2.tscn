@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://blswcpeqrxkkb"]
 
 [ext_resource type="PackedScene" uid="uid://dj6e7xh4njtlj" path="res://bullet_hell/bullet_hell_game.tscn" id="1_0ajff"]
-[ext_resource type="JSON" uid="uid://cdhqclmy6kq4t" path="res://bullet_hell/levels/level_2/level_2_words.tres" id="2_7jh1e"]
+[ext_resource type="JSON" path="res://bullet_hell/levels/level_2/level_2_words.tres" id="2_7jh1e"]
 [ext_resource type="PackedScene" uid="uid://d4cmwufycjqln" path="res://bullet_hell/display/start_transition_confident_king.tscn" id="3_v3md7"]
 [ext_resource type="PackedScene" uid="uid://g4kts1tujkt6" path="res://bullet_hell/audio/MusicPlayer.tscn" id="4_wvjyo"]
 [ext_resource type="AudioStream" uid="uid://s53fuyeoaj46" path="res://assets/audio/music/level_2_music.mp3" id="5_x6qsc"]
@@ -19,4 +19,4 @@ transition = NodePath("../StartTransition")
 [node name="MusicPlayer" parent="." instance=ExtResource("4_wvjyo")]
 with_intro = ExtResource("5_x6qsc")
 without_intro = ExtResource("6_d1510")
-volume = -15
+volume = -5

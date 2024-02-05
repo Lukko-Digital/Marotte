@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddvbh4c2narml"]
+[gd_scene load_steps=5 format=3 uid="uid://ddvbh4c2narml"]
 
 [ext_resource type="PackedScene" uid="uid://bl1fy1m5y84p4" path="res://dialogue_scene/sv_dialogue_scene.tscn" id="1_wpuvo"]
 [ext_resource type="PackedScene" uid="uid://dcvn7q84asb6c" path="res://bullet_hell/display/start_transition_scared_king.tscn" id="2_4pxn8"]
+[ext_resource type="PackedScene" uid="uid://g4kts1tujkt6" path="res://bullet_hell/audio/MusicPlayer.tscn" id="3_a736m"]
+[ext_resource type="AudioStream" uid="uid://dp65xgio4wdhs" path="res://assets/audio/music/talking_with_king.mp3" id="4_d5dlb"]
 
 [node name="1_pre" type="Node2D"]
 
@@ -10,3 +12,8 @@ script_file_path = "res://bullet_hell/levels/level_1/1_script_pre.txt"
 
 [node name="StartTransition" parent="sv_dialogue_scene" instance=ExtResource("2_4pxn8")]
 visible = false
+
+[node name="MusicPlayer" parent="." instance=ExtResource("3_a736m")]
+with_intro = ExtResource("4_d5dlb")
+without_intro = ExtResource("4_d5dlb")
+volume = -5

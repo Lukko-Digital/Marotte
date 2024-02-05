@@ -17,7 +17,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	position += direction * speed * delta
+	position += direction * speed * delta * Difficulty.bullet_speed_modifier
 
 
 func _on_area_exited(_area):

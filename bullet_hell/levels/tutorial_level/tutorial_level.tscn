@@ -71,6 +71,6 @@ libraries = {
 [node name="MusicPlayer" parent="." instance=ExtResource("6_sx3wy")]
 with_intro = ExtResource("6_7iv71")
 without_intro = ExtResource("6_7iv71")
-volume = -15
+volume = -5
 
 [connection signal="animation_finished" from="MovementTutorial/AnimationPlayer" to="MovementTutorial" method="_on_animation_player_animation_finished"]

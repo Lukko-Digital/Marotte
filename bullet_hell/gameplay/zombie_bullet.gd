@@ -17,7 +17,7 @@ var running: bool
 func start(start_pos: Vector2, args: Array):
 	position = start_pos
 	player = args[0]
-	speed = args[1] * 500
+	speed = args[1] * 500 * Difficulty.bullet_speed_modifier
 	offset = args[2]
 	await ready 
 	sprite.play("default")

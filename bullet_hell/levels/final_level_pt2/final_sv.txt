@@ -1,3 +1,4 @@
+!nextscene: credits/credits: 0
 !jester: : 0
 Jester_dead: : 0.00001
 Player_scared: ...: keypress

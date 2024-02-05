@@ -17,7 +17,7 @@ extends Control
 @onready var text_timer: Timer = $ThoughtBubble/Label/TextTimer
 @onready var dialogue_audio: DialogueAudioPlayer = $ThoughtBubble/DialogueAudioPlayer
 @onready var death_text_label: Label = $Death/DeathText
-@onready var button_sound_animation: AnimationPlayer = $Death/ButtonSoundPlayer/AnimationPlayer
+@onready var button_sound_animation: AnimationPlayer = $Death/ButtonSoundAnimation
 
 const MAX_HP = 5
 var current_hp = MAX_HP : set = _set_current_hp
@@ -95,6 +95,7 @@ func death():
 	$ScreenColor.visible = false
 	await get_tree().create_timer(0.5).timeout
 	$Death/TryAgain.visible = true
+	$Death/TryAgain.grab_focus()
 	button_sound_animation.stop(true)
 	button_sound_animation.play("spawn")
 	await get_tree().create_timer(0.3).timeout
@@ -108,18 +109,20 @@ func _on_try_again_button_up():
 	get_tree().reload_current_scene()
 
 
+func _on_try_again_mouse_entered():
+	$Death/TryAgain.grab_focus()
+
+
+func _on_give_up_mouse_entered():
+	$Death/GiveUp.grab_focus()
+
+
 func _on_give_up_button_up():
-	get_tree().quit()
+	$Death/are_you_sure.start()
 
 
-func _on_button_hover():
-	button_sound_animation.stop(true)
-	button_sound_animation.play("hover")
-
-
-func _on_button_press():
-	button_sound_animation.stop(true)
-	button_sound_animation.play("click")
+func _on_are_you_sure_dont_quit():
+	$Death/TryAgain.grab_focus()
 
 
 func _set_current_hp(new_hp):
