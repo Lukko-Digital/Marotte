@@ -151,9 +151,8 @@ script = ExtResource("1_52ypd")
 
 [node name="Left" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = -1080.0
 offset_right = 966.0
-offset_bottom = 1.0
+offset_bottom = 1081.0
 texture = ExtResource("2_ttyef")
 expand_mode = 4
 
@@ -167,10 +166,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="Right" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 961.0
-offset_top = 1124.4
-offset_right = 1920.0
-offset_bottom = 2204.4
+offset_left = 960.0
+offset_right = 1919.0
+offset_bottom = 1080.0
 texture = ExtResource("3_0ekj0")
 expand_mode = 4
 

@@ -10,6 +10,5 @@ func _process(delta):
 	rotation += delta * 5
 
 func loading(_anim_name):
-	print(1)
 	if (_anim_name == "end"):
 		visible = true

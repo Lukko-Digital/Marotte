@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dqkhhsrby17yd"]
 
 [ext_resource type="PackedScene" uid="uid://dj6e7xh4njtlj" path="res://bullet_hell/bullet_hell_game.tscn" id="1_0kqsq"]
-[ext_resource type="JSON" uid="uid://dv1k1amh4rxr1" path="res://bullet_hell/levels/level_1/1_word_groups.tres" id="2_xo781"]
+[ext_resource type="JSON" uid="uid://d25t1x1fbc78a" path="res://bullet_hell/levels/level_1/1_word_groups.tres" id="2_xo781"]
 [ext_resource type="PackedScene" uid="uid://dcvn7q84asb6c" path="res://bullet_hell/display/start_transition_scared_king.tscn" id="3_ekrug"]
 [ext_resource type="PackedScene" uid="uid://g4kts1tujkt6" path="res://bullet_hell/audio/MusicPlayer.tscn" id="4_05ebj"]
 [ext_resource type="AudioStream" uid="uid://btlhp3m5b4wxw" path="res://assets/audio/music/level_1_music.mp3" id="5_iulxs"]
