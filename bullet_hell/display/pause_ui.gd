@@ -10,6 +10,14 @@ func _unhandled_input(event):
 		$Resume.grab_focus()
 
 
+func _on_quit_mouse_entered():
+	$Quit.grab_focus()
+
+
+func _on_resume_mouse_entered():
+	$Resume.grab_focus()
+
+
 func _on_quit_pressed():
 	are_you_sure.start()
 
