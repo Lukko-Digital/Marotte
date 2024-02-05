@@ -11,12 +11,12 @@ Player: it’s gotta be a classic...: 2
 !joke_words: CHICKEN: pickup
 !bullets: none: 1
 Jester_chicken: don’t make the same mistakes i did...: 3
-!bullets: wall_chicken_1: 5
+!bullets: wall_chicken_1: 5.5
 !joke_words: CROSS: pickup
-!bullets: wall_chicken_2: 4
+!bullets: wall_chicken_2: 5.5
 !joke_words: THE: pickup
 !bullets: wall_chicken_3: 0
-!bullets: circle: 5
+!bullets: circle: 5.5
 !joke_words: ROAD: pickup
 !bullets: none: 0
 !transition: level_1/level_1_post: 0
