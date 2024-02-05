@@ -50,10 +50,12 @@ func parse_line(line: String):
 			next_line()
 			return
 		"!transition":
+			ResourceLoader.load_threaded_request("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]}))
 			Checkpoint.reload_point = 0
 			transition.play("clear")
 			await transition.transition_finished
-			get_tree().change_scene_to_file("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]}))
+			var packed_scene := ResourceLoader.load_threaded_get("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]})) as PackedScene
+			get_tree().change_scene_to_packed(packed_scene)
 		"!final_transition":
 			Checkpoint.reload_point = 0
 			transition.play("black")

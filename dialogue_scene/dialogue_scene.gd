@@ -54,9 +54,11 @@ func parse_line(line: String):
 	var command = split[0].split("_")[0]
 	match command:
 		"!transition":
+			ResourceLoader.load_threaded_request("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]}))
 			transition.play("end")
 			await transition.transition_finished
-			get_tree().change_scene_to_file("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]}))
+			var packed_scene := ResourceLoader.load_threaded_get("res://bullet_hell/levels/{level}.tscn".format({"level": split[1]})) as PackedScene
+			get_tree().change_scene_to_packed(packed_scene)
 		"!sound":
 			var audio_player: AudioStreamPlayer = get_node(split[1])
 			audio_player.play()
