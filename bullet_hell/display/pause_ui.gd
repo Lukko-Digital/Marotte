@@ -7,7 +7,10 @@ func _unhandled_input(event):
 		are_you_sure.visible = false
 		visible = !visible
 		get_tree().paused = !get_tree().paused
-		$Resume.grab_focus()
+		if visible:
+			$Resume.show()
+			$Quit.show()
+			$Resume.grab_focus()
 
 
 func _on_quit_mouse_entered():
