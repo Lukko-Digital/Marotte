@@ -60,7 +60,6 @@ func parse_line(line: String):
 			transition_to()
 		"!final_transition":
 			transition.play("black")
-			await transition.transition_finished
 			transition_to()
 		"Player", "Jester_neutral", "Jester_angry", "Jester_happy", "Jester_chicken":
 			active_speaker.emit(split[0])

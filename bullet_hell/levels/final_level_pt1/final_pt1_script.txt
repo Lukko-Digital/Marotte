@@ -40,4 +40,3 @@ Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 3
 Jester_angry: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: 5
 !joke_words: HEAD: pickup
 !bullets: none: 0
-!final_transition: final_level_pt2/final_level_pt2: 0
