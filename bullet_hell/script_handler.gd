@@ -55,7 +55,6 @@ func parse_line(line: String):
 			next_line()
 			return
 		"!transition":
-			Checkpoint.reload_point = 0
 			transition.play("clear")
 			transition_to()
 		"!final_transition":
