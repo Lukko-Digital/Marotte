@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcvn7q84asb6c"]
+[gd_scene load_steps=12 format=3 uid="uid://dcvn7q84asb6c"]
 
 [ext_resource type="Script" path="res://bullet_hell/display/transition.gd" id="1_yerh2"]
 [ext_resource type="Texture2D" uid="uid://y15kahix1cjb" path="res://assets/sprites/transition_jokeclear_scaredkid.png" id="2_n7hp7"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ctsc6s3qmnl0m" path="res://assets/sprites/transition_jokestart_full_scaredkid_king.png" id="4_1attr"]
 [ext_resource type="AudioStream" uid="uid://ium5iscnenqo" path="res://assets/audio/joke_start_woosh.mp3" id="5_qe1yq"]
 [ext_resource type="AudioStream" uid="uid://by703u8akmhym" path="res://assets/audio/joke_start_pulse.mp3" id="6_612hf"]
+[ext_resource type="Texture2D" uid="uid://cd72oivwabptc" path="res://assets/sprites/loading_spin.png" id="7_fcjws"]
+[ext_resource type="Script" path="res://bullet_hell/display/loading_spin.gd" id="8_t13hj"]
 
 [sub_resource type="Animation" id="Animation_6wk1v"]
 resource_name = "end"
@@ -149,9 +151,8 @@ script = ExtResource("1_yerh2")
 
 [node name="Left" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = -214.264
 offset_right = 966.0
-offset_bottom = 866.736
+offset_bottom = 1081.0
 texture = ExtResource("2_n7hp7")
 expand_mode = 4
 
@@ -165,10 +166,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="Right" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 953.0
-offset_top = 228.98
-offset_right = 1920.0
-offset_bottom = 1308.98
+offset_left = 954.0
+offset_right = 1921.0
+offset_bottom = 1080.0
 texture = ExtResource("3_l665y")
 expand_mode = 4
 
@@ -189,5 +189,12 @@ texture = ExtResource("4_1attr")
 libraries = {
 "": SubResource("AnimationLibrary_ggtfr")
 }
+
+[node name="Loading" type="Sprite2D" parent="AnimationPlayer"]
+visible = false
+position = Vector2(1810, 960)
+scale = Vector2(0.186585, 0.186585)
+texture = ExtResource("7_fcjws")
+script = ExtResource("8_t13hj")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

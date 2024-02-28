@@ -1,3 +1,4 @@
+!nextscene: level_2/level_2_pre: 0
 Player_pensive: : 0.5
 Player_pensive: why did the chicken cross the road?: keypress
 King_neutral: ...: keypress

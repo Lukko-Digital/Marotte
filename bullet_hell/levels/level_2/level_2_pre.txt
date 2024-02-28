@@ -1,3 +1,4 @@
+!nextscene: level_2/level_2: 0
 King_pointing: : 0.5
 King_pointing: Not only have you failed to make me laugh...: keypress
 King_crossed_arms: But that joke was created only two weeks ago.: keypress

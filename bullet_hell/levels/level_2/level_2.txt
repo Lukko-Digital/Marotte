@@ -1,3 +1,4 @@
+!nextscene: level_2/level_2_post: 0
 Player: i haven't memorized any dark jokes...: 3
 !bullets: quick_circle: 3
 !joke_words: WHAT: pickup

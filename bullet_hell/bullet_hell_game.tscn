@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://bullet_hell/bullet_hell_game.gd" id="1_ruomc"]
 [ext_resource type="AudioStream" uid="uid://2q4ffrxsf5l3" path="res://assets/audio/bullets_warning.mp3" id="2_dr1t0"]
 [ext_resource type="Script" path="res://bullet_hell/display/thinking_bar.gd" id="2_uwvi3"]
-[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/Playerfont-Regular.ttf" id="2_waoyk"]
+[ext_resource type="FontFile" uid="uid://bda3nvjdg78pn" path="res://assets/fonts/playerfont-Regular.ttf" id="2_waoyk"]
 [ext_resource type="AudioStream" uid="uid://cyo4830oj6un0" path="res://assets/audio/bullets_warning_v2.mp3" id="3_2nset"]
 [ext_resource type="PackedScene" uid="uid://c5rvnoi1v7yxh" path="res://bullet_hell/display/bh_ui.tscn" id="3_5sicw"]
 [ext_resource type="Script" path="res://bullet_hell/display/JokeLabel.gd" id="3_ea24l"]
@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://bullet_hell/display/RedJokeLabel.gd" id="8_3axfu"]
 [ext_resource type="FontFile" uid="uid://4onft5ytn1tk" path="res://assets/fonts/Jokerfont3-Regular.ttf" id="8_24ksl"]
 [ext_resource type="PackedScene" uid="uid://cyjcpt38w0tyo" path="res://bullet_hell/gameplay/bullet_pattern.tscn" id="8_jtn82"]
-[ext_resource type="PackedScene" path="res://bullet_hell/display/pause_ui.tscn" id="15_64oxy"]
+[ext_resource type="PackedScene" uid="uid://biod12rdse4po" path="res://bullet_hell/display/pause_ui.tscn" id="15_64oxy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65c2p"]
 

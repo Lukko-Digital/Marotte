@@ -1,5 +1,7 @@
 extends Node2D
 
+var path : String
+
 var game_script: PackedStringArray
 var current_line: int = 0
 
@@ -39,6 +41,9 @@ func next_line():
 func parse_line(line: String):
 	var split = line.split(": ")
 	match split[0]:
+		"!nextscene":
+			path = "res://bullet_hell/levels/{level}.tscn".format({"level": split[1]})
+			ResourceLoader.load_threaded_request(path)
 		"!dialogue_words":
 			spawn_dialogue_words.emit(split[1])
 		"!joke_words":
@@ -51,10 +56,10 @@ func parse_line(line: String):
 			return
 		"!transition":
 			transition.play("clear")
-			transition_to(split[1])
+			transition_to()
 		"!final_transition":
 			transition.play("black")
-			transition_to(split[1])
+			transition_to()
 		"Player", "Jester_neutral", "Jester_angry", "Jester_happy", "Jester_chicken":
 			active_speaker.emit(split[0])
 			display_line.emit(split[1])
@@ -76,12 +81,12 @@ func parse_line(line: String):
 				assert(false, "Error: Invalid advance condition")
 
 
-func transition_to(level):
+func transition_to():
 	Checkpoint.reload_point = 0
 	Events.level_complete.emit()
 	await transition.transition_finished
-	get_tree().change_scene_to_file("res://bullet_hell/levels/{level}.tscn".format({"level": level}))
-
+	var packed_scene := ResourceLoader.load_threaded_get(path) as PackedScene
+	get_tree().change_scene_to_packed(packed_scene)
 
 func _on_timer_timeout():
 	if advance_condition == Advance_Conditions.TIME:

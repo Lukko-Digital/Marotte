@@ -1,3 +1,4 @@
+!nextscene: final_level_pt2/jester_laughing: 0
 Jester_neutral: wait... what's going on?: 2
 !bullets: wall_right: 2
 !bullets: wall_top: 2

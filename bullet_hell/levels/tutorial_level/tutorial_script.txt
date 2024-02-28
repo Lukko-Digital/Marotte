@@ -1,3 +1,4 @@
+!nextscene: tutorial_level/tutorial_post: 0
 Jester_neutral: : 2
 Jester_neutral: this is your mind palace: 2
 !dialogue_words: A: 0

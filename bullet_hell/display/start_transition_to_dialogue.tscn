@@ -4,7 +4,6 @@
 
 [sub_resource type="Animation" id="Animation_wlank"]
 resource_name = "end"
-length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

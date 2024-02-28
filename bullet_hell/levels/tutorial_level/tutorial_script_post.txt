@@ -1,3 +1,4 @@
+!nextscene: level_1/1_pre: 0
 Player_pensive: : 0.5
 Player_pensive: what do you call a fish with no eyes?: keypress
 Jester_neutral: what?: keypress

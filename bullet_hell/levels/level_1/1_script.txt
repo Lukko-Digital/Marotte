@@ -1,3 +1,4 @@
+!nextscene: level_1/level_1_post: 0
 Player: what joke should I tell?: 3
 !bullets: circle_lvl1: 3
 !joke_words: WHY: pickup

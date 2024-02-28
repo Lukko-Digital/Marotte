@@ -1,3 +1,4 @@
+!nextscene: tutorial_level/tutorial_level: 0
 Player_nervous: : 0.5
 Player_nervous: ...: keypress
 Jester_neutral: you're next up to see the king...: keypress
